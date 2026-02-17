@@ -249,7 +249,7 @@ class RPCGSSClient {
 		offset = 0; n = 0; i = 0;
 
 		while (i < (len - 1)) {
-		    while (Character.isSpace((char) argbuf[i])) {
+		    while (Character.isWhitespace((char) argbuf[i])) {
 			i++;
 		    }
 		    offset = i;
