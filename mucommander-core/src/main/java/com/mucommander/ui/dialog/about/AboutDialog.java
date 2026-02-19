@@ -74,7 +74,7 @@ public class AboutDialog extends FocusDialog implements ActionListener {
     /** Style for a section title. */
     private static final String STYLE_TITLE = "title";
     /** Line break string. */
-    private static final String LINE_BREAK = System.getProperty("line.separator");
+    private static final String LINE_BREAK = System.lineSeparator();
 
     // - UI components ----------------------------------------------------------
     // --------------------------------------------------------------------------
