@@ -197,26 +197,23 @@ public class ShortcutsPanel extends PreferencesPanel {
                 .sorted(Comparator.comparing(ActionCategory::toString))
                 .forEach(combo::addItem);
 
-        final ActionListener filterActionListener = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                final ActionCategory selectedActionCategory = (ActionCategory) combo.getSelectedItem();
+        final ActionListener filterActionListener = e -> {
+            final ActionCategory selectedActionCategory = (ActionCategory)combo.getSelectedItem();
 
-                String filter = filterField.getText().toLowerCase().trim();
-                String[] filterWords = filter.split("\\s+");
+            String filter = filterField.getText().toLowerCase().trim();
+            String[] filterWords = filter.split("\\s+");
 
-                shortcutsTable.updateModel((actionId, rowAsText) -> {
-                    if (selectedActionCategory != null && !selectedActionCategory.contains(actionId)) {
-                        return false;
-                    }
-                    return Arrays.stream(filterWords).allMatch(rowAsText::contains);
-                });
-
-                tooltipBar.showDefaultMessage();
-
-                if (e.getSource() == filterField) {
-                    filterField.requestFocus();
+            shortcutsTable.updateModel((actionId, rowAsText) -> {
+                if (selectedActionCategory != null && !selectedActionCategory.contains(actionId)) {
+                    return false;
                 }
+                return Arrays.stream(filterWords).allMatch(rowAsText::contains);
+            });
+
+            tooltipBar.showDefaultMessage();
+
+            if (e.getSource() == filterField) {
+                filterField.requestFocus();
             }
         };
 

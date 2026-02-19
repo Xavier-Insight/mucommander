@@ -140,13 +140,11 @@ public class StatusBar extends JPanel {
 
         // Listens to configuration changes and updates static fields accordingly.
         // Note: a reference to the listener must be kept to prevent it from being garbage-collected.
-        CONFIGURATION_ADAPTER = new ConfigurationListener() {
-            public synchronized void configurationChanged(ConfigurationEvent event) {
-                String var = event.getVariable();
+        CONFIGURATION_ADAPTER = event -> {
+            String var = event.getVariable();
 
-                if (var.equals(MuPreferences.DISPLAY_COMPACT_FILE_SIZE))
-                    setSelectedFileSizeFormat(event.getBooleanValue());
-            }
+            if (var.equals(MuPreferences.DISPLAY_COMPACT_FILE_SIZE))
+                setSelectedFileSizeFormat(event.getBooleanValue());
         };
         MuConfigurations.addPreferencesListener(CONFIGURATION_ADAPTER);
     }

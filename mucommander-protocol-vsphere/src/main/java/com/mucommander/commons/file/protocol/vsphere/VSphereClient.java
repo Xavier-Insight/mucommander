@@ -28,7 +28,6 @@ import java.util.Map;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLSession;
 import javax.xml.ws.BindingProvider;
 
 import org.slf4j.Logger;
@@ -169,12 +168,7 @@ public class VSphereClient implements Closeable {
 	}
 
 	private void doTrust() {
-		HostnameVerifier hv = new HostnameVerifier() {
-			@Override
-			public boolean verify(String urlHostName, SSLSession session) {
-				return true;
-			}
-		};
+		HostnameVerifier hv = (urlHostName, session) -> true;
 		try {
 			trustAllHttpsCertificates();
 		} catch (KeyManagementException e) {

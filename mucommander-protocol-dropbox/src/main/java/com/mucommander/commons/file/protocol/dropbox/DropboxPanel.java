@@ -202,7 +202,7 @@ public class DropboxPanel extends ServerPanel implements ActionListener {
 		case SIGN_IN:
 			setLoginPhase(LoginPhase.CANCEL_SIGN_IN);
 			token.setText("");
-			SwingUtilities.invokeLater(() -> {
+			SwingUtilities.invokeLater(() ->
 				new Thread(() ->  {
 				    appInfo = new DbxAppInfo(appKey, appSecret);
 				    PkceAuthorize pkceAuthorize = new PkceAuthorize(appInfo);
@@ -210,8 +210,7 @@ public class DropboxPanel extends ServerPanel implements ActionListener {
 				    listener.browse(authUrl);
 				    setAuthorizationFieldsVisible(pkceAuthorize);
 				    setAccountFieldsVisible(null);
-				}).start();
-			});
+				}).start());
 			break;
 		case CANCEL_SIGN_IN:
 			setLoginPhase(LoginPhase.SIGN_IN);

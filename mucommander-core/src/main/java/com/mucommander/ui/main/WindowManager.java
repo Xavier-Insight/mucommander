@@ -297,9 +297,8 @@ public class WindowManager implements WindowListener, ConfigurationListener {
             currentThread.setContextClassLoader(oldLoader);
 
             mainFrames.forEach(MainFrame::updateFileTablesHeaderRenderer);
-            mainFrames.forEach(e -> {
-                SwingUtilities.updateComponentTreeUI(e.getJFrame());
-            });
+            mainFrames.forEach(e ->
+                SwingUtilities.updateComponentTreeUI(e.getJFrame()));
         }
         catch(Throwable e) {
             LOGGER.debug("Exception caught", e);

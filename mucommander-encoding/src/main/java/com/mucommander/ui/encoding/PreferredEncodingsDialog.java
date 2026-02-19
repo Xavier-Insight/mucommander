@@ -23,8 +23,6 @@ import java.awt.Dialog;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Frame;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.nio.charset.Charset;
@@ -126,11 +124,8 @@ public class PreferredEncodingsDialog extends FocusDialog {
         if(OsFamily.MAC_OS.isCurrent())
             defaultsButton.putClientProperty("JComponent.sizeVariant", "small");
 
-        defaultsButton.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                selectCheckboxes(EncodingPreferences.getDefaultPreferredEncodings());
-            }
-        });
+        defaultsButton.addActionListener(e ->
+            selectCheckboxes(EncodingPreferences.getDefaultPreferredEncodings()));
 
         JPanel flowPanel = new JPanel(new FlowLayout(FlowLayout.TRAILING));
         flowPanel.add(defaultsButton);

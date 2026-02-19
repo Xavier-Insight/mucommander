@@ -89,12 +89,10 @@ public abstract class BasicFileEditor implements FileEditor {
         MnemonicHelper menuItemMnemonicHelper = new MnemonicHelper();
 
         fileMenu = MenuToolkit.addMenu(Translator.get("file_editor.file_menu"), menuMnemonicHelper, null);
-        saveItem = MenuToolkit.addMenuItem(fileMenu, Translator.get("file_editor.save"), menuItemMnemonicHelper, DesktopManager.getActionShortcuts().getDefaultKeystroke(ActionType.Save), (e) -> {
-            trySave(getCurrentFile());
-        });
-        saveAsItem = MenuToolkit.addMenuItem(fileMenu, Translator.get("file_editor.save_as"), menuItemMnemonicHelper, null, (e) -> {
-            trySaveAs();
-        });
+        saveItem = MenuToolkit.addMenuItem(fileMenu, Translator.get("file_editor.save"), menuItemMnemonicHelper, DesktopManager.getActionShortcuts().getDefaultKeystroke(ActionType.Save), (e) ->
+            trySave(getCurrentFile()));
+        saveAsItem = MenuToolkit.addMenuItem(fileMenu, Translator.get("file_editor.save_as"), menuItemMnemonicHelper, null, (e) ->
+            trySaveAs());
     }
 
     @Override

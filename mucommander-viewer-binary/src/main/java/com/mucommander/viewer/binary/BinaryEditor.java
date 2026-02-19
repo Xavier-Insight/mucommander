@@ -38,11 +38,9 @@ import com.mucommander.viewer.EditorPresenter;
 import com.mucommander.viewer.FileEditor;
 import org.exbin.auxiliary.binary_data.BinaryData;
 import org.exbin.auxiliary.binary_data.array.paged.ByteArrayPagedData;
-import org.exbin.bined.operation.BinaryDataCommand;
 import org.exbin.bined.operation.swing.CodeAreaOperationCommandHandler;
 import org.exbin.bined.operation.swing.CodeAreaUndoRedo;
 import org.exbin.bined.operation.undo.BinaryDataUndoRedo;
-import org.exbin.bined.operation.undo.BinaryDataUndoRedoChangeListener;
 import org.exbin.bined.swing.basic.CodeArea;
 
 import javax.annotation.Nonnull;
@@ -196,12 +194,8 @@ class BinaryEditor extends BinaryBase implements FileEditor {
 
         undoRedo = new CodeAreaUndoRedo(codeArea);
         codeArea.setCommandHandler(new CodeAreaOperationCommandHandler(codeArea, undoRedo));
-        undoRedo.addChangeListener(new BinaryDataUndoRedoChangeListener() {
-            @Override
-            public void undoChanged() {
-                updateUndoStatus();
-            }
-        });
+        undoRedo.addChangeListener(() ->
+            updateUndoStatus());
         updateUndoStatus();
 
         updateClipboardActionsStatus();

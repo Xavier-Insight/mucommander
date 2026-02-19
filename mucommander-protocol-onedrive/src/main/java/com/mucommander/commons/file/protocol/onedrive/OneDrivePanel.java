@@ -143,7 +143,7 @@ public class OneDrivePanel extends ServerPanel implements ActionListener {
         switch (loginPhase) {
         case SIGN_IN:
             setLoginPhase(LoginPhase.CANCEL_SIGN_IN, false);
-            SwingUtilities.invokeLater(() -> {
+            SwingUtilities.invokeLater(() ->
                 new Thread(() -> {
                     User user = login();
                     if (user != null) {
@@ -154,8 +154,7 @@ public class OneDrivePanel extends ServerPanel implements ActionListener {
                         accountAlias.requestFocus();
                         accountAlias.selectAll();
                     }
-                }).start();
-            });
+                }).start());
             break;
         case CANCEL_SIGN_IN:
             setLoginPhase(LoginPhase.SIGN_IN, false);

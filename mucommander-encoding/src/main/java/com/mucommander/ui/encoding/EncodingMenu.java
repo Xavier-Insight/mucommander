@@ -122,17 +122,15 @@ public class EncodingMenu extends JMenu {
 
         // 'Customize' menu item
         JMenuItem customizeItem = new JMenuItem(Translator.get("customize")+"...");
-        customizeItem.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                Window owner = dialogOwner.getOwner();
-                if(owner instanceof Frame)
-                    new PreferredEncodingsDialog((Frame)owner).showDialog();
-                else
-                    new PreferredEncodingsDialog((Dialog)owner).showDialog();
+        customizeItem.addActionListener(e -> {
+            Window owner = dialogOwner.getOwner();
+            if (owner instanceof Frame)
+                new PreferredEncodingsDialog((Frame)owner).showDialog();
+            else
+                new PreferredEncodingsDialog((Dialog)owner).showDialog();
 
-                removeAll();
-                populateMenu();
-            }
+            removeAll();
+            populateMenu();
         });
         add(customizeItem);
     }

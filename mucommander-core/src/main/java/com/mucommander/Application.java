@@ -164,9 +164,8 @@ public class Application {
      * Prints the specified startup message.
      */
     private void printStartupMessage(CompletableFuture<SplashScreen> splashScreenProvider, String message) {
-        splashScreenProvider.thenAccept(splashScreen -> {
-            splashScreen.setLoadingMessage(message);
-        });
+        splashScreenProvider.thenAccept(splashScreen ->
+            splashScreen.setLoadingMessage(message));
 
         LOGGER.trace(message);
     }
@@ -527,9 +526,8 @@ public class Application {
 
                 // If no theme is configured in the preferences, ask for an initial theme.
                 if (showSetup) {
-                    SwingUtilities.invokeLater(() -> {
-                        new InitialSetupDialog(WindowManager.getCurrentMainFrame().getJFrame()).showDialog();
-                    });
+                    SwingUtilities.invokeLater(() ->
+                        new InitialSetupDialog(WindowManager.getCurrentMainFrame().getJFrame()).showDialog());
                 }
             }, "MainFrameInit");
             mainThread.start();

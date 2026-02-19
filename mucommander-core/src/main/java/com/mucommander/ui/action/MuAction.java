@@ -43,7 +43,6 @@ import com.mucommander.ui.text.KeyStrokeUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.mucommander.commons.file.util.ResourceLoader;
 import com.mucommander.ui.icon.IconManager;
 import com.mucommander.ui.main.MainFrame;
 
@@ -97,12 +96,10 @@ public abstract class MuAction extends AbstractAction {
     static {
         // Listens to configuration changes and updates static fields accordingly.
         // Note: a reference to the listener must be kept to prevent it from being garbage-collected.
-        CONFIGURATION_ADAPTER = new ConfigurationListener() {
-            public synchronized void configurationChanged(ConfigurationEvent event) {
-                String var = event.getVariable();
-                if (var.equals(MuPreferences.SHOW_KEYBOARD_HINTS)) {
-                    showKeyboardHints = event.getBooleanValue();
-                }
+        CONFIGURATION_ADAPTER = event -> {
+            String var = event.getVariable();
+            if (var.equals(MuPreferences.SHOW_KEYBOARD_HINTS)) {
+                showKeyboardHints = event.getBooleanValue();
             }
         };
         MuConfigurations.addPreferencesListener(CONFIGURATION_ADAPTER);

@@ -67,22 +67,20 @@ public class RarFile {
         final CircularByteBuffer cbb = new CircularByteBuffer(CircularByteBuffer.INFINITE_SIZE);
         
         new Thread(
-    		    new Runnable(){
-    		      public void run(){
-    		    	try {
-						archive.extractFile(header, cbb.getOutputStream());
-					} catch (RarException e) {
-					    e.printStackTrace();
-					}
-    		    	finally {
-    		    		try {
-							cbb.getOutputStream().close();
-						} catch (IOException e1) {
-							e1.printStackTrace();
-						}
-    		    	}
-    		      }
-    		    }
+            () -> {
+                try {
+                    archive.extractFile(header, cbb.getOutputStream());
+                } catch (RarException e) {
+                    e.printStackTrace();
+                }
+                finally {
+                    try {
+                        cbb.getOutputStream().close();
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
+                }
+            }
     		  ).start();
         
         return cbb.getInputStream();
