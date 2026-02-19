@@ -305,7 +305,7 @@ public class LocationTextField extends ProgressTextField implements LocationList
             SwingUtilities.invokeLater(() -> setCaretPosition(text.length()));
         else
             // (upon focus) have text selected, so as to save the user the need to manually do so
-            SwingUtilities.invokeLater(() -> selectAll());
+            SwingUtilities.invokeLater(this::selectAll);
     }
 
     @Override

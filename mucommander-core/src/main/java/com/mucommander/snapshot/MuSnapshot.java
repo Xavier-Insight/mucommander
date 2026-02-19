@@ -546,7 +546,7 @@ public class MuSnapshot {
     MuSnapshot() {
         configuration = new Configuration(
                 MuSnapshotFile.getSnapshotFile(),
-                () -> new XmlConfigurationReader(),
+                XmlConfigurationReader::new,
                 out -> new XmlConfigurationWriter(out, ROOT_ELEMENT));
 		
 		try {

@@ -458,8 +458,8 @@ public class ZipEntry implements Cloneable {
     private Optional<Long> getTimeExtended() {
         return extraFields == null ? Optional.empty()
                 : extraFields.stream()
-                        .filter(f -> f instanceof ExtendedTimestampExtraField)
-                        .map(f -> (ExtendedTimestampExtraField) f)
+                        .filter(ExtendedTimestampExtraField.class::isInstance)
+                        .map(ExtendedTimestampExtraField.class::cast)
                         .map(ExtendedTimestampExtraField::getJavaTime)
                         .filter(Objects::nonNull)
                         .findFirst();

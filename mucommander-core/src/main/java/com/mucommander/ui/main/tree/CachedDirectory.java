@@ -84,8 +84,7 @@ public class CachedDirectory extends ProxyFile {
         if (lsTimeStamp != file.getDate()) {
             setReadingChildren(true);
             // read children in caching thread
-            TreeIOThreadManager.getInstance().addTask(() ->
-                lsAsync());
+            TreeIOThreadManager.getInstance().addTask(this::lsAsync);
             return false;
         }
         return true;

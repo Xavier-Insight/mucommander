@@ -194,8 +194,7 @@ class BinaryEditor extends BinaryBase implements FileEditor {
 
         undoRedo = new CodeAreaUndoRedo(codeArea);
         codeArea.setCommandHandler(new CodeAreaOperationCommandHandler(codeArea, undoRedo));
-        undoRedo.addChangeListener(() ->
-            updateUndoStatus());
+        undoRedo.addChangeListener(this::updateUndoStatus);
         updateUndoStatus();
 
         updateClipboardActionsStatus();

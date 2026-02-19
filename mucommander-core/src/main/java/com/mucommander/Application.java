@@ -17,6 +17,7 @@
 
 package com.mucommander;
 
+import java.awt.Window;
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
 import java.lang.reflect.InvocationTargetException;
@@ -56,6 +57,7 @@ import com.mucommander.ui.main.commandbar.CommandBarIO;
 import com.mucommander.ui.main.frame.CommandLineMainFrameBuilder;
 import com.mucommander.ui.main.frame.DefaultMainFramesBuilder;
 import com.mucommander.ui.main.toolbar.ToolBarIO;
+import com.mucommander.ui.theme.ThemeManager;
 import com.mucommander.utils.MuLogging;
 
 import javax.swing.SwingUtilities;
@@ -371,7 +373,7 @@ public class Application {
                 // Loads the themes.
                 printStartupMessage(splashScreenProvider, "Loading theme...");
                 try {
-                    SwingUtilities.invokeAndWait(() -> com.mucommander.ui.theme.ThemeManager.loadCurrentTheme());
+                    SwingUtilities.invokeAndWait(ThemeManager::loadCurrentTheme);
                     LOGGER.debug("Loading theme DONE");
                 } catch (InterruptedException | InvocationTargetException e) {
                     LOGGER.error("Error loading current theme, continuing without it", e);
@@ -507,7 +509,7 @@ public class Application {
                 LOGGER.debug("Launch lock freed");
 
                 // Dispose splash screen.
-                splashScreenProvider.thenAccept(splashScreen -> splashScreen.dispose());
+                splashScreenProvider.thenAccept(Window::dispose);
 
                 // Enable system notifications, only after MainFrame is created as SystemTrayNotifier needs to retrieve
                 // a MainFrame instance
