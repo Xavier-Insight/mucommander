@@ -92,7 +92,7 @@ public abstract class TransferDestinationDialog extends JobDialog implements Act
     // Dialog width should not exceed 360, height is not an issue (always the same)
     protected final static Dimension MAXIMUM_DIALOG_DIMENSION = new Dimension(400,10000);
 
-    private final static FileCollisionDialog.FileCollisionAction DEFAULT_ACTIONS[] = {
+    private final static FileCollisionDialog.FileCollisionAction[] DEFAULT_ACTIONS = {
         FileCollisionDialog.FileCollisionAction.CANCEL,
         FileCollisionDialog.FileCollisionAction.SKIP,
         FileCollisionDialog.FileCollisionAction.OVERWRITE,

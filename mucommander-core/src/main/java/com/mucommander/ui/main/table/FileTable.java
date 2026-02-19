@@ -513,7 +513,7 @@ public class FileTable extends JTable implements MouseListener, MouseMotionListe
      * @param children children of the specified folder
      * @param fileToSelect the file to select, <code>null</code> for the default selection.
      */
-    public void setCurrentFolder(AbstractFile folder, AbstractFile children[], AbstractFile fileToSelect) {
+    public void setCurrentFolder(AbstractFile folder, AbstractFile[] children, AbstractFile fileToSelect) {
     	overlayTable.setOverlayVisible(!folder.exists());
         // Stop quick search in case it was being used before folder change
         quickSearch.stop();

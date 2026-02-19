@@ -47,8 +47,8 @@ public class DurationFormat {
         int remainderSec = Math.round(((float)durationMs)/1000);
         String s = "";
 
-        String keys[] = new String[]{YEARS_KEY, MONTHS_KEY, DAYS_KEY, HOURS_KEY, MINUTES_KEY};
-        int seconds[] = new int[]{SECONDS_IN_YEAR, SECONDS_IN_MONTH, SECONDS_IN_DAY, SECONDS_IN_HOUR, SECONDS_IN_MINUTE};
+        String[] keys = new String[]{YEARS_KEY, MONTHS_KEY, DAYS_KEY, HOURS_KEY, MINUTES_KEY};
+        int[] seconds = new int[]{SECONDS_IN_YEAR, SECONDS_IN_MONTH, SECONDS_IN_DAY, SECONDS_IN_HOUR, SECONDS_IN_MINUTE};
 
         for(int i=0; i<5; i++) {
             int n = remainderSec/seconds[i];

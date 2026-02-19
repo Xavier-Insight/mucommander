@@ -66,7 +66,7 @@ public class EmailFilesDialog extends JobDialog implements ActionListener, ItemL
     private JTextField subjectField;
     private JTextArea bodyArea;
     private JLabel infoLabel;
-    private JCheckBox fileCheckboxes[];
+    private JCheckBox[] fileCheckboxes;
 
     private static String lastTo = "";
     private static String lastSubject = "";
@@ -217,7 +217,7 @@ public class EmailFilesDialog extends JobDialog implements ActionListener, ItemL
      */
     private void recurseOnFolder(AbstractFile file, FileSet flattenedFiles) throws IOException {
         if(file.isDirectory() && !file.isSymlink()) {
-            AbstractFile children[] = file.ls();
+            AbstractFile[] children = file.ls();
             for (AbstractFile child : children)
                 recurseOnFolder(child, flattenedFiles);
         }

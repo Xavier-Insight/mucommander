@@ -73,7 +73,7 @@ public class ChangeFileAttributesJob extends FileJob {
         if(recurseOnDirectories && file.isDirectory()) {
             do {		// Loop for retries
                 try {
-                    AbstractFile children[] = file.ls();
+                    AbstractFile[] children = file.ls();
                     int nbChildren = children.length;
 
                     for(int i=0; i<nbChildren && getState() != FileJobState.INTERRUPTED; i++) {

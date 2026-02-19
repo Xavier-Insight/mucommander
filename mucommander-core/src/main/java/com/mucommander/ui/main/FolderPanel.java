@@ -413,7 +413,7 @@ public class FolderPanel implements FocusListener, QuickListContainer, ActiveTab
      * @param changeLockedTab - flag that indicates whether to change the presented folder in 
      * the currently selected tab although it's locked (used when switching tabs)
      */
-    public void setCurrentFolder(AbstractFile folder, AbstractFile children[], AbstractFile fileToSelect, boolean changeLockedTab) {
+    public void setCurrentFolder(AbstractFile folder, AbstractFile[] children, AbstractFile fileToSelect, boolean changeLockedTab) {
         fileTable.setCurrentFolder(folder, children, fileToSelect);
     }
 

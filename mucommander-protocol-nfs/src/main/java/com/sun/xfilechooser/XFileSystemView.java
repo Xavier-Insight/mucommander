@@ -320,7 +320,7 @@ class WindowsXFileSystemView extends XFileSystemView {
 	 * for their existance.
 	 */
 	for (char c = 'C'; c <= 'Z'; c++) {
-	    char device[] = {c, ':', '\\'};
+	    char[] device = {c, ':', '\\'};
 	    String deviceName = new String(device);
 	    BeanXFile deviceFile = new BeanXFile(deviceName);
 	    if (deviceFile != null && deviceFile.exists()) {

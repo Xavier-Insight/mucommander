@@ -49,13 +49,13 @@ class StatusBarPanel extends ThemeEditorPanel implements PropertyChangeListener 
     private static final int WARNING  = 1;
     private static final int CRITICAL = 2;
 
-    private final static int WARNING_LEVEL_COLOR_IDS[] = {
+    private final static int[] WARNING_LEVEL_COLOR_IDS = {
         ThemeData.STATUS_BAR_OK_COLOR,
         ThemeData.STATUS_BAR_WARNING_COLOR,
         ThemeData.STATUS_BAR_CRITICAL_COLOR
     };
 
-    private final static String WARNING_LEVEL_LABELS[] = {
+    private final static String[] WARNING_LEVEL_LABELS = {
         Translator.get("theme_editor.free_space.ok"),
         Translator.get("theme_editor.free_space.warning"),
         Translator.get("theme_editor.free_space.critical")
@@ -66,9 +66,9 @@ class StatusBarPanel extends ThemeEditorPanel implements PropertyChangeListener 
     private final static long WARNING_SIZE              = TOTAL_SIZE / 10;
     private final static long CRITICAL_SIZE             = TOTAL_SIZE / 100;
 
-    private final static int WARNING_DRAW_PERCENTAGE[] = {50, 10, 1};
+    private final static int[] WARNING_DRAW_PERCENTAGE = {50, 10, 1};
 
-    private final static String WARNING_LEVEL_TEXT[] = {
+    private final static String[] WARNING_LEVEL_TEXT = {
         Translator.get("status_bar.volume_free", SizeFormat.format(NORMAL_SIZE, StatusBar.VOLUME_INFO_SIZE_FORMAT) + " / " + SizeFormat.format(TOTAL_SIZE, StatusBar.VOLUME_INFO_SIZE_FORMAT)),
         Translator.get("status_bar.volume_free", SizeFormat.format(WARNING_SIZE, StatusBar.VOLUME_INFO_SIZE_FORMAT) + " / " + SizeFormat.format(TOTAL_SIZE, StatusBar.VOLUME_INFO_SIZE_FORMAT)),
         Translator.get("status_bar.volume_free", SizeFormat.format(CRITICAL_SIZE, StatusBar.VOLUME_INFO_SIZE_FORMAT) + " / " + SizeFormat.format(TOTAL_SIZE, StatusBar.VOLUME_INFO_SIZE_FORMAT))

@@ -43,7 +43,7 @@ public class IconManager {
 	private static final Logger LOGGER = LoggerFactory.getLogger(IconManager.class);
 	
     /** Caches for the different icon sets */
-    private final static Map<String, ImageIcon> caches[];
+    private final static Map<String, ImageIcon>[] caches;
 
     /** Designates the file icon set */
     public final static int FILE_ICON_SET        = 0;
@@ -65,7 +65,7 @@ public class IconManager {
     /** Base folder of all images */
     private final static String BASE_IMAGE_FOLDER = "/images";
     /** Icon sets folders within the application's JAR file */
-    private final static String ICON_SET_FOLDERS[] = {
+    private final static String[] ICON_SET_FOLDERS = {
         BASE_IMAGE_FOLDER +"/file/",
         BASE_IMAGE_FOLDER +"/action/",
         BASE_IMAGE_FOLDER +"/status_bar/",

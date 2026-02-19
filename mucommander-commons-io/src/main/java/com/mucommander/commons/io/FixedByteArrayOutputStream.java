@@ -38,11 +38,11 @@ public class FixedByteArrayOutputStream extends OutputStream {
     private byte[] bytes;
     private int offset;
 
-    public FixedByteArrayOutputStream(byte bytes[]) {
+    public FixedByteArrayOutputStream(byte[] bytes) {
         this(bytes, 0);
     }
 
-    public FixedByteArrayOutputStream(byte bytes[], int offset) {
+    public FixedByteArrayOutputStream(byte[] bytes, int offset) {
         this.bytes = bytes;
         this.offset = offset;
     }

@@ -120,7 +120,7 @@ public class MimeTable implements FileNameMap {
     public synchronized void add(MimeEntry m) {
         entries.put(m.getType(), m);
 
-        String exts[] = m.getExtensions();
+        String[] exts = m.getExtensions();
         if (exts == null) {
             return;
         }

@@ -42,8 +42,8 @@ import java.util.*;
     but lines like this are everywhere). */
 public
 class MessageHeader {
-    private String keys[];
-    private String values[];
+    private String[] keys;
+    private String[] values;
     private int nkeys;
 
     public MessageHeader () {
@@ -486,7 +486,7 @@ class MessageHeader {
     public void mergeHeader(InputStream is) throws java.io.IOException {
         if (is == null)
             return;
-        char s[] = new char[10];
+        char[] s = new char[10];
         int firstc = is.read();
         while (firstc != '\n' && firstc != '\r' && firstc >= 0) {
             int len = 0;
@@ -523,7 +523,7 @@ class MessageHeader {
                         break;
                     }
                     if (len >= s.length) {
-                        char ns[] = new char[s.length * 2];
+                        char[] ns = new char[s.length * 2];
                         System.arraycopy(s, 0, ns, 0, len);
                         s = ns;
                     }

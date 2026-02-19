@@ -391,7 +391,7 @@ public class NFSFile extends ProtocolFile {
 
     @Override
     public AbstractFile[] ls(FilenameFilter filenameFilter) throws IOException {
-        String names[] = file.list();
+        String[] names = file.list();
 
         if(names==null)
             throw new IOException();
@@ -399,7 +399,7 @@ public class NFSFile extends ProtocolFile {
         if(filenameFilter!=null)
             names = filenameFilter.filter(names);
 
-        AbstractFile children[] = new AbstractFile[names.length];
+        AbstractFile[] children = new AbstractFile[names.length];
         FileURL childURL;
         String baseURLPath = fileURL.getPath();
         if(!baseURLPath.endsWith("/"))
@@ -439,7 +439,7 @@ public class NFSFile extends ProtocolFile {
         }
 
         @Override
-        public int read(byte b[], int off, int len) throws IOException {
+        public int read(byte[] b, int off, int len) throws IOException {
             return raf.read(b, off, len);
         }
 
@@ -481,12 +481,12 @@ public class NFSFile extends ProtocolFile {
         }
 
         @Override
-        public void write(byte b[]) throws IOException {
+        public void write(byte[] b) throws IOException {
             raf.write(b);
         }
 
         @Override
-        public void write(byte b[], int off, int len) throws IOException {
+        public void write(byte[] b, int off, int len) throws IOException {
             raf.write(b, off, len);
         }
 

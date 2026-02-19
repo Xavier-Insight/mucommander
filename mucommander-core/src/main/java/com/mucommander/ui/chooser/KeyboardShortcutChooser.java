@@ -49,7 +49,7 @@ public class KeyboardShortcutChooser extends JPanel implements ItemListener, Com
 	private static final Logger LOGGER = LoggerFactory.getLogger(KeyboardShortcutChooser.class);
 	
     private JTextField textField;
-    private JCheckBox modifierCheckBoxes[];
+    private JCheckBox[] modifierCheckBoxes;
     private SaneComboBox keyComboBox;
 
     private KeyStroke currentKeyStroke;
@@ -60,7 +60,7 @@ public class KeyboardShortcutChooser extends JPanel implements ItemListener, Com
 
     private String noneString = "<"+Translator.get("none")+">";
 
-    private final static int KEY_CHOICES[] = new int[] {
+    private final static int[] KEY_CHOICES = new int[] {
         KeyEvent.VK_ESCAPE, KeyEvent.VK_TAB, KeyEvent.VK_DELETE, KeyEvent.VK_BACK_SPACE, KeyEvent.VK_ENTER,
         KeyEvent.VK_BACK_QUOTE, KeyEvent.VK_MINUS, KeyEvent.VK_EQUALS, KeyEvent.VK_OPEN_BRACKET, KeyEvent.VK_CLOSE_BRACKET, KeyEvent.VK_BACK_SLASH, KeyEvent.VK_SEMICOLON, KeyEvent.VK_QUOTE, KeyEvent.VK_COMMA, KeyEvent.VK_PERIOD, KeyEvent.VK_SLASH,
         KeyEvent.VK_UP, KeyEvent.VK_DOWN, KeyEvent.VK_LEFT, KeyEvent.VK_RIGHT,
@@ -73,7 +73,7 @@ public class KeyboardShortcutChooser extends JPanel implements ItemListener, Com
         KeyEvent.VK_NUMPAD0, KeyEvent.VK_NUMPAD1, KeyEvent.VK_NUMPAD2, KeyEvent.VK_NUMPAD3, KeyEvent.VK_NUMPAD4, KeyEvent.VK_NUMPAD5, KeyEvent.VK_NUMPAD6, KeyEvent.VK_NUMPAD7, KeyEvent.VK_NUMPAD8, KeyEvent.VK_NUMPAD9
     };
 
-    private final static int MODIFIER_TABLE[] = {
+    private final static int[] MODIFIER_TABLE = {
         KeyEvent.SHIFT_MASK,
         KeyEvent.CTRL_MASK,
         KeyEvent.ALT_MASK,

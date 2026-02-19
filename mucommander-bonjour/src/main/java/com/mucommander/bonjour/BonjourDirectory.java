@@ -66,7 +66,7 @@ public final class BonjourDirectory implements ServiceListener, ConfigurationLis
     private static List<BonjourService> services = new Vector<>();
 
     /** Known Bonjour/Zeroconf service types and their corresponding protocol */
-    private final static String KNOWN_SERVICE_TYPES[][] = {
+    private final static String[][] KNOWN_SERVICE_TYPES = {
         {"_http._tcp.local.", FileProtocols.HTTP},
         {"_ftp._tcp.local.", FileProtocols.FTP},
         {"_ssh._tcp.local.", FileProtocols.SFTP},
@@ -143,7 +143,7 @@ public final class BonjourDirectory implements ServiceListener, ConfigurationLis
      * @return all currently available Bonjour services
      */
     public static BonjourService[] getServices() {
-        BonjourService servicesArray[] = new BonjourService[services.size()];
+        BonjourService[] servicesArray = new BonjourService[services.size()];
         services.toArray(servicesArray);
         return servicesArray;
     }

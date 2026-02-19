@@ -93,7 +93,7 @@ public class BonjourMenu extends JMenu implements MenuListener {
         removeAll();
 
         if(BonjourDirectory.isActive()) {
-            BonjourService services[] = BonjourDirectory.getServices();
+            BonjourService[] services = BonjourDirectory.getServices();
             int nbServices = services.length;
 
             if(nbServices>0) {

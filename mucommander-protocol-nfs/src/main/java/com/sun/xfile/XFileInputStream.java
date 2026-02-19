@@ -92,7 +92,7 @@ public class XFileInputStream extends InputStream {
      * @param len the number of bytes that are written
      * @exception java.io.IOException If an I/O error has occurred. 
      */ 
-    synchronized private int XFAread(byte b[], int off, int len)
+    synchronized private int XFAread(byte[] b, int off, int len)
         throws IOException {
 
         if (b == null)
@@ -140,7 +140,7 @@ public class XFileInputStream extends InputStream {
      *             the end of the file has been reached.
      * @exception  java.io.IOException if an I/O error occurs.
      */
-    public int read(byte b[]) throws IOException {
+    public int read(byte[] b) throws IOException {
 	return XFAread(b, 0, b.length);
     }
 
@@ -157,7 +157,7 @@ public class XFileInputStream extends InputStream {
      *             the end of the file has been reached.
      * @exception  java.io.IOException  if an I/O error occurs.
      */
-    public int read(byte b[], int off, int len) throws IOException {
+    public int read(byte[] b, int off, int len) throws IOException {
 	return XFAread(b, off, len);
     }
 

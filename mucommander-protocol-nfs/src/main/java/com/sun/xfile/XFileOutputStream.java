@@ -143,7 +143,7 @@ public class XFileOutputStream extends OutputStream {
     /*
      * All writes to the Accessor go through here.
      */
-    synchronized private void XFAwrite(byte b[], int off, int len)
+    synchronized private void XFAwrite(byte[] b, int off, int len)
         throws IOException {
 
         if (b == null)
@@ -178,7 +178,7 @@ public class XFileOutputStream extends OutputStream {
      * @param      b   the data.
      * @exception  java.io.IOException  if an I/O error occurs.
      */
-    public void write(byte b[]) throws IOException {
+    public void write(byte[] b) throws IOException {
 	XFAwrite(b, 0, b.length);
     }
 
@@ -192,7 +192,7 @@ public class XFileOutputStream extends OutputStream {
      * @param      len   the number of bytes to write.
      * @exception  java.io.IOException  if an I/O error occurs.
      */
-    public void write(byte b[], int off, int len) throws IOException {
+    public void write(byte[] b, int off, int len) throws IOException {
 	XFAwrite(b, off, len);
     }
 

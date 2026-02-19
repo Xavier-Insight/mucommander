@@ -66,7 +66,7 @@ public class FastLRUCache<K, V> extends LRUCache<K,V> {
         String s = super.toString()+" size="+cacheMap.size()+" capacity="+capacity+" eldestExpirationDate="+eldestExpirationDate+"\n";
 
         Object key;
-        Object value[];
+        Object[] value;
         int i=0;
         for(Map.Entry<K, Object[]> mapEntry : cacheMap.entrySet()) {
             key = mapEntry.getKey();
@@ -206,7 +206,7 @@ public class FastLRUCache<K, V> extends LRUCache<K,V> {
      */
     @Override
     protected void testCorruption() throws RuntimeException {
-        Object value[];
+        Object[] value;
         long expirationDate;
         Long expirationDateL;
 

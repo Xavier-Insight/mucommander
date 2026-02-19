@@ -110,7 +110,7 @@ class AppearancePanel extends PreferencesPanel implements ActionListener, Runnab
     /**
      * All available look&feels.
      */
-    private UIManager.LookAndFeelInfo lookAndFeels[];
+    private UIManager.LookAndFeelInfo[] lookAndFeels;
     /**
      * Triggers look and feel importing.
      */
@@ -146,11 +146,11 @@ class AppearancePanel extends PreferencesPanel implements ActionListener, Runnab
     /**
      * All icon sizes label.
      */
-    private final static String ICON_SIZES[] = {"100%", "125%", "150%", "175%", "200%", "300%"};
+    private final static String[] ICON_SIZES = {"100%", "125%", "150%", "175%", "200%", "300%"};
     /**
      * All icon sizes scale factors.
      */
-    private final static float ICON_SCALE_FACTORS[] = {1.0f, 1.25f, 1.5f, 1.75f, 2.0f, 3.0f};
+    private final static float[] ICON_SCALE_FACTORS = {1.0f, 1.25f, 1.5f, 1.75f, 2.0f, 3.0f};
 
 
     // - Icons ---------------------------------------------------------------------------

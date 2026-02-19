@@ -154,7 +154,7 @@ public class LocalLocationHistory {
 			return new FileURL[0];
 
 		int backLen = historyIndex;
-		FileURL urls[] = new FileURL[backLen];
+		FileURL[] urls = new FileURL[backLen];
 
 		int cur = 0;
 		for(int i=historyIndex-1; i>=0; i--)
@@ -173,7 +173,7 @@ public class LocalLocationHistory {
 			return new FileURL[0];
 
 		int historySize = history.size();
-		FileURL urls[] = new FileURL[historySize-historyIndex-1];
+		FileURL[] urls = new FileURL[historySize-historyIndex-1];
 
 		int cur = 0;
 		for(int i=historyIndex+1; i<historySize; i++)

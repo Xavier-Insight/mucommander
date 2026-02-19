@@ -60,7 +60,7 @@ import com.mucommander.ui.main.MainFrame;
 public class ChangePermissionsDialog extends JobDialog
         implements ActionListener, ItemListener, DocumentListener {
 
-    private JCheckBox permCheckBoxes[][];
+    private JCheckBox[][] permCheckBoxes;
 
     private JTextField octalPermTextField;
 

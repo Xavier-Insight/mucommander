@@ -864,7 +864,7 @@ public class ZipFile implements ZipConstants {
             // data offset will be filled later
 
             // Read and set extra bytes
-            byte extra[] = new byte[extraLen];
+            byte[] extra = new byte[extraLen];
             rais.readFully(extra);
             ze.setExtra(extra);
 
@@ -951,7 +951,7 @@ public class ZipFile implements ZipConstants {
      * @param bytes the bytes to feed to the encoding accumulator
      * @throws IOException if an I/O occurs (should never happen)
      */
-    private static void feedEncodingAccumulator(ByteArrayOutputStream encodingAccumulator, byte bytes[]) throws IOException {
+    private static void feedEncodingAccumulator(ByteArrayOutputStream encodingAccumulator, byte[] bytes) throws IOException {
         if(encodingAccumulator.size() < EncodingDetector.MAX_RECOMMENDED_BYTE_SIZE)
             encodingAccumulator.write(bytes);
         // Else accumulator has enough bytes, ignore the given bytes
@@ -1061,7 +1061,7 @@ public class ZipFile implements ZipConstants {
             off += 2;
 
             // Fetch the global zip file comment
-            byte commentBytes[] = new byte[ZipShort.getValue(commentLen)];
+            byte[] commentBytes = new byte[ZipShort.getValue(commentLen)];
             System.arraycopy(buf, off, commentBytes, 0, commentBytes.length);
 
             // If no default encoding has been specified, try to guess the comment's encoding.

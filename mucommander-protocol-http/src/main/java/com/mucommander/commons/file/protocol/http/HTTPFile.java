@@ -653,7 +653,7 @@ public class HTTPFile extends ProtocolFile {
                 }
             }
 
-            AbstractFile childrenArray[] = new AbstractFile[children.size()];
+            AbstractFile[] childrenArray = new AbstractFile[children.size()];
             children.toArray(childrenArray);
             return childrenArray;
         }
@@ -748,7 +748,7 @@ public class HTTPFile extends ProtocolFile {
         ///////////////////////////////////////////
 
         @Override
-        protected int readBlock(long fileOffset, byte block[], int blockLen) throws IOException {
+        protected int readBlock(long fileOffset, byte[] block, int blockLen) throws IOException {
             HttpURLConnection conn = getHttpURLConnection(url);
 
             // Note: 'Range' may not be supported by the HTTP server, in that case an IOException will be thrown

@@ -59,7 +59,7 @@ public class XFileChooserBeanInfo extends SimpleBeanInfo {
      * Properties that are modifiable via a bean editor during
      * customization
      */
-    private static Object xfBeanPropInits[][] = {
+    private static Object[][] xfBeanPropInits = {
 	{rb.getString("Dialog Type"), "getDialogType", "setDialogType", DialogEditor.class},
 	{rb.getString("Dialog Title"), "getDialogTitle", "setDialogTitle", XFileChooser.class},
 	{rb.getString("File Selection Mode"), "getFileSelectionMode", "setFileSelectionMode", FileModeEditor.class},

@@ -196,7 +196,7 @@ public class CachedFile extends ProxyFile {
     /**
      * Creates a CachedFile instance for each of the AbstractFile instances in the given array.
      */
-    private AbstractFile[] createCachedFiles(AbstractFile files[]) {
+    private AbstractFile[] createCachedFiles(AbstractFile[] files) {
         return Stream.of(files).map(file -> new CachedFile(file, true)).toArray(CachedFile[]::new);
     }
 
@@ -482,7 +482,7 @@ public class CachedFile extends ProxyFile {
     @Override
     public AbstractFile[] ls() throws IOException, UnsupportedFileOperationException {
         // Don't cache ls() result but create a CachedFile instance around each of the files if recursion is enabled
-        AbstractFile files[] = file.ls();
+        AbstractFile[] files = file.ls();
 
         if(recurseInstances)
             return createCachedFiles(files);
@@ -493,7 +493,7 @@ public class CachedFile extends ProxyFile {
     @Override
     public AbstractFile[] ls(FileFilter filter) throws IOException, UnsupportedFileOperationException {
         // Don't cache ls() result but create a CachedFile instance around each of the files if recursion is enabled
-        AbstractFile files[] = file.ls(filter);
+        AbstractFile[] files = file.ls(filter);
 
         if(recurseInstances)
             return createCachedFiles(files);
@@ -504,7 +504,7 @@ public class CachedFile extends ProxyFile {
     @Override
     public AbstractFile[] ls(FilenameFilter filter) throws IOException, UnsupportedFileOperationException {
         // Don't cache ls() result but create a CachedFile instance around each of the files if recursion is enabled
-        AbstractFile files[] = file.ls(filter);
+        AbstractFile[] files = file.ls(filter);
 
         if(recurseInstances)
             return createCachedFiles(files);

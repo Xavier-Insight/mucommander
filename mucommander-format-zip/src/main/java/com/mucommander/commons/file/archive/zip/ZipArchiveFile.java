@@ -62,7 +62,7 @@ public class ZipArchiveFile extends AbstractRWArchiveFile {
     private long lastZipFileDate;
 
     /** Contents of an empty Zip file, 22 bytes long */
-    private final static byte EMPTY_ZIP_BYTES[] = {
+    private final static byte[] EMPTY_ZIP_BYTES = {
             0x50, 0x4B, 0x05, 0x06, 0x00, 0x00, 0x00, 0x00,
             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
             0x00, 0x00, 0x00, 0x00, 0x00, 0x00

@@ -104,7 +104,7 @@ public class Base64OutputStream extends OutputStream {
     private final byte paddingChar;
 
     /** Array used to accumulate the first 2 bytes of a 3-byte group */
-    private byte byteAcc[] = new byte[2];
+    private byte[] byteAcc = new byte[2];
 	
     /** Number of bytes accumulated to form a 3-byte group */
     private int nbBytesWaiting;

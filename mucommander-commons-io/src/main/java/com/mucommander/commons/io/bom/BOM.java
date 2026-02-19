@@ -35,7 +35,7 @@ public class BOM {
     private String encoding;
 
     /** character encoding aliases that map onto this BOM */
-    private String aliases[];
+    private String[] aliases;
 
     /**
      * Creates a new <code>BOM</code> instance identified by the given signature and denoting the specified
@@ -45,7 +45,7 @@ public class BOM {
      * @param encoding the character encoding denoted by this BOM
      * @param aliases character encoding aliases
      */
-    BOM(byte signature[], String encoding, String[] aliases) {
+    BOM(byte[] signature, String encoding, String[] aliases) {
         this.sig = signature;
         this.encoding = encoding;
         this.aliases = aliases;
@@ -84,7 +84,7 @@ public class BOM {
      * @param bytes the byte sequence to compare against this BOM's signature
      * @return true if this BOM's signature starts with the given byte sequence
      */
-    public boolean sigStartsWith(byte bytes[]) {
+    public boolean sigStartsWith(byte[] bytes) {
         int bytesLen = bytes.length;
         if(bytesLen>sig.length)
             return false;
@@ -103,7 +103,7 @@ public class BOM {
      * @param bytes the byte sequence to compare against this BOM's signature
      * @return true if this BOM's signature matches the given byte sequence
      */
-    public boolean sigEquals(byte bytes[]) {
+    public boolean sigEquals(byte[] bytes) {
         return bytes.length==sig.length && sigStartsWith(bytes);
     }
 

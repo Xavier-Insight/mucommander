@@ -121,7 +121,7 @@ public class Base64Test {
      */
     @Test
     public void testInvalidLength() {
-        String invalidLengthStrings[] = {
+        String[] invalidLengthStrings = {
             "a", "ab", "abc",
             "=", "a=", "a==", "ab=",
             "0000a", "0000ab", "0000abc",

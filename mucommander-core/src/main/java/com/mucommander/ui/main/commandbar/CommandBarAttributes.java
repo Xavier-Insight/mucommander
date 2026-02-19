@@ -35,14 +35,14 @@ import com.mucommander.ui.action.ActionId;
 public class CommandBarAttributes {
 
     /** Command bar actions */
-    private static ActionId actionIds[];
+    private static ActionId[] actionIds;
     /** Command bar alternate actions */
-    private static ActionId alternateActionIds[];
+    private static ActionId[] alternateActionIds;
     /** Modifier key that triggers the display of alternate actions when pressed */
     private static KeyStroke modifier;
 
     /** Command bar default actions */
-    private static final ActionId DEFAULT_ACTION_IDS[] =
+    private static final ActionId[] DEFAULT_ACTION_IDS =
             {
                     ActionId.asCommandBarAction(ActionType.View.getId()),
                     ActionId.asCommandBarAction(ActionType.Edit.getId()),
@@ -54,7 +54,7 @@ public class CommandBarAttributes {
                     ActionId.asCommandBarAction(ActionType.CloseWindow.getId())
             };
     /** Command bar default alternate actions */
-    private static final ActionId DEFAULT_ALTERNATE_ACTION_IDS[] =
+    private static final ActionId[] DEFAULT_ALTERNATE_ACTION_IDS =
             {
                     null,
                     null,

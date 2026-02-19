@@ -41,7 +41,7 @@ class ArArchiveEntryIterator implements ArchiveEntryIterator {
     private ArchiveEntry currentEntry;
 
     /** GNU variant: extended filenames contained in the special // entry's data */
-    private byte gnuExtendedNames[];
+    private byte[] gnuExtendedNames;
 
 
     /**
@@ -66,7 +66,7 @@ class ArArchiveEntryIterator implements ArchiveEntryIterator {
      * @throws IOException if an error occurred
      */
     ArchiveEntry getNextEntry() throws IOException {
-        byte fileHeader[] = new byte[60];
+        byte[] fileHeader = new byte[60];
 
         try {
             // Fully read the 60 file header bytes. If it cannot be read, it most likely means we've reached

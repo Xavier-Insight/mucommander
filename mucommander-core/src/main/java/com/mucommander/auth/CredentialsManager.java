@@ -229,7 +229,7 @@ public class CredentialsManager {
         List<CredentialsMapping> matchesV = getMatchingCredentialsV(location);
 
         // Transform vector into an array
-        CredentialsMapping matches[] = new CredentialsMapping[matchesV.size()];
+        CredentialsMapping[] matches = new CredentialsMapping[matchesV.size()];
         matchesV.toArray(matches);
 
         return matches;
@@ -347,7 +347,7 @@ public class CredentialsManager {
     private static void authenticateImplicit(FileURL location) {
     	LOGGER.trace("called, fileURL="+ location +" containsCredentials="+ location.containsCredentials());
 
-        CredentialsMapping creds[] = getMatchingCredentials(location);
+        CredentialsMapping[] creds = getMatchingCredentials(location);
         if(creds.length>0) {
             authenticate(location, creds[0]);
         }
@@ -408,7 +408,7 @@ public class CredentialsManager {
             pathTokensV.add(st.nextToken());
         }
         int nbTokens = pathTokensV.size();
-        String pathTokens[] = new String[nbTokens];
+        String[] pathTokens = new String[nbTokens];
         pathTokensV.toArray(pathTokens);
 
         CredentialsMapping tempCredentialsMapping;

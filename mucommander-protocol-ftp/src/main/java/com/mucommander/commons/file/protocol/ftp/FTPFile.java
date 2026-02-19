@@ -167,7 +167,7 @@ public class FTPFile extends ProtocolFile implements ConnectionHandlerFactory {
         }
         else {
             FTPConnectionHandler connHandler = (FTPConnectionHandler)ConnectionPool.getConnectionHandler(this, fileURL, true);
-            org.apache.commons.net.ftp.FTPFile files[];
+            org.apache.commons.net.ftp.FTPFile[] files;
             try {
                 // Makes sure the connection is started, if not starts it
                 connHandler.checkConnection();
@@ -222,7 +222,7 @@ public class FTPFile extends ProtocolFile implements ConnectionHandlerFactory {
      * @throws AuthException if the user is not allowed to access this directory
      */
     private static org.apache.commons.net.ftp.FTPFile[] listFiles(FTPConnectionHandler connHandler, String absPath) throws IOException, AuthException {
-        org.apache.commons.net.ftp.FTPFile files[];
+        org.apache.commons.net.ftp.FTPFile[] files;
         try {
             // Important: the folder is listed by changing the current working directory using the CWD command and then
             // issuing a LIST to list the current directory, instead of issuing a LIST with the path as an argument.
@@ -552,7 +552,7 @@ public class FTPFile extends ProtocolFile implements ConnectionHandlerFactory {
     public AbstractFile[] ls() throws IOException {
         // Retrieve a ConnectionHandler and lock it
         FTPConnectionHandler connHandler = (FTPConnectionHandler)ConnectionPool.getConnectionHandler(this, fileURL, true);
-        org.apache.commons.net.ftp.FTPFile files[];
+        org.apache.commons.net.ftp.FTPFile[] files;
         try {
             // Makes sure the connection is started, if not starts it
             connHandler.checkConnection();
@@ -567,7 +567,7 @@ public class FTPFile extends ProtocolFile implements ConnectionHandlerFactory {
         if(files==null || files.length==0)
             return new AbstractFile[] {};
 
-        AbstractFile children[] = new AbstractFile[files.length];
+        AbstractFile[] children = new AbstractFile[files.length];
         AbstractFile child;
         FileURL childURL;
         String childName;
@@ -599,7 +599,7 @@ public class FTPFile extends ProtocolFile implements ConnectionHandlerFactory {
 
         // Create new array of the exact file count
         if(fileCount<nbFiles) {
-            AbstractFile newChildren[] = new AbstractFile[fileCount];
+            AbstractFile[] newChildren = new AbstractFile[fileCount];
             System.arraycopy(children, 0, newChildren, 0, fileCount);
             return newChildren;
         }
@@ -1011,7 +1011,7 @@ public class FTPFile extends ProtocolFile implements ConnectionHandlerFactory {
         }
 
         @Override
-        public int read(byte b[], int off, int len) throws IOException {
+        public int read(byte[] b, int off, int len) throws IOException {
             int nbRead = in.read(b, off, len);
 
             if(nbRead!=-1)

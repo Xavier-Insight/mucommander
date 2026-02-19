@@ -382,7 +382,7 @@ public class WindowManager implements WindowListener, ConfigurationListener {
             return;
 
         // Test if there is at least one window (viewer, editor...) still showing
-        Frame frames[] = Frame.getFrames();
+        Frame[] frames = Frame.getFrames();
         int nbFrames = frames.length;
         Frame frame;
         for(int i=0; i<nbFrames; i++) {

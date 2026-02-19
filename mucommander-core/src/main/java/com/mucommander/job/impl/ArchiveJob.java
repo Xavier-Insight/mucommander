@@ -97,7 +97,7 @@ public class ArchiveJob extends TransferFileJob {
                     archiver.createEntry(entryRelativePath, file);
 
                     // Recurse on files
-                    AbstractFile subFiles[] = file.ls();
+                    AbstractFile[] subFiles = file.ls();
                     boolean folderComplete = true;
                     for(int i=0; i<subFiles.length && getState() != FileJobState.INTERRUPTED; i++) {
                         // Notify job that we're starting to process this file (needed for recursive calls to processFile)

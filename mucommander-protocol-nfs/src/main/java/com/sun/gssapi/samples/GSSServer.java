@@ -55,7 +55,7 @@ class GSSServer {
 	 * This is the server end of the MIT like sample
 	 * GSS-API applications.
 	 */
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 
 		//default MIT port
 		int port = 4444;

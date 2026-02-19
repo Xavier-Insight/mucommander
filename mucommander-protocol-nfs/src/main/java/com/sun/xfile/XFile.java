@@ -902,7 +902,7 @@ public class XFile {
         if (!bind())
             return null;;
 
-	String names[] = list();
+	String[] names = list();
 
 	if (names == null) {
 	    return null;
@@ -917,7 +917,7 @@ public class XFile {
 	}
 
 	// Create the array
-	String files[] = new String[v.size()];
+	String[] files = new String[v.size()];
 	v.copyInto(files);
 
 	return files;

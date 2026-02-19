@@ -80,7 +80,7 @@ class GeneralPanel extends PreferencesPanel implements ItemListener, ActionListe
     private final static String YEAR = Translator.get("prefs_dialog.year");
 
 
-    private final static String DATE_FORMAT_LABELS[] = {
+    private final static String[] DATE_FORMAT_LABELS = {
         MONTH+"/"+DAY+"/"+YEAR,
         DAY+"/"+MONTH+"/"+YEAR,
         YEAR+"/"+MONTH+"/"+DAY,
@@ -89,7 +89,7 @@ class GeneralPanel extends PreferencesPanel implements ItemListener, ActionListe
         YEAR+"/"+DAY+"/"+MONTH
     };
 
-    private final static String DATE_FORMATS[] = {
+    private final static String[] DATE_FORMATS = {
         "MM/dd/yy",
         "dd/MM/yy",
         "yy/MM/dd",
@@ -98,7 +98,7 @@ class GeneralPanel extends PreferencesPanel implements ItemListener, ActionListe
         "yy/dd/MM"
     };
 
-    private final static String DATE_FORMATS_WITH_CENTURY[] = {
+    private final static String[] DATE_FORMATS_WITH_CENTURY = {
         "MM/dd/yyyy",
         "dd/MM/yyyy",
         "yyyy/MM/dd",

@@ -112,12 +112,12 @@ public class BoundedInputStream extends FilterInputStream implements Bounded {
     }
 
     @Override
-    public int read(byte b[]) throws IOException {
+    public int read(byte[] b) throws IOException {
         return read(b, 0, b.length);
     }
 
     @Override
-    public synchronized int read(byte b[], int off, int len) throws IOException {
+    public synchronized int read(byte[] b, int off, int len) throws IOException {
         int canRead = (int)Math.min(getRemainingBytes(), len);
         if(canRead==0)
             return handleStreamOutOfBound();

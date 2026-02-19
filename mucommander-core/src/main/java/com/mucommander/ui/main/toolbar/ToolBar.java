@@ -208,7 +208,7 @@ public class ToolBar extends JToolBar implements ConfigurationListener, MouseLis
         // Rescale buttons icon
         if (var.equals(MuPreferences.TOOLBAR_ICON_SCALE)) {
             scaleFactor = event.getFloatValue();
-            Component components[] = getComponents();
+            Component[] components = getComponents();
             int nbComponents = components.length;
 
             for(int i=0; i<nbComponents; i++) {
@@ -282,7 +282,7 @@ public class ToolBar extends JToolBar implements ConfigurationListener, MouseLis
 
         @Override
         public JPopupMenu getPopupMenu() {
-            FileURL history[] = action instanceof GoBackAction?
+            FileURL[] history = action instanceof GoBackAction?
                     mainFrame.getActivePanel().getFolderHistory().getBackFolders()
                     :mainFrame.getActivePanel().getFolderHistory().getForwardFolders();
 

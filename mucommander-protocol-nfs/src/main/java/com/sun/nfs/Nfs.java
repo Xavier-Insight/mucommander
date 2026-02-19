@@ -396,7 +396,7 @@ public abstract class Nfs {
      * @param foffset	File offset to begin writing at
      * @exception	java.io.IOException
      */
-    synchronized void write(byte buf[], int boff, int length, long foffset)
+    synchronized void write(byte[] buf, int boff, int length, long foffset)
 	throws IOException {
 
         /*

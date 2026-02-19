@@ -40,7 +40,7 @@ public class Base64InputStream extends InputStream {
     private final byte paddingChar;
 
     /** Decoded bytes available for reading */
-    private int readBuffer[] = new int[3];
+    private int[] readBuffer = new int[3];
 
     /** Index of the next byte available for reading in the buffer */
     private int readOffset;
@@ -49,7 +49,7 @@ public class Base64InputStream extends InputStream {
     private int bytesLeft;
 
     /** Buffer used temporarily for decoding */
-    private int decodeBuffer[] = new int[4];
+    private int[] decodeBuffer = new int[4];
 
 
     /**

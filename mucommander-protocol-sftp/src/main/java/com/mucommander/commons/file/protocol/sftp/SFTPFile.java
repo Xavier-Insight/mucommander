@@ -397,7 +397,7 @@ public class SFTPFile extends ProtocolFile {
         if(nbFiles==0)
             return new AbstractFile[] {};
 
-        AbstractFile children[] = new AbstractFile[nbFiles];
+        AbstractFile[] children = new AbstractFile[nbFiles];
         FileURL childURL;
         String filename;
         int fileCount = 0;
@@ -420,7 +420,7 @@ public class SFTPFile extends ProtocolFile {
 
         // Create new array of the exact file count
         if(fileCount<nbFiles) {
-            AbstractFile newChildren[] = new AbstractFile[fileCount];
+            AbstractFile[] newChildren = new AbstractFile[fileCount];
             System.arraycopy(children, 0, newChildren, 0, fileCount);
             return newChildren;
         }
@@ -770,7 +770,7 @@ public class SFTPFile extends ProtocolFile {
         }
 
         @Override
-        public int read(byte b[], int off, int len) throws IOException {
+        public int read(byte[] b, int off, int len) throws IOException {
             int nbRead = in.read(b, off, len);
 
             if(nbRead!=-1)

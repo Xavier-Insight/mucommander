@@ -55,7 +55,7 @@ class GSSClient {
 	 * This application in compatible with the MIT sample
 	 * applications (gss-server, gss-client).
 	 */
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 
 		String serverHost, serverName, message;
 		int port = 4444;

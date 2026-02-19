@@ -438,7 +438,7 @@ public class LocalFile extends ProtocolFile {
 
         // Adds subfolders
         try {
-            AbstractFile volumesFiles[] = volumesFolder.ls();
+            AbstractFile[] volumesFiles = volumesFolder.ls();
             Arrays.stream(volumesFiles).filter(AbstractFile::isDirectory).forEach(volumes::add);
         } catch (IOException e) {
             LOGGER.warn("Can't get /Volumes subfolders", e);
@@ -883,14 +883,14 @@ public class LocalFile extends ProtocolFile {
 
     @Override
     public AbstractFile[] ls(FilenameFilter filenameFilter) throws IOException {
-        File files[] = file.listFiles(filenameFilter == null ? null : new LocalFilenameFilter(filenameFilter));
+        File[] files = file.listFiles(filenameFilter == null ? null : new LocalFilenameFilter(filenameFilter));
 
         if (files == null) {
             throw new IOException();
         }
 
         int nbFiles = files.length;
-        AbstractFile children[] = new AbstractFile[nbFiles];
+        AbstractFile[] children = new AbstractFile[nbFiles];
 
         for (int i = 0; i < nbFiles; i++) {
             // Clone the FileURL of this file and set the child's path, this is more efficient than creating a new
@@ -1025,7 +1025,7 @@ public class LocalFile extends ProtocolFile {
         }
 
         @Override
-        public int read(byte b[], int off, int len) throws IOException {
+        public int read(byte[] b, int off, int len) throws IOException {
             synchronized (bb) {
                 bb.position(0);
                 bb.limit(Math.min(bb.capacity(), len));
@@ -1130,12 +1130,12 @@ public class LocalFile extends ProtocolFile {
         }
 
         @Override
-        public void write(byte b[]) throws IOException {
+        public void write(byte[] b) throws IOException {
             write(b, 0, b.length);
         }
 
         @Override
-        public void write(byte b[], int off, int len) throws IOException {
+        public void write(byte[] b, int off, int len) throws IOException {
             int nbToWrite;
             synchronized (bb) {
                 do {

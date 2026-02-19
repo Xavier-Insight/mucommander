@@ -165,7 +165,7 @@ public abstract class AbstractFileTest {
      */
     protected void writeRandomData(OutputStream out, long length, int maxChunkSize) throws IOException, NoSuchAlgorithmException {
         long remaining = length;
-        byte bytes[];
+        byte[] bytes;
         int chunkSize;
 
         // Ensure that integer is not maxed out as we'll be adding 1 to it 
@@ -247,7 +247,7 @@ public abstract class AbstractFileTest {
      * @param b2 the second byte array to test
      * @return true if both byte arrays are equal
      */
-    protected boolean byteArraysEqual(byte b1[], byte b2[]) {
+    protected boolean byteArraysEqual(byte[] b1, byte[] b2) {
         if(b1.length!=b2.length)
             return false;
 
@@ -399,7 +399,7 @@ public abstract class AbstractFileTest {
         assert unicodeFile.exists();
         assert unicodeFile.isDirectory() == directory;
 
-        AbstractFile children[] = unicodeFile.getParent().ls();
+        AbstractFile[] children = unicodeFile.getParent().ls();
         assert 1 == children.length;
         assert children[0].exists();
         assert unicodeFile.isDirectory() == children[0].isDirectory();
@@ -686,7 +686,7 @@ public abstract class AbstractFileTest {
 
         // Assert that read methods return -1 when EOF has been reached
         assert -1 == in.read();
-        byte b[] = new byte[1];
+        byte[] b = new byte[1];
         assert -1 == in.read(b);
         assert -1 == in.read(b, 0, 1);
 
@@ -756,7 +756,7 @@ public abstract class AbstractFileTest {
 
         // Assert that read methods return -1 when EOF has been reached
         assert -1 == rais.read();
-        byte b[] = new byte[1];
+        byte[] b = new byte[1];
         assert -1 == rais.read(b);
         assert -1 == rais.read(b, 0, 1);
 
@@ -1143,7 +1143,7 @@ public abstract class AbstractFileTest {
         tempFile.delete();
         tempFile.mkdir();
 
-        AbstractFile children[] = tempFile.ls();
+        AbstractFile[] children = tempFile.ls();
         assert children != null;
         assert 0 == children.length;
 

@@ -453,13 +453,13 @@ public class UNCFile extends ProtocolFile {
 
     @Override
     public AbstractFile[] ls(FilenameFilter filenameFilter) throws IOException {
-        File files[] = file.listFiles(filenameFilter==null?null:new UNCFilenameFilter(filenameFilter));
+        File[] files = file.listFiles(filenameFilter==null?null:new UNCFilenameFilter(filenameFilter));
 
         if(files==null)
             throw new IOException();
 
         int nbFiles = files.length;
-        AbstractFile children[] = new AbstractFile[nbFiles];
+        AbstractFile[] children = new AbstractFile[nbFiles];
 
         for(int i=0; i<nbFiles; i++) {
             File file = files[i];

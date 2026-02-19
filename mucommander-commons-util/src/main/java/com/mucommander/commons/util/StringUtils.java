@@ -272,7 +272,7 @@ public final class StringUtils {
      * @param s the string array to flatten
      * @return the flattened string array
      */
-    public static String flatten(String s[]) {
+    public static String flatten(String[] s) {
         return flatten(s, " ");
     }
 
@@ -287,7 +287,7 @@ public final class StringUtils {
      * @param separator the String that separates each
      * @return the flattened string array
      */
-    public static String flatten(String s[], String separator) {
+    public static String flatten(String[] s, String separator) {
         if(s==null)
             return null;
 

@@ -325,7 +325,7 @@ public class XFileChooser extends JFileChooser implements PropertyChangeListener
     /**
      *  Used only for testing of bean
      */
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 	XFileChooser xfb = new XFileChooser();
 	xfb.showDialog(new JFrame(), "ajacob");
 

@@ -75,7 +75,7 @@ public abstract class AbstractFileFilter implements FileFilter {
         return !accept(file);
     }
 
-    public AbstractFile[] filter(AbstractFile files[]) {
+    public AbstractFile[] filter(AbstractFile[] files) {
         return Stream.of(files)
                 .filter(this::match)
                 .toArray(AbstractFile[]::new);
@@ -90,7 +90,7 @@ public abstract class AbstractFileFilter implements FileFilter {
         }
     }
 
-    public boolean match(AbstractFile files[]) {
+    public boolean match(AbstractFile[] files) {
         int nbFiles = files.length;
         for(int i=0; i<nbFiles; i++)
             if(!match(files[i]))
@@ -108,7 +108,7 @@ public abstract class AbstractFileFilter implements FileFilter {
         return true;
     }
 
-    public boolean accept(AbstractFile files[]) {
+    public boolean accept(AbstractFile[] files) {
         int nbFiles = files.length;
         for(int i=0; i<nbFiles; i++)
             if(!accept(files[i]))
@@ -126,7 +126,7 @@ public abstract class AbstractFileFilter implements FileFilter {
         return true;
     }
 
-    public boolean reject(AbstractFile files[]) {
+    public boolean reject(AbstractFile[] files) {
         int nbFiles = files.length;
         for(int i=0; i<nbFiles; i++)
             if(!reject(files[i]))

@@ -140,7 +140,7 @@ public class MkdirJob extends FileJob {
                                 mkfileOut = file.getOutputStream();
 
                                 // Use BufferPool to avoid excessive memory allocation and garbage collection
-                                byte buffer[] = BufferPool.getByteArray();
+                                byte[] buffer = BufferPool.getByteArray();
                                 int bufferSize = buffer.length;
 
                                 try {

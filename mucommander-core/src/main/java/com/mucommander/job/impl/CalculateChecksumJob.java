@@ -105,7 +105,7 @@ public class CalculateChecksumJob extends TransferFileJob {
             do {		// Loop for retry
                 try {
                     // for each file in folder...
-                    AbstractFile children[] = file.ls();
+                    AbstractFile[] children = file.ls();
                     for(int i=0; i<children.length && getState() != FileJobState.INTERRUPTED; i++) {
                         // Notify job that we're starting to process this file (needed for recursive calls to processFile)
                         nextFile(children[i]);

@@ -78,7 +78,7 @@ class RPCGSSClient {
     /**
      * Main method for the RPCGSSClient sample application.
      */
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 
 	Rpc rpc = null;
 	CredGss cred = null;

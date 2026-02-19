@@ -1274,7 +1274,7 @@ public abstract class AbstractFile implements FileAttributes {
                 throw new FileTransferException(FileTransferError.WRITING_DESTINATION);
             }
 
-            AbstractFile children[];
+            AbstractFile[] children;
             try {
                 children = sourceFile.ls();
             }
@@ -1330,7 +1330,7 @@ public abstract class AbstractFile implements FileAttributes {
      */
     protected final void deleteRecursively(AbstractFile file) throws IOException, UnsupportedFileOperationException {
         if(file.isDirectory() && !file.isSymlink()) {
-            AbstractFile children[] = file.ls();
+            AbstractFile[] children = file.ls();
             for (AbstractFile child : children)
                 deleteRecursively(child);
         }

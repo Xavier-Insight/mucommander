@@ -260,7 +260,7 @@ public class LocationTextField extends ProgressTextField implements LocationList
         }
 
         // Look for a volume whose name is the entered string (case insensitive)
-        AbstractFile volumes[] = LocalFile.getVolumes();
+        AbstractFile[] volumes = LocalFile.getVolumes();
         for(int i=0; tryToInterpretEnteredString && i<volumes.length; i++) {
             if(volumes[i].getName().equalsIgnoreCase(location)) {
                 // Change the current folder to the volume folder

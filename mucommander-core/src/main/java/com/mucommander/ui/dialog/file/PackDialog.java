@@ -52,7 +52,7 @@ import com.mucommander.ui.text.FilePathField;
 public class PackDialog extends TransferDestinationDialog implements ItemListener {
 
     private JComboBox<String> formatsComboBox;
-    private int formats[];
+    private int[] formats;
 	
     private JTextArea commentArea;
 

@@ -117,7 +117,7 @@ public class MainMenuBar extends JMenuBar implements ActionListener, MenuListene
     /** A handler for Open With menu */
     private OpenWithMenu openWithMenu;
 
-    private final static ActionId RECALL_WINDOW_ACTION_IDS[] = {
+    private final static ActionId[] RECALL_WINDOW_ACTION_IDS = {
             ActionId.asGenericAction(ActionType.RecallWindow1.getId()),
             ActionId.asGenericAction(ActionType.RecallWindow2.getId()),
             ActionId.asGenericAction(ActionType.RecallWindow3.getId()),
@@ -447,7 +447,7 @@ public class MainMenuBar extends JMenuBar implements ActionListener, MenuListene
                 goMenu.remove(volumeOffset);
             }
 
-            AbstractFile volumes[] = LocalFile.getVolumes();
+            AbstractFile[] volumes = LocalFile.getVolumes();
             int nbFolders = volumes.length;
 
             for (int i = 0; i < nbFolders; i++) {
@@ -527,7 +527,7 @@ public class MainMenuBar extends JMenuBar implements ActionListener, MenuListene
             }
 
             // Add 'other' (non-MainFrame) windows : viewer and editor frames, no associated accelerator
-            Frame frames[] = Frame.getFrames();
+            Frame[] frames = Frame.getFrames();
             nbFrames = frames.length;
             Frame frame;
             JMenuItem menuItem;

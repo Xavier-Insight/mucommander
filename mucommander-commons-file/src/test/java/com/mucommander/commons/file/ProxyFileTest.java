@@ -115,7 +115,7 @@ public class ProxyFileTest extends AbstractFileTest {
 
         // This array will contain all AbstractFile public methods, including the ones defined by parent classes
         // (java.lang.Object), and including static and final ones.
-        Method abstractFileMethods[] = abstractFileClass.getMethods();
+        Method[] abstractFileMethods = abstractFileClass.getMethods();
         Method proxyFileMethod;
 
         for (Method abstractFileMethod : abstractFileMethods) {

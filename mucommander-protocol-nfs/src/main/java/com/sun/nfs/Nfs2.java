@@ -176,7 +176,7 @@ public class Nfs2 extends Nfs {
 	boolean found = false;
 	long uid = NfsConnect.getCred().getUid();
 	long gid = NfsConnect.getCred().getGid();
-	int gids[] = NfsConnect.getCred().getGids();
+	int[] gids = NfsConnect.getCred().getGids();
 
 	/*
 	 * Access check is based on only

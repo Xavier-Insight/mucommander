@@ -87,7 +87,7 @@ public class DrivePopupButton extends PopupButton implements BookmarkListener, C
     private FolderPanel folderPanel;
 
     /** Current volumes */
-    private static AbstractFile volumes[];
+    private static AbstractFile[] volumes;
 
     /** static FileSystemView instance, has a (non-null) value only under Windows */
     private static FileSystemView fileSystemView;

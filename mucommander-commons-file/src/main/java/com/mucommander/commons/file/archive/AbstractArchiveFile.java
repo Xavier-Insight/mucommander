@@ -229,7 +229,7 @@ public abstract class AbstractArchiveFile extends ProxyFile {
      * underlying file protocol.
      */
     private AbstractFile[] ls(DefaultMutableTreeNode treeNode, AbstractFile parentFile, FilenameFilter filenameFilter, FileFilter fileFilter) throws IOException, UnsupportedFileOperationException {
-        AbstractFile files[];
+        AbstractFile[] files;
         int nbChildren = treeNode.getChildCount();
 
         // No FilenameFilter, create entry files and store them directly into an array

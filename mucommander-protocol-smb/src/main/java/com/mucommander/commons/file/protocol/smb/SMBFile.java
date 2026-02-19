@@ -497,7 +497,7 @@ import jcifs.smb.SmbRandomAccessFile;
     @Override
     public AbstractFile[] ls(FilenameFilter filenameFilter) throws IOException {
         try {
-            SmbFile smbFiles[] = file.listFiles(filenameFilter==null?null:new SMBFilenameFilter(filenameFilter));
+            SmbFile[] smbFiles = file.listFiles(filenameFilter==null?null:new SMBFilenameFilter(filenameFilter));
 
             if(smbFiles==null)
                 throw new IOException("failed to list " + file);
@@ -580,7 +580,7 @@ import jcifs.smb.SmbRandomAccessFile;
         }
 
         @Override
-        public int read(byte b[], int off, int len) throws IOException {
+        public int read(byte[] b, int off, int len) throws IOException {
             return raf.read(b, off, len);
         }
 
@@ -619,12 +619,12 @@ import jcifs.smb.SmbRandomAccessFile;
         }
 
         @Override
-        public void write(byte b[]) throws IOException {
+        public void write(byte[] b) throws IOException {
             raf.write(b);
         }
 
         @Override
-        public void write(byte b[], int off, int len) throws IOException {
+        public void write(byte[] b, int off, int len) throws IOException {
             raf.write(b, off, len);
         }
 

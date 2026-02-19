@@ -93,10 +93,10 @@ public class S3Root extends S3File {
     @Override
     public AbstractFile[] ls() throws IOException {
         try {
-            org.jets3t.service.model.S3Bucket buckets[] = service.listAllBuckets();
+            org.jets3t.service.model.S3Bucket[] buckets = service.listAllBuckets();
             int nbBuckets = buckets.length;
 
-            AbstractFile bucketFiles[] = new AbstractFile[nbBuckets];
+            AbstractFile[] bucketFiles = new AbstractFile[nbBuckets];
             FileURL bucketURL;
             for(int i=0; i<nbBuckets; i++) {
                 bucketURL = (FileURL)fileURL.clone();

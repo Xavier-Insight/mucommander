@@ -94,7 +94,7 @@ public abstract class AbstractCriterionFilter<C> extends AbstractFileFilter impl
      * @param values values to be tested
      * @return an array of accepted AbstractFile instances
      */
-    public C[] filter(C values[]) {
+    public C[] filter(C[] values) {
         Vector<C> filteredValuesV = new Vector<C>();
         int nbvalues = values.length;
         C value;
@@ -104,7 +104,7 @@ public abstract class AbstractCriterionFilter<C> extends AbstractFileFilter impl
                 filteredValuesV.add(value);
         }
 
-        C filteredValues[] = (C[]) new Object[filteredValuesV.size()];
+        C[] filteredValues = (C[]) new Object[filteredValuesV.size()];
         filteredValuesV.toArray(filteredValues);
         return filteredValues;
     }
@@ -116,7 +116,7 @@ public abstract class AbstractCriterionFilter<C> extends AbstractFileFilter impl
      * @param values the values to be tested
      * @return true if all the values in the specified array were accepted
      */
-    public boolean match(C values[]) {
+    public boolean match(C[] values) {
         int nbFiles = values.length;
         for(int i=0; i<nbFiles; i++)
             if(!match(values[i]))
@@ -132,7 +132,7 @@ public abstract class AbstractCriterionFilter<C> extends AbstractFileFilter impl
      * @param values the values to be tested
      * @return true if all the values in the specified array were accepted
      */
-    public boolean accept(C values[]) {
+    public boolean accept(C[] values) {
         int nbFiles = values.length;
         for(int i=0; i<nbFiles; i++)
             if(!accept(values[i]))
@@ -148,7 +148,7 @@ public abstract class AbstractCriterionFilter<C> extends AbstractFileFilter impl
      * @param values the values to be tested
      * @return true if all the values in the specified array were rejected
      */
-    public boolean reject(C values[]) {
+    public boolean reject(C[] values) {
         int nbFiles = values.length;
         for(int i=0; i<nbFiles; i++)
             if(!reject(values[i]))
