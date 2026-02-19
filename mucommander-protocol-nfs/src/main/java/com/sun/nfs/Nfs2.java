@@ -351,7 +351,7 @@ public class Nfs2 extends Nfs {
                                 NfsSecurity.getService(secKey),
                                 NfsSecurity.getQop(secKey)));
                         continue;
-                    } else if (secKey != null && secKey.equals("1")) {
+                    } else if ("1".equals(secKey)) {
 			rpc.setCred(new CredUnix());
 			continue;
 		    }
@@ -603,7 +603,7 @@ public class Nfs2 extends Nfs {
 
                 cookie = reply.xdr_u_int();
 
-                if (ename.equals(".") || ename.equals(".."))	// ignore
+                if (".".equals(ename) || "..".equals(ename))	// ignore
                     continue;
 
                 s[i++] = ename;

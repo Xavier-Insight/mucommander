@@ -203,14 +203,14 @@ public class NfsConnect {
                     proto = "udp";
                 }
             }
-        } else if (proto.equals("tcp")) {
+        } else if ("tcp".equals(proto)) {
             conn = Connection.getCache(server, port, "tcp");
             if (conn == null) {
                 conn = new ConnectSocket(server, port, MAXBUF);
                 Connection.putCache(conn);
             }
 
-        } else if (proto.equals("udp")) {
+        } else if ("udp".equals(proto)) {
             conn = Connection.getCache(server, port, "udp");
             if (conn == null) {
                 conn = new ConnectDatagram(server, port, MAXBUF);
@@ -276,7 +276,7 @@ public class NfsConnect {
          * Server doesn't accept public filehandles
          * Resort to using the MOUNT protocol
          */
-        if (path.equals("."))
+        if (".".equals(path))
             path = "/";
 
 	Mount m = new Mount();
@@ -299,7 +299,7 @@ public class NfsConnect {
          * Use the default security flavor.
          */
         String defaultSec = NfsSecurity.getDefault();
-        if (defaultSec.equals("1")){
+        if ("1".equals(defaultSec)){
 	    // AUTH_SYS
             rpc.setCred(cred);
         } else {
@@ -321,7 +321,7 @@ public class NfsConnect {
         else
             pubnfs = new Nfs3(rpc, pubfh, path, null);
 
-        if (path.equals("/."))  // special path for testing
+        if ("/.".equals(path))  // special path for testing
             return pubnfs;
 
         if (mount) {

@@ -122,7 +122,7 @@ public class NfsURLConnection extends URLConnection {
 	
         // Filter path for Web NFS
         String path = url.getFile();
-        if (path.equals("/")) {
+        if ("/".equals(path)) {
             // Convert empty paths to "/." to be more acceptible for NFS servers
             path = "/.";
 	    root_directory = true;
@@ -207,7 +207,7 @@ public class NfsURLConnection extends URLConnection {
                     XFile dirEntry;
                 
                     // Don't display the ".." or "." directory entries
-                    if (dirList[i].equals("..") || dirList[i].equals(".")) {
+                    if ("..".equals(dirList[i]) || ".".equals(dirList[i])) {
                         continue;
 		    }
                 

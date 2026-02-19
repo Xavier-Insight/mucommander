@@ -328,13 +328,13 @@ public class FileURL implements Cloneable {
      * @return the filename extracted from the given path, <code>null</code> if the path doesn't contain any
      */
     public static String getFilenameFromPath(String path, String separator) {
-        if(path.equals("") || path.equals("/"))
+        if("".equals(path) || "/".equals(path))
             return null;
 
         // Remove any trailing separator
         path = PathUtils.removeTrailingSeparator(path, separator);
 
-        if(!separator.equals("/"))
+        if(!"/".equals(separator))
             path = PathUtils.removeLeadingSeparator(path, "/");
 
         // Extract filename
@@ -556,7 +556,7 @@ public class FileURL implements Cloneable {
      * @see #getPath()
      */
     public void setPath(String path) {
-        if(path==null || path.equals(""))
+        if(path==null || "".equals(path))
             path = "/";
 
         if(!path.startsWith("/"))
@@ -595,7 +595,7 @@ public class FileURL implements Cloneable {
      */
     public FileURL getParent() {
         // If path equals '/', url has no parent
-        if(!(path.equals("/") || path.equals(""))) {
+        if(!("/".equals(path) || "".equals(path))) {
             String separator = getPathSeparator();
 
             // Remove any trailing separator
@@ -792,7 +792,7 @@ public class FileURL implements Cloneable {
             sb.append(port);
         }
 
-        if(host!=null || !path.equals("/"))	{ // Test to avoid URLs like 'smb:///'
+        if(host!=null || !"/".equals(path))	{ // Test to avoid URLs like 'smb:///'
             if(path.startsWith("/")) {
                 sb.append(path);
             }

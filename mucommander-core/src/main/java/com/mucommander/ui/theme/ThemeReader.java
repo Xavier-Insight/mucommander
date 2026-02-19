@@ -870,9 +870,9 @@ class ThemeReader extends DefaultHandler implements ThemeXmlConstants {
 
         // Computes the font style.
         style = 0;
-        if (((buffer = attributes.getValue(ATTRIBUTE_BOLD)) != null) && buffer.equals(VALUE_TRUE))
+        if (((buffer = attributes.getValue(ATTRIBUTE_BOLD)) != null) && VALUE_TRUE.equals(buffer))
             style |= Font.BOLD;
-        if (((buffer = attributes.getValue(ATTRIBUTE_ITALIC)) != null) && buffer.equals(VALUE_TRUE))
+        if (((buffer = attributes.getValue(ATTRIBUTE_ITALIC)) != null) && VALUE_TRUE.equals(buffer))
             style |= Font.ITALIC;
 
         // Computes the font size.

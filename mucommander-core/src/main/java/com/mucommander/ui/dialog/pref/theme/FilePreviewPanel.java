@@ -100,15 +100,15 @@ class FilePreviewPanel extends JScrollPane implements PropertyChangeListener {
     }
 
     public void propertyChange(PropertyChangeEvent event) {
-        if(event.getPropertyName().equals(PreviewLabel.BACKGROUND_COLOR_PROPERTY_NAME))
+        if(PreviewLabel.BACKGROUND_COLOR_PROPERTY_NAME.equals(event.getPropertyName()))
             getViewport().setBackground(data.getColor(isActive ? Theme.FILE_TABLE_BACKGROUND_COLOR : Theme.FILE_TABLE_INACTIVE_BACKGROUND_COLOR));
-        else if(event.getPropertyName().equals(PreviewLabel.BORDER_COLOR_PROPERTY_NAME)) {
+        else if(PreviewLabel.BORDER_COLOR_PROPERTY_NAME.equals(event.getPropertyName())) {
             // Some (rather evil) look and feels will change borders outside of muCommander's control,
             // this check is necessary to ensure no exception is thrown.
             if(getBorder() instanceof MutableLineBorder)
                 ((MutableLineBorder)getBorder()).setLineColor(data.getColor(isActive ? Theme.FILE_TABLE_BORDER_COLOR : Theme.FILE_TABLE_INACTIVE_BORDER_COLOR));
         }
-        else if(!event.getPropertyName().equals(PreviewLabel.FOREGROUND_COLOR_PROPERTY_NAME))
+        else if(!PreviewLabel.FOREGROUND_COLOR_PROPERTY_NAME.equals(event.getPropertyName()))
             return;
         repaint();
     }

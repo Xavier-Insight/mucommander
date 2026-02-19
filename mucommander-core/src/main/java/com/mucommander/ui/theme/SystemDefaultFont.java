@@ -96,7 +96,7 @@ public class SystemDefaultFont extends DefaultFont implements PropertyChangeList
 
         // Monitors changes to both the global look & feel and the target property and react to them if necessary. 
         name = evt.getPropertyName().toLowerCase();
-        if(name.equals("lookandfeel") || name.equalsIgnoreCase(property)) {
+        if("lookandfeel".equals(name) || name.equalsIgnoreCase(property)) {
             Font oldFont;
 
             oldFont = font;

@@ -148,7 +148,7 @@ public class GrowlNotifier extends AbstractNotifier {
 
     public static boolean isGrowlRunning() {
         StringBuilder outputBuffer = new StringBuilder();
-        return AppleScript.execute(IS_GROWL_RUNNING_APPLESCRIPT, outputBuffer) && outputBuffer.toString().trim().equals("true");
+        return AppleScript.execute(IS_GROWL_RUNNING_APPLESCRIPT, outputBuffer) && "true".equals(outputBuffer.toString().trim());
     }
 
     @Override

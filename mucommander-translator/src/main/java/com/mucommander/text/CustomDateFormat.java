@@ -67,7 +67,7 @@ public class CustomDateFormat implements ConfigurationListener {
      * @return the given format string with '/' separator characters replaced by the given separator character.
      */
     public static String replaceDateSeparator(String dateFormatString, String separator) {
-        if(separator==null || separator.equals("/"))
+        if(separator==null || "/".equals(separator))
             return dateFormatString;
 
         StringBuilder dateFormatStringSB = new StringBuilder();
@@ -136,7 +136,7 @@ public class CustomDateFormat implements ConfigurationListener {
     public void configurationChanged(ConfigurationEvent event) {
         String var = event.getVariable();
 
-        if (var.equals(MuPreferences.TIME_FORMAT) || var.equals(MuPreferences.DATE_FORMAT) || var.equals(MuPreferences.DATE_SEPARATOR))
+        if (MuPreferences.TIME_FORMAT.equals(var) || MuPreferences.DATE_FORMAT.equals(var) || MuPreferences.DATE_SEPARATOR.equals(var))
             updateDateFormat();
     }
 }

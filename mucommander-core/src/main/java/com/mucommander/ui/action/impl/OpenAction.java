@@ -133,7 +133,7 @@ public class OpenAction extends MuAction {
         }
 
         // Opens local files using their native associations.
-        else if (resolvedFile.getURL().getScheme().equals(LocalFile.SCHEMA)
+        else if (LocalFile.SCHEMA.equals(resolvedFile.getURL().getScheme())
                 && (resolvedFile.hasAncestor(LocalFile.class))) {
             try {
                 OpenAction.openFile(getMainFrame(), resolvedFile);

@@ -1076,11 +1076,11 @@ public class ThemeManager {
      * @return a valid theme type identifier.
      */
     private static ThemeType getThemeTypeFromLabel(String label) {
-        if(label.equals(MuPreferences.THEME_USER))
+        if(MuPreferences.THEME_USER.equals(label))
             return ThemeType.USER_THEME;
-        else if(label.equals(MuPreferences.THEME_PREDEFINED))
+        else if(MuPreferences.THEME_PREDEFINED.equals(label))
             return ThemeType.PREDEFINED_THEME;
-        else if(label.equals(MuPreferences.THEME_CUSTOM))
+        else if(MuPreferences.THEME_CUSTOM.equals(label))
             return ThemeType.CUSTOM_THEME;
         throw new IllegalStateException("Unknown theme type: " + label);
     }

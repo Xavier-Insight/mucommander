@@ -209,7 +209,7 @@ public class PathUtils {
             FileURL baseFolderURL = baseFolder.getURL();
             destURL  = (FileURL)baseFolderURL.clone();
             String basePath = destURL.getPath();
-            if(!destPath.equals(""))
+            if(!"".equals(destPath))
                 destURL.setPath(basePath + (basePath.endsWith(separator)?"":separator) + destPath);
 
             // At this point we have the proper URL, except that the path may contain '.', '..' or '~' tokens.
@@ -430,7 +430,7 @@ public class PathUtils {
      * @return the depth of the given path
      */
     public static int getDepth(String path, String separator) {
-        if(path.equals("") || path.equals(separator))
+        if("".equals(path) || path.equals(separator))
             return 0;
 
         int depth = 1;

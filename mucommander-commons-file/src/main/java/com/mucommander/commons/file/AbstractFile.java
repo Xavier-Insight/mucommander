@@ -286,7 +286,7 @@ public abstract class AbstractFile implements FileAttributes {
      * @return <code>true</code> if this file is a root folder
      */
     public boolean isRoot() {
-        return getURL().getPath().equals("/");
+        return "/".equals(getURL().getPath());
     }
 
     /**
@@ -1153,7 +1153,7 @@ public abstract class AbstractFile implements FileAttributes {
         // (Reminder: C: is C's current folder, while C:\ is C's root)
         String separator = getSeparator();
         if(path.endsWith(separator)
-           && !((separator.equals("/") && path.length()==1) || (separator.equals("\\") && path.charAt(path.length()-2)==':')))
+           && !(("/".equals(separator) && path.length()==1) || ("\\".equals(separator) && path.charAt(path.length()-2)==':')))
             path = path.substring(0, path.length()-1);
         return path;
     }

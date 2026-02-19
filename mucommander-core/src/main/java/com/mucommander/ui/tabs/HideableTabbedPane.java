@@ -339,7 +339,7 @@ public class HideableTabbedPane<T extends Tab> extends JComponent implements Tab
 		String var = event.getVariable();
 
         // Update the button's icon if the system file icons policy has changed
-        if (var.equals(MuPreferences.SHOW_SINGLE_TAB_HEADER))
+        if (MuPreferences.SHOW_SINGLE_TAB_HEADER.equals(var))
             refreshViewer();
 	}
 

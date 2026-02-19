@@ -194,9 +194,9 @@ public abstract class URLConnection extends java.net.URLConnection {
              */
 
             if (ct == null || ce != null &&
-                    !(ce.equalsIgnoreCase("7bit")
-                      || ce.equalsIgnoreCase("8bit")
-                      || ce.equalsIgnoreCase("binary")))
+                    !("7bit".equalsIgnoreCase(ce)
+                      || "8bit".equalsIgnoreCase(ce)
+                      || "binary".equalsIgnoreCase(ce)))
                 ct = "content/unknown";
             setContentType(ct);
         }

@@ -206,7 +206,7 @@ public class ToolBar extends JToolBar implements ConfigurationListener, MouseLis
         String var = event.getVariable();
 
         // Rescale buttons icon
-        if (var.equals(MuPreferences.TOOLBAR_ICON_SCALE)) {
+        if (MuPreferences.TOOLBAR_ICON_SCALE.equals(var)) {
             scaleFactor = event.getFloatValue();
             Component[] components = getComponents();
             int nbComponents = components.length;

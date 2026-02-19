@@ -120,7 +120,7 @@ class CommandBarReader extends CommandBarIO {
 
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-        if(qName.equals(BUTTON_ELEMENT)) {
+        if(BUTTON_ELEMENT.equals(qName)) {
         	// Resolve action id
         	String actionIdAttribute = attributes.getValue(ACTION_ID_ATTRIBUTE);
         	if (actionIdAttribute != null) {
@@ -161,7 +161,7 @@ class CommandBarReader extends CommandBarIO {
         		}
         	}
         }
-        else if(qName.equals(ROOT_ELEMENT)) {
+        else if(ROOT_ELEMENT.equals(qName)) {
         	// Retrieve modifier key (shift by default)
         	modifier = KeyStroke.getKeyStroke(attributes.getValue(MODIFIER_ATTRIBUTE));
             

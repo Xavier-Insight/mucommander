@@ -383,7 +383,7 @@ public abstract class QuickSearch<T> extends KeyAdapter implements Runnable, Con
         // This check is done on key release, so that if backspace key is maintained pressed
         // to remove all the search string, it does not trigger the JComponent's back action 
     	// which is mapped on backspace too
-        if(isActive() && e.getKeyCode()==KeyEvent.VK_BACK_SPACE && searchString.equals("")) {
+        if(isActive() && e.getKeyCode()==KeyEvent.VK_BACK_SPACE && "".equals(searchString)) {
             e.consume();
             stop();
         }
@@ -392,7 +392,7 @@ public abstract class QuickSearch<T> extends KeyAdapter implements Runnable, Con
     @Override
     public void configurationChanged(ConfigurationEvent event) {
         String var = event.getVariable();
-        if (var.equals(MuPreferences.QUICK_SEARCH_TIMEOUT)) {
+        if (MuPreferences.QUICK_SEARCH_TIMEOUT.equals(var)) {
             quickSearchTimeout = event.getIntegerValue() * 1000;
         }
     }

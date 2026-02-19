@@ -169,7 +169,7 @@ public class XAlignedComponentPanel extends JPanel {
             if(firstComponent instanceof JTextComponent) {
                 JTextComponent textComponent = (JTextComponent) firstComponent;
                 String text = textComponent.getText();
-                if(!text.equals("")) {
+                if(!"".equals(text)) {
                     textComponent.setSelectionStart(0);
                     textComponent.setSelectionEnd(text.length());
                 }

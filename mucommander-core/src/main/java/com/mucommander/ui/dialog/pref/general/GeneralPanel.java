@@ -238,20 +238,20 @@ class GeneralPanel extends PreferencesPanel implements ItemListener, ActionListe
         time12RadioButton = new PrefRadioButton(Translator.get("prefs_dialog.time_12_hour")) {
 			public boolean hasChanged() {
 				String timeFormat = MuConfigurations.getPreferences().getVariable(MuPreference.TIME_FORMAT);
-		        return isSelected() != (timeFormat.equals(HOUR_12_TIME_FORMAT) || timeFormat.equals(HOUR_12_TIME_FORMAT_WITH_SECONDS)); 
+		        return isSelected() != (HOUR_12_TIME_FORMAT.equals(timeFormat) || HOUR_12_TIME_FORMAT_WITH_SECONDS.equals(timeFormat)); 
 			}
         };
         time12RadioButton.addActionListener(this);
         PrefRadioButton time24RadioButton = new PrefRadioButton(Translator.get("prefs_dialog.time_24_hour")) {
 			public boolean hasChanged() {
 				String timeFormat = MuConfigurations.getPreferences().getVariable(MuPreference.TIME_FORMAT);
-		        return isSelected() != (timeFormat.equals(HOUR_24_TIME_FORMAT) || timeFormat.equals(HOUR_24_TIME_FORMAT_WITH_SECONDS));
+		        return isSelected() != (HOUR_24_TIME_FORMAT.equals(timeFormat) || HOUR_24_TIME_FORMAT_WITH_SECONDS.equals(timeFormat));
 			}
         };
         time24RadioButton.addActionListener(this);
         
         String timeFormat = MuConfigurations.getPreferences().getVariable(MuPreference.TIME_FORMAT);
-        if(timeFormat.equals(HOUR_12_TIME_FORMAT) || timeFormat.equals(HOUR_12_TIME_FORMAT_WITH_SECONDS))
+        if(HOUR_12_TIME_FORMAT.equals(timeFormat) || HOUR_12_TIME_FORMAT_WITH_SECONDS.equals(timeFormat))
             time12RadioButton.setSelected(true);
         else
             time24RadioButton.setSelected(true);

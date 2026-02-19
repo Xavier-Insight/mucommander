@@ -268,7 +268,7 @@ public class DrivePopupButton extends PopupButton implements BookmarkListener, C
         // Note: fileSystemView.getSystemDisplayName(java.io.File) is unfortunately very very slow
         String name = fileSystemView.getSystemDisplayName((java.io.File) localFile.getUnderlyingFileObject());
 
-        if (name == null || name.equals("")) // This happens for CD/DVD drives when they don't contain any disc
+        if (name == null || "".equals(name)) // This happens for CD/DVD drives when they don't contain any disc
             return localFile.getName();
 
         return name;
@@ -545,7 +545,7 @@ public class DrivePopupButton extends PopupButton implements BookmarkListener, C
         String var = event.getVariable();
 
         // Update the button's icon if the system file icons policy has changed
-        if (var.equals(MuPreferences.USE_SYSTEM_FILE_ICONS))
+        if (MuPreferences.USE_SYSTEM_FILE_ICONS.equals(var))
             updateButton();
     }
 

@@ -120,7 +120,7 @@ public class FolderChangeMonitor implements Runnable, WindowListener, LocationLi
 
         disableAutoRefreshFilter.addFileFilter(new AbstractFileFilter() {
             public boolean accept(AbstractFile file) {
-                return file.getURL().getScheme().equals(FileProtocols.S3);
+                return FileProtocols.S3.equals(file.getURL().getScheme());
             }
         });
     }

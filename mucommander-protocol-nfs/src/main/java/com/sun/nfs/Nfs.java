@@ -193,7 +193,7 @@ public abstract class Nfs {
      * @param n	the object to be removed from cache
      */
     static void cache_remove(Nfs n, String name) {
-	if (n.name.equals(".")) 
+	if (".".equals(n.name)) 
        	    cacheNfs.remove(n.rpc.conn.server + ":" + name);
 	else
             cacheNfs.remove(n.rpc.conn.server + ":" + n.name + "/" + name);

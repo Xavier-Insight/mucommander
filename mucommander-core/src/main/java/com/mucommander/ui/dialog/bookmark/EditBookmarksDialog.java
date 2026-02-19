@@ -254,7 +254,7 @@ public class EditBookmarksDialog extends FocusDialog implements ActionListener, 
         // Update name
         if(sourceDocument==nameField.getDocument()) {
             String name = nameField.getText();
-            if(name.trim().equals(""))
+            if("".equals(name.trim()))
                 name = getFreeNameVariation(Translator.get("untitled"));
 
             selectedBookmark.setName(name);

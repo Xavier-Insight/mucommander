@@ -125,10 +125,10 @@ public class AutoProcessor
         while (st.hasMoreTokens())
         {
             String s = st.nextToken().trim().toLowerCase();
-            if (s.equals(AUTO_DEPLOY_INSTALL_VALUE)
-                || s.equals(AUTO_DEPLOY_START_VALUE)
-                || s.equals(AUTO_DEPLOY_UPDATE_VALUE)
-                || s.equals(AUTO_DEPLOY_UNINSTALL_VALUE))
+            if (AUTO_DEPLOY_INSTALL_VALUE.equals(s)
+                || AUTO_DEPLOY_START_VALUE.equals(s)
+                || AUTO_DEPLOY_UPDATE_VALUE.equals(s)
+                || AUTO_DEPLOY_UNINSTALL_VALUE.equals(s))
             {
                 actionList.add(s);
             }
@@ -328,7 +328,7 @@ public class AutoProcessor
             // then assume it is the default bundle start level, otherwise
             // parse the specified start level.
             int startLevel = sl.getInitialBundleStartLevel();
-            if (!key.equals(AUTO_INSTALL_PROP) && !key.equals(AUTO_START_PROP))
+            if (!AUTO_INSTALL_PROP.equals(key) && !AUTO_START_PROP.equals(key))
             {
                 try
                 {
@@ -405,7 +405,7 @@ public class AutoProcessor
             while ((st.hasMoreTokens()) && (!exit))
             {
                 tok = st.nextToken(tokenList);
-                if (tok.equals("\""))
+                if ("\"".equals(tok))
                 {
                     inQuote = ! inQuote;
                     if (inQuote)
@@ -418,7 +418,7 @@ public class AutoProcessor
                     }
 
                 }
-                else if (tok.equals(" "))
+                else if (" ".equals(tok))
                 {
                     tokBuf.append(tok);
                 }

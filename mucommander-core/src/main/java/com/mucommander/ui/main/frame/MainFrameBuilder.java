@@ -73,7 +73,7 @@ public abstract class MainFrameBuilder {
         MuPreferencesAPI preferences = MuConfigurations.getPreferences();
 
         // Checks which kind of initial path we're dealing with.
-        isCustom = preferences.getVariable(MuPreference.STARTUP_FOLDERS, MuPreferences.DEFAULT_STARTUP_FOLDERS).equals(MuPreferences.STARTUP_FOLDERS_CUSTOM);
+        isCustom = MuPreferences.STARTUP_FOLDERS_CUSTOM.equals(preferences.getVariable(MuPreference.STARTUP_FOLDERS, MuPreferences.DEFAULT_STARTUP_FOLDERS));
 
         // Handles custom initial paths.
         if (isCustom) {
@@ -126,7 +126,7 @@ public abstract class MainFrameBuilder {
         MuPreferencesAPI preferences = MuConfigurations.getPreferences();
 
         // Checks which kind of initial path we're dealing with.
-        boolean isCustom = preferences.getVariable(MuPreference.STARTUP_FOLDERS, MuPreferences.DEFAULT_STARTUP_FOLDERS).equals(MuPreferences.STARTUP_FOLDERS_CUSTOM);
+        boolean isCustom = MuPreferences.STARTUP_FOLDERS_CUSTOM.equals(preferences.getVariable(MuPreference.STARTUP_FOLDERS, MuPreferences.DEFAULT_STARTUP_FOLDERS));
 
         String customPath = null;
         // Handles custom initial paths.

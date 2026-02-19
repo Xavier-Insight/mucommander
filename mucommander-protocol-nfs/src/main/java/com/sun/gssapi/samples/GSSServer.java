@@ -73,13 +73,13 @@ class GSSServer {
 			//parse the command line options
 			for (int i = 0; i < args.length; i++) {
 
-				if (args[i].equals("-port")) {
+				if ("-port".equals(args[i])) {
 					if (i >= (args.length - 2)) {
 						usage();
 						exit(-1);
 					}
 					port = Integer.parseInt(args[++i]);
-				} else if (args[i].equals("-mech")) {
+				} else if ("-mech".equals(args[i])) {
 					if (i >= (args.length-2)) {
 						usage();
 						exit(-1);

@@ -181,7 +181,7 @@ public class SystemDefaultColor extends DefaultColor implements PropertyChangeLi
 
         name = evt.getPropertyName().toLowerCase();
 
-        if(name.equals("lookandfeel") || name.equalsIgnoreCase(property)) {
+        if("lookandfeel".equals(name) || name.equalsIgnoreCase(property)) {
             Color oldColor;
 
             color    = null;

@@ -85,7 +85,7 @@ class ArArchiveEntryIterator implements ArchiveEntryIterator {
             // and parse date as a long.
             // If the entry is the special // GNU one (see below), date is null and thus should not be parsed
             // (would throw a NumberFormatException)
-            long date = name.equals("//")?0:Long.parseLong(new String(fileHeader, 16, 12).trim()) * 1000;
+            long date = "//".equals(name)?0:Long.parseLong(new String(fileHeader, 16, 12).trim()) * 1000;
 
             // No use for file's Owner ID, Group ID and mode at the moment, skip them
 
@@ -106,7 +106,7 @@ class ArArchiveEntryIterator implements ArchiveEntryIterator {
             // this record is referred to by future headers. A header references an extended filename by storing a "/"
             // followed by a decimal offset to the start of the filename in the extended filename data section.
             // This entry appears first in the archive, i.e. before any other entries.
-            else if(name.equals("//")) {
+            else if("//".equals(name)) {
                 this.gnuExtendedNames = StreamUtils.readFully(in, new byte[(int)size]);
 
                 // Skip one padding byte if size is odd

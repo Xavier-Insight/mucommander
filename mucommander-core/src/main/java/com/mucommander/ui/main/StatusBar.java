@@ -143,7 +143,7 @@ public class StatusBar extends JPanel {
         CONFIGURATION_ADAPTER = event -> {
             String var = event.getVariable();
 
-            if (var.equals(MuPreferences.DISPLAY_COMPACT_FILE_SIZE))
+            if (MuPreferences.DISPLAY_COMPACT_FILE_SIZE.equals(var))
                 setSelectedFileSizeFormat(event.getBooleanValue());
         };
         MuConfigurations.addPreferencesListener(CONFIGURATION_ADAPTER);

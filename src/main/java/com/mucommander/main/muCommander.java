@@ -374,7 +374,7 @@ public class muCommander {
         // If enabled, register a shutdown hook to make sure the framework is
         // cleanly shutdown when the VM exits.
         String enableHook = configProps.get(SHUTDOWN_HOOK_PROP);
-        if ((enableHook == null) || !enableHook.equalsIgnoreCase("false")) {
+        if ((enableHook == null) || !"false".equalsIgnoreCase(enableHook)) {
             Runtime.getRuntime().addShutdownHook(new Thread("Felix Shutdown Hook") {
                 public void run() {
                     try {

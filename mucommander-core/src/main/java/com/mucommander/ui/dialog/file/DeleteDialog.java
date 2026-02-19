@@ -84,7 +84,7 @@ public class DeleteDialog extends JobDialog implements ItemListener, ActionListe
         // - the base folder can be moved to the trash (the eligibility conditions should be the same as the files to-be-deleted)
         AbstractTrash trash = DesktopManager.getTrash();
         AbstractFile baseFolder = files.getBaseFolder();
-        if (baseFolder.getURL().getScheme().equals(SearchFile.SCHEMA))
+        if (SearchFile.SCHEMA.equals(baseFolder.getURL().getScheme()))
             baseFolder = ((SearchFile) baseFolder.getUnderlyingFileObject()).getSearchPlace();
         if(trash!=null && !baseFolder.isArchive() && !trash.isTrashFile(baseFolder) && trash.canMoveToTrash(baseFolder)) {
             moveToTrash = !deletePermanently;

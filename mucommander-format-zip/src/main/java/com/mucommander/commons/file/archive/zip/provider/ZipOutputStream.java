@@ -170,7 +170,7 @@ public class ZipOutputStream extends OutputStream implements ZipConstants {
      * @return true if the given encoding is either "UTF-8", "UTF8" or null
      */
     private static boolean isUTF8(String encoding) {
-        return encoding==null || encoding.equalsIgnoreCase("UTF-8") || encoding.equalsIgnoreCase("UTF8");
+        return encoding==null || "UTF-8".equalsIgnoreCase(encoding) || "UTF8".equalsIgnoreCase(encoding);
     }
 
     /**

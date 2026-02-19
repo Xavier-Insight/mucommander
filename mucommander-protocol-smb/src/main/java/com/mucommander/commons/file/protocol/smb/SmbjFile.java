@@ -292,8 +292,8 @@ public class SmbjFile extends ProtocolFile implements ConnectionHandlerFactory {
 
             List<FileIdBothDirectoryInformation> list = c.getDiskShare().list(path);
             return list.stream()
-                    .filter(f -> !f.getFileName().equals("."))
-                    .filter(f -> !f.getFileName().equals(".."))
+                    .filter(f -> !".".equals(f.getFileName()))
+                    .filter(f -> !"..".equals(f.getFileName()))
                     .map(f -> {
                         FileURL childURL = (FileURL)fileURL.clone();
                         childURL.setHost(fileURL.getHost());

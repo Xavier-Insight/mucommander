@@ -215,7 +215,7 @@ public class OSXTrash extends QueuedTrash {
     private boolean moveToTrashViaAppleScript(List<AbstractFile> queuedFiles) {
         // Simple script for AppleScript versions with Unicode support, i.e. that allows Unicode characters in the
         // script (AppleScript 2.0 / Mac OS X 10.5 or higher).
-        if(AppleScript.getScriptEncoding().equals(AppleScript.UTF8)) {
+        if(AppleScript.UTF8.equals(AppleScript.getScriptEncoding())) {
             String appleScript = queuedFiles.stream()
                     .map(AbstractFile::getAbsolutePath)
                     .map(path -> String.format("posix file \"%s\"", path))

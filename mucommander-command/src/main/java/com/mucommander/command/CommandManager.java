@@ -204,7 +204,7 @@ public class CommandManager implements CommandBuilder {
     }
 
     private static void setDefaultCommand(Command command) {
-        if (defaultCommand == null && command.getAlias().equals(FILE_OPENER_ALIAS)) {
+        if (defaultCommand == null && FILE_OPENER_ALIAS.equals(command.getAlias())) {
             LOGGER.debug("Registering '" + command.getCommand() + "' as default command.");
             defaultCommand = command;
         }

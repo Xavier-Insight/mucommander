@@ -68,7 +68,7 @@ public class DefaultPathCanonizer implements PathCanonizer {
     public String canonize(String path) {
         // Todo: use PathTokenizer?
 
-        if(!path.equals("/")) {
+        if(!"/".equals(path)) {
             int pos;	    // position of current path separator
             int pos2 = 0;	// position of next path separator
             int separatorLen = separator.length();
@@ -90,17 +90,17 @@ public class DefaultPathCanonizer implements PathCanonizer {
                 }
 
                 // Discard '.' and empty directories
-                if((dirWS.equals("") && pathV.size()>0) || dirWS.equals(".")) {
+                if(("".equals(dirWS) && pathV.size()>0) || ".".equals(dirWS)) {
                     continue;
                 }
                 // Remove last directory
-                else if(dirWS.equals("..")) {
+                else if("..".equals(dirWS)) {
                     if(pathV.size()>0)
                         pathV.removeElementAt(pathV.size()-1);
                     continue;
                 }
                 // Replace '~' by the provided replacement string, only if one was specified
-                else if(tildeReplacement!=null && dirWS.equals("~")) {
+                else if(tildeReplacement!=null && "~".equals(dirWS)) {
                     path = path.substring(0, pos) + tildeReplacement + path.substring(pos+1);
                     // Will perform another pass at the same position
                     pos2 = pos;

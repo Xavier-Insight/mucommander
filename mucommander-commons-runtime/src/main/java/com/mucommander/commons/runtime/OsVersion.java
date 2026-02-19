@@ -142,19 +142,19 @@ public enum OsVersion implements ComparableRuntimeProperty {
         // http://lopica.sourceforge.net/os.html
 
         if(osFamily==OsFamily.WINDOWS) {
-            if (osNameProp.equals("Windows 7"))
+            if ("Windows 7".equals(osNameProp))
                 return WINDOWS_7;
 
-            if (osNameProp.equals("Windows 8"))
+            if ("Windows 8".equals(osNameProp))
                 return WINDOWS_8;
 
-            if (osNameProp.equals("Windows 8.1"))
+            if ("Windows 8.1".equals(osNameProp))
                 return WINDOWS_8_1;
 
-            if (osNameProp.equals("Windows 10"))
+            if ("Windows 10".equals(osNameProp))
                 return WINDOWS_10;
 
-            if (osNameProp.equals("Windows 11"))
+            if ("Windows 11".equals(osNameProp))
                 return WINDOWS_11;
 
             // Newer version we don't know of yet, assume latest supported OS version

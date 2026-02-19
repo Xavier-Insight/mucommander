@@ -98,7 +98,7 @@ public abstract class MuAction extends AbstractAction {
         // Note: a reference to the listener must be kept to prevent it from being garbage-collected.
         CONFIGURATION_ADAPTER = event -> {
             String var = event.getVariable();
-            if (var.equals(MuPreferences.SHOW_KEYBOARD_HINTS)) {
+            if (MuPreferences.SHOW_KEYBOARD_HINTS.equals(var)) {
                 showKeyboardHints = event.getBooleanValue();
             }
         };

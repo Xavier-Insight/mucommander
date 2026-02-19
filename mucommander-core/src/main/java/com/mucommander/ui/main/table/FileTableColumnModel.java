@@ -336,7 +336,7 @@ public class FileTableColumnModel implements TableColumnModel, PropertyChangeLis
         String name;
 
         name = event.getPropertyName();
-        if(name.equals("width")) {
+        if("width".equals(name)) {
                 columnSizesSet = true;
             widthCache = CACHE_OUT_OF_DATE;
                 // Notifies the table that columns width have changed and that it should repaint itself.

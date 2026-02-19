@@ -304,7 +304,7 @@ class BinaryEditor extends BinaryBase implements FileEditor {
     public void saveAsFile() {
         JFileChooser fileChooser = new JFileChooser();
         // Sets selected file in JFileChooser to current file
-        if (currentFile.getURL().getScheme().equals(LocalFile.SCHEMA)) {
+        if (LocalFile.SCHEMA.equals(currentFile.getURL().getScheme())) {
             fileChooser.setSelectedFile(new java.io.File(currentFile.getAbsolutePath()));
         }
         fileChooser.setDialogType(JFileChooser.SAVE_DIALOG);

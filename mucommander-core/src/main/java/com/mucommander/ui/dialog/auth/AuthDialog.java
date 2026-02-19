@@ -202,7 +202,7 @@ public class AuthDialog extends FocusDialog implements ActionListener, EditableC
 
         yPanel.add(compPanel);
 
-        if (fileURL.getScheme().equals(FileProtocols.SMB)) {
+        if (FileProtocols.SMB.equals(fileURL.getScheme())) {
             if (useLegacy == null) {
                 String useLegacyStr = fileURL.getProperty(PROPERTY_SMB_USE_LEGACY);
                 useLegacy = useLegacyStr == null || Boolean.parseBoolean(useLegacyStr);

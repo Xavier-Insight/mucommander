@@ -95,7 +95,7 @@ public abstract class S3File extends ProtocolFile {
             StorageObject[] objects = chunk.getObjects();
             String[] commonPrefixes = chunk.getCommonPrefixes();
 
-            if(objects.length==0 && !prefix.equals("")) {
+            if(objects.length==0 && !"".equals(prefix)) {
                 // This happens only when the directory does not exist
                 throw new IOException();
             }

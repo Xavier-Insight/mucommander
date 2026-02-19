@@ -96,13 +96,13 @@ public class CommandReader extends DefaultHandler implements CommandsXmlConstant
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         // New custom command declaration.
-        if(qName.equals(ELEMENT_COMMAND)) {
+        if(ELEMENT_COMMAND.equals(qName)) {
             String alias = attributes.getValue(ATTRIBUTE_ALIAS);
             String command = attributes.getValue(ATTRIBUTE_VALUE);
 
             // Makes sure the required attributes are there.
             if(alias != null && command != null) {
-                if (command.equals("open -a Finder $f")) {
+                if ("open -a Finder $f".equals(command)) {
                     // we made a backward incompatible change when the default 'open with file manager'
                     // on macOS changed to "open -R $f" so if we detect the previous command, we ignore
                     // it and indicate that the commands were modified to update the commands.xml file

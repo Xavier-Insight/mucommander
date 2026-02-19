@@ -200,9 +200,9 @@ public class SelfUpdateJob extends CopyJob {
                 parent = destJar.getParent();
 
                 // Look for an .app container that encloses the JAR file
-                if(parent.getName().equals("Java")
-                &&(parent=parent.getParent())!=null && parent.getName().equals("Resources")
-                &&(parent=parent.getParent())!=null && parent.getName().equals("Contents")
+                if("Java".equals(parent.getName())
+                &&(parent=parent.getParent())!=null && "Resources".equals(parent.getName())
+                &&(parent=parent.getParent())!=null && "Contents".equals(parent.getName())
                 &&(parent=parent.getParent())!=null && "app".equals(parent.getExtension())) {
 
                     String appPath = parent.getAbsolutePath();

@@ -1123,7 +1123,7 @@ public class FileTable extends JTable implements MouseListener, MouseMotionListe
     }
 
     private boolean isDirectorySize(Column c, String val) {
-        return c == Column.SIZE && val.equals(FileTableModel.DIRECTORY_SIZE_STRING);
+        return c == Column.SIZE && FileTableModel.DIRECTORY_SIZE_STRING.equals(val);
     }
 
     private void doStaticLayout() {

@@ -114,7 +114,7 @@ public class SMBPanel extends ServerPanel {
 
         // Insert the domain (if any) before the username, separated by a semicolon
         String userInfo = lastUsername;
-        if(!lastDomain.equals(""))
+        if(!"".equals(lastDomain))
             userInfo = lastDomain+";"+userInfo;
 
         url.setCredentials(new Credentials(userInfo, lastPassword));

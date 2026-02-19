@@ -239,7 +239,7 @@ public class EmailFilesDialog extends JobDialog implements ActionListener, ItemL
             String to = toField.getText().trim();
             String subject = subjectField.getText();
             String body = bodyArea.getText();
-            if(!to.equals("")) {
+            if(!"".equals(to)) {
                 lastTo = to;
                 lastSubject = subject;
                 lastBody = body;

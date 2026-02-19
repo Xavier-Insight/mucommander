@@ -153,7 +153,7 @@ public class ResourceLoader {
 
         String separator = rootPackageFile.getSeparator();
         String nativePath;
-        if(separator.equals("/"))
+        if("/".equals(separator))
             nativePath = path;
         else
             nativePath = path.replace("/", separator);

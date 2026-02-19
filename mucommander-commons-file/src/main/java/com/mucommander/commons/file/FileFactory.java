@@ -174,7 +174,7 @@ public class FileFactory {
 
         // Special case for local file provider.
         // Note that the local file provider is also added to the provider hashtable.
-        if(protocol.equals(LocalFile.SCHEMA))
+        if(LocalFile.SCHEMA.equals(protocol))
             localFileProvider = provider;
 
         return protocolProviders.put(protocol, provider);
@@ -193,7 +193,7 @@ public class FileFactory {
         FILE_POOL_MAP.remove(protocol);
 
         // Special case for local file provider
-        if(protocol.equals(LocalFile.SCHEMA))
+        if(LocalFile.SCHEMA.equals(protocol))
             localFileProvider = null;
 
         return protocolProviders.remove(protocol);
@@ -547,7 +547,7 @@ public class FileFactory {
 
         // Special case for local files to avoid provider hashtable lookup and other unnecessary checks
         // (for performance reasons)
-        if(scheme.equals(LocalFile.SCHEMA)) {
+        if(LocalFile.SCHEMA.equals(scheme)) {
             if(localFileProvider == null)
                 throw new IOException("Unknown file protocol: " + scheme);
 
@@ -609,7 +609,7 @@ public class FileFactory {
      * normal circumstances.
      */
     public static AbstractFile getTemporaryFile(String desiredFilename, boolean deleteOnExit) throws IOException {
-        if(desiredFilename==null || desiredFilename.equals(""))
+        if(desiredFilename==null || "".equals(desiredFilename))
             desiredFilename = "temp";
         
         // Attempt to use the desired name

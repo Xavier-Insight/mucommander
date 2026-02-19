@@ -200,7 +200,7 @@ public class ConfigurationSectionTest {
 
         list = new ValueList("1,2,3,4", ",");
         assert ConfigurationSection.getListValue("1,2,3,4", ",").equals(list);
-        assert ConfigurationSection.getValue(list, ",").equals("1,2,3,4");
+        assert "1,2,3,4".equals(ConfigurationSection.getValue(list, ","));
     }
 
     /**
@@ -261,12 +261,12 @@ public class ConfigurationSectionTest {
     @Test
     public void testBooleans() {
         assert ConfigurationSection.getBooleanValue("true");
-        assert ConfigurationSection.getValue(true).equals("true");
+        assert "true".equals(ConfigurationSection.getValue(true));
 
         assert !ConfigurationSection.getBooleanValue("false");
         assert !ConfigurationSection.getBooleanValue("!@#");
         assert !ConfigurationSection.getBooleanValue("");
-        assert ConfigurationSection.getValue(false).equals("false");
+        assert "false".equals(ConfigurationSection.getValue(false));
 
         assert !ConfigurationSection.getBooleanValue(null);
     }

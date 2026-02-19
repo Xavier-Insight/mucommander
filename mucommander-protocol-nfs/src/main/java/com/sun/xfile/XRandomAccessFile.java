@@ -79,9 +79,9 @@ public class XRandomAccessFile implements DataOutput, DataInput {
     public XRandomAccessFile(XFile xf, String mode) throws IOException {
 
 
-        if (! (mode.equals("r") || mode.equals("rw")))
+        if (! ("r".equals(mode) || "rw".equals(mode)))
             throw new IllegalArgumentException("mode must be r or rw");
-        readOnly = mode.equals("r");
+        readOnly = "r".equals(mode);
         xfa = xf.newAccessor();
         xfa.open(xf, false, readOnly);
 

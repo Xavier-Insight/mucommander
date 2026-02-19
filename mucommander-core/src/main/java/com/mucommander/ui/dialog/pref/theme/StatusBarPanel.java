@@ -235,14 +235,14 @@ class StatusBarPanel extends ThemeEditorPanel implements PropertyChangeListener 
      */
     public void propertyChange(PropertyChangeEvent event) {
         // Repaints previews when the overlay or background color have been changed.
-        if(event.getPropertyName().equals(PreviewLabel.BACKGROUND_COLOR_PROPERTY_NAME) || event.getPropertyName().equals(PreviewLabel.OVERLAY_COLOR_PROPERTY_NAME)) {
+        if(PreviewLabel.BACKGROUND_COLOR_PROPERTY_NAME.equals(event.getPropertyName()) || PreviewLabel.OVERLAY_COLOR_PROPERTY_NAME.equals(event.getPropertyName())) {
             okPreview.repaint();
             warningPreview.repaint();
             criticalPreview.repaint();
         }
 
         // Resets the preview labels' foreground color.
-        else if(event.getPropertyName().equals(PreviewLabel.FOREGROUND_COLOR_PROPERTY_NAME)) {
+        else if(PreviewLabel.FOREGROUND_COLOR_PROPERTY_NAME.equals(event.getPropertyName())) {
             Color color;
 
             color = themeData.getColor(ThemeData.STATUS_BAR_FOREGROUND_COLOR);
@@ -254,7 +254,7 @@ class StatusBarPanel extends ThemeEditorPanel implements PropertyChangeListener 
         }
 
         // Resets the preview labels' borders.
-        else if(event.getPropertyName().equals(PreviewLabel.BORDER_COLOR_PROPERTY_NAME)) {
+        else if(PreviewLabel.BORDER_COLOR_PROPERTY_NAME.equals(event.getPropertyName())) {
             okPreview.refreshBorder();
             warningPreview.refreshBorder();
             criticalPreview.refreshBorder();

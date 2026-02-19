@@ -272,7 +272,7 @@ public abstract class AbstractArchiveFile extends ProxyFile {
         // If the parent file's separator is not '/' (the default entry separator), replace '/' occurrences by
         // the parent file's separator. For local files Under Windows, this allows entries' path to have '\' separators.
         String fileSeparator = getSeparator();
-        if(!fileSeparator.equals("/"))
+        if(!"/".equals(fileSeparator))
             entryPath = entryPath.replace("/", fileSeparator);
 
         // Cache AbstractArchiveEntryFile instances so that there is only one AbstractArchiveEntryFile corresponding to 

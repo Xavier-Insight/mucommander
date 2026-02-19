@@ -153,7 +153,7 @@ class MessageHeader {
         for (int i=0; i<nkeys; i++) {
             if (k.equalsIgnoreCase(keys[i])
                     && values[i] != null && values[i].length() > 5
-                    && values[i].substring(0, 5).equalsIgnoreCase("NTLM ")) {
+                    && "NTLM ".equalsIgnoreCase(values[i].substring(0, 5))) {
                 found = true;
                 break;
             }
@@ -308,7 +308,7 @@ class MessageHeader {
         if (c2 != '.') return false;
         if (c3 < '0' || c3 > '9') return false;
 
-        return (k.substring(i+1, len-3).equalsIgnoreCase("HTTP/"));
+        return ("HTTP/".equalsIgnoreCase(k.substring(i+1, len-3)));
     }
 
     /** Prints the key-value pairs represented by this

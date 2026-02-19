@@ -582,7 +582,7 @@ public class FTPFile extends ProtocolFile implements ConnectionHandlerFactory {
                 continue;
 
             childName = files[i].getName();
-            if(childName.equals(".") || childName.equals(".."))
+            if(".".equals(childName) || "..".equals(childName))
                 continue;
 
             // Note: properties and credentials are cloned for every children's url
@@ -590,7 +590,7 @@ public class FTPFile extends ProtocolFile implements ConnectionHandlerFactory {
             childURL.setPath(parentPath+childName);
 
             // Discard '.' and '..' files
-            if(childName.equals(".") || childName.equals(".."))
+            if(".".equals(childName) || "..".equals(childName))
                 continue;
 
             child = FileFactory.getFile(childURL, this, Collections.singletonMap("parentFtpFile", files[i]));
@@ -1159,11 +1159,11 @@ public class FTPFile extends ProtocolFile implements ConnectionHandlerFactory {
             // Use the passive mode property if it is set
             String passiveModeProperty = location.getProperty(PASSIVE_MODE_PROPERTY_NAME);
             // Passive mode is enabled by default if property isn't specified
-            this.passiveMode = passiveModeProperty==null || !passiveModeProperty.equals("false");
+            this.passiveMode = passiveModeProperty==null || !"false".equals(passiveModeProperty);
 
             // Use the encoding property if it is set
             this.encoding = location.getProperty(ENCODING_PROPERTY_NAME);
-            if(encoding==null || encoding.equals(""))
+            if(encoding==null || "".equals(encoding))
                 encoding = DEFAULT_ENCODING;
 
             // Use the property that controls the number of connection retries after a recoverable connection failure,
@@ -1308,7 +1308,7 @@ public class FTPFile extends ProtocolFile implements ConnectionHandlerFactory {
 	                // configuration setting of the FTP server.
 	                ftpClient.setListHiddenFiles(FTPProtocolProvider.getForceHiddenFilesListing());
 	
-	                if(encoding.equalsIgnoreCase("UTF-8")) {
+	                if("UTF-8".equalsIgnoreCase(encoding)) {
 	                    // This command enables UTF8 on the remote server... but only a few FTP servers currently support this command
 	                    ftpClient.sendCommand("OPTS UTF8 ON");
 	                }

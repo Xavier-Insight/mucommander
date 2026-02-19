@@ -57,7 +57,7 @@ public class RecentExecutedFilesQL extends QuickListWithIcons<AbstractFile> {
     protected void acceptListItem(AbstractFile item) {
 		MainFrame mainFrame = WindowManager.getCurrentMainFrame();
 
-		if(item.getURL().getScheme().equals(LocalFile.SCHEMA) && (item.hasAncestor(LocalFile.class))) {
+		if(LocalFile.SCHEMA.equals(item.getURL().getScheme()) && (item.hasAncestor(LocalFile.class))) {
             try { DesktopManager.open(item); }
             catch(IOException e) {}
         }

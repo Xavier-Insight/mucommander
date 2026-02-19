@@ -173,7 +173,7 @@ public class LocationTextField extends ProgressTextField implements LocationList
             FileURL folderURL = e.getFolderURL();
 
             String locationText;
-            if(folderURL.getScheme().equals(LocalFile.SCHEMA)) {
+            if(LocalFile.SCHEMA.equals(folderURL.getScheme())) {
                 // Do not display the URL's scheme & host for local files
                 if (FileURL.LOCALHOST.equals(folderURL.getHost())) {
                     locationText = folderURL.getPath();

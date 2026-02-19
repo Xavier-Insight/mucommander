@@ -220,7 +220,7 @@ public class ChangePermissionsDialog extends JobDialog
         JCheckBox permCheckBox;
         String octalStr = octalPermTextField.getText();
 
-        int perms = octalStr.equals("")?0:Integer.parseInt(octalStr, 8);
+        int perms = "".equals(octalStr)?0:Integer.parseInt(octalStr, 8);
 
         for(PermissionAccess a : PermissionAccess.reverseValues()) {
             for(PermissionType p : PermissionType.reverseValues()) {

@@ -123,7 +123,7 @@ public class HTTPFile extends ProtocolFile {
         super(fileURL);
 
         String scheme = fileURL.getScheme().toLowerCase();
-        if((!scheme.equals(FileProtocols.HTTP) && !scheme.equals(FileProtocols.HTTPS)) || fileURL.getHost()==null)
+        if((!FileProtocols.HTTP.equals(scheme) && !FileProtocols.HTTPS.equals(scheme)) || fileURL.getHost()==null)
             throw new IOException();
 
         this.url = url;

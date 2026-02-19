@@ -102,7 +102,7 @@ public class AssociationReader extends DefaultHandler implements AssociationsXml
 
         try {
             if(!isInAssociation) {
-                if(qName.equals(ELEMENT_ASSOCIATION)) {
+                if(ELEMENT_ASSOCIATION.equals(qName)) {
                     // Makes sure the required attributes are present.
                     if((buffer = attributes.getValue(ATTRIBUTE_COMMAND)) == null)
                         return;
@@ -112,40 +112,40 @@ public class AssociationReader extends DefaultHandler implements AssociationsXml
                 }
             }
             else {
-                if(qName.equals(ELEMENT_MASK)) {
+                if(ELEMENT_MASK.equals(qName)) {
                     String caseSensitive;
 
                     if((buffer = attributes.getValue(ATTRIBUTE_VALUE)) == null)
                         return;
                     if((caseSensitive = attributes.getValue(ATTRIBUTE_CASE_SENSITIVE)) != null)
-                        builder.setMask(buffer, caseSensitive.equals(VALUE_TRUE));
+                        builder.setMask(buffer, VALUE_TRUE.equals(caseSensitive));
                     else
                         builder.setMask(buffer, true);
                 }
-                else if(qName.equals(ELEMENT_IS_HIDDEN)) {
+                else if(ELEMENT_IS_HIDDEN.equals(qName)) {
                     if((buffer = attributes.getValue(ATTRIBUTE_VALUE)) == null)
                         return;
-                    builder.setIsHidden(buffer.equals(VALUE_TRUE));
+                    builder.setIsHidden(VALUE_TRUE.equals(buffer));
                 }
-                else if(qName.equals(ELEMENT_IS_SYMLINK)) {
+                else if(ELEMENT_IS_SYMLINK.equals(qName)) {
                     if((buffer = attributes.getValue(ATTRIBUTE_VALUE)) == null)
                         return;
-                    builder.setIsSymlink(buffer.equals(VALUE_TRUE));
+                    builder.setIsSymlink(VALUE_TRUE.equals(buffer));
                 }
-                else if(qName.equals(ELEMENT_IS_READABLE)) {
+                else if(ELEMENT_IS_READABLE.equals(qName)) {
                     if((buffer = attributes.getValue(ATTRIBUTE_VALUE)) == null)
                         return;
-                    builder.setIsReadable(buffer.equals(VALUE_TRUE));
+                    builder.setIsReadable(VALUE_TRUE.equals(buffer));
                 }
-                else if(qName.equals(ELEMENT_IS_WRITABLE)) {
+                else if(ELEMENT_IS_WRITABLE.equals(qName)) {
                     if((buffer = attributes.getValue(ATTRIBUTE_VALUE)) == null)
                         return;
-                    builder.setIsWritable(buffer.equals(VALUE_TRUE));
+                    builder.setIsWritable(VALUE_TRUE.equals(buffer));
                 }
-                else if(qName.equals(ELEMENT_IS_EXECUTABLE)) {
+                else if(ELEMENT_IS_EXECUTABLE.equals(qName)) {
                     if((buffer = attributes.getValue(ATTRIBUTE_VALUE)) == null)
                         return;
-                    builder.setIsExecutable(buffer.equals(VALUE_TRUE));
+                    builder.setIsExecutable(VALUE_TRUE.equals(buffer));
                 }
             }
         }
@@ -157,7 +157,7 @@ public class AssociationReader extends DefaultHandler implements AssociationsXml
      */
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
-        if(qName.equals(ELEMENT_ASSOCIATION) && isInAssociation) {
+        if(ELEMENT_ASSOCIATION.equals(qName) && isInAssociation) {
             try {builder.endAssociation();}
             catch(CommandException e) {throw new SAXException(e);}
             isInAssociation = false;

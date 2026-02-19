@@ -375,7 +375,7 @@ public class VSphereFile extends ProtocolFile implements
 			// more than one result - it's a directory.
 			// find the entry for "."
 			for (GuestFileInfo f : res.getFiles()) {
-				if (f.getPath().equals(".")) {
+				if (".".equals(f.getPath())) {
 					updateAttributes(f);
 					break;
 				}
@@ -390,7 +390,7 @@ public class VSphereFile extends ProtocolFile implements
 
 		for (int i = 0; i < childNodes.getLength(); ++i) {
 			// I hate soap...
-			if (childNodes.item(i).getNodeName().equals("FileNotFoundFault")) {
+			if ("FileNotFoundFault".equals(childNodes.item(i).getNodeName())) {
 				return true;
 			}
 		}
@@ -497,7 +497,7 @@ public class VSphereFile extends ProtocolFile implements
 		}
 		String rootPath = getRootPath();
 
-		if (rootPath.equals(pathInsideVm) || pathInsideVm.equals("/")) {
+		if (rootPath.equals(pathInsideVm) || "/".equals(pathInsideVm)) {
 			return null;
 		}
 
@@ -617,7 +617,7 @@ public class VSphereFile extends ProtocolFile implements
 			Collection<AbstractFile> res = new ArrayList<AbstractFile>();
 			for (GuestFileInfo f : fileInfos) {
 				final String name = getFileName(f.getPath());
-				if (name.equals(".") || name.equals("..")) {
+				if (".".equals(name) || "..".equals(name)) {
 					continue;
 				}
 

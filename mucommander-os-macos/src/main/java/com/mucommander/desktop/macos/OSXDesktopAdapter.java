@@ -158,7 +158,7 @@ public class OSXDesktopAdapter extends DefaultDesktopAdapter {
         String extension = file.getExtension();
 
         // the isDirectory() test comes last as it is I/O bound
-        return extension!=null && extension.equalsIgnoreCase("app") && file.isDirectory();
+        return "app".equalsIgnoreCase(extension) && file.isDirectory();
     }
 
     @Override

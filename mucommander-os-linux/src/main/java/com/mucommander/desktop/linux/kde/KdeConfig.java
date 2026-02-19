@@ -53,7 +53,7 @@ public class KdeConfig {
 
             LOGGER.debug(CONFIG_COMMAND+" returned '"+line+"' for "+key);
 
-            if(line==null || (line=line.trim()).equals(""))
+            if(line==null || "".equals((line=line.trim())))
                 return null;
 
             return line;

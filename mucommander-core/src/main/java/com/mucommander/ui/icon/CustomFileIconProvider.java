@@ -207,7 +207,7 @@ public class CustomFileIconProvider implements FileIconProvider {
         // If file is a directory, use folder icon. One exception is made for 'app' extension under MAC OS
         else if(file.isDirectory()) {
             // Mac OS X application are directories with the .app extension and have a dedicated icon
-            if(fileExtension!=null && fileExtension.equals("app"))
+            if("app".equals(fileExtension))
                 icon = IconManager.getIcon(IconManager.FILE_ICON_SET, MAC_OS_APP_ICON_NAME);
             // Default folder icon
             else

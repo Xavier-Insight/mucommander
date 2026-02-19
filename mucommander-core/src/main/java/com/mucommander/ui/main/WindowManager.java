@@ -418,7 +418,7 @@ public class WindowManager implements WindowListener, ConfigurationListener {
 
     	// /!\ font.size is set after font.family in AppearancePrefPanel
     	// that's why we only listen to this one in order not to change Font twice
-    	if (var.equals(MuPreferences.LOOK_AND_FEEL)) {
+    	if (MuPreferences.LOOK_AND_FEEL.equals(var)) {
     		String lnfName = event.getValue();
 
     		if(!UIManager.getLookAndFeel().getClass().getName().equals(lnfName))

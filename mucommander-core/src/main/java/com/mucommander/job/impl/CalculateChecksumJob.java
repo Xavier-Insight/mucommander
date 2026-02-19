@@ -88,7 +88,7 @@ public class CalculateChecksumJob extends TransferFileJob {
 
         this.checksumFile = checksumFile;
         this.digest = digest;
-        this.useSfvFormat = digest.getAlgorithm().equalsIgnoreCase("CRC32");
+        this.useSfvFormat = "CRC32".equalsIgnoreCase(digest.getAlgorithm());
 
         this.baseSourcePath = getBaseSourceFolder().getAbsolutePath(true);
     }

@@ -409,7 +409,7 @@ public class SFTPFile extends ProtocolFile {
         for (LsEntry file : files) {
             filename = file.getFilename();
             // Discard '.' and '..' files, dunno why these are returned
-            if (filename.equals(".") || filename.equals(".."))
+            if (".".equals(filename) || "..".equals(filename))
                 continue;
 
             childURL = (FileURL) fileURL.clone();

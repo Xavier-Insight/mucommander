@@ -85,7 +85,7 @@ public class HDFSFile extends HadoopFile {
     private static String getUsername(FileURL url) {
         Credentials credentials = url.getCredentials();
         String username;
-        if(credentials==null||(username=credentials.getLogin()).equals(""))
+        if(credentials==null||"".equals((username=credentials.getLogin())))
             username = getDefaultUsername();
 
         return username;

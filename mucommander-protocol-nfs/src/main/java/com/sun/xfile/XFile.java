@@ -469,7 +469,7 @@ public class XFile {
              */
             String suffix;
 
-            if (url.getProtocol().equals("nfs"))
+            if ("nfs".equals(url.getProtocol()))
                 suffix = "nfsXFileExtensionAccessor";
             else
                 suffix = "XFileExtensionAccessor";

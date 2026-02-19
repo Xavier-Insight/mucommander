@@ -215,10 +215,10 @@ public class CalculateChecksumDialog extends JobDialog implements ActionListener
 
         algorithm = algorithm.toUpperCase();
 
-        if(algorithm.equals("SHA"))
+        if("SHA".equals(algorithm))
             return "SHA1SUMS";
 
-        if(algorithm.equals("CRC32"))
+        if("CRC32".equals(algorithm))
             return (files.size()==1?files.elementAt(0):files.getBaseFolder()).getName()+".sfv";
 
         return algorithm.replace("-", "")+"SUMS";

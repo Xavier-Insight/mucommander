@@ -275,7 +275,7 @@ public final class BonjourDirectory implements ServiceListener, ConfigurationLis
 
     @Override
     public void configurationChanged(ConfigurationEvent event) {
-        if (event.getVariable().equals(MuPreferences.ENABLE_BONJOUR_DISCOVERY)) {
+        if (MuPreferences.ENABLE_BONJOUR_DISCOVERY.equals(event.getVariable())) {
             setActive(event.getBooleanValue());
         }
     }

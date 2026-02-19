@@ -141,7 +141,7 @@ public abstract class BasicFileEditor implements FileEditor {
         JFileChooser fileChooser = new JFileChooser();
         AbstractFile currentFile = getCurrentFile();
         // Sets selected file in JFileChooser to current file
-        if (currentFile.getURL().getScheme().equals(LocalFile.SCHEMA)) {
+        if (LocalFile.SCHEMA.equals(currentFile.getURL().getScheme())) {
             fileChooser.setSelectedFile(new java.io.File(currentFile.getAbsolutePath()));
         }
         fileChooser.setDialogType(JFileChooser.SAVE_DIALOG);

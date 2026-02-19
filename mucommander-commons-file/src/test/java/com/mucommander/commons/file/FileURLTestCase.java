@@ -44,7 +44,7 @@ public abstract class FileURLTestCase {
     protected String getSchemePath(String path) {
         String separator = getPathSeparator();
 
-        if(!separator.equals("/"))
+        if(!"/".equals(separator))
             path = "/" + path.replace("/", separator);
 
         return path;

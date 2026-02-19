@@ -78,7 +78,7 @@ public class LocalLocationHistory {
 		//  - it doesn't look like a removable media drive (cd/dvd/floppy), especially in order to prevent
 		// Java from triggering that dreaded 'Drive not ready' popup.
 		LOGGER.trace("folder="+folderURL);
-		if(folderURL.getScheme().equals(LocalFile.SCHEMA)) {
+		if(LocalFile.SCHEMA.equals(folderURL.getScheme())) {
 			AbstractFile folder = FileFactory.getFile(folderURL);
 			if (folder.isDirectory() && (folder instanceof LocalFile) && !((LocalFile)folder.getRoot()).guessRemovableDrive()) {
 				this.lastRecallableFolder = folder.getAbsolutePath();

@@ -109,7 +109,7 @@ public class AddBookmarkDialog extends FocusDialog implements ActionListener, Do
      * accordingly, in order to prevent user from adding a bookmark with an empty name.
      */
     private void checkEmptyName() {
-        if(nameField.getText().trim().equals("")) {
+        if("".equals(nameField.getText().trim())) {
             if(addButton.isEnabled())
                 addButton.setEnabled(false);
         }

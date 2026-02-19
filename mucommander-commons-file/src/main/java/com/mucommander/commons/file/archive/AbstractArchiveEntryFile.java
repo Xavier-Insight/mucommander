@@ -121,7 +121,7 @@ public abstract class AbstractArchiveEntryFile extends AbstractFile {
         // Replace all occurrences of the entry's separator by the archive file's separator, only if the separator is
         // not "/" (i.e. the entry path separator).
         String separator = getSeparator();
-        if(!separator.equals("/"))
+        if(!"/".equals(separator))
             path = path.replace("/", separator);
 
         return path;

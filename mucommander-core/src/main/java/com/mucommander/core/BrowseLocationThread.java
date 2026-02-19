@@ -146,7 +146,7 @@ public class BrowseLocationThread extends ChangeFolderThread {
      */
     private boolean followCanonicalPath(AbstractFile file) {
         return (MuConfigurations.getPreferences().getVariable(MuPreference.CD_FOLLOWS_SYMLINKS, MuPreferences.DEFAULT_CD_FOLLOWS_SYMLINKS)
-                || file.getURL().getScheme().equals(FileProtocols.HTTP))
+                || FileProtocols.HTTP.equals(file.getURL().getScheme()))
                 && !file.getAbsolutePath(false).equals(file.getCanonicalPath(false));
     }
 
@@ -555,7 +555,7 @@ public class BrowseLocationThread extends ChangeFolderThread {
         boolean sftpWithPrivateKey = false;
         CredentialsMapping[] matchingCredentials = CredentialsManager.getMatchingCredentials(this.folderURL);
         for (int i = 0; i < matchingCredentials.length; i++) {
-            boolean isSftp = matchingCredentials[i].getRealm().getScheme().equals(FileProtocols.SFTP);
+            boolean isSftp = FileProtocols.SFTP.equals(matchingCredentials[i].getRealm().getScheme());
             boolean hasPrivateKey = matchingCredentials[i].getRealm().getProperty("privateKeyPath") != null;
             sftpWithPrivateKey = isSftp && hasPrivateKey;
             if (sftpWithPrivateKey) {
