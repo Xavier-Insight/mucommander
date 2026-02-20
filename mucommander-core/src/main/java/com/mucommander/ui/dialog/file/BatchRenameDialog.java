@@ -423,9 +423,7 @@ public class BatchRenameDialog extends FocusDialog implements ActionListener, Do
         }
 
         // uppercase/lowercase
-        newName = changeCase(newName, cbCase.getSelectedIndex());
-
-        return newName;
+        return changeCase(newName, cbCase.getSelectedIndex());
     }
     
     /**

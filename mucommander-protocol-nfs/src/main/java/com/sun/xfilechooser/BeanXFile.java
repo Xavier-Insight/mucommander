@@ -75,7 +75,7 @@ public class BeanXFile extends File {
 	String path = beanXF.getPath();
 
 	// For nfs URLs, if the url is nfs://<server_name>, path is ""
-	if (path == "")
+	if ("".equals(path))
 	    path = beanXF.getAbsolutePath();
 
 	return path;
@@ -87,11 +87,9 @@ public class BeanXFile extends File {
 
     public String getCanonicalPath() {
 	try {
-	    String path = beanXF.getCanonicalPath();
-	    return path;
+	    return beanXF.getCanonicalPath();
 	} catch (IOException e) {
-	    String path = beanXF.getAbsolutePath();
-	    return path;
+	    return beanXF.getAbsolutePath();
 	}
 
     }

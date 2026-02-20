@@ -92,10 +92,8 @@ public abstract class Connection extends Thread {
      * @returns null	If there is no cached connection
      */
     public static Connection getCache(String server, int port, String proto) {
-        Connection conn = (Connection) connections.get(
+        return (Connection) connections.get(
                 server + ":" + port + ":" + proto);
-
-        return conn;
     }
 
     /**

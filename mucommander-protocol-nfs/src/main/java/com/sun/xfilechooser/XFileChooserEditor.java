@@ -53,8 +53,7 @@ public class XFileChooserEditor extends PropertyEditorSupport {
      * @return String name of XFile object
      */
     public String getAsText() {
-	String pathName = ((XFile) getValue()).getAbsolutePath();
-	return pathName;
+	return ((XFile) getValue()).getAbsolutePath();
     }
 
     /**

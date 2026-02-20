@@ -149,7 +149,7 @@ public class OneDrivePanel extends ServerPanel implements ActionListener {
                     if (user != null) {
                         displayName.setText(user.displayName);
                         emailAddress.setText(user.userPrincipalName);
-                        accountAlias.setText(user.displayName.replaceAll(" ", "-"));
+                        accountAlias.setText(user.displayName.replace(" ", "-"));
                         setLoginPhase(LoginPhase.SIGN_IN, true);
                         accountAlias.requestFocus();
                         accountAlias.selectAll();

@@ -331,8 +331,7 @@ class XFileAccessor implements com.sun.xfile.XFileAccessor {
     public int read(byte[] b, int off, int len, long foff)
         throws IOException {
 
-        int c = nfs.read(b, off, len, foff);
-        return c;
+        return nfs.read(b, off, len, foff);
     }
 
 

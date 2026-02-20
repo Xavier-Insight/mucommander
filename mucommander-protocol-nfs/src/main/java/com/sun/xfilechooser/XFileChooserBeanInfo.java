@@ -96,13 +96,11 @@ public class XFileChooserBeanInfo extends SimpleBeanInfo {
     
     public java.awt.Image getIcon(int iconKind) {
 	if (iconKind == BeanInfo.ICON_COLOR_16x16) {
-	    java.awt.Image img = loadImage("images/422LOGO5_16x16.gif");
-	    return img;
+	    return loadImage("images/422LOGO5_16x16.gif");
 	}
 
 	if (iconKind == BeanInfo.ICON_MONO_32x32) {
-	    java.awt.Image img = loadImage("images/422LOGO5_32x32.gif");
-	    return img;
+	    return loadImage("images/422LOGO5_32x32.gif");
 	}
 	return null;
     }

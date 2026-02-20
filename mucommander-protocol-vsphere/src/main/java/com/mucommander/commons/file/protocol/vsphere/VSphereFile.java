@@ -340,10 +340,9 @@ public class VSphereFile extends ProtocolFile implements
 	private ManagedObjectReference getFileManager(VsphereConnHandler connHandler)
 			throws RemoteException, InvalidPropertyFaultMsg,
 			RuntimeFaultFaultMsg {
-		ManagedObjectReference fileManager = (ManagedObjectReference) connHandler
+		return (ManagedObjectReference) connHandler
 				.getClient().getProperties(guestOperationsManager,
 						"fileManager")[0];
-		return fileManager;
 	}
 
 	private void checkAttributues(VsphereConnHandler connHandler)
@@ -480,9 +479,8 @@ public class VSphereFile extends ProtocolFile implements
 
 		gc.setTime(new Date(lastModified));
 
-		XMLGregorianCalendar xmlTime = DatatypeFactory.newInstance()
+		return DatatypeFactory.newInstance()
 				.newXMLGregorianCalendar(gc);
-		return xmlTime;
 	}
 
 	@Override
@@ -918,9 +916,8 @@ public class VSphereFile extends ProtocolFile implements
 						remotePathName, gfa, fileSize, override);
 
 		// replace * with the address of the server. see vsphere docs.
-		fileUploadUrl = fileUploadUrl.replace("*", connHandler.getClient()
+		return fileUploadUrl.replace("*", connHandler.getClient()
 				.getServer());
-		return fileUploadUrl;
 	}
 
 	@Override
