@@ -297,7 +297,7 @@ public abstract class TransferDestinationDialog extends JobDialog implements Act
      */
     private void textUpdated() {
         synchronized(this) {
-            if(thread!=null && thread instanceof InitialPathRetriever) {
+            if(thread instanceof InitialPathRetriever) {
                 // Interrupt InitialPathRetriever
                 interruptOngoingThread();
 
