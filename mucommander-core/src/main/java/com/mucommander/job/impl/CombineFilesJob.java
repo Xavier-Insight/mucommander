@@ -158,39 +158,20 @@ public class CombineFilesJob extends AbstractCopyJob {
             );
             return;
         }
-        InputStream crcIn = null;
-        try {
-            crcIn = crcFile.getInputStream();
-            BufferedReader crcReader = new BufferedReader(new InputStreamReader(crcIn));
-            String crcLine = crcReader.readLine();
-            crcLine = crcLine.substring(crcLine.lastIndexOf(' ') + 1).trim();
-            String crcDest = destFile.calculateChecksum("CRC32");
-            if (!crcLine.equals(crcDest)) {
-                showErrorDialog(errorDialogTitle,
-                        Translator.get("combine_files_job.crc_check_failed", crcDest, crcLine),
-                        Arrays.asList(FileJobAction.OK)
-                );
-            } else {
-                showErrorDialog(Translator.get("combine_files_dialog.error_title"),
-                        Translator.get("combine_files_job.crc_ok"),
-                        Arrays.asList(FileJobAction.OK)
-                );
-            }
-        } catch (Exception e) {
-            LOGGER.debug("Caught exception", e);
-            showErrorDialog(errorDialogTitle,
-                    Translator.get("combine_files_job.crc_read_error"),
-                    Arrays.asList(FileJobAction.CANCEL)
-            );
-        } finally {
-            if (crcIn != null) {
-                try {
-                    crcIn.close();
-                } catch (IOException e) {
-                    LOGGER.debug("Caught exception", e);
-                }
-            }
-        }
+		try (InputStream crcIn = crcFile.getInputStream()) {
+			BufferedReader crcReader = new BufferedReader(new InputStreamReader(crcIn));
+			String crcLine = crcReader.readLine();
+			crcLine = crcLine.substring(crcLine.lastIndexOf(' ') + 1).trim();
+			String crcDest = destFile.calculateChecksum("CRC32");
+			if (!crcLine.equals(crcDest)) {
+				showErrorDialog(errorDialogTitle, Translator.get("combine_files_job.crc_check_failed", crcDest, crcLine), Arrays.asList(FileJobAction.OK));
+			} else {
+				showErrorDialog(Translator.get("combine_files_dialog.error_title"), Translator.get("combine_files_job.crc_ok"), Arrays.asList(FileJobAction.OK));
+			}
+		} catch (Exception e) {
+			LOGGER.debug("Caught exception", e);
+			showErrorDialog(errorDialogTitle, Translator.get("combine_files_job.crc_read_error"), Arrays.asList(FileJobAction.CANCEL));
+		}
     }
 
     /**

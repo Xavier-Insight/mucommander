@@ -294,14 +294,10 @@ public abstract class AbstractFileTest {
      * @throws NoSuchAlgorithmException should not happen
      */
     protected String calculateMd5(AbstractFile file) throws IOException, NoSuchAlgorithmException {
-        InputStream in = file.getInputStream();
 
-        try {
-            return calculateMd5(in);
-        }
-        finally {
-            in.close();
-        }
+		try (InputStream in = file.getInputStream()) {
+			return calculateMd5(in);
+		}
     }
 
     /**

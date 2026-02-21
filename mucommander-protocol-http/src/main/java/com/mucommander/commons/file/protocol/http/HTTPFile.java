@@ -758,23 +758,18 @@ public class HTTPFile extends ProtocolFile {
             checkHTTPResponse(conn);
 
             // Read up to blockLen bytes
-            InputStream in = conn.getInputStream();
-            try {
-                int totalRead = 0;
-                int read;
-                while(totalRead<blockLen) {
-                    read = in.read(block, totalRead, blockLen-totalRead);
-                    if(read==-1)
-                        break;
+			try (InputStream in = conn.getInputStream()) {
+				int totalRead = 0;
+				int read;
+				while (totalRead < blockLen) {
+					read = in.read(block, totalRead, blockLen - totalRead);
+					if (read == -1) break;
 
-                    totalRead += read;
-                }
+					totalRead += read;
+				}
 
-                return totalRead;
-            }
-            finally {
-                in.close();
-            }
+				return totalRead;
+			}
         }
 
         public long getLength() throws IOException {

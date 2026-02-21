@@ -1116,14 +1116,10 @@ public abstract class AbstractFile implements FileAttributes {
      * or not implemented by the underlying filesystem.
      */
     public final String calculateChecksum(MessageDigest messageDigest) throws IOException, UnsupportedFileOperationException {
-        InputStream in = getInputStream();
 
-        try {
-            return calculateChecksum(in, messageDigest);
-        }
-        finally {
-            in.close();
-        }
+		try (InputStream in = getInputStream()) {
+			return calculateChecksum(in, messageDigest);
+		}
     }
 
 

@@ -436,19 +436,15 @@ public class muCommander {
         URL url = muCommander.class.getClassLoader().getResource(
                 "META-INF/services/org.osgi.framework.launch.FrameworkFactory");
         if (url != null) {
-            BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
-            try {
-                for (String s = br.readLine(); s != null; s = br.readLine()) {
-                    s = s.trim();
-                    // Try to load first non-empty, non-commented line.
-                    if ((s.length() > 0) && (s.charAt(0) != '#')) {
-                        return (FrameworkFactory) Class.forName(s).getDeclaredConstructor().newInstance();
-                    }
-                }
-            } finally {
-                if (br != null)
-                    br.close();
-            }
+			try (BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()))) {
+				for (String s = br.readLine(); s != null; s = br.readLine()) {
+					s = s.trim();
+					// Try to load first non-empty, non-commented line.
+					if ((s.length() > 0) && (s.charAt(0) != '#')) {
+						return (FrameworkFactory) Class.forName(s).getDeclaredConstructor().newInstance();
+					}
+				}
+			}
         }
 
         throw new Exception("Could not find framework factory.");
