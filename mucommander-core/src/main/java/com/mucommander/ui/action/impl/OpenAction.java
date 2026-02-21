@@ -124,12 +124,10 @@ public class OpenAction extends MuAction {
                     tabs.add(bookmarkURL);
                 else
                     destination.tryChangeCurrentFolder(bookmarkURL);
-            } else {
-                if (tabs.getCurrentTab().isLocked())
-                    tabs.add(resolvedFile);
-                else
-                    destination.tryChangeCurrentFolder(resolvedFile);
-            }
+            } else if (tabs.getCurrentTab().isLocked())
+                tabs.add(resolvedFile);
+            else
+                destination.tryChangeCurrentFolder(resolvedFile);
         }
 
         // Opens local files using their native associations.

@@ -172,10 +172,8 @@ public class ResourceLoader {
                     if(getJarFilePath(resourceURL).equals(rootPackagePath))
                         return resourceURL;
                 }
-                else {
-                    if(normalizeUrlPath(getDecodedURLPath(resourceURL)).equals(resourcePath))
-                        return resourceURL;
-                }
+                else if(normalizeUrlPath(getDecodedURLPath(resourceURL)).equals(resourcePath))
+                    return resourceURL;
             }
         }
         catch(IOException e) {

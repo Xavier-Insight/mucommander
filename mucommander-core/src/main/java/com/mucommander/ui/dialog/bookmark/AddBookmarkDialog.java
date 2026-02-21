@@ -113,10 +113,8 @@ public class AddBookmarkDialog extends FocusDialog implements ActionListener, Do
             if(addButton.isEnabled())
                 addButton.setEnabled(false);
         }
-        else {
-            if(!addButton.isEnabled())
-                addButton.setEnabled(true);
-        }
+        else if(!addButton.isEnabled())
+            addButton.setEnabled(true);
     }
 	
 	

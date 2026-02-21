@@ -368,11 +368,9 @@ public class WindowManager implements WindowListener, ConfigurationListener {
             if(nbFrames==1) {
                 mainFrames.get(0).updateWindowTitle();
             }
-            else {
-                if(frameIndex!=-1) {
-                    for(int i=frameIndex; i<nbFrames; i++)
-                        mainFrames.get(i).updateWindowTitle();
-                }
+            else if(frameIndex!=-1) {
+                for(int i=frameIndex; i<nbFrames; i++)
+                    mainFrames.get(i).updateWindowTitle();
             }
         }
 

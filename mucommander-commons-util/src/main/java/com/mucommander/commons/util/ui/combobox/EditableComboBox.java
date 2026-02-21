@@ -190,17 +190,15 @@ public class EditableComboBox extends SaneComboBox {
                     }
                 }
                 // Combo popup menu is not visible, these events really belong to the text field
-                else {
-                    if(keyCode==KeyEvent.VK_ENTER) {
-                        // Notify listeners that the text field has been validated
-                        fireComboFieldValidated();
-                        // /!\ Consume the event so to prevent JComboBox from firing an ActionEvent (default JComboBox behavior)
-                        keyEvent.consume();
-                    }
-                    else if(keyCode==KeyEvent.VK_ESCAPE) {
-                        // Notify listeners that the text field has been cancelled
-                        fireComboFieldCancelled();
-                    }
+                else if(keyCode==KeyEvent.VK_ENTER) {
+                    // Notify listeners that the text field has been validated
+                    fireComboFieldValidated();
+                    // /!\ Consume the event so to prevent JComboBox from firing an ActionEvent (default JComboBox behavior)
+                    keyEvent.consume();
+                }
+                else if(keyCode==KeyEvent.VK_ESCAPE) {
+                    // Notify listeners that the text field has been cancelled
+                    fireComboFieldCancelled();
                 }
             }
         });

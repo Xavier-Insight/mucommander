@@ -96,10 +96,8 @@ public class AdbFile extends ProtocolFile {
                 }
             }
             closeConnection();
-        } else {
-            if (remoteFile.isDirectory()) {
-                rebuildChildrenList(url);
-            }
+        } else if (remoteFile.isDirectory()) {
+            rebuildChildrenList(url);
         }
         if (rootFolder == null) {
             rootFolder = "/";

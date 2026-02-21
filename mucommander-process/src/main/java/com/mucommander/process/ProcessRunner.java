@@ -85,20 +85,19 @@ public class ProcessRunner {
 		// If currentDirectory is null, use the VM's current directory.
 		if (currentDirectory == null) {
 			currentDirectory = FileFactory.getFile(System.getProperty("user.dir"), true);
-		} else {
-			// If currentDirectory is not on a local filesytem, use the user's home.
-			if (!currentDirectory.hasAncestor(LocalFile.class)) {
-				currentDirectory = FileFactory.getFile(System.getProperty("user.home"), true);
-			}
-			// If currentDirectory is not a directory (e.g. an archive entry)
-			else {
-				while (currentDirectory != null && !currentDirectory.isDirectory())
-					currentDirectory = currentDirectory.getParent();
+		}
+		// If currentDirectory is not on a local filesytem, use the user's home.
+		else if (!currentDirectory.hasAncestor(LocalFile.class)) {
+			currentDirectory = FileFactory.getFile(System.getProperty("user.home"), true);
+		}
+		// If currentDirectory is not a directory (e.g. an archive entry)
+		else {
+			while (currentDirectory != null && !currentDirectory.isDirectory())
+				currentDirectory = currentDirectory.getParent();
 
-				// This shouldn't normally happen
-				if (currentDirectory == null)
-					currentDirectory = FileFactory.getFile(System.getProperty("user.dir"), true);
-			}
+			// This shouldn't normally happen
+			if (currentDirectory == null)
+				currentDirectory = FileFactory.getFile(System.getProperty("user.dir"), true);
 		}
 
 		// // Register a debug process listener.

@@ -334,12 +334,12 @@ class Nfs3 extends Nfs {
         if (name == null) { 
 		pathname = this.name;
 		name = this.name;
-        } else { /* Single component case  */
-            if (this.name == null)
-                pathname = name;
-            else
-                pathname = this.name + "/" + name;
         }
+        /* Single component case  */
+        else if (this.name == null)
+            pathname = name;
+        else
+            pathname = this.name + "/" + name;
 
         /*
          * First check the cache to see

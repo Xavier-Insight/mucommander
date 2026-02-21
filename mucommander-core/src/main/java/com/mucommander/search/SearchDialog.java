@@ -367,10 +367,8 @@ public class SearchDialog extends FocusDialog implements ActionListener, Documen
             if (searchButton.isEnabled()) {
                 searchButton.setEnabled(false);
             }
-        } else {
-            if (!searchButton.isEnabled()) {
-                searchButton.setEnabled(true);
-            }
+        } else if (!searchButton.isEnabled()) {
+            searchButton.setEnabled(true);
         }
     }
 

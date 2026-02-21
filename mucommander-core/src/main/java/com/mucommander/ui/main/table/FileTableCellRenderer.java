@@ -177,12 +177,10 @@ public class FileTableCellRenderer implements TableCellRenderer, ThemeListener {
         boolean matches;
         if(!table.hasFocus())
             matches = true;
-        else {
-            if(search.isActive())
-                matches = search.matches(this.table.getFileNameAtRow(rowIndex));
-            else
-                matches = true;
-        }
+        else if(search.isActive())
+            matches = search.matches(this.table.getFileNameAtRow(rowIndex));
+        else
+            matches = true;
 
         // Retrieves the various indexes of the colors to apply.
         // Selection only applies when the table is the active one

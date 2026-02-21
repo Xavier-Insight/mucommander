@@ -149,12 +149,10 @@ class XFurl {
                 } else if ("..".equals(component)) {
                     int q = bpath.lastIndexOf("/");
                     bpath = q < 0 ? "" : bpath.substring(0, q);
-                } else {
-                    if ("".equals(bpath))
-                        bpath = component;
-                    else
-                        bpath += "/" + component;
-                }
+                } else if ("".equals(bpath))
+                    bpath = component;
+                else
+                    bpath += "/" + component;
                 p1 = p2 + 1;
             }
             path = bpath;

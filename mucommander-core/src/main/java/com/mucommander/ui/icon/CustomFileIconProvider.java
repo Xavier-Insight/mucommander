@@ -218,23 +218,21 @@ public class CustomFileIconProvider implements FileIconProvider {
             icon = IconManager.getIcon(IconManager.FILE_ICON_SET, ARCHIVE_ICON_NAME);
         }
         // Regular file icon
+        else // Determine if the file's extension has an associated icon
+        if(fileExtension==null)
+            // File has no extension, use default file icon
+            icon = IconManager.getIcon(IconManager.FILE_ICON_SET, FILE_ICON_NAME);
         else {
-            // Determine if the file's extension has an associated icon
-            if(fileExtension==null)
-                // File has no extension, use default file icon
+            // Compare extension against lower-cased extensions
+            String iconName = extensionMap.get(fileExtension.toLowerCase());
+            if(iconName==null)	// No icon associated to extension, use default file icon
                 icon = IconManager.getIcon(IconManager.FILE_ICON_SET, FILE_ICON_NAME);
             else {
-                // Compare extension against lower-cased extensions
-                String iconName = extensionMap.get(fileExtension.toLowerCase());
-                if(iconName==null)	// No icon associated to extension, use default file icon
-                    icon = IconManager.getIcon(IconManager.FILE_ICON_SET, FILE_ICON_NAME);
-                else {
-                    // Retrieves the cached (or freshly loaded if not in cache already) ImageIcon instance corresponding to the icon's name
-                    icon = IconManager.getIcon(IconManager.FILE_ICON_SET, iconName);
-                    // Returned IconImage should never be null, but if it is (icon file missing), return default file icon
-                    if(icon==null)
-                        return IconManager.getIcon(IconManager.FILE_ICON_SET, FILE_ICON_NAME);
-                }
+                // Retrieves the cached (or freshly loaded if not in cache already) ImageIcon instance corresponding to the icon's name
+                icon = IconManager.getIcon(IconManager.FILE_ICON_SET, iconName);
+                // Returned IconImage should never be null, but if it is (icon file missing), return default file icon
+                if(icon==null)
+                    return IconManager.getIcon(IconManager.FILE_ICON_SET, FILE_ICON_NAME);
             }
         }
 

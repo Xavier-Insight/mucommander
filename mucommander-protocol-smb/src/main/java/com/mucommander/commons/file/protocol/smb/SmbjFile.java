@@ -180,14 +180,13 @@ public class SmbjFile extends ProtocolFile implements ConnectionHandlerFactory {
                         // New directory being created
                         return false;
                     }
+                }
+                // Actual file
+                else if (isDirectory()) {
+                    return true;
                 } else {
-                    // Actual file
-                    if (isDirectory()) {
+                    try (File f = openFileForRead(c)) {
                         return true;
-                    } else {
-                        try (File f = openFileForRead(c)) {
-                            return true;
-                        }
                     }
                 }
             } catch (Exception e) {

@@ -111,42 +111,40 @@ public class AssociationReader extends DefaultHandler implements AssociationsXml
                     builder.startAssociation(buffer);
                 }
             }
-            else {
-                if(ELEMENT_MASK.equals(qName)) {
-                    String caseSensitive;
+            else if(ELEMENT_MASK.equals(qName)) {
+                String caseSensitive;
 
-                    if((buffer = attributes.getValue(ATTRIBUTE_VALUE)) == null)
-                        return;
-                    if((caseSensitive = attributes.getValue(ATTRIBUTE_CASE_SENSITIVE)) != null)
-                        builder.setMask(buffer, VALUE_TRUE.equals(caseSensitive));
-                    else
-                        builder.setMask(buffer, true);
-                }
-                else if(ELEMENT_IS_HIDDEN.equals(qName)) {
-                    if((buffer = attributes.getValue(ATTRIBUTE_VALUE)) == null)
-                        return;
-                    builder.setIsHidden(VALUE_TRUE.equals(buffer));
-                }
-                else if(ELEMENT_IS_SYMLINK.equals(qName)) {
-                    if((buffer = attributes.getValue(ATTRIBUTE_VALUE)) == null)
-                        return;
-                    builder.setIsSymlink(VALUE_TRUE.equals(buffer));
-                }
-                else if(ELEMENT_IS_READABLE.equals(qName)) {
-                    if((buffer = attributes.getValue(ATTRIBUTE_VALUE)) == null)
-                        return;
-                    builder.setIsReadable(VALUE_TRUE.equals(buffer));
-                }
-                else if(ELEMENT_IS_WRITABLE.equals(qName)) {
-                    if((buffer = attributes.getValue(ATTRIBUTE_VALUE)) == null)
-                        return;
-                    builder.setIsWritable(VALUE_TRUE.equals(buffer));
-                }
-                else if(ELEMENT_IS_EXECUTABLE.equals(qName)) {
-                    if((buffer = attributes.getValue(ATTRIBUTE_VALUE)) == null)
-                        return;
-                    builder.setIsExecutable(VALUE_TRUE.equals(buffer));
-                }
+                if((buffer = attributes.getValue(ATTRIBUTE_VALUE)) == null)
+                    return;
+                if((caseSensitive = attributes.getValue(ATTRIBUTE_CASE_SENSITIVE)) != null)
+                    builder.setMask(buffer, VALUE_TRUE.equals(caseSensitive));
+                else
+                    builder.setMask(buffer, true);
+            }
+            else if(ELEMENT_IS_HIDDEN.equals(qName)) {
+                if((buffer = attributes.getValue(ATTRIBUTE_VALUE)) == null)
+                    return;
+                builder.setIsHidden(VALUE_TRUE.equals(buffer));
+            }
+            else if(ELEMENT_IS_SYMLINK.equals(qName)) {
+                if((buffer = attributes.getValue(ATTRIBUTE_VALUE)) == null)
+                    return;
+                builder.setIsSymlink(VALUE_TRUE.equals(buffer));
+            }
+            else if(ELEMENT_IS_READABLE.equals(qName)) {
+                if((buffer = attributes.getValue(ATTRIBUTE_VALUE)) == null)
+                    return;
+                builder.setIsReadable(VALUE_TRUE.equals(buffer));
+            }
+            else if(ELEMENT_IS_WRITABLE.equals(qName)) {
+                if((buffer = attributes.getValue(ATTRIBUTE_VALUE)) == null)
+                    return;
+                builder.setIsWritable(VALUE_TRUE.equals(buffer));
+            }
+            else if(ELEMENT_IS_EXECUTABLE.equals(qName)) {
+                if((buffer = attributes.getValue(ATTRIBUTE_VALUE)) == null)
+                    return;
+                builder.setIsExecutable(VALUE_TRUE.equals(buffer));
             }
         }
         catch(CommandException e) {throw new SAXException(e);}

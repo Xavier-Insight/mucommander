@@ -207,11 +207,9 @@ import jcifs.smb.SmbRandomAccessFile;
                     file = createSmbFile(fileURL);
                 }
             }
-            else {
-                if(endsWithSeparator) {
-                    fileURL.setPath(removeTrailingSeparator(path));
-                    file = createSmbFile(fileURL);
-                }
+            else if(endsWithSeparator) {
+                fileURL.setPath(removeTrailingSeparator(path));
+                file = createSmbFile(fileURL);
             }
         }
         catch(MalformedURLException e) {

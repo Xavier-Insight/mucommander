@@ -542,14 +542,12 @@ public class BatchRenameDialog extends FocusDialog implements ActionListener, Do
                 if (oldName.charAt(i) == ' ') {
                     newNameCase.append(' ');
                     afterSpace = true;
+                } else if (afterSpace) {
+                    newNameCase.append(Character.toUpperCase(oldName
+                            .charAt(i)));
+                    afterSpace = false;
                 } else {
-                    if (afterSpace) {
-                        newNameCase.append(Character.toUpperCase(oldName
-                                .charAt(i)));
-                        afterSpace = false;
-                    } else {
-                        newNameCase.append(oldName.charAt(i));
-                    }
+                    newNameCase.append(oldName.charAt(i));
                 }
             }
             newName = newNameCase.toString();

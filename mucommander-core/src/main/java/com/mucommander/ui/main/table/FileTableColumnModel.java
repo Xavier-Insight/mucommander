@@ -100,10 +100,8 @@ public class FileTableColumnModel implements TableColumnModel, PropertyChangeLis
             if(c == Column.NAME) {
                 enabled[columnIndex] = true;
             }
-            else {
-                if(enabled[columnIndex] = conf.isEnabled(c))
-                    countCache++;
-            }
+            else if(enabled[columnIndex] = conf.isEnabled(c))
+                countCache++;
             column.setMinWidth(c.getMinimumColumnWidth());
 
             // Init visibility state to enabled state, FileTable will adjust the values for conditional columns later

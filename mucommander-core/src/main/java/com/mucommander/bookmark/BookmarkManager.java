@@ -362,12 +362,10 @@ public class BookmarkManager implements VectorChangeListener {
                 fireBookmarksChanged();
             }
         }
-        else {
-            // Remember pause start time
-            if(fireEvents) {
-                fireEvents = false;
-                lastEventPauseTime = System.currentTimeMillis();
-            }
+        else // Remember pause start time
+        if(fireEvents) {
+            fireEvents = false;
+            lastEventPauseTime = System.currentTimeMillis();
         }
     }
 

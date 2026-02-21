@@ -632,22 +632,20 @@ public abstract class Nfs {
 
                         bufferList[i] = null;		// release buffer
                         b.exit();
+                    }
+					/*
+					 * Have to rewrite.
+					 *
+					 * If flushing then do sync-writes because
+					 * we can't return until the data are safe.
+					 * Otherwise, we just fire off another async
+					 * write and have it committed later.
+					 */
+					else if (flushing) {
+                        b.startUnload(SYNC);
+                        b.waitUnloaded();
                     } else {
-
-			/*
-			 * Have to rewrite.
-			 *
-			 * If flushing then do sync-writes because
-			 * we can't return until the data are safe.
-			 * Otherwise, we just fire off another async
-			 * write and have it committed later.
-			 */
-                        if (flushing) {
-                            b.startUnload(SYNC);
-                            b.waitUnloaded();
-                        } else {
-                            b.startUnload(ASYNC);
-                        }
+                        b.startUnload(ASYNC);
                     }
                 }
             } // end for
