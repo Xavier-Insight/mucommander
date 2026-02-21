@@ -62,7 +62,6 @@ public class XFileChooserEditor extends PropertyEditorSupport {
      */
     public void setAsText(String text) throws IllegalArgumentException {
 	setValue(new XFile(text));
-	return;
     }
     
 }

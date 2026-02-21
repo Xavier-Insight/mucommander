@@ -78,7 +78,6 @@ public class DropboxFile extends ProtocolFile implements ConnectionHandlerFactor
 			FolderMetadata folder = (FolderMetadata) metadata;
 			dir = true;
 			id = folder.getId();
-			return;
 		}
 	}
 
