@@ -181,9 +181,8 @@ public class SendMailJob extends TransferFileJob {
 
         List<String> recipients = new Vector<String>();
         recipientString = splitRecipientString(recipientString, recipients);
-        int nbRecipients = recipients.size();
-        for (int i = 0; i < nbRecipients; i++)
-            readWriteLine("RCPT TO: <" + recipients.get(i) + ">");
+		for (String recipient : recipients)
+            readWriteLine("RCPT TO: <" + recipient + ">");
         readWriteLine("DATA");
         writeLine("MIME-Version: 1.0");
         writeLine("Subject: " + this.mailSubject);

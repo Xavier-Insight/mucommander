@@ -204,9 +204,8 @@ public class CommandBarDialog extends CustomizeDialog {
     
 	private Collection<ActionId> initCommandBarActionsList() {
 		ActionId[] commandBarActionIds = CommandBarAttributes.getActions();
-		int nbCommandBarActionIds = commandBarActionIds.length;
-		for (int i=0; i<nbCommandBarActionIds; ++i)
-			commandBarButtons.add(CommandBarButtonForDisplay.create(commandBarActionIds[i]));
+		for (ActionId commandBarActionId : commandBarActionIds)
+			commandBarButtons.add(CommandBarButtonForDisplay.create(commandBarActionId));
 		
 		commandBarButtonsList = new DynamicList<JButton>(commandBarButtons);
 		
@@ -312,9 +311,8 @@ public class CommandBarDialog extends CustomizeDialog {
 	
 	private Collection<ActionId> initCommandBarAlternateActionsList() {
 		ActionId[] commandBarActionIds = CommandBarAttributes.getAlternateActions();
-		int nbCommandBarActionIds = commandBarActionIds.length;
-		for (int i=0; i<nbCommandBarActionIds; ++i)
-			commandBarAlternateButtons.add(CommandBarButtonForDisplay.create(commandBarActionIds[i]));
+		for (ActionId commandBarActionId : commandBarActionIds)
+			commandBarAlternateButtons.add(CommandBarButtonForDisplay.create(commandBarActionId));
 		
 		commandBarAlternateButtonsList = new DynamicList<JButton>(commandBarAlternateButtons);
 		

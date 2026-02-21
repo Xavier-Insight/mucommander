@@ -292,22 +292,18 @@ public final class StringUtils {
             return null;
 
         StringBuilder sb = new StringBuilder();
-        int sLen = s.length;
-        boolean first = true;
+		boolean first = true;
         String el;
 
-        for(int i=0; i<sLen; i++) {
-            el = s[i];
-            if (isNullOrEmpty(el))
-                continue;
+		for (String string : s) {
+			el = string;
+			if (isNullOrEmpty(el)) continue;
 
-            if(first)
-                first = false;
-            else
-                sb.append(separator);
+			if (first) first = false;
+			else sb.append(separator);
 
-            sb.append(el);
-        }
+			sb.append(el);
+		}
 
         return sb.toString();
     }

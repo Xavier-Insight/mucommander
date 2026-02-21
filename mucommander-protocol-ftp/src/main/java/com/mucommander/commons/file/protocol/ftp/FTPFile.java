@@ -186,12 +186,10 @@ public class FTPFile extends ProtocolFile implements ConnectionHandlerFactory {
                 return null;
 
             // Find the file in the parent folder's contents
-            int nbFiles = files.length;
-            String wantedName = fileURL.getFilename();
-            for(int i=0; i<nbFiles; i++) {
-                if(files[i].getName().equalsIgnoreCase(wantedName))
-                    return files[i];
-            }
+			String wantedName = fileURL.getFilename();
+			for (org.apache.commons.net.ftp.FTPFile ftpFile : files) {
+				if (ftpFile.getName().equalsIgnoreCase(wantedName)) return ftpFile;
+			}
 
             // File doesn't exists
             return null;
@@ -577,25 +575,22 @@ public class FTPFile extends ProtocolFile implements ConnectionHandlerFactory {
         if(!parentPath.endsWith(SEPARATOR))
             parentPath += SEPARATOR;
 
-        for(int i=0; i<nbFiles; i++) {
-            if(files[i]==null)
-                continue;
+		for (org.apache.commons.net.ftp.FTPFile ftpFile : files) {
+			if (ftpFile == null) continue;
 
-            childName = files[i].getName();
-            if(".".equals(childName) || "..".equals(childName))
-                continue;
+			childName = ftpFile.getName();
+			if (".".equals(childName) || "..".equals(childName)) continue;
 
-            // Note: properties and credentials are cloned for every children's url
-            childURL = (FileURL)fileURL.clone();
-            childURL.setPath(parentPath+childName);
+			// Note: properties and credentials are cloned for every children's url
+			childURL = (FileURL) fileURL.clone();
+			childURL.setPath(parentPath + childName);
 
-            // Discard '.' and '..' files
-            if(".".equals(childName) || "..".equals(childName))
-                continue;
+			// Discard '.' and '..' files
+			if (".".equals(childName) || "..".equals(childName)) continue;
 
-            child = FileFactory.getFile(childURL, this, Collections.singletonMap("parentFtpFile", files[i]));
-            children[fileCount++] = child;
-        }
+			child = FileFactory.getFile(childURL, this, Collections.singletonMap("parentFtpFile", ftpFile));
+			children[fileCount++] = child;
+		}
 
         // Create new array of the exact file count
         if(fileCount<nbFiles) {

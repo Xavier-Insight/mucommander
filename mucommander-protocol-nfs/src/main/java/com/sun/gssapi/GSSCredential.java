@@ -175,9 +175,9 @@ public class GSSCredential {
      */
     public GSSCredential(GSSName aName, int lifetime, Oid [] mechs,
 	int usage) throws GSSException {
-        
-        for (int i = 0; i < mechs.length; i++)
-            add(aName, lifetime, lifetime, mechs[i], usage);
+
+		for (Oid mech : mechs)
+            add(aName, lifetime, lifetime, mech, usage);
     }
 
  
@@ -519,8 +519,7 @@ public class GSSCredential {
         sb.append("\nOver mechs:\t");
         try {
             Oid [] mechs = getMechs();
-            for (int i = 0; i < mechs.length; i++)
-                sb.append(mechs[i].toString() + " ");
+			for (Oid mech : mechs) sb.append(mech.toString() + " ");
             
             sb.append("\nFor principal:\t" + getGSSName().toString());
             sb.append("\nUsage:\t" + getUsage());

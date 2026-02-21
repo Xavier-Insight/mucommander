@@ -110,19 +110,18 @@ public class GSSManager {
          */
         Provider [] p = java.security.Security.getProviders();
         Vector aV = new Vector(5, 3);
-        
-        for (int i = 0; i < p.length; i++) {
-            String []mechs = MechInfo.getMechsForProvider(p[i]);
-            
-            if (mechs == null)
-                continue;
-                
-            for (int j=0; j < mechs.length; j++) {
-                try {
-                    addUniqueOid(aV, new Oid(mechs[j]));
-                } catch (GSSException e) {}
-            }
-        }
+
+		for (Provider provider : p) {
+			String[] mechs = MechInfo.getMechsForProvider(provider);
+
+			if (mechs == null) continue;
+
+			for (String mech : mechs) {
+				try {
+					addUniqueOid(aV, new Oid(mech));
+				} catch (GSSException e) {}
+			}
+		}
 
         if (aV.size() == 0)
             return null;
@@ -170,19 +169,17 @@ public class GSSManager {
     
         Provider []p = java.security.Security.getProviders();
         Vector v = new Vector(5,3);
-        
-        for (int i = 0; i < p.length; i++) {
-            MechInfo [] mechs = MechInfo.getInfoForAllMechs(p[i]);
-            
-            if (mechs == null)
-                continue;
-                
-            for (int j = 0; j < mechs.length; j++) {
-            
-                if (mechs[j].supportsName(nameType))
-                    addUniqueOid(v, mechs[j].getOid());
-            }
-        }
+
+		for (Provider provider : p) {
+			MechInfo[] mechs = MechInfo.getInfoForAllMechs(provider);
+
+			if (mechs == null) continue;
+
+			for (MechInfo mech : mechs) {
+
+				if (mech.supportsName(nameType)) addUniqueOid(v, mech.getOid());
+			}
+		}
         
         if (v.size() == 0)
             return null;
@@ -211,15 +208,14 @@ public class GSSManager {
         Provider []p = java.security.Security.getProviders();
         
         //check each provider
-        for (int i = 0; i < p.length; i++) {
-            String []mechs = MechInfo.getMechsForProvider(p[i]);
-            
-            if (mechs == null)
-                continue;
-                
-            m_defaultMech = new MechInfo(p[i], mechs[0]);
-            return m_defaultMech.getOid();
-        }
+		for (Provider provider : p) {
+			String[] mechs = MechInfo.getMechsForProvider(provider);
+
+			if (mechs == null) continue;
+
+			m_defaultMech = new MechInfo(provider, mechs[0]);
+			return m_defaultMech.getOid();
+		}
         
         throw new GSSException(GSSException.BAD_MECH);
     }
@@ -296,26 +292,25 @@ public class GSSManager {
         //need to search all providers
         Provider [] p = java.security.Security.getProviders();
         String mechString = oid.toString();
-        
-        for (int i=0; i < p.length; i++) {
-        
-            if (MechInfo.implementsMech(p[i], mechString)) {
 
-                try {
-                    aMech = new MechInfo(p[i], mechString);
-                    
-                    if (installMech)
-                        MechTable.putMechInfo(aMech);
-                        
-                    return aMech;
-                } catch (GSSException e) {
-                
-                    //skip over this provider, there might be
-                    //other good ones
-                    continue;
-                }
-            }
-        }
+		for (Provider provider : p) {
+
+			if (MechInfo.implementsMech(provider, mechString)) {
+
+				try {
+					aMech = new MechInfo(provider, mechString);
+
+					if (installMech) MechTable.putMechInfo(aMech);
+
+					return aMech;
+				} catch (GSSException e) {
+
+					//skip over this provider, there might be
+					//other good ones
+					continue;
+				}
+			}
+		}
         
         //this mechanism is not installed on the system
         throw new GSSException(GSSException.BAD_MECH);
@@ -330,14 +325,13 @@ public class GSSManager {
         Provider [] p = java.security.Security.getProviders();
         MechInfo [] mechs;
         boolean foundGSSProv = false;
-        
-        for (int i = 0; i < p.length; i++ ) {
-            mechs = MechInfo.getInfoForAllMechs(p[i]);
-            if (mechs == null)
-                continue;
-                
-            foundGSSProv = true;
-        }
+
+		for (Provider provider : p) {
+			mechs = MechInfo.getInfoForAllMechs(provider);
+			if (mechs == null) continue;
+
+			foundGSSProv = true;
+		}
     }
 
     //private class variable - default mechanism oid
@@ -400,11 +394,10 @@ class MechInfo {
      * @return true if name type is supported, false otherwise
      */
     boolean supportsName(Oid nameOid) {
-    
-        for (int i = 0; i < m_names.length; i++) {
-            if (m_names[i].equals(nameOid))
-                return true;
-        }
+
+		for (Oid mName : m_names) {
+			if (mName.equals(nameOid)) return true;
+		}
         return false;
     }
     
@@ -577,11 +570,10 @@ class MechInfo {
         
         if (mechs == null)
             return false;
-            
-        for (int i = 0; i < mechs.length; i++) {
-            if (mechs[i].equals(oid))
-                return true;
-        }
+
+		for (String mech : mechs) {
+			if (mech.equals(oid)) return true;
+		}
         
         return false;
     }
@@ -648,9 +640,8 @@ class MechInfo {
         else
             aBuf.append(_V510CA83.getInfo());
         aBuf.append("\nSupported Names:\t");
-        
-        for(int i = 0; i < m_names.length; i++)
-            aBuf.append(m_names[i].toString()).append(" ");
+
+		for (Oid mName : m_names) aBuf.append(mName.toString()).append(" ");
         
         aBuf.append("\nName Class:\t").append(_V2395ABD);
         aBuf.append("\nCred Class:\t").append(_V901D6C2);

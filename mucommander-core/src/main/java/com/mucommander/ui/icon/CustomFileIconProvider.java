@@ -143,13 +143,12 @@ public class CustomFileIconProvider implements FileIconProvider {
     private static void init() {
         // Map known file extensions to icon names
         extensionMap = new Hashtable<String, String>();
-        int nbIcons = ICON_EXTENSIONS.length;
-        for(int i=0; i<nbIcons; i++) {
-            int nbExtensions = ICON_EXTENSIONS[i].length;
-            String iconName = ICON_EXTENSIONS[i][0];
-            for(int j=1; j<nbExtensions; j++)
-                extensionMap.put(ICON_EXTENSIONS[i][j], iconName);
-        }
+		for (String[] iconExtension : ICON_EXTENSIONS) {
+			int    nbExtensions = iconExtension.length;
+			String iconName     = iconExtension[0];
+			for (int j = 1; j < nbExtensions; j++)
+				extensionMap.put(iconExtension[j], iconName);
+		}
 
         initialized = true;
     }

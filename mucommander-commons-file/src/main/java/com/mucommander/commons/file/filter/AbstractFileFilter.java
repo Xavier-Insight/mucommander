@@ -91,10 +91,8 @@ public abstract class AbstractFileFilter implements FileFilter {
     }
 
     public boolean match(AbstractFile[] files) {
-        int nbFiles = files.length;
-        for(int i=0; i<nbFiles; i++)
-            if(!match(files[i]))
-                return false;
+		for (AbstractFile file : files)
+			if (!match(file)) return false;
 
         return true;
     }
@@ -110,9 +108,8 @@ public abstract class AbstractFileFilter implements FileFilter {
 
     public boolean accept(AbstractFile[] files) {
         int nbFiles = files.length;
-        for(int i=0; i<nbFiles; i++)
-            if(!accept(files[i]))
-                return false;
+		for (AbstractFile file : files)
+			if (!accept(file)) return false;
 
         return true;
     }
@@ -128,9 +125,8 @@ public abstract class AbstractFileFilter implements FileFilter {
 
     public boolean reject(AbstractFile[] files) {
         int nbFiles = files.length;
-        for(int i=0; i<nbFiles; i++)
-            if(!reject(files[i]))
-                return false;
+		for (AbstractFile file : files)
+			if (!reject(file)) return false;
 
         return true;
     }

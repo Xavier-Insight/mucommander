@@ -72,9 +72,8 @@ public abstract class AutocompleterTextComponent {
 	
 	private void removeAllKeyListeners() {
 		KeyListener[] l = editableComboBox.getTextField().getKeyListeners();
-		int nbKeyListeners = l.length;
-		for (int i=0 ; i<nbKeyListeners; i++)
-			editableComboBox.getTextField().removeKeyListener(l[i]);
+		for (KeyListener keyListener : l)
+			editableComboBox.getTextField().removeKeyListener(keyListener);
 	}
 	
 	// Methods of the text component which are used by the auto-completion mechanism:	

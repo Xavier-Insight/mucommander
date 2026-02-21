@@ -74,11 +74,10 @@ public class ToolBarWriter extends ToolBarIO {
 				XmlAttributes rootElementAttributes = new XmlAttributes();
 				rootElementAttributes.add(VERSION_ATTRIBUTE, RuntimeConstants.VERSION);
 
-    			writer.startElement(ROOT_ELEMENT, rootElementAttributes, true);    			
-    			
-    			int nbToolBarActions = actionIds.length;
-    			for (int i=0; i<nbToolBarActions; ++i)
-    				write(actionIds[i]);
+    			writer.startElement(ROOT_ELEMENT, rootElementAttributes, true);
+
+				for (ActionId actionId : actionIds)
+					write(actionId);
 
     		} finally {
     			writer.endElement(ROOT_ELEMENT);

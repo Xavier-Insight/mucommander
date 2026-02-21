@@ -160,10 +160,9 @@ public class AutoProcessor
             // Get list of already installed bundles as a map.
             Map<String, Bundle> installedBundleMap = new HashMap<>();
             Bundle[] bundles = context.getBundles();
-            for (int i = 0; i < bundles.length; i++)
-            {
-                installedBundleMap.put(bundles[i].getLocation(), bundles[i]);
-            }
+			for (Bundle value : bundles) {
+				installedBundleMap.put(value.getLocation(), value);
+			}
 
             // Get the auto deploy directory.
             String autoDir = configMap.get(AUTO_DEPLOY_DIR_PROPERTY);

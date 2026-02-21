@@ -209,13 +209,12 @@ public class ToolBar extends JToolBar implements ConfigurationListener, MouseLis
         if (MuPreferences.TOOLBAR_ICON_SCALE.equals(var)) {
             scaleFactor = event.getFloatValue();
             Component[] components = getComponents();
-            int nbComponents = components.length;
 
-            for(int i=0; i<nbComponents; i++) {
-                if(components[i] instanceof JButton) {
-                    setButtonIcon((JButton)components[i]);
-                }
-            }
+			for (Component component : components) {
+				if (component instanceof JButton) {
+					setButtonIcon((JButton) component);
+				}
+			}
         }
     }
 
@@ -292,8 +291,8 @@ public class ToolBar extends JToolBar implements ConfigurationListener, MouseLis
 
             JPopupMenu popupMenu = new JPopupMenu();
             int historyLen = history.length;
-            for(int i=0; i<historyLen; i++)
-                popupMenu.add(new OpenLocationAction(mainFrame, new Hashtable<>(), history[i]));
+			for (FileURL fileURL : history)
+				popupMenu.add(new OpenLocationAction(mainFrame, new Hashtable<>(), fileURL));
 
             return popupMenu;
         }

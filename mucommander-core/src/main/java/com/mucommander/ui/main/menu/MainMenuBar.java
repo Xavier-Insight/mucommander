@@ -448,11 +448,10 @@ public class MainMenuBar extends JMenuBar implements ActionListener, MenuListene
             }
 
             AbstractFile[] volumes = LocalFile.getVolumes();
-            int nbFolders = volumes.length;
 
-            for (int i = 0; i < nbFolders; i++) {
-                goMenu.add(new OpenLocationAction(mainFrame, new Hashtable<>(), volumes[i]));
-            }
+			for (AbstractFile volume : volumes) {
+				goMenu.add(new OpenLocationAction(mainFrame, new Hashtable<>(), volume));
+			}
         } else if (source == bookmarksMenu) {
             // Remove any previous bookmarks menu items from menu
             // as bookmarks might have changed since menu was last selected

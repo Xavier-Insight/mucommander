@@ -161,11 +161,11 @@ public final class BonjourDirectory implements ServiceListener, ConfigurationLis
             String type = serviceInfo.getType();
             int nbServices = KNOWN_SERVICE_TYPES.length;
             // Looks for the file protocol corresponding to the service type
-            for (int i = 0; i < nbServices; i++) {
-                if(KNOWN_SERVICE_TYPES[i][0].equals(type)) {
-                    return new BonjourService(serviceInfo.getName(), FileURL.getFileURL(serviceInfo.getURL(KNOWN_SERVICE_TYPES[i][1])), serviceInfo.getQualifiedName());
-                }
-            }
+			for (String[] knownServiceType : KNOWN_SERVICE_TYPES) {
+				if (knownServiceType[0].equals(type)) {
+					return new BonjourService(serviceInfo.getName(), FileURL.getFileURL(serviceInfo.getURL(knownServiceType[1])), serviceInfo.getQualifiedName());
+				}
+			}
         } catch(MalformedURLException e) {
             // Null will be returned
         }
@@ -262,9 +262,9 @@ public final class BonjourDirectory implements ServiceListener, ConfigurationLis
 
             // Listens to service events for known service types
             int nbServices = KNOWN_SERVICE_TYPES.length;
-            for (int i=0; i<nbServices; i++) {
-                jmDNS.addServiceListener(KNOWN_SERVICE_TYPES[i][0], getInstance());
-            }
+			for (String[] knownServiceType : KNOWN_SERVICE_TYPES) {
+				jmDNS.addServiceListener(knownServiceType[0], getInstance());
+			}
         } catch(IOException e) {
             LOGGER.warn("Could not instantiate jmDNS, Bonjour not enabled", e);
         } finally {

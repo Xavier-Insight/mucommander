@@ -304,25 +304,24 @@ public class AuthDialog extends FocusDialog implements ActionListener, EditableC
 
             // Look for an existing matching CredentialsMapping instance to re-use the realm which may contain
             // connection properties.
-            int nbCredentials = credentialsMappings.length;
-            CredentialsMapping cm;
-            for(int i=0; i<nbCredentials; i++) {
-                cm = credentialsMappings[i];
-                if(cm.getCredentials().equals(enteredCredentials, true)) {  // Comparison must be password-sensitive
-                    // Create a new CredentialsMapping instance in case the 'isPersistent' flag has changed.
-                    // (original credentials may have originally been added as 'volatile' and then made persistent by
-                    // ticking the checkbox, or vice-versa)
+			CredentialsMapping cm;
+			for (CredentialsMapping credentialsMapping : credentialsMappings) {
+				cm = credentialsMapping;
+				if (cm.getCredentials().equals(enteredCredentials, true)) {  // Comparison must be password-sensitive
+					// Create a new CredentialsMapping instance in case the 'isPersistent' flag has changed.
+					// (original credentials may have originally been added as 'volatile' and then made persistent by
+					// ticking the checkbox, or vice-versa)
 
-                    // Copy the useLegacy property to make sure it persists
-                   var smbUseLegacyProperty = fileURL.getProperty(PROPERTY_SMB_USE_LEGACY);
-                    if (smbUseLegacyProperty != null) {
-                        cm.getRealm().setProperty(PROPERTY_SMB_USE_LEGACY, smbUseLegacyProperty);
-                    }
+					// Copy the useLegacy property to make sure it persists
+					var smbUseLegacyProperty = fileURL.getProperty(PROPERTY_SMB_USE_LEGACY);
+					if (smbUseLegacyProperty != null) {
+						cm.getRealm().setProperty(PROPERTY_SMB_USE_LEGACY, smbUseLegacyProperty);
+					}
 
-                    selectedCredentialsMapping = new CredentialsMapping(cm.getCredentials(), cm.getRealm(), isPersistent);
-                    break;
-                }
-            }
+					selectedCredentialsMapping = new CredentialsMapping(cm.getCredentials(), cm.getRealm(), isPersistent);
+					break;
+				}
+			}
         }
     }
 

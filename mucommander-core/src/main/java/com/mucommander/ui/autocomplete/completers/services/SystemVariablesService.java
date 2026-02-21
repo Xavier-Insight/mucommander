@@ -47,12 +47,11 @@ public class SystemVariablesService implements CompletionService {
 
     public String complete(String selectedCompletion) {
         String result = null;
-        int nbKeyNames = cachedKeyNames.length;
-        for (int i=0; i<nbKeyNames; i++)
-            if (cachedKeyNames[i].equalsIgnoreCase(selectedCompletion)) {
-                result = cachedKeyNames[i];
-                break;
-            }
+		for (String cachedKeyName : cachedKeyNames)
+			if (cachedKeyName.equalsIgnoreCase(selectedCompletion)) {
+				result = cachedKeyName;
+				break;
+			}
         return result;
     }
 }

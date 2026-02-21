@@ -713,12 +713,11 @@ public class MainFrame implements LocationListener {
 
         Window[] ownedWindows = getJFrame().getOwnedWindows();
 
-        int nbWindows = ownedWindows.length;
-        for (int i = 0; i < nbWindows; i++) {
-            if (ownedWindows[i].isActive()) {
-                return true;
-            }
-        }
+		for (Window ownedWindow : ownedWindows) {
+			if (ownedWindow.isActive()) {
+				return true;
+			}
+		}
 
         return false;
     }

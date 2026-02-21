@@ -52,14 +52,12 @@ public class ByteUtils {
     public static String toHexString(byte[] bytes) {
         StringBuffer sb = new StringBuffer();
 
-        int bytesLen = bytes.length;
-        String hexByte;
-        for(int i=0; i<bytesLen; i++) {
-            hexByte = Integer.toHexString(bytes[i] & 0xFF);
-            if(hexByte.length()==1)
-                sb.append('0');
-            sb.append(hexByte);
-        }
+		String hexByte;
+		for (byte aByte : bytes) {
+			hexByte = Integer.toHexString(aByte & 0xFF);
+			if (hexByte.length() == 1) sb.append('0');
+			sb.append(hexByte);
+		}
 
         return sb.toString();
     }

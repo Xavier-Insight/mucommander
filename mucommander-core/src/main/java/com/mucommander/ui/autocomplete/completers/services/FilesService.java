@@ -96,12 +96,11 @@ public abstract class FilesService implements CompletionService {
 
     public String complete(String selectedCompletion) {
         String result = null;
-        int nbCachedFileNames = cachedDirectoryFileNames.length;
-        for (int i=0; i < nbCachedFileNames; i++)
-            if (cachedDirectoryFileNames[i].equalsIgnoreCase(selectedCompletion)) {
-                result = cachedDirectoryName + cachedDirectoryFileNames[i];
-                break;
-            }
+		for (String cachedDirectoryFileName : cachedDirectoryFileNames)
+			if (cachedDirectoryFileName.equalsIgnoreCase(selectedCompletion)) {
+				result = cachedDirectoryName + cachedDirectoryFileName;
+				break;
+			}
         return result;
     }
 }

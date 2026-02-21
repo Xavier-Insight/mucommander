@@ -138,14 +138,12 @@ public class PreferredEncodingsDialog extends FocusDialog {
             @Override
             public void windowClosing(WindowEvent e) {
                 JCheckBox checkbox;
-                int nbCheckboxes = checkboxes.size();
-                java.util.List<String> preferredEncodings = new Vector<String>();
+				java.util.List<String> preferredEncodings = new Vector<String>();
 
-                for(int i=0; i<nbCheckboxes; i++) {
-                    checkbox = checkboxes.get(i);
-                    if(checkbox.isSelected())
-                        preferredEncodings.add(checkbox.getText());
-                }
+				for (JCheckBox jCheckBox : checkboxes) {
+					checkbox = jCheckBox;
+					if (checkbox.isSelected()) preferredEncodings.add(checkbox.getText());
+				}
 
                 EncodingPreferences.setPreferredEncodings(preferredEncodings);
             }
@@ -160,9 +158,9 @@ public class PreferredEncodingsDialog extends FocusDialog {
     protected void selectCheckboxes(java.util.List<String> selectedEncodings) {
         JCheckBox checkbox;
         int nbCheckboxes = checkboxes.size();
-        for(int i=0; i<nbCheckboxes; i++) {
-            checkbox = checkboxes.get(i);
-            checkbox.setSelected(selectedEncodings.contains(checkbox.getText()));
-        }
+		for (JCheckBox jCheckBox : checkboxes) {
+			checkbox = jCheckBox;
+			checkbox.setSelected(selectedEncodings.contains(checkbox.getText()));
+		}
     }
 }

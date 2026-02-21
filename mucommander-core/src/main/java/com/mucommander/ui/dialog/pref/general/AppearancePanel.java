@@ -843,16 +843,16 @@ class AppearancePanel extends PreferencesPanel implements ActionListener, Runnab
                     customLookAndFeels = new Vector<String>();
 
                 // Adds all new instances to the list of custom look&feels.
-                for (int i = 0; i < newLookAndFeels.size(); i++) {
-                    currentName = newLookAndFeels.get(i).getName();
-                    if (!customLookAndFeels.contains(currentName)) {
-                        customLookAndFeels.add(currentName);
-                        try {
-                            WindowManager.installLookAndFeel(currentName);
-                        } catch (Throwable e) {
-                        }
-                    }
-                }
+				for (Class<?> newLookAndFeel : newLookAndFeels) {
+					currentName = newLookAndFeel.getName();
+					if (!customLookAndFeels.contains(currentName)) {
+						customLookAndFeels.add(currentName);
+						try {
+							WindowManager.installLookAndFeel(currentName);
+						} catch (Throwable e) {
+						}
+					}
+				}
 
                 if (customLookAndFeels.isEmpty())
                     customLookAndFeels = null;

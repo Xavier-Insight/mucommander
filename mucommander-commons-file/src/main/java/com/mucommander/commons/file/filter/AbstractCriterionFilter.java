@@ -96,13 +96,11 @@ public abstract class AbstractCriterionFilter<C> extends AbstractFileFilter impl
      */
     public C[] filter(C[] values) {
         Vector<C> filteredValuesV = new Vector<C>();
-        int nbvalues = values.length;
-        C value;
-        for(int i=0; i<nbvalues; i++) {
-            value = values[i];
-            if(accept(value))
-                filteredValuesV.add(value);
-        }
+		C value;
+		for (C c : values) {
+			value = c;
+			if (accept(value)) filteredValuesV.add(value);
+		}
 
         C[] filteredValues = (C[]) new Object[filteredValuesV.size()];
         filteredValuesV.toArray(filteredValues);
@@ -118,9 +116,8 @@ public abstract class AbstractCriterionFilter<C> extends AbstractFileFilter impl
      */
     public boolean match(C[] values) {
         int nbFiles = values.length;
-        for(int i=0; i<nbFiles; i++)
-            if(!match(values[i]))
-                return false;
+		for (C value : values)
+			if (!match(value)) return false;
 
         return true;
     }
@@ -134,9 +131,8 @@ public abstract class AbstractCriterionFilter<C> extends AbstractFileFilter impl
      */
     public boolean accept(C[] values) {
         int nbFiles = values.length;
-        for(int i=0; i<nbFiles; i++)
-            if(!accept(values[i]))
-                return false;
+		for (C value : values)
+			if (!accept(value)) return false;
 
         return true;
     }
@@ -150,9 +146,8 @@ public abstract class AbstractCriterionFilter<C> extends AbstractFileFilter impl
      */
     public boolean reject(C[] values) {
         int nbFiles = values.length;
-        for(int i=0; i<nbFiles; i++)
-            if(!reject(values[i]))
-                return false;
+		for (C value : values)
+			if (!reject(value)) return false;
 
         return true;
     }

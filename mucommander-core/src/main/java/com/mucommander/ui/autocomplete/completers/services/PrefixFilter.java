@@ -58,12 +58,9 @@ public class PrefixFilter {
      */
     public Vector<String> filter(String[] strings) {
         Vector<String> result = new Vector<String>();
-        int nbString = strings.length;
-        for (int i=0; i<nbString; i++) {
-            String stringI = strings[i];
-            if (accept(stringI))
-                result.add(stringI);
-        }
+		for (String stringI : strings) {
+			if (accept(stringI)) result.add(stringI);
+		}
         return result;
     }
 
