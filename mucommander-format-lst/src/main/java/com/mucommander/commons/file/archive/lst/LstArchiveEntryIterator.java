@@ -86,7 +86,7 @@ class LstArchiveEntryIterator implements ArchiveEntryIterator {
 
             String name = st.nextToken().replace('\\', '/');
             long size = Long.parseLong(st.nextToken());
-            long date = lstDateFormat.parse((st.nextToken()+" "+st.nextToken())).getTime();
+            long date = lstDateFormat.parse(st.nextToken()+" "+st.nextToken()).getTime();
 
             String path;
             boolean isDirectory;

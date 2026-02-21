@@ -109,7 +109,7 @@ public class ClonedFileTableTabFactory implements TabFactory<FileTableTab, FileT
 		@Override
 		public boolean equals(Object obj) {
 			if (obj instanceof FileTableTab) {
-				FileTableTab other = ((FileTableTab) obj);
+				FileTableTab other = (FileTableTab) obj;
 				return location.equals(other.getLocation()) &&
 					   locked == ((FileTableTab) obj).isLocked();
 			}

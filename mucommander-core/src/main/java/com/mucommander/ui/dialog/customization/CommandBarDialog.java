@@ -130,7 +130,7 @@ public class CommandBarDialog extends CustomizeDialog {
 		ActionId[] newAlternativeActionIds = new ActionId[nbNewAlternativeActions];
 		for (int i=0; i<nbNewAlternativeActions; ++i) {
 			Object button = commandBarAlternateButtons.get(i);
-			newAlternativeActionIds[i] = (button != null) ? 
+			newAlternativeActionIds[i] = button != null ? 
 										((CommandBarButtonForDisplay) button).getActionId() : null;
 		}
 		

@@ -272,7 +272,7 @@ public class FileTable extends JTable implements MouseListener, MouseMotionListe
     }
 
     public String getFileNameAtRow(int index) {
-    	return (index==0 && tableModel.hasParentFolder()) ? ".." : tableModel.getFileAtRow(index).getName();
+    	return index==0 && tableModel.hasParentFolder() ? ".." : tableModel.getFileAtRow(index).getName();
     }
 
     /**

@@ -192,7 +192,7 @@ public class ChangePermissionsDialog extends JobDialog
                 permCheckBox = permCheckBoxes[a.toInt()][p.toInt()];
 
                 if(permCheckBox.isSelected())
-                    perms |= (p.toInt()<<a.toInt()*3);
+                    perms |= p.toInt()<<a.toInt()*3;
             }
         }
 

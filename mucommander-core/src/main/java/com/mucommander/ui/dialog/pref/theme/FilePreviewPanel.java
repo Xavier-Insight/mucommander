@@ -196,7 +196,7 @@ class FilePreviewPanel extends JScrollPane implements PropertyChangeListener {
             rowCount = getModel().getRowCount();
             width    = 0;
             for(int i = 0; i < rowCount; i++)
-                width = Math.max(width, fm.stringWidth(((String)(getModel().getValueAt(i, 1)))) + 2 * CellLabel.CELL_BORDER_WIDTH);
+                width = Math.max(width, fm.stringWidth((String)(getModel().getValueAt(i, 1))) + 2 * CellLabel.CELL_BORDER_WIDTH);
             return width;
         }
 
@@ -360,14 +360,14 @@ class FilePreviewPanel extends JScrollPane implements PropertyChangeListener {
                 if(isSelected)
                     currentLabel.setBackground(FilePreviewPanel.this.data.getColor(ThemeData.FILE_TABLE_SELECTED_BACKGROUND_COLOR));
                 else
-                    currentLabel.setBackground(FilePreviewPanel.this.data.getColor((row % 2 == 0) ? ThemeData.FILE_TABLE_BACKGROUND_COLOR :
+                    currentLabel.setBackground(FilePreviewPanel.this.data.getColor(row % 2 == 0 ? ThemeData.FILE_TABLE_BACKGROUND_COLOR :
                                                                                    ThemeData.FILE_TABLE_ALTERNATE_BACKGROUND_COLOR));
             }
             else {
                 if(isSelected)
                     currentLabel.setBackground(FilePreviewPanel.this.data.getColor(ThemeData.FILE_TABLE_INACTIVE_SELECTED_BACKGROUND_COLOR));
                 else
-                    currentLabel.setBackground(FilePreviewPanel.this.data.getColor((row % 2 == 0) ? ThemeData.FILE_TABLE_INACTIVE_BACKGROUND_COLOR :
+                    currentLabel.setBackground(FilePreviewPanel.this.data.getColor(row % 2 == 0 ? ThemeData.FILE_TABLE_INACTIVE_BACKGROUND_COLOR :
                                                                                    ThemeData.FILE_TABLE_INACTIVE_ALTERNATE_BACKGROUND_COLOR));
             }
 

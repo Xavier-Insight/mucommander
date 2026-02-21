@@ -153,7 +153,7 @@ public class AbstractFileClassLoader extends ClassLoader {
     protected URL findResource(String name) {
         // Tries to find the resource.
         AbstractFile file = findResourceAsFile(name);
-        if((file) == null)
+        if(file == null)
             return null;
 
         // Tries to retrieve an URL on the resource.

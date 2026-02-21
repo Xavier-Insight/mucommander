@@ -603,7 +603,7 @@ public class VSphereFile extends ProtocolFile implements
 						.getVimPort()
 						.listFilesInGuest(fileManager, vm, credentials,
 								getPathInVm(), index, null, null);
-				haveRemaining = (res.getRemaining() != 0);
+				haveRemaining = res.getRemaining() != 0;
 
 				fileInfos.addAll(res.getFiles());
 				index = fileInfos.size();

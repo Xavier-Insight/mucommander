@@ -250,16 +250,16 @@ public class PathUtilsTest {
         assert PathUtils.pathEquals("--home--", "--home", "--");
         assert PathUtils.pathEquals("--home", "--home--", "--");
 
-        assert !(PathUtils.pathEquals("/", "/home", "/"));
-        assert !(PathUtils.pathEquals("/home", "/home/", "\\"));
-        assert !(PathUtils.pathEquals("/home/", "/home", "\\"));
+        assert !PathUtils.pathEquals("/", "/home", "/");
+        assert !PathUtils.pathEquals("/home", "/home/", "\\");
+        assert !PathUtils.pathEquals("/home/", "/home", "\\");
 
-        assert !(PathUtils.pathEquals("C:\\", "C:\\home", "\\"));
-        assert !(PathUtils.pathEquals("C:\\home", "C:\\home\\", "/"));
-        assert !(PathUtils.pathEquals("C:\\home\\", "C:\\home", "/"));
+        assert !PathUtils.pathEquals("C:\\", "C:\\home", "\\");
+        assert !PathUtils.pathEquals("C:\\home", "C:\\home\\", "/");
+        assert !PathUtils.pathEquals("C:\\home\\", "C:\\home", "/");
 
-        assert !(PathUtils.pathEquals("--", "--home", "--"));
-        assert !(PathUtils.pathEquals("--home", "--home--", "/"));
-        assert !(PathUtils.pathEquals("--home--", "--home", "/"));
+        assert !PathUtils.pathEquals("--", "--home", "--");
+        assert !PathUtils.pathEquals("--home", "--home--", "/");
+        assert !PathUtils.pathEquals("--home--", "--home", "/");
     }
 }

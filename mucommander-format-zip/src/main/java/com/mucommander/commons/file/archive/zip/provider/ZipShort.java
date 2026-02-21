@@ -120,7 +120,7 @@ public final class ZipShort implements Cloneable {
      */
     public static int getValue(byte[] bytes, int offset) {
         int value = (bytes[offset + 1] << 8) & 0xFF00;
-        value += (bytes[offset] & 0xFF);
+        value += bytes[offset] & 0xFF;
         return value;
     }
 

@@ -125,11 +125,11 @@ public class GSSManager {
         }
 
         if (aV.size() == 0)
-            return (null);
+            return null;
             
         Oid []mechs = new Oid[aV.size()];
         aV.copyInto(mechs);
-        return (mechs);
+        return mechs;
     }
          
     
@@ -151,7 +151,7 @@ public class GSSManager {
     
         MechInfo aMech = getMechInfo(mech, false);
         
-        return (aMech.getNames());        
+        return aMech.getNames();        
     }
     
 
@@ -185,11 +185,11 @@ public class GSSManager {
         }
         
         if (v.size() == 0)
-            return (null);
+            return null;
             
         Oid [] oids = new Oid[v.size()];
         v.copyInto(oids);
-        return (oids);
+        return oids;
     }
     
     
@@ -206,7 +206,7 @@ public class GSSManager {
     public static Oid getDefaultMech() throws GSSException {
 
         if (m_defaultMech != null)
-            return (m_defaultMech.getOid());
+            return m_defaultMech.getOid();
             
         Provider []p = java.security.Security.getProviders();
         
@@ -218,7 +218,7 @@ public class GSSManager {
                 continue;
                 
             m_defaultMech = new MechInfo(p[i], mechs[0]);
-            return (m_defaultMech.getOid());
+            return m_defaultMech.getOid();
         }
         
         throw new GSSException(GSSException.BAD_MECH);
@@ -248,7 +248,7 @@ public class GSSManager {
     
         //get mech out of the mech table, and if need be load it
         MechInfo aMech = getMechInfo(mech, true);
-        return (aMech.getCredInstance());
+        return aMech.getCredInstance();
     }
 
 
@@ -260,7 +260,7 @@ public class GSSManager {
     
         //get mech out of the mech table, and if need be load it
         MechInfo aMech = getMechInfo(mech, true);
-        return (aMech.getNameInstance());
+        return aMech.getNameInstance();
     }
 
 
@@ -272,7 +272,7 @@ public class GSSManager {
     
         //get mech out of the mech table, and if need be load it
         MechInfo aMech = getMechInfo(mech, true);
-        return (aMech._M4092FBA ());
+        return aMech._M4092FBA ();
     }
         
 
@@ -290,7 +290,7 @@ public class GSSManager {
         if (aMech != null) {
             if (installMech)
                 MechTable.putMechInfo(aMech);
-            return (aMech);
+            return aMech;
         }
         
         //need to search all providers
@@ -307,7 +307,7 @@ public class GSSManager {
                     if (installMech)
                         MechTable.putMechInfo(aMech);
                         
-                    return (aMech);
+                    return aMech;
                 } catch (GSSException e) {
                 
                     //skip over this provider, there might be
@@ -403,9 +403,9 @@ class MechInfo {
     
         for (int i = 0; i < m_names.length; i++) {
             if (m_names[i].equals(nameOid))
-                return (true);
+                return true;
         }
-        return (false);
+        return false;
     }
     
     
@@ -414,7 +414,7 @@ class MechInfo {
      */
     Oid[] getNames() {
         
-        return (m_names);
+        return m_names;
     }
     
 
@@ -423,7 +423,7 @@ class MechInfo {
      */
     Oid getOid() {
     
-        return (m_oid);
+        return m_oid;
     }
 
 
@@ -440,7 +440,7 @@ class MechInfo {
                 _V29ED8BF = Class.forName(_V901D6C2);
             }
         
-            return ((GSSCredSpi)_V29ED8BF.getDeclaredConstructor().newInstance());
+            return (GSSCredSpi)_V29ED8BF.getDeclaredConstructor().newInstance();
             
         } catch (Exception e) {
             throw new GSSException(GSSException.UNAVAILABLE);
@@ -461,7 +461,7 @@ class MechInfo {
                 _V30FDA16 = Class.forName(_V108CA91);
             }
         
-            return ((C018FE95)_V30FDA16.getDeclaredConstructor().newInstance());
+            return (C018FE95)_V30FDA16.getDeclaredConstructor().newInstance();
             
         } catch (Exception e) {
             throw new GSSException(GSSException.UNAVAILABLE);
@@ -482,7 +482,7 @@ class MechInfo {
                 _V29ED8BF = Class.forName(_V2395ABD);
             }
         
-            return ((GSSNameSpi)_V29ED8BF.getDeclaredConstructor().newInstance());
+            return (GSSNameSpi)_V29ED8BF.getDeclaredConstructor().newInstance();
             
         } catch (Exception e) {
             throw new GSSException(GSSException.UNAVAILABLE);
@@ -497,7 +497,7 @@ class MechInfo {
      */
     Provider getProvider() {
     
-        return (_V510CA83);
+        return _V510CA83;
     }
     
             
@@ -516,13 +516,13 @@ class MechInfo {
 
         if ((aStr = p.getProperty("JGSS.Mech." + _V0095DCA + "." + key))
                 != null) {
-            return (aStr);
+            return aStr;
         }
 
         if ((aStr = oidStrToAlias(_V0095DCA)) == null)
             return null;
 
-        return (p.getProperty("JGSS.Mech." + aStr + "." + key));
+        return p.getProperty("JGSS.Mech." + aStr + "." + key);
     }
     
     
@@ -576,14 +576,14 @@ class MechInfo {
         String [] mechs = getMechsForProvider(p);
         
         if (mechs == null)
-            return (false);
+            return false;
             
         for (int i = 0; i < mechs.length; i++) {
             if (mechs[i].equals(oid))
-                return (true);
+                return true;
         }
         
-        return (false);
+        return false;
     }
     
     
@@ -597,7 +597,7 @@ class MechInfo {
         
         //does this provider even support JGSS ?
         if (mechsStr == null)
-            return (null);
+            return null;
             
         StringTokenizer st = new StringTokenizer(mechsStr, ":");
         MechInfo[] mInfo = new MechInfo[st.countTokens()];
@@ -608,7 +608,7 @@ class MechInfo {
             }
         }
             
-        return (mInfo);
+        return mInfo;
     }
     
     
@@ -626,9 +626,9 @@ class MechInfo {
             String[] res = new String[st.countTokens()];
             for (int i = 0; i < res.length; i++)
                 res[i] = st.nextToken();
-            return (res);
+            return res;
         }
-        return (null);
+        return null;
     }
     
     
@@ -656,7 +656,7 @@ class MechInfo {
         aBuf.append("\nCred Class:\t").append(_V901D6C2);
         aBuf.append("\nCtxt Class:\t").append(_V108CA91);
 
-        return (aBuf.toString());
+        return aBuf.toString();
     }
     
     //instance variables
@@ -696,7 +696,7 @@ class MechTable {
      */
     static MechInfo getMechInfo(Oid oid) {
     
-        return ((MechInfo)M_table.get(oid));
+        return (MechInfo)M_table.get(oid);
     }
     
 
@@ -709,10 +709,10 @@ class MechTable {
     static boolean putMechInfo(MechInfo aMech) {
     
         if (M_table.containsKey(aMech.getOid()))
-            return (false);
+            return false;
             
         M_table.put(aMech.getOid(), aMech);
-        return (true);
+        return true;
     }
     
 

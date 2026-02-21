@@ -93,7 +93,7 @@ public class GoogleDrivePanel extends ServerPanel implements ActionListener {
 
         emailAddress = new JLabel(" ");
         displayName = new JLabel(" ");
-        accountLabel = new JLabel(Translator.get(("server_connect_dialog.account")));
+        accountLabel = new JLabel(Translator.get("server_connect_dialog.account"));
         addRow(accountLabel, displayName, 5);
         addRow("", emailAddress, 15);
 

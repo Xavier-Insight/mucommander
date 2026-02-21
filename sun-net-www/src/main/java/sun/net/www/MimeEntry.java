@@ -134,7 +134,7 @@ public class MimeEntry implements Cloneable {
     }
 
     public synchronized String getDescription() {
-        return (description != null ? description : typeName);
+        return description != null ? description : typeName;
     }
 
     public synchronized void setDescription(String description) {

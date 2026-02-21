@@ -97,14 +97,14 @@ public class BeanXFile extends File {
     public String getName() {
 	String fname = beanXF.getName();
 	if (fname == null)
-	    return(beanXF.getAbsolutePath());
+	    return beanXF.getAbsolutePath();
 	else
-	    return(fname);
+	    return fname;
     }
 
     public boolean renameTo(File dest) {
 	XFile tmpFile = new XFile(dest.getAbsolutePath());
-	return (beanXF.renameTo(tmpFile));
+	return beanXF.renameTo(tmpFile);
     }
 
     public String getParent() {

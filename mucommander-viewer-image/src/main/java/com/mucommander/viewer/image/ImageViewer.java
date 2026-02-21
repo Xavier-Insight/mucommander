@@ -421,8 +421,8 @@ class ImageViewer implements FileViewer, ActionListener {
                 targetViewportPos.y = (int) Math.round(focusPoint.y / zoomFactor * factor) - offsetY;
             } else {
                 // Focus center of the viewport instead
-                int offsetX = (view.width / 2);
-                int offsetY = (view.height / 2);
+                int offsetX = view.width / 2;
+                int offsetY = view.height / 2;
                 targetViewportPos.x = (int) Math.round((view.x + offsetX) / zoomFactor * factor) - offsetX;
                 targetViewportPos.y = (int) Math.round((view.y + offsetY) / zoomFactor * factor) - offsetY;
             }

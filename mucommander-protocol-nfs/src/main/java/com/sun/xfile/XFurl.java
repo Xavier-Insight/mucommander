@@ -162,15 +162,15 @@ class XFurl {
     }
 
     String getProtocol() {
-        return (protocol);
+        return protocol;
     }
 
     String getLocation() {
-        return (location);
+        return location;
     }
 
     String getPath() {
-        return (path);
+        return path;
     }
 
     String getParent() {
@@ -204,6 +204,6 @@ class XFurl {
         if (path != null)
             s += "/" + path;
 
-        return (s);
+        return s;
     }
 }

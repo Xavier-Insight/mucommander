@@ -301,7 +301,7 @@ public final class DesktopManager {
         List<DesktopOperation> container = getOperations(type, priority);
 
         // If the operation vector is null, no need to look further.
-        if((container ) != null)
+        if(container != null)
             for(int i = container.size() - 1; i >= 0; i--) {
                 DesktopOperation operation = container.get(i); 
                 if (operation.isAvailable())

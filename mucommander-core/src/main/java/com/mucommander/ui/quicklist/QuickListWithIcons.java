@@ -110,7 +110,7 @@ public abstract class QuickListWithIcons<T> extends QuickListWithDataList<T> {
 	 * @return the specified file's icon. null is returned if the file does not exist
 	 */
 	protected Icon getIconOfFile(AbstractFile file) {
-		return (file != null && file.exists()) ?
+		return file != null && file.exists() ?
 			IconManager.getImageIcon(FileIcons.getFileIcon(file)) : null; 
 	}
 	

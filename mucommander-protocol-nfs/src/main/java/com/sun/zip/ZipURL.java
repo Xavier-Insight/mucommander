@@ -87,15 +87,15 @@ public class ZipURL {
     }
 
     public String getProtocol() {
-        return (protocol);
+        return protocol;
     }
 
     public String getLocation() {
-        return (location);
+        return location;
     }
 
     public String getPath() {
-        return (path);
+        return path;
     }
 
     public String toString() {
@@ -107,6 +107,6 @@ public class ZipURL {
         if (path != null)
             s += "/" + path;
 
-        return (s);
+        return s;
     }
 }

@@ -115,7 +115,7 @@ public class SystemTrayNotifier extends AbstractNotifier implements ActionListen
 
             // If System Tray has already been initialized
             if(trayIcon!=null) {
-                return (isEnabled = true);
+                return isEnabled = true;
             }
 
             SystemTray systemTray = SystemTray.getSystemTray();
@@ -152,12 +152,12 @@ public class SystemTrayNotifier extends AbstractNotifier implements ActionListen
                 // Tray icon was added OK, listen to action events
                 trayIcon.addActionListener(this);
 
-                return (isEnabled = true);
+                return isEnabled = true;
             }
             catch(java.awt.AWTException e) {
                 trayIcon = null;
 
-                return (isEnabled = false);
+                return isEnabled = false;
             }
         }
         else {
@@ -169,7 +169,7 @@ public class SystemTrayNotifier extends AbstractNotifier implements ActionListen
                 trayIcon = null;
             }
 
-            return (isEnabled = false);
+            return isEnabled = false;
         }
     }
 

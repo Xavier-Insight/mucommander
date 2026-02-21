@@ -128,7 +128,7 @@ public abstract class Completer {
     protected String tryToCompleteFromServices(String selectedString) {
         String location = null;
         for (CompletionService service : services)
-            if ((location = (service).complete(selectedString)) != null)
+            if ((location = service.complete(selectedString)) != null)
                 break;
         return location;
     }

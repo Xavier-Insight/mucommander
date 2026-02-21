@@ -179,7 +179,7 @@ public class BOM {
         out.append(", signature=");
         for(int i=0; i < sig.length; i++) {
             out.append(0xFF&sig[i]);
-            out.append((i==sig.length-1?"}":", "));
+            out.append(i==sig.length-1?"}":", ");
         }
         out.append(", encoding=");
         out.append(encoding);

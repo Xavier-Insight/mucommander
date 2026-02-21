@@ -161,10 +161,10 @@ public class Xdr {
      * @return integer
      */
     public int xdr_int() {
-	return ((buf[off++] & 0xff) << 24 |
+	return (buf[off++] & 0xff) << 24 |
 	        (buf[off++] & 0xff) << 16 |
 	        (buf[off++] & 0xff) << 8  |
-	        (buf[off++] & 0xff));
+	        (buf[off++] & 0xff);
     }
 
     /**
@@ -188,10 +188,10 @@ public class Xdr {
      * @return long
      */
     public long xdr_u_int() {
-	return ((buf[off++] & 0xff) << 24 |
+	return (buf[off++] & 0xff) << 24 |
 	        (buf[off++] & 0xff) << 16 |
 	        (buf[off++] & 0xff) << 8  |
-	        (buf[off++] & 0xff));
+	        (buf[off++] & 0xff);
     }
 
     /**
@@ -215,14 +215,14 @@ public class Xdr {
      * @return long
      */
     public long xdr_hyper() {
-	return ((long)(buf[off++] & 0xff) << 56 |
+	return (long)(buf[off++] & 0xff) << 56 |
 	       	(long)(buf[off++] & 0xff) << 48 |
 	        (long)(buf[off++] & 0xff) << 40 |
 	        (long)(buf[off++] & 0xff) << 32 |
 	        (long)(buf[off++] & 0xff) << 24 |
 	        (long)(buf[off++] & 0xff) << 16 |
 	        (long)(buf[off++] & 0xff) << 8  |
-	        (long)(buf[off++] & 0xff));
+	        (long)(buf[off++] & 0xff);
     }
 
     /**
@@ -255,7 +255,7 @@ public class Xdr {
      * @return boolean
      */
     public boolean xdr_bool() {
-	return (xdr_int() != 0);
+	return xdr_int() != 0;
     }
 
     /**
@@ -273,7 +273,7 @@ public class Xdr {
      * @return float
      */
     public float xdr_float() {
-	return (Float.intBitsToFloat(xdr_int()));
+	return Float.intBitsToFloat(xdr_int());
     }
 
     /**
@@ -313,7 +313,7 @@ public class Xdr {
      * @return bytes
      */
     public byte[] xdr_bytes() {
-	return (xdr_raw(xdr_int()));
+	return xdr_raw(xdr_int());
     }
 
     /**

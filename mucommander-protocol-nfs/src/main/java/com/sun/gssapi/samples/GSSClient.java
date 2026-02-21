@@ -176,7 +176,7 @@ class GSSClient {
 			dis.readFully(inTok, 0, inTok.length);
 		} while (true);
 			
-		return (aCtxt);
+		return aCtxt;
 	}
 
 	

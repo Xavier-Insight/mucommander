@@ -236,7 +236,7 @@ public class ConfigurationSectionTest {
     public void testDoubles() {
         for(int i = 0; i < 10; i++) {
             assert ConfigurationSection.getDoubleValue(i + ".5") == (i + 0.5d);
-            assert ConfigurationSection.getValue((i + 0.5d)).equals(i + ".5");
+            assert ConfigurationSection.getValue(i + 0.5d).equals(i + ".5");
         }
 
         assert ConfigurationSection.getDoubleValue(null) == 0f;
@@ -249,7 +249,7 @@ public class ConfigurationSectionTest {
     public void testFloats() {
         for(int i = 0; i < 10; i++) {
             assert ConfigurationSection.getFloatValue(i + ".5") == (i + 0.5f);
-            assert ConfigurationSection.getValue((i + 0.5f)).equals(i + ".5");
+            assert ConfigurationSection.getValue(i + 0.5f).equals(i + ".5");
         }
 
         assert ConfigurationSection.getFloatValue(null) == 0f;

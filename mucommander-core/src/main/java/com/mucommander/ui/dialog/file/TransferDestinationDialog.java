@@ -253,7 +253,7 @@ public abstract class TransferDestinationDialog extends JobDialog implements Act
      * @return <code>true</code> if the given resolved destination is valid
      */
 	protected boolean isValidDestination(PathUtils.ResolvedDestination resolvedDest, String destPath) {
-        return (resolvedDest!=null && (files.size()==1 || resolvedDest.getDestinationType()==DestinationType.EXISTING_FOLDER));
+        return resolvedDest!=null && (files.size()==1 || resolvedDest.getDestinationType()==DestinationType.EXISTING_FOLDER);
 	}
 
     /**

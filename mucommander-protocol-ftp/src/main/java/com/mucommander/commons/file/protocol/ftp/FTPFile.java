@@ -412,7 +412,7 @@ public class FTPFile extends ProtocolFile implements ConnectionHandlerFactory {
 
     @Override
     public void changePermission(PermissionAccess access, PermissionType permission, boolean enabled) throws IOException, UnsupportedFileOperationException {
-        changePermissions(ByteUtils.setBit(permissions.getIntValue(), (permission.toInt() << (access.toInt()*3)), enabled));
+        changePermissions(ByteUtils.setBit(permissions.getIntValue(), permission.toInt() << (access.toInt()*3), enabled));
     }
 
     /**

@@ -350,9 +350,9 @@ public class GSSException extends Exception {
     public String toString() {
 
         if (m_minor == 0)
-            return (getMajorString());
+            return getMajorString();
             
-        return (getMajorString() + "(" + getMinorString() + ")");
+        return getMajorString() + "(" + getMinorString() + ")";
     }
 
 
@@ -365,7 +365,7 @@ public class GSSException extends Exception {
      */
     public String getMessage() {
 
-        return (toString());
+        return toString();
     }
 
 
@@ -375,8 +375,8 @@ public class GSSException extends Exception {
     private boolean validateMajor(int major) {
     
         if (m_major > 0 && m_major <= messages.length)
-            return (true);
+            return true;
             
-        return (false);
+        return false;
     }
 }

@@ -86,7 +86,7 @@ public class VSphereClient implements Closeable {
 	}
 
 	protected String getVSphereServiceUrl() {
-		if (StringUtils.isNullOrEmpty((server))) {
+		if (StringUtils.isNullOrEmpty(server)) {
 			log.warn("Can't construct vim service url, vSphere host name is empty");
 			throw new IllegalArgumentException();
 		}

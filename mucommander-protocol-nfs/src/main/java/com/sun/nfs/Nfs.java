@@ -164,7 +164,7 @@ public abstract class Nfs {
      * Get FileHandle for Nfs Object
      */
     byte[] getFH() {
-	return (fh);
+	return fh;
     }
 
     /*
@@ -184,7 +184,7 @@ public abstract class Nfs {
      * @returns		The object - or null if not cached
      */
     static Nfs cache_get(String server, String name) {
-        return ((Nfs)cacheNfs.get(server + ":" + name));
+        return (Nfs)cacheNfs.get(server + ":" + name);
     }
 
     /*
@@ -357,7 +357,7 @@ public abstract class Nfs {
 	    bytesRead += cc;
         }
 
-        return (bytesRead);
+        return bytesRead;
     }
 
     /*

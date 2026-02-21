@@ -1178,7 +1178,7 @@ public class ThemeData {
      */
     public synchronized Color getColor(int id) {
         checkColorIdentifier(id);
-        return (colors[id] == null) ? getDefaultColor(id, this) : colors[id];
+        return colors[id] == null ? getDefaultColor(id, this) : colors[id];
     }
 
     /**
@@ -1194,7 +1194,7 @@ public class ThemeData {
     public synchronized Font getFont(int id) {
         checkFontIdentifier(id);
 
-        return (fonts[id] == null) ? getDefaultFont(id, this) : fonts[id];
+        return fonts[id] == null ? getDefaultFont(id, this) : fonts[id];
     }
 
 

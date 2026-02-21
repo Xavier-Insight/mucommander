@@ -158,7 +158,7 @@ public class Oid {
         StringBuffer sb = new StringBuffer(50);
     
         if (m_v.size() < 1)
-            return (new String(""));
+            return new String("");
             
         for (Enumeration e = m_v.elements(); e.hasMoreElements();) {
             sb.append(e.nextElement().toString());
@@ -166,7 +166,7 @@ public class Oid {
                 sb.append(".");
         }
         
-        return (sb.toString());
+        return sb.toString();
     }
 
 
@@ -183,7 +183,7 @@ public class Oid {
         StringBuffer sb = new StringBuffer(50);
         
         if (m_v.size() < 1)
-            return (new String(""));
+            return new String("");
             
         sb.append("{ ");
         for (Enumeration e = m_v.elements(); e.hasMoreElements(); ) {
@@ -192,7 +192,7 @@ public class Oid {
         }
         sb.append("}");
         
-        return (sb.toString());
+        return sb.toString();
     }
     
     
@@ -205,25 +205,25 @@ public class Oid {
     public boolean equals(Object Obj) {
     
         if (! (Obj instanceof Oid))
-            return (false);
+            return false;
 
         //check if both reference the same object
         if (this == Obj)
-            return (true);
+            return true;
 
         Oid anOid = (Oid) Obj;
         
         if (m_v.size() != anOid.m_v.size())
-            return (false);
+            return false;
             
         for (Enumeration e1 = m_v.elements(), e2 = anOid.m_v.elements();
             e1.hasMoreElements(); ) {
         
             if (! e1.nextElement().equals(e2.nextElement()))
-                return (false);
+                return false;
         }
         
-        return (true);
+        return true;
     }
 
     
@@ -236,10 +236,10 @@ public class Oid {
     public byte[] getDER() throws GSSException {
     
         if (m_der != null)
-            return (m_der);
+            return m_der;
         
         m_der = DERParser.encodeOid(m_v);
-        return (m_der);
+        return m_der;
     }
     
         
@@ -256,10 +256,10 @@ public class Oid {
     
         for (int i = 0; i < oids.length; i++) {
             if (oids[i].equals(this))
-                return (true);
+                return true;
         }
     
-        return (false);
+        return false;
     }
     
     

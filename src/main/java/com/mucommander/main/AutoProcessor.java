@@ -105,7 +105,7 @@ public class AutoProcessor
             processAutoProperties(executor, configMap, context);
         } catch (Exception ex) {
             System.err.println("failed to close executor: "
-                    + ex + ((ex.getCause() != null) ? " - " + ex.getCause() : ""));
+                    + ex + (ex.getCause() != null ? " - " + ex.getCause() : ""));
         }
     }
 
@@ -119,7 +119,7 @@ public class AutoProcessor
     {
         // Determine if auto deploy actions to perform.
         String action = configMap.get(AUTO_DEPLOY_ACTION_PROPERTY);
-        action = (action == null) ? "" : action;
+        action = action == null ? "" : action;
         List<String> actionList = new ArrayList<>();
         StringTokenizer st = new StringTokenizer(action, ",");
         while (st.hasMoreTokens())
@@ -167,7 +167,7 @@ public class AutoProcessor
 
             // Get the auto deploy directory.
             String autoDir = configMap.get(AUTO_DEPLOY_DIR_PROPERTY);
-            autoDir = (autoDir == null) ? AUTO_DEPLOY_DIR_VALUE : autoDir;
+            autoDir = autoDir == null ? AUTO_DEPLOY_DIR_VALUE : autoDir;
             // Look in the specified bundle directory to create a list
             // of all JAR files to install.
             File[] files = new File(autoDir).listFiles();
@@ -210,7 +210,7 @@ public class AutoProcessor
                                 return context.installBundle(jarPath);
                             } catch (BundleException ex) {
                                 System.err.println("Auto-deploy install: "
-                                        + ex + ((ex.getCause() != null) ? " - " + ex.getCause() : ""));
+                                        + ex + (ex.getCause() != null ? " - " + ex.getCause() : ""));
                                 return null;
                             }
                         });
@@ -230,7 +230,7 @@ public class AutoProcessor
                 catch (BundleException ex)
                 {
                     System.err.println("Auto-deploy install: "
-                        + ex + ((ex.getCause() != null) ? " - " + ex.getCause() : ""));
+                        + ex + (ex.getCause() != null ? " - " + ex.getCause() : ""));
                 }
             }
             // deferred bundles added to the end of start list (so they have more time to load in the meantime)
@@ -252,7 +252,7 @@ public class AutoProcessor
                         catch (BundleException ex)
                         {
                         System.err.println("Auto-deploy uninstall: "
-                            + ex + ((ex.getCause() != null) ? " - " + ex.getCause() : ""));
+                            + ex + (ex.getCause() != null ? " - " + ex.getCause() : ""));
                         }
                     }
                 }
@@ -281,7 +281,7 @@ public class AutoProcessor
                             catch (BundleException ex)
                             {
                                 System.err.println("Auto-deploy start: "
-                                        + ex + ((ex.getCause() != null) ? " - " + ex.getCause() : ""));
+                                        + ex + (ex.getCause() != null ? " - " + ex.getCause() : ""));
                             }
                         });
                     } catch (InterruptedException | ExecutionException e) {
@@ -352,7 +352,7 @@ public class AutoProcessor
                 catch (Exception ex)
                 {
                     System.err.println("Auto-properties install: " + location + " ("
-                        + ex + ((ex.getCause() != null) ? " - " + ex.getCause() : "") + ")");
+                        + ex + (ex.getCause() != null ? " - " + ex.getCause() : "") + ")");
                     if (ex.getCause() != null) {
                         ex.printStackTrace();
                     }
@@ -382,7 +382,7 @@ public class AutoProcessor
                         catch (Exception ex)
                         {
                             System.err.println("Auto-properties start: " + loc + " ("
-                                    + ex + ((ex.getCause() != null) ? " - " + ex.getCause() : "") + ")");
+                                    + ex + (ex.getCause() != null ? " - " + ex.getCause() : "") + ")");
                         }
                     });
                 }
@@ -431,7 +431,7 @@ public class AutoProcessor
 
             // Handle case where end of token stream and
             // still got data
-            if ((!exit) && (tokStarted))
+            if ((!exit) && tokStarted)
             {
                 retVal = tokBuf.toString();
             }

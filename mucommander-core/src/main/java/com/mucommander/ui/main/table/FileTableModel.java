@@ -234,7 +234,7 @@ public class FileTableModel extends AbstractTableModel {
     synchronized void setCurrentFolder(AbstractFile folder, AbstractFile[] children) {
         int nbFiles = children.length;
 
-        this.currentFolder = (folder instanceof CachedFile)?folder:new CachedFile(folder, true);
+        this.currentFolder = folder instanceof CachedFile?folder:new CachedFile(folder, true);
 
         this.parent = showParentFolder ? currentFolder.getParent() : null;    // Note: the returned parent is a CachedFile instance
         if(parent!=null) {

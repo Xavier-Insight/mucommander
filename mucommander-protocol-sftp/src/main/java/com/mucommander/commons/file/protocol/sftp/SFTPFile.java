@@ -305,7 +305,7 @@ public class SFTPFile extends ProtocolFile {
 
     @Override
     public void changePermission(PermissionAccess access, PermissionType permission, boolean enabled) throws IOException {
-        changePermissions(ByteUtils.setBit(getPermissions().getIntValue(), (permission.toInt() << (access.toInt()*3)), enabled));
+        changePermissions(ByteUtils.setBit(getPermissions().getIntValue(), permission.toInt() << (access.toInt()*3), enabled));
     }
 
     @Override

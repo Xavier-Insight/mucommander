@@ -172,7 +172,7 @@ public abstract class XFileSystemView extends FileSystemView {
             String parentFilename = f.getParent();
 
             if (parentFilename != null)
-                return (new BeanXFile(parentFilename));
+                return new BeanXFile(parentFilename);
 	}
         return null;
     }

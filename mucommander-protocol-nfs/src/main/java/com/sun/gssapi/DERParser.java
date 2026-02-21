@@ -65,14 +65,14 @@ class DERParser {
 		tmp &= 0x7f;
 		for (length = 0; tmp > 0; tmp--) {
 		    length <<= 8;
-		    length += (0xff & is.read());
+		    length += 0xff & is.read();
 		}
 	    }
 	} catch (IOException e) {
 		throw new GSSException(GSSException.DEFECTIVE_TOKEN);
 	}
 
-	return (length);
+	return length;
     }
 	
 	
@@ -89,7 +89,7 @@ class DERParser {
 	    throw new GSSException(GSSException.DEFECTIVE_TOKEN);
 	}
 	
-	return (decodeOidOctets(is, readLength(is)));
+	return decodeOidOctets(is, readLength(is));
     }
 	
 	
@@ -124,7 +124,7 @@ class DERParser {
 		for (int j=0; j < 4; j++) {
 		    comp <<= 7;
 		    tmp = is.read();
-		    comp |= (tmp & 0x7f);
+		    comp |= tmp & 0x7f;
 		    if ((tmp & 0x80) == 0)
 			break;
 		    i++;
@@ -136,7 +136,7 @@ class DERParser {
 	    throw new GSSException(GSSException.DEFECTIVE_TOKEN);
 	}
 	
-	return (v);
+	return v;
     }
 
     /**
@@ -212,7 +212,7 @@ class DERParser {
 	
 	    throw new GSSException(GSSException.DEFECTIVE_TOKEN);
 	}
-	return (o.toByteArray());
+	return o.toByteArray();
     }
 	
 	
@@ -231,7 +231,7 @@ class DERParser {
 			
 	    //each component may be at most 4 octets long
 	    for (int c = 0; c < 4; c++) {
-		tmp = (nextComp & 0x7f);
+		tmp = nextComp & 0x7f;
 		nextComp >>>= 7;
 			
 		//every octet except for last has bit 8 on

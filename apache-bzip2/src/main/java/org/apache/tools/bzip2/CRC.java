@@ -129,7 +129,7 @@ final class CRC {
         int globalCrcShadow = this.globalCrc;
         while (repeat-- > 0) {
             int temp = (globalCrcShadow >> 24) ^ inCh;
-            globalCrcShadow = (globalCrcShadow << 8) ^ crc32Table[(temp >= 0)
+            globalCrcShadow = (globalCrcShadow << 8) ^ crc32Table[temp >= 0
                                                       ? temp
                                                       : (temp + 256)];
         }

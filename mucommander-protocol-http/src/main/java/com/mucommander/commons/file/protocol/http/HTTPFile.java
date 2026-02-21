@@ -137,7 +137,7 @@ public class HTTPFile extends ProtocolFile {
         //  - URL's path has no filename (e.g. http://www.mucommander.com/) or path ends with '/' (e.g. http://www.mucommander.com/download/)
         //  - URL has a query part (works most of the time, must not always)
         //  - URL has an extension that registered with an HTML/XHTML mime type
-        if((filename==null || fileURL.getPath().endsWith("/") || fileURL.getQuery()!=null || ((mimeType=MimeTypes.getMimeType(this))!=null && isParsableMimeType(mimeType)))) {
+        if(filename==null || fileURL.getPath().endsWith("/") || fileURL.getQuery()!=null || ((mimeType=MimeTypes.getMimeType(this))!=null && isParsableMimeType(mimeType))) {
             attributes.setDirectory(true);
             resolve = false;
         }

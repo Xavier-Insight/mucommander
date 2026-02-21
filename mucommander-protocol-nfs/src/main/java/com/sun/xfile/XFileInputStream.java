@@ -107,11 +107,11 @@ public class XFileInputStream extends InputStream {
         int c = xfa.read(b, off, len, fp);
 
         if (c <= 0)
-            return (-1);
+            return -1;
 
         fp += c;
 
-        return (c);
+        return c;
     }
 
     /**
@@ -125,7 +125,7 @@ public class XFileInputStream extends InputStream {
         byte[] b = new byte[1];
 
         if (XFAread(b, 0, 1) != 1)
-            return (-1);
+            return -1;
 
         return b[0] & 0xff;
     }

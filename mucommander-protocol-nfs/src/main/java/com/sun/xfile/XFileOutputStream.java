@@ -104,7 +104,7 @@ public class XFileOutputStream extends OutputStream {
 
         xfa = xfile.newAccessor();
 
-        if ((isExist = xfa.open(xfile, true, false))) { // serial, not readonly
+        if (isExist = xfa.open(xfile, true, false)) { // serial, not readonly
             if (!xfa.isFile())
                 throw new IOException("not a file");
 

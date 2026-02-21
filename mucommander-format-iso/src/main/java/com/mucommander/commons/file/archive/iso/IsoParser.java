@@ -143,7 +143,7 @@ class IsoParser {
 
 
     private static void newString(byte[] b, int len, int level, StringBuffer name) throws Exception {
-        name.append((level == 0) ? new String(b, 0, len) : new String(b, 0, len, "UnicodeBigUnmarked"));
+        name.append(level == 0 ? new String(b, 0, len) : new String(b, 0, len, "UnicodeBigUnmarked"));
     }
 
     public static todo parse_dir(todo todo_idr, String rootname, int extent, int len, RandomAccessInputStream rais, byte[] buffer, Vector<IsoArchiveEntry> entries, int sectSize, int level, long shiftOffset, long sector_offset, Calendar calendar) throws Exception {
@@ -232,7 +232,7 @@ class IsoParser {
                     );
                 }
 
-                i += (buffer[i] & 0xff);
+                i += buffer[i] & 0xff;
                 if (i > IsoUtil.MODE1_2048 - idr.s_length) break;
             }
         }
@@ -242,7 +242,7 @@ class IsoParser {
 
     // ======================================
     private static int ISODCL(int start, int end) {
-        return (end - start + 1);
+        return end - start + 1;
     }
 
     private static int isonum_731(byte[] p) {
@@ -250,11 +250,11 @@ class IsoParser {
     }
 
     public static int isonum_733(byte[] p) {
-        return (isonum_731(p));
+        return isonum_731(p);
     }
 
     private static boolean S_ISDIR(int m) {
-        return ((m & S_IFDIR) == S_IFDIR);
+        return (m & S_IFDIR) == S_IFDIR;
     }
 
     // ======================================

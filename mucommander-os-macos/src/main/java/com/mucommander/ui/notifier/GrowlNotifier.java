@@ -110,7 +110,7 @@ public class GrowlNotifier extends AbstractNotifier {
 
             // Nothing else to do if the application has already been registered
             if(isRegistered)
-                return (isEnabled = true);
+                return isEnabled = true;
 
             // Test if Growl is currently running and abort if it is not
             if(!isGrowlRunning()) {
@@ -142,7 +142,7 @@ public class GrowlNotifier extends AbstractNotifier {
             return isEnabled = isRegistered;
         }
         else {
-            return (isEnabled = false);
+            return isEnabled = false;
         }
     }
 

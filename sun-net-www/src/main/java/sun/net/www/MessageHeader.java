@@ -308,7 +308,7 @@ class MessageHeader {
         if (c2 != '.') return false;
         if (c3 < '0' || c3 > '9') return false;
 
-        return ("HTTP/".equalsIgnoreCase(k.substring(i+1, len-3)));
+        return "HTTP/".equalsIgnoreCase(k.substring(i+1, len-3));
     }
 
     /** Prints the key-value pairs represented by this

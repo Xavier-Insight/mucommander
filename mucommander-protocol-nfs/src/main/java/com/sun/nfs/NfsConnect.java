@@ -110,9 +110,9 @@ public class NfsConnect {
             n = NfsConnect.cache_get(server);
 
         if (n == null)
-            return (connect(server, path, port, version, proto, pub));
+            return connect(server, path, port, version, proto, pub);
         else
-            return (connect(server, path, n.port, n.version, n.proto, n.pub));
+            return connect(server, path, n.port, n.version, n.proto, n.pub);
     }
 
     /**
@@ -130,9 +130,9 @@ public class NfsConnect {
 
         NfsConnect n = NfsConnect.cache_get(server);
         if (n == null)
-            return (connect(server, path, port, 0, null, true));
+            return connect(server, path, port, 0, null, true);
         else
-            return (connect(server, path, n.port, n.version, n.proto, n.pub));
+            return connect(server, path, n.port, n.version, n.proto, n.pub);
     }
     
     /**
@@ -169,7 +169,7 @@ public class NfsConnect {
 	    if (nfs.isSymlink())
 		return followLink(nfs);
 
-            return (nfs);
+            return nfs;
         }
 
         /*
@@ -268,7 +268,7 @@ public class NfsConnect {
     
             if (nfs != null) {	// public fh worked
                 NfsConnect.cache_put(new NfsConnect(server, port, vers, proto, true));
-                return (nfs);
+                return nfs;
             }
         }
 	
@@ -285,7 +285,7 @@ public class NfsConnect {
 
         NfsConnect.cache_put(new NfsConnect(server, port, vers, proto, false));
 
-        return (tryNfs(conn, fh, path, vers, true));
+        return tryNfs(conn, fh, path, vers, true);
     }
 
     private static Nfs tryNfs(Connection conn, byte[] pubfh, String path,
@@ -335,12 +335,12 @@ public class NfsConnect {
             pubnfs.getattr();
             Nfs.cache_put(pubnfs);
 
-            return (pubnfs);
+            return pubnfs;
         }
 	/* The path passed to lookup will be null since it
 	 * has been filled in when object has been created.
 	 */
-        return (pubnfs.lookup(null));
+        return pubnfs.lookup(null);
     }
 
 
@@ -401,11 +401,11 @@ public class NfsConnect {
         }
 
         try {
-            return (NfsConnect.connect(server, port, newpath));
+            return NfsConnect.connect(server, port, newpath);
         } catch (IOException e) {
             System.err.println(e + ": symbolic link: " +
                 base + " -> " + text);
-            return (link);
+            return link;
         }
     }
 
@@ -425,7 +425,7 @@ public class NfsConnect {
      * @returns		The object - or null if not cached
      */
     private static NfsConnect cache_get(String server) {
-        return ((NfsConnect)cacheNfsConnect.get(server));
+        return (NfsConnect)cacheNfsConnect.get(server);
     }
 
     /**
@@ -434,7 +434,7 @@ public class NfsConnect {
      * @returns		The credential stored for Nfs operations
      */
     public static CredUnix getCred() {
-	return (cred);
+	return cred;
     }
 
     /**

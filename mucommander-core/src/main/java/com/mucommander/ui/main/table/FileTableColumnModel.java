@@ -101,7 +101,7 @@ public class FileTableColumnModel implements TableColumnModel, PropertyChangeLis
                 enabled[columnIndex] = true;
             }
             else {
-                if((enabled[columnIndex] = conf.isEnabled(c)))
+                if(enabled[columnIndex] = conf.isEnabled(c))
                     countCache++;
             }
             column.setMinWidth(c.getMinimumColumnWidth());

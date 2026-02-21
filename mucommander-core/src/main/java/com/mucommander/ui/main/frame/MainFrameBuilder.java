@@ -131,9 +131,9 @@ public abstract class MainFrameBuilder {
         String customPath = null;
         // Handles custom initial paths.
         if (isCustom) {
-            customPath = (folderPanelType == FolderPanelType.LEFT ? 
+            customPath = folderPanelType == FolderPanelType.LEFT ? 
                     preferences.getVariable(MuPreference.LEFT_CUSTOM_FOLDER)
-                    : preferences.getVariable(MuPreference.RIGHT_CUSTOM_FOLDER));
+                    : preferences.getVariable(MuPreference.RIGHT_CUSTOM_FOLDER);
         }
 
         AbstractFile result = null;

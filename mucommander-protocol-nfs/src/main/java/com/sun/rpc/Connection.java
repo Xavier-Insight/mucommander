@@ -121,7 +121,7 @@ public abstract class Connection extends Thread {
      * @returns server, port number and protocol info.
      */
     public String toString() {
-        return (server + ":" + port + ":" + proto);
+        return server + ":" + port + ":" + proto;
     }
 
     private boolean running;
@@ -167,7 +167,7 @@ public abstract class Connection extends Thread {
 	    if (err != null)
 		throw err;
 
-            timeout -= (System.currentTimeMillis() - t);
+            timeout -= System.currentTimeMillis() - t;
             if (timeout <= 0) {
                 waiters.remove(Integer.valueOf(call.xid));
                 throw new InterruptedIOException(); // timed out

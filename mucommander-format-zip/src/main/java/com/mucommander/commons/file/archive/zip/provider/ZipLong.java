@@ -121,7 +121,7 @@ public final class ZipLong implements Cloneable {
         long value = (bytes[offset + 3] << 24) & 0xFF000000L;
         value += (bytes[offset + 2] << 16) & 0xFF0000;
         value += (bytes[offset + 1] << 8) & 0xFF00;
-        value += (bytes[offset] & 0xFF);
+        value += bytes[offset] & 0xFF;
         return value;
     }
 

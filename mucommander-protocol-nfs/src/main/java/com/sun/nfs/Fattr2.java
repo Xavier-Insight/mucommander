@@ -127,8 +127,7 @@ class Fattr2 extends Fattr {
     }
 
     public String toString() {
-         return (
-             "  ftype = " + ftype + "\n" +
+         return "  ftype = " + ftype + "\n" +
              "   mode = 0" + Long.toOctalString(mode) + "\n" +
              "  nlink = " + nlink + "\n" +
              "    uid = " + uid + "\n" +
@@ -141,7 +140,6 @@ class Fattr2 extends Fattr {
              " fileid = " + fileid + "\n" +
              "  atime = " + new Date(atime) + "\n" +
              "  mtime = " + new Date(mtime) + "\n" +
-             "  ctime = " + new Date(ctime)
-         );
+             "  ctime = " + new Date(ctime);
     }
 }

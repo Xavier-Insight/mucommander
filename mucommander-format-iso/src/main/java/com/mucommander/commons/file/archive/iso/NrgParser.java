@@ -53,7 +53,7 @@ class NrgParser extends IsoParser {
 
             rais.seek(len - i);
 
-            if (rais.read(buffer, 0, (i == 7) ? 4 : 12) == -1)
+            if (rais.read(buffer, 0, i == 7 ? 4 : 12) == -1)
                 throw new IOException("unable to read tail of nrg file");
 
             if (buffer[0] == 'N' && buffer[1] == 'E' && buffer[2] == 'R' && buffer[3] == '5') // v2 footer

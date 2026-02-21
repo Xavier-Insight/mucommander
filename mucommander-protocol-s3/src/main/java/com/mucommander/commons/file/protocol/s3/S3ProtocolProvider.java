@@ -67,7 +67,7 @@ public class S3ProtocolProvider implements ProtocolProvider {
         String path = url.getPath();
 
         // Root resource
-        if(("/").equals(path))
+        if("/".equals(path))
             return new S3Root(url, service);
 
         // Fetch the bucket name from the URL

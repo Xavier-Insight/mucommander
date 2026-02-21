@@ -209,7 +209,7 @@ public class DeleteJob extends FileJob {
         if(archiveFile!=null && archiveFile.isArchive() && archiveFile.isWritable()) {
             while(true) {
                 try {
-                    archiveToOptimize = ((AbstractRWArchiveFile)archiveFile);
+                    archiveToOptimize = (AbstractRWArchiveFile)archiveFile;
                     isOptimizingArchive = true;
 
                     archiveToOptimize.optimizeArchive();

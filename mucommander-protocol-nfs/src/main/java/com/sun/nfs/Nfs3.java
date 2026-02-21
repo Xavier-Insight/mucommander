@@ -775,7 +775,7 @@ class Nfs3 extends Nfs {
          * cached then return them.
          */
         if (dircache != null && cacheOK(cacheTime))
-            return (dircache);
+            return dircache;
 
         Xdr call = new Xdr(rsize + 512);
 
@@ -821,7 +821,7 @@ class Nfs3 extends Nfs {
         }
 
         if (i == 0)
-            return (null);
+            return null;
         /*
          * Trim array to exact size
          */
@@ -835,7 +835,7 @@ class Nfs3 extends Nfs {
         dircache = s;
         cacheTime = attr.mtime;
 
-        return (s);
+        return s;
     }
 
     /*

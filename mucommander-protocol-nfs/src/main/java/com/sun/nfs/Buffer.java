@@ -393,7 +393,7 @@ public class Buffer extends Thread {
     }
 
     public String toString() {
-        return (nfs.name + " @ " + foffset + " for " + buflen);
+        return nfs.name + " @ " + foffset + " for " + buflen;
     }
 
 //    protected void finalize() throws Throwable {

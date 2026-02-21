@@ -98,7 +98,7 @@ public class ExtraFieldUtils {
         int start = 0;
         while (start <= data.length - 4) {
             ZipShort headerId = new ZipShort(data, start);
-            int length = (new ZipShort(data, start + 2)).getValue();
+            int length = new ZipShort(data, start + 2).getValue();
             if (start + 4 + length > data.length) {
                 throw new ZipException("data starting at " + start
                     + " is in unknown format");
@@ -112,7 +112,7 @@ public class ExtraFieldUtils {
             } catch (IllegalAccessException iae) {
                 throw new ZipException(iae.getMessage());
             }
-            start += (length + 4);
+            start += length + 4;
         }
         if (start != data.length) { // array not exhausted
             throw new ZipException("data starting at " + start
@@ -143,7 +143,7 @@ public class ExtraFieldUtils {
                     0, result, start + 2, 2);
             byte[] local = d.getLocalFileDataData();
             System.arraycopy(local, 0, result, start + 4, local.length);
-            start += (local.length + 4);
+            start += local.length + 4;
         }
         return result;
     }
@@ -167,7 +167,7 @@ public class ExtraFieldUtils {
                     0, result, start + 2, 2);
             byte[] local = d.getCentralDirectoryData();
             System.arraycopy(local, 0, result, start + 4, local.length);
-            start += (local.length + 4);
+            start += local.length + 4;
         }
         return result;
     }

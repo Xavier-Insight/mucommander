@@ -254,7 +254,7 @@ public class TerminalIntegration {
 
         try {
             // https://stackoverflow.com/a/27432464/1715521
-            BasicSplitPaneUI splitUI = ((BasicSplitPaneUI) splitPane.getUI());
+            BasicSplitPaneUI splitUI = (BasicSplitPaneUI) splitPane.getUI();
             splitPane.setToolTipText(tooltip);
 
             splitUI.getDivider().addMouseListener(new MouseAdapter() {

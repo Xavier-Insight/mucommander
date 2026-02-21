@@ -143,7 +143,7 @@ class TextEditorImpl implements ThemeListener {
                     }
                 }
             });
-            textArea.addHyperlinkListener((event) -> {
+            textArea.addHyperlinkListener(event -> {
                 URL url = event.getURL();
                 if (url != null && event.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
                     SwingUtilities.invokeLater(() -> {

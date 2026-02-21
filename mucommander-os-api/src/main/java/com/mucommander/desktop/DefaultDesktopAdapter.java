@@ -53,7 +53,7 @@ public class DefaultDesktopAdapter implements DesktopAdapter {
 
     static {
         try {
-            Integer value = ((Integer)Toolkit.getDefaultToolkit().getDesktopProperty("awt.multiClickInterval"));
+            Integer value = (Integer)Toolkit.getDefaultToolkit().getDesktopProperty("awt.multiClickInterval");
             if(value==null)
                 multiClickInterval = DEFAULT_MULTICLICK_INTERVAL;
             else

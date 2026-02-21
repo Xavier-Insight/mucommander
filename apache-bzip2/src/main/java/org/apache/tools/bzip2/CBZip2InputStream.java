@@ -203,7 +203,7 @@ public class CBZip2InputStream extends InputStream implements BZip2Constants {
             dest[destOffs++] = (byte) b;
         }
 
-        return (destOffs == offs) ? -1 : (destOffs - offs);
+        return destOffs == offs ? -1 : (destOffs - offs);
     }
 
     private void makeMaps() {
@@ -886,7 +886,7 @@ public class CBZip2InputStream extends InputStream implements BZip2Constants {
             } else {
                 this.su_rNToGo--;
             }
-            this.su_ch2 = su_ch2Shadow ^= (this.su_rNToGo == 1) ? 1 : 0;
+            this.su_ch2 = su_ch2Shadow ^= this.su_rNToGo == 1 ? 1 : 0;
             this.su_i2++;
             this.currentChar = su_ch2Shadow;
             this.currentState = RAND_PART_B_STATE;

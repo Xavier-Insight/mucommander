@@ -609,7 +609,7 @@ public abstract class AbstractFileTest {
         long date;
 
         // Assert that changeDate succeeds (does not throw an exception)
-        tempFile.changeDate(date=(tempFile.getDate()-1000));
+        tempFile.changeDate(date=tempFile.getDate()-1000);
 
         // Assert that the getDate returns the date that was set
         assert date == tempFile.getDate();

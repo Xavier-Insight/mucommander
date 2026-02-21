@@ -354,7 +354,7 @@ public class XFile {
 
         ht.put(proto, cl);
 
-        return (cl);
+        return cl;
     }
     
 
@@ -980,7 +980,7 @@ public class XFile {
      */
     public String toString() {
         if (nativeFile != null)
-            return (nativeFile.toString());
+            return nativeFile.toString();
 
 	return urlStr;
     }

@@ -196,7 +196,7 @@ public class Nfs2 extends Nfs {
 		    gidsLength = gids.length;
 
 		for (int i = 0; i < gidsLength; i++)
-		    if (found = ((long)gids[i] == attr.gid))
+		    if (found = (long)gids[i] == attr.gid)
 			break;
 		if (!found) {
 		    // not in group list, check "other" field

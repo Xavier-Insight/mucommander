@@ -343,7 +343,7 @@ public class XFileAccessor implements com.sun.xfile.XFileAccessor {
         if (c > 0)
             fp += c;
 
-        return (c);
+        return c;
     }
 
 

@@ -233,7 +233,7 @@ public class ThemeManager {
 
         // Sorts the themes by name.
         Collections.sort(themes, new Comparator<Theme>() {
-                public int compare(Theme t1, Theme t2) {return (t1.getName()).compareTo(t2.getName());}
+                public int compare(Theme t1, Theme t2) {return t1.getName().compareTo(t2.getName());}
             });
 
         return themes;

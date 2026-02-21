@@ -129,8 +129,8 @@ public class EncodingDetector {
         CharsetMatch cm = cd.detect();
 
         // Debug info
-        LOGGER.trace("bestMatch getName()={}, getConfidence()={}", (cm==null?"null":cm.getName()),
-                     (cm==null?"null":Integer.toString(cm.getConfidence())));
+        LOGGER.trace("bestMatch getName()={}, getConfidence()={}", cm==null?"null":cm.getName(),
+                     cm==null?"null":Integer.toString(cm.getConfidence()));
 //            CharsetMatch cms[] = cd.detectAll();
 //            for(int i=0; i<cms.length; i++)
 //                CommonsLogger.finest("getName()="+cms[i].getName()+" getConfidence()="+cms[i].getConfidence());

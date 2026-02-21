@@ -99,7 +99,7 @@ public class BrowseLocationThread extends ChangeFolderThread {
             MainFrame mainFrame, FolderPanel folderPanel, LocationManager locationManager, LocationChanger locationChanger) {
         this(folder.getURL(), mainFrame, folderPanel, locationManager, locationChanger);
         // Ensure that we work on a raw file instance and not a cached one
-        this.folder = (folder instanceof CachedFile)?((CachedFile)folder).getProxiedFile():folder;
+        this.folder = folder instanceof CachedFile?((CachedFile)folder).getProxiedFile():folder;
         this.findWorkableFolder = findWorkableFolder;
         this.changeLockedTab = changeLockedTab;
     }

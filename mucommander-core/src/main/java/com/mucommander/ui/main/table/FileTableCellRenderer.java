@@ -186,7 +186,7 @@ public class FileTableCellRenderer implements TableCellRenderer, ThemeListener {
 
         // Retrieves the various indexes of the colors to apply.
         // Selection only applies when the table is the active one
-        int selectedIndex =  (isSelected && ((FileTable)table).isActiveTable()) ? ThemeCache.SELECTED : ThemeCache.NORMAL;
+        int selectedIndex =  isSelected && ((FileTable)table).isActiveTable() ? ThemeCache.SELECTED : ThemeCache.NORMAL;
         int focusedIndex  = table.hasFocus() ? ThemeCache.ACTIVE : ThemeCache.INACTIVE;
         int colorIndex    = getColorIndex(rowIndex, file, tableModel);
 
@@ -246,7 +246,7 @@ public class FileTableCellRenderer implements TableCellRenderer, ThemeListener {
             if(table.hasFocus() && search.isActive())
                 label.setBackground(ThemeCache.backgroundColors[focusedIndex][ThemeCache.NORMAL]);
             else
-                label.setBackground(ThemeCache.backgroundColors[focusedIndex][(rowIndex % 2 == 0) ? ThemeCache.NORMAL : ThemeCache.ALTERNATE]);
+                label.setBackground(ThemeCache.backgroundColors[focusedIndex][rowIndex % 2 == 0 ? ThemeCache.NORMAL : ThemeCache.ALTERNATE]);
         }
         else
             label.setBackground(ThemeCache.unmatchedBackground);
