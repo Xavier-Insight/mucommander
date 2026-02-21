@@ -371,12 +371,7 @@ class BinaryEditor extends BinaryBase implements FileEditor {
                         Arrays.asList(BinaryEditorAction.YES, BinaryEditorAction.NO, BinaryEditorAction.CANCEL),
                         0);
         DialogAction ret = dialog.getActionValue();
-
-        if (ret == BinaryEditorAction.YES && trySave(currentFile) || ret == BinaryEditorAction.NO) {
-            return true;
-        }
-
-        return false; // User canceled or the file couldn't be properly saved
+        return ret == BinaryEditorAction.YES && trySave(currentFile) || ret == BinaryEditorAction.NO; // User canceled or the file couldn't be properly saved
     }
 
     /**

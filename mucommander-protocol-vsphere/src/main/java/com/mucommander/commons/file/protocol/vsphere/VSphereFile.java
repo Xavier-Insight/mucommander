@@ -736,7 +736,7 @@ public class VSphereFile extends ProtocolFile implements
 	@Override
 	public void copyStream(InputStream in, boolean append, long length)
 			throws FileTransferException {
-		if ((append == true) || (length == -1)) {
+		if (append || (length == -1)) {
 			super.copyStream(in, append, length);
 		} else {
 			try {

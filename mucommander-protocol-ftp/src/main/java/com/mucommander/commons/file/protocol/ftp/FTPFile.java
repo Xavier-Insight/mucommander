@@ -1322,7 +1322,7 @@ public class FTPFile extends ProtocolFile implements ConnectionHandlerFactory {
                     // condition is temporary and the action may be requested again."
 	                int replyCode = ftpClient.getReplyCode();
                     if(!ftpClient.isConnected() || FTPReply.isNegativeTransient(replyCode)) {
-                        LOGGER.info((!ftpClient.isConnected()?"Connection error":"Temporary server error ("+replyCode+")")+", retries left="+retriesLeft, e);
+                        LOGGER.info((ftpClient.isConnected()?"Temporary server error ("+replyCode+")":"Connection error")+", retries left="+retriesLeft, e);
 
                         // Retry to connect, if we have at least an attempt left
                         if(retriesLeft>0) {

@@ -139,7 +139,7 @@ public class SearchDialog extends FocusDialog implements ActionListener, Documen
         l.setDisplayedMnemonic('n');
 
         boolean lastMatchRegex = Boolean.parseBoolean(SearchProperty.MATCH_REGEX.getValue());
-        wildcards = new JLabel(!lastMatchRegex ? Translator.get("search_dialog.wildcards") : " ");
+        wildcards = new JLabel(lastMatchRegex ? " " : Translator.get("search_dialog.wildcards"));
         compPanel.addRow("", wildcards, 10);
 
         GridBagConstraints gbc = ProportionalGridPanel.getDefaultGridBagConstraints();
@@ -153,7 +153,7 @@ public class SearchDialog extends FocusDialog implements ActionListener, Documen
         matchRegex = new JCheckBox(SearchProperty.MATCH_REGEX.getTranslation(), lastMatchRegex);
         matchRegex.addChangeListener(e -> {
             AbstractButton b = (AbstractButton) e.getSource();
-            wildcards.setText(!b.isSelected() ? Translator.get("search_dialog.wildcards") : " ");
+            wildcards.setText(b.isSelected() ? " " : Translator.get("search_dialog.wildcards"));
         });
         groupingPanel.add(matchRegex);
         compPanel.addRow("", groupingPanel, 10);

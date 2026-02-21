@@ -183,7 +183,7 @@ public class ConfigurationEventTest {
 
         // Makes sure unset values are returned as 0.
         event = new ConfigurationEvent(conf, VARIABLE_NAME, null);
-        assert false == event.getBooleanValue();
+        assert !event.getBooleanValue();
     }
 
 

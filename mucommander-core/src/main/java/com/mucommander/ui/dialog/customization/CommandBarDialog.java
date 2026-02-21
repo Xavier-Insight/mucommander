@@ -425,9 +425,7 @@ public class CommandBarDialog extends CustomizeDialog {
 			
 			@Override
 			public boolean canImport(TransferHandler.TransferSupport support) {
-				if (!support.isDataFlavorSupported(TransferableButton.buttonFlavor))
-					return false;
-				return true;
+                return support.isDataFlavorSupported(TransferableButton.buttonFlavor);
 			}
 			
 			@Override

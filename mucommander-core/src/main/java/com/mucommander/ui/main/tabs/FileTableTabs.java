@@ -109,7 +109,7 @@ public class FileTableTabs extends HideableTabbedPane<FileTableTab> implements L
 	
 	@Override
 	protected FileTableTab removeTab() {
-		return !getCurrentTab().isLocked() ? super.removeTab() : null;
+		return getCurrentTab().isLocked() ? null : super.removeTab();
 	}
 	
 	/********************
