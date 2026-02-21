@@ -169,8 +169,8 @@ public class DeleteJob extends FileJob {
                 LOGGER.debug("IOException caught", e);
 
                 ret = showErrorDialog(errorDialogTitle,
-                                      Translator.get(file.isDirectory()?"cannot_delete_folder":"cannot_delete_file", file.getName())
-                                      );
+                    Translator.get(file.isDirectory()?"cannot_delete_folder":"cannot_delete_file", file.getName())
+                );
                 // Retry loops
                 if(ret==FileJobAction.RETRY)
                     continue;

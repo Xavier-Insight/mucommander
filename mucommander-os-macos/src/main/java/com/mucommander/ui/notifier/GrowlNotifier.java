@@ -126,14 +126,14 @@ public class GrowlNotifier extends AbstractNotifier {
                 "{"+
                     "\""+Translator.get(NOTIFICATION_KEYS.get(NotificationType.JOB_COMPLETED))+"\","+
                     "\""+Translator.get(NOTIFICATION_KEYS.get(NotificationType.JOB_ERROR))+"\""+
-                "}";
+                    "}";
 
             // Register muCommander with Growl, declare the notifications types and enable all of them by default
             isRegistered = tellGrowl(
                 "register as application \""+APP_NAME+"\""+
-                " all notifications "+notificationTypes+
-                " default notifications "+notificationTypes+
-                " icon of application \""+APP_NAME+"\"");
+                    " all notifications "+notificationTypes+
+                    " default notifications "+notificationTypes+
+                    " icon of application \""+APP_NAME+"\"");
 
             LOGGER.info(isRegistered?
                 "Successfully registered "+APP_NAME+" with Growl":

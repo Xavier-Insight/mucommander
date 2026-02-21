@@ -119,8 +119,8 @@ public class ZipArchiveFile extends AbstractRWArchiveFile {
         zipEntry.setMethod(ZipConstants.DEFLATED);
         zipEntry.setTime(System.currentTimeMillis());
         zipEntry.setUnixMode(SimpleFilePermissions.padPermissions(entry.getPermissions(), isDirectory
-                ? FilePermissions.DEFAULT_DIRECTORY_PERMISSIONS
-                        : FilePermissions.DEFAULT_FILE_PERMISSIONS).getIntValue());
+            ? FilePermissions.DEFAULT_DIRECTORY_PERMISSIONS
+            : FilePermissions.DEFAULT_FILE_PERMISSIONS).getIntValue());
 
         return zipEntry;
     }

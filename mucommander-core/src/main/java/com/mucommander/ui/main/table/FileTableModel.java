@@ -322,7 +322,7 @@ public class FileTableModel extends AbstractTableModel {
                 if (canGetGroup == null || canGetOwner == null) {
                     canGetGroup = file.canGetGroup();
                     canGetOwner = file.canGetOwner();
-		}
+		        }
             }
             int cellIndex = fileArrayIndex[fileIndex] + indexOffset;
             Object sizeValue;

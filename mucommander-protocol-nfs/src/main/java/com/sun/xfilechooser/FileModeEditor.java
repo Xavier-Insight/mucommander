@@ -81,7 +81,7 @@ public class FileModeEditor extends PropertyEditorSupport
 	int s = ((Integer)getValue()).intValue();
 	for (int i=0; i<fileModeNames.length; i++) {
 	    if (s == fileModeValues[i]) 
-		return fileModeNames[i];
+		    return fileModeNames[i];
 	}
 	return null;
     }

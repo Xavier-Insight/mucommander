@@ -167,7 +167,7 @@ public class CalculateChecksumDialog extends JobDialog implements ActionListener
         JButton cancelButton = new JButton(Translator.get("cancel"));
 
         mainPanel.add(createButtonsPanel(createFileDetailsButton(fileDetailsPanel),
-                DialogToolkit.createOKCancelPanel(okButton, cancelButton, getRootPane(), this)));
+            DialogToolkit.createOKCancelPanel(okButton, cancelButton, getRootPane(), this)));
 
         mainPanel.addSpace(3);
 

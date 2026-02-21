@@ -78,7 +78,7 @@ public class ZipURL {
             if (p < r)
                 location = url.substring(p, r);
         } else {
-             q = p;
+            q = p;
         }
 
         if (q < end)

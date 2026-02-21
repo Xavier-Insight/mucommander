@@ -300,7 +300,7 @@ public class FileTableColumnModel implements TableColumnModel, PropertyChangeLis
         for(int i = 0; i < count; i++) {
             x = x - getColumn(i).getWidth();
             if(x < 0)
-            return i;
+                return i;
             }
         return -1;
     }

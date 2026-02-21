@@ -300,13 +300,13 @@ public class FileTable extends JTable implements MouseListener, MouseMotionListe
 
         // Highlights the selected column
         tableHeader.putClientProperty("JTableHeader.selectedColumn", isActiveTable
-                ? convertColumnIndexToView(sortInfo.getCriterion().ordinal())
-                        : null);
+            ? convertColumnIndexToView(sortInfo.getCriterion().ordinal())
+            : null);
 
         // Displays an ascending/descending arrow
         tableHeader.putClientProperty("JTableHeader.sortDirection", isActiveTable
-                ? sortInfo.getAscendingOrder()?"ascending":"decending"      // 'decending' is misspelled but this is OK
-                    : null);
+            ? sortInfo.getAscendingOrder()?"ascending":"decending"      // 'decending' is misspelled but this is OK
+            : null);
 
         // Note: if this table is not currently active, properties are cleared to remove the highlighting effect.
         // However, clearing the properties does not yield the desired behavior as it does not restore the table
@@ -1163,7 +1163,7 @@ public class FileTable extends JTable implements MouseListener, MouseMotionListe
                 // would not work. Instead, SwingUtilities.invokeLater is used to delay the call after all pending
                 // UI events (including JViewport revalidation) have been processed.
                 SwingUtilities.invokeLater(() -> scrollpaneWrapper.getViewport().setViewPosition(
-                        new java.awt.Point(0, Math.max(0, cellRect.y-scrollpaneWrapper.getHeight()/2-getRowHeight()/2))));
+                    new java.awt.Point(0, Math.max(0, cellRect.y-scrollpaneWrapper.getHeight()/2-getRowHeight()/2))));
             }
         }
     }

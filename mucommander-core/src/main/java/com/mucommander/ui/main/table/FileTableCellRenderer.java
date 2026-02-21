@@ -195,8 +195,8 @@ public class FileTableCellRenderer implements TableCellRenderer, ThemeListener {
         if(column == Column.EXTENSION) {
             // Set file icon (parent folder icon if '..' file)
             label.setIcon(rowIndex ==0 && tableModel.hasParentFolder()
-                    ?IconManager.getIcon(IconManager.FILE_ICON_SET, CustomFileIconProvider.PARENT_FOLDER_ICON_NAME, FileIcons.getScaleFactor())
-                    :FileIcons.getFileIcon(file));
+                ?IconManager.getIcon(IconManager.FILE_ICON_SET, CustomFileIconProvider.PARENT_FOLDER_ICON_NAME, FileIcons.getScaleFactor())
+                :FileIcons.getFileIcon(file));
         }
         // Any other column (name, date or size)
         else {
@@ -218,7 +218,7 @@ public class FileTableCellRenderer implements TableCellRenderer, ThemeListener {
                 String rightText = text.substring(text.length()/2, text.length());
 
                 while(table.getColumnModel().getColumn(columnIndex).getWidth() < label.getPreferredSize().getWidth()
-                   && leftText.length()>0 && rightText.length()>0) {    // Prevents against going out of bounds
+                    && leftText.length()>0 && rightText.length()>0) {    // Prevents against going out of bounds
 
                     if(leftText.length()>rightText.length())
                         leftText = leftText.substring(0, leftText.length()-1);

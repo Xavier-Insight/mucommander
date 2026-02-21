@@ -76,8 +76,7 @@ public class IntEditor extends JSpinner.DefaultEditor {
                 }
             };
         }
-        DefaultFormatterFactory factory = new DefaultFormatterFactory(
-                                              formatter);
+        var factory = new DefaultFormatterFactory(formatter);
         JFormattedTextField ftf = getTextField();
         ftf.setEditable(true);
         ftf.setFormatterFactory(factory);

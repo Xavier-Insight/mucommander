@@ -170,15 +170,15 @@ class NrgParser extends IsoParser {
                 Vector<IsoArchiveEntry> entries = new Vector<IsoArchiveEntry>();
                 for (int k = 0; k < tracks; k++) {
                     entries.add(
-                            new IsoArchiveEntry(
-                                    file.getName() + ".TRACK" + (k + 1) + ".wav",
-                                    false,
-                                    file.getDate(),
-                                    tracksEnd[k] - tracksOffset[k] + IsoUtil.WAV_header, // adding wav header
-                                    0,
-                                    sectSize,
-                                    tracksOffset[k],
-                                    true)
+                        new IsoArchiveEntry(
+                            file.getName() + ".TRACK" + (k + 1) + ".wav",
+                            false,
+                            file.getDate(),
+                            tracksEnd[k] - tracksOffset[k] + IsoUtil.WAV_header, // adding wav header
+                            0,
+                            sectSize,
+                            tracksOffset[k],
+                            true)
                     );
                 }
                 return entries;

@@ -116,8 +116,8 @@ class ProcessOutputMonitor implements Runnable {
 
         // Closes the stream.
         try {
-	    if(in != null)
-		in.close();
+	        if(in != null)
+		        in.close();
 	}
         catch(IOException e) {
             LOGGER.debug("IOException thrown while closing process stream", e);

@@ -232,8 +232,8 @@ public class UnpackJob extends AbstractCopyJob {
 
                     // Figure out the destination file's path, relatively to the base destination folder
                     String relDestPath = baseArchiveDepth == 0
-                            ? entry.getPath()
-                                    : PathUtils.removeLeadingFragments(entry.getPath(), "/", baseArchiveDepth);
+                        ? entry.getPath()
+                        : PathUtils.removeLeadingFragments(entry.getPath(), "/", baseArchiveDepth);
 
                     if (newName != null)
                         relDestPath = newName + (PathUtils.getDepth(relDestPath, "/") <= 1 ? "" : "/" + PathUtils.removeLeadingFragments(relDestPath, "/", 1));
@@ -302,8 +302,8 @@ public class UnpackJob extends AbstractCopyJob {
 
                         if (entry.isSymlink()) {
                             Files.createSymbolicLink(
-                                    FileSystems.getDefault().getPath(destFile.getAbsolutePath()),
-                                    FileSystems.getDefault().getPath(entry.getLinkTarget()));
+                                FileSystems.getDefault().getPath(destFile.getAbsolutePath()),
+                                FileSystems.getDefault().getPath(entry.getLinkTarget()));
                             continue;
                         }
 

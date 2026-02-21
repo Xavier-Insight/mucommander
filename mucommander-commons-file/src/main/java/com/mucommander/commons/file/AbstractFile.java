@@ -1149,7 +1149,7 @@ public abstract class AbstractFile implements FileAttributes {
         // (Reminder: C: is C's current folder, while C:\ is C's root)
         String separator = getSeparator();
         if(path.endsWith(separator)
-           && !(("/".equals(separator) && path.length()==1) || ("\\".equals(separator) && path.charAt(path.length()-2)==':')))
+            && !(("/".equals(separator) && path.length()==1) || ("\\".equals(separator) && path.charAt(path.length()-2)==':')))
             path = path.substring(0, path.length()-1);
         return path;
     }
@@ -1219,8 +1219,8 @@ public abstract class AbstractFile implements FileAttributes {
      */
     protected final void checkCopyRemotelyPrerequisites(AbstractFile destFile, boolean allowCaseVariations, boolean allowDifferentHosts) throws IOException, FileTransferException {
         if(!fileURL.schemeEquals(fileURL)
-        || !destFile.getTopAncestor().getClass().equals(getTopAncestor().getClass())
-        || (!allowDifferentHosts && !destFile.getURL().hostEquals(fileURL)))
+            || !destFile.getTopAncestor().getClass().equals(getTopAncestor().getClass())
+            || (!allowDifferentHosts && !destFile.getURL().hostEquals(fileURL)))
             throw new IOException();
 
         checkCopyPrerequisites(destFile, allowCaseVariations);
@@ -1444,10 +1444,10 @@ public abstract class AbstractFile implements FileAttributes {
     	String fileName = getName(); 
     	int lastDotPos = fileName.lastIndexOf('.');
     	 
-         if(lastDotPos<=0 || lastDotPos==fileName.length()-1)
-             return fileName;
+        if(lastDotPos<=0 || lastDotPos==fileName.length()-1)
+            return fileName;
          
-         return fileName.substring(0, lastDotPos);
+        return fileName.substring(0, lastDotPos);
     }
     
     /**

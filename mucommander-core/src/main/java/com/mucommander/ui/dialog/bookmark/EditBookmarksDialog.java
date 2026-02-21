@@ -281,9 +281,9 @@ public class EditBookmarksDialog extends FocusDialog implements ActionListener, 
         char c;
         int num = 2;
         if(len>4 && name.charAt(len-1)==')'
-                    && (c=name.charAt(len-2))>='0' && c<='9'
-                    && name.charAt(len-3)=='('
-                    && name.charAt(len-4)==' ')
+            && (c=name.charAt(len-2))>='0' && c<='9'
+            && name.charAt(len-3)=='('
+            && name.charAt(len-4)==' ')
         {
             num = (c-'0')+1;
             name = name.substring(0, len-4);

@@ -99,14 +99,14 @@ public class SFTPPanel extends ServerPanel {
             chooseFileButton.putClientProperty("JComponent.sizeVariant", "small");
 
         chooseFileButton.addActionListener(new ActionListener() {
-                JFileChooser fc = new JFileChooser(System.getProperty("user.home") + System.getProperty("file.separator") + ".ssh");
-                public void actionPerformed(ActionEvent e) {
-                    int returnVal = fc.showOpenDialog(mainFrame);
-                    if (returnVal == JFileChooser.APPROVE_OPTION) {
-                        privateKeyPathField.setText(fc.getSelectedFile().getAbsolutePath());
-                    }
+            JFileChooser fc = new JFileChooser(System.getProperty("user.home") + System.getProperty("file.separator") + ".ssh");
+            public void actionPerformed(ActionEvent e) {
+                int returnVal = fc.showOpenDialog(mainFrame);
+                if (returnVal == JFileChooser.APPROVE_OPTION) {
+                    privateKeyPathField.setText(fc.getSelectedFile().getAbsolutePath());
                 }
             }
+        }
         );
         privateKeyChooser.add(chooseFileButton, BorderLayout.EAST);
 

@@ -186,9 +186,9 @@ public class MkdirJob extends FileJob {
                 LOGGER.debug("IOException caught", e);
 
                 DialogAction action = showErrorDialog(
-                        Translator.get("error"),
-                        Translator.get(mkfileMode ? "cannot_write_file" : "cannot_create_folder", file.getAbsolutePath()),
-                        Arrays.asList(FileJobAction.RETRY, FileJobAction.CANCEL)
+                    Translator.get("error"),
+                    Translator.get(mkfileMode ? "cannot_write_file" : "cannot_create_folder", file.getAbsolutePath()),
+                    Arrays.asList(FileJobAction.RETRY, FileJobAction.CANCEL)
                 );
                 // Retry (loop)
                 if (action == FileJobAction.RETRY)

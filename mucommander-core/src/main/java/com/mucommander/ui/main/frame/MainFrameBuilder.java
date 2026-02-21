@@ -104,10 +104,10 @@ public abstract class MainFrameBuilder {
                     initialFolders.toArray(new AbstractFile[0]);
 
                 LOGGER.debug("initial folders:");
-                for (AbstractFile result:results)
-                    LOGGER.debug("\t"+result);
+        for (AbstractFile result:results)
+            LOGGER.debug("\t"+result);
 
-                return results;
+        return results;
     }
 
     /**

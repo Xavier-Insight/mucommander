@@ -135,7 +135,7 @@ public class ProxyFileTest extends AbstractFileTest {
             }
 
             assert proxyFileMethod != null && (proxyFileMethod.getDeclaringClass().equals(proxyFileClass)):
-                    abstractFileMethod.getName() + " not overridden by " + proxyFileClass.getName();
+                abstractFileMethod.getName() + " not overridden by " + proxyFileClass.getName();
         }
 
     }

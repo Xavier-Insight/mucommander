@@ -90,8 +90,8 @@ public class ClassFinder {
             if (file.isDirectory())
                 result.addAll(find(currentPackage + file.getName() + '.', file));
 
-                // Passes each class through the class filter.
-                // Errors are treated as 'this class is not wanted'.
+            // Passes each class through the class filter.
+            // Errors are treated as 'this class is not wanted'.
             else {
                 try {
                     if (classFilter.accept(currentClass = Class.forName(currentPackage + file.getNameWithoutExtension(), false, loader)))

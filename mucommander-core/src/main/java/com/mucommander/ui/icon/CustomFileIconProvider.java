@@ -148,7 +148,7 @@ public class CustomFileIconProvider implements FileIconProvider {
             int nbExtensions = ICON_EXTENSIONS[i].length;
             String iconName = ICON_EXTENSIONS[i][0];
             for(int j=1; j<nbExtensions; j++)
-                 extensionMap.put(ICON_EXTENSIONS[i][j], iconName);
+                extensionMap.put(ICON_EXTENSIONS[i][j], iconName);
         }
 
         initialized = true;

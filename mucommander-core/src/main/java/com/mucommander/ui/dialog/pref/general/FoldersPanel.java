@@ -220,9 +220,9 @@ class FoldersPanel extends PreferencesPanel implements ItemListener, KeyListener
             return String.format("%s (%s)", language, languageTag);
         };
         var locales = Stream.of(Locale.getAvailableLocales())
-                .filter(locale -> !locale.getLanguage().isEmpty())
-                .sorted(Comparator.comparing(localeToDisplayName))
-                .toArray(Locale[]::new);
+            .filter(locale -> !locale.getLanguage().isEmpty())
+            .sorted(Comparator.comparing(localeToDisplayName))
+            .toArray(Locale[]::new);
         Supplier<String> currentLanguageTag = () -> MuConfigurations.getPreferences().getVariable(MuPreference.FILENAME_LOCALE, Locale.getDefault().toLanguageTag());
         localeComboBox = new PrefComboBox<>() {
             public boolean hasChanged() {
@@ -249,8 +249,8 @@ class FoldersPanel extends PreferencesPanel implements ItemListener, KeyListener
         northPanel.addSpace(10);
 
         showHiddenFilesCheckBox = new PrefCheckBox(Translator.get("prefs_dialog.show_hidden_files"), () -> MuConfigurations.getPreferences().getVariable(
-                MuPreference.SHOW_HIDDEN_FILES,
-                MuPreferences.DEFAULT_SHOW_HIDDEN_FILES));
+            MuPreference.SHOW_HIDDEN_FILES,
+            MuPreferences.DEFAULT_SHOW_HIDDEN_FILES));
         showHiddenFilesCheckBox.addDialogListener(parent);
         northPanel.add(showHiddenFilesCheckBox);
 
@@ -261,8 +261,8 @@ class FoldersPanel extends PreferencesPanel implements ItemListener, KeyListener
             showHiddenFilesCheckBox.addItemListener(this);
 
             showDSStoreFilesCheckBox = new PrefCheckBox(Translator.get("prefs_dialog.show_ds_store_files"), () -> MuConfigurations.getPreferences().getVariable(
-                    MuPreference.SHOW_DS_STORE_FILES,
-                    MuPreferences.DEFAULT_SHOW_DS_STORE_FILES));
+                MuPreference.SHOW_DS_STORE_FILES,
+                MuPreferences.DEFAULT_SHOW_DS_STORE_FILES));
             showDSStoreFilesCheckBox.setEnabled(showHiddenFilesCheckBox.isSelected());
             showDSStoreFilesCheckBox.addDialogListener(parent);
             // Shift the check box to the right to indicate that it is a sub-option
@@ -270,42 +270,42 @@ class FoldersPanel extends PreferencesPanel implements ItemListener, KeyListener
         }
 
         showParentFolderCheckBox = new PrefCheckBox(Translator.get("prefs_dialog.show_parent"), () -> MuConfigurations.getPreferences().getVariable(
-                MuPreference.SHOW_PARENT_FOLDER,
-                MuPreferences.DEFAULT_SHOW_PARENT_FOLDER));
+            MuPreference.SHOW_PARENT_FOLDER,
+            MuPreferences.DEFAULT_SHOW_PARENT_FOLDER));
         showParentFolderCheckBox.addDialogListener(parent);
         northPanel.add(showParentFolderCheckBox);
 
         if (OsFamily.MAC_OS.isCurrent() || OsFamily.WINDOWS.isCurrent()) {
             showSystemFoldersCheckBox = new PrefCheckBox(Translator.get("prefs_dialog.show_system_folders"), () -> MuConfigurations.getPreferences().getVariable(
-                    MuPreference.SHOW_SYSTEM_FOLDERS,
-                    MuPreferences.DEFAULT_SHOW_SYSTEM_FOLDERS));
+                MuPreference.SHOW_SYSTEM_FOLDERS,
+                MuPreferences.DEFAULT_SHOW_SYSTEM_FOLDERS));
             showSystemFoldersCheckBox.addDialogListener(parent);
             northPanel.add(showSystemFoldersCheckBox);
         }
 
         compactSizeCheckBox = new PrefCheckBox(Translator.get("prefs_dialog.compact_file_size"), () -> MuConfigurations.getPreferences().getVariable(
-                MuPreference.DISPLAY_COMPACT_FILE_SIZE,
-                MuPreferences.DEFAULT_DISPLAY_COMPACT_FILE_SIZE));
+            MuPreference.DISPLAY_COMPACT_FILE_SIZE,
+            MuPreferences.DEFAULT_DISPLAY_COMPACT_FILE_SIZE));
         compactSizeCheckBox.addDialogListener(parent);
         northPanel.add(compactSizeCheckBox);
 
         followSymlinksCheckBox = new PrefCheckBox(Translator.get("prefs_dialog.follow_symlinks_when_cd"), () -> MuConfigurations.getPreferences().getVariable(
-                MuPreference.CD_FOLLOWS_SYMLINKS,
-                MuPreferences.DEFAULT_CD_FOLLOWS_SYMLINKS));
+            MuPreference.CD_FOLLOWS_SYMLINKS,
+            MuPreferences.DEFAULT_CD_FOLLOWS_SYMLINKS));
         followSymlinksCheckBox.addDialogListener(parent);
         northPanel.add(followSymlinksCheckBox);
 
         showTabHeaderCheckBox = new PrefCheckBox(Translator.get("prefs_dialog.show_tab_header"), () -> MuConfigurations.getPreferences().getVariable(
-                MuPreference.SHOW_TAB_HEADER,
-                MuPreferences.DEFAULT_SHOW_TAB_HEADER));
+            MuPreference.SHOW_TAB_HEADER,
+            MuPreferences.DEFAULT_SHOW_TAB_HEADER));
         showTabHeaderCheckBox.addDialogListener(parent);
         northPanel.add(showTabHeaderCheckBox);
 
         JPanel quickSearchPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         quickSearchPanel.setBorder(BorderFactory.createEmptyBorder());
         quickSearchTimeoutSpinner = new PrefSpinner(0, 999, 1, () -> MuConfigurations.getPreferences().getVariable(
-                MuPreference.QUICK_SEARCH_TIMEOUT,
-                MuPreferences.DEFAULT_QUICK_SEARCH_TIMEOUT));
+            MuPreference.QUICK_SEARCH_TIMEOUT,
+            MuPreferences.DEFAULT_QUICK_SEARCH_TIMEOUT));
         quickSearchTimeoutSpinner.addDialogListener(parent);
         quickSearchTimeoutSpinner.setEditor(new IntEditor(quickSearchTimeoutSpinner, "###", Translator.get("prefs_dialog.no_quick_search_timeout"), SwingConstants.TRAILING));
         quickSearchPanel.add(new JLabel(Translator.get("prefs_dialog.quick_search_timeout_sec")));

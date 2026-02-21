@@ -458,8 +458,8 @@ public class FileFactory {
         String pathSeparator = fileURL.getPathSeparator();
 
         PathTokenizer pt = new PathTokenizer(filePath,
-                pathSeparator,
-                false);
+            pathSeparator,
+            false);
 
         AbstractFile currentFile = null;
         boolean lastFileResolved = false;

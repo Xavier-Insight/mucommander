@@ -174,13 +174,13 @@ public class FolderPanel implements FocusListener, QuickListContainer, ActiveTab
 
         // Initialize quick lists in background
         fileTablePopups =  CompletableFuture.supplyAsync(() -> new QuickList[] {
-                            new ParentFoldersQL(this),
-                            new RecentLocationsQL(this),
-                            new RecentExecutedFilesQL(this),
-                            new BookmarksQL(this),
-                            new RootFoldersQL(this),
-                            new TabsQL(this)
-            });
+            new ParentFoldersQL(this),
+            new RecentLocationsQL(this),
+            new RecentExecutedFilesQL(this),
+            new BookmarksQL(this),
+            new RootFoldersQL(this),
+            new TabsQL(this)
+        });
 
         // Create the FileTable
         fileTable = new FileTable(mainFrame, this, conf);

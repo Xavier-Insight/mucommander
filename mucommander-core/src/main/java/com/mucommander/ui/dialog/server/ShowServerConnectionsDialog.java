@@ -111,8 +111,8 @@ public class ShowServerConnectionsDialog extends FocusDialog implements ActionLi
             connectionList.setSelectedIndex(0);
 
         contentPane.add(
-                new JScrollPane(connectionList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED),
-                BorderLayout.CENTER);
+            new JScrollPane(connectionList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED),
+            BorderLayout.CENTER);
 
         // Add buttons
 

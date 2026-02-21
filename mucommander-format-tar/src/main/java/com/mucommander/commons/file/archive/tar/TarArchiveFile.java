@@ -94,10 +94,10 @@ public class TarArchiveFile extends AbstractROArchiveFile {
         TarArchiveEntry tarEntry;
         String targetPath = entry.getPath();
         // Iterate through the archive until we've found the entry
-         while ((tarEntry = tin.getNextTarEntry()) != null) {
-             if (tarEntry.getName().equals(targetPath)) {
-                 // That's the one, return it
-                 return tin;
+        while ((tarEntry = tin.getNextTarEntry()) != null) {
+            if (tarEntry.getName().equals(targetPath)) {
+                // That's the one, return it
+                return tin;
             }
         }
 

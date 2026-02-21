@@ -201,7 +201,7 @@ public class DynamicList<E> extends JList {
 
         // Select first item, if there is at least one
         if(items.size()>0)
-           setSelectedIndex(0);
+            setSelectedIndex(0);
 
         // Create action instances
         this.moveUpAction = new MoveUpAction();

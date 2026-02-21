@@ -425,7 +425,7 @@ public class Command implements Comparable<Command> {
         Command cmd;
         cmd = (Command)object;
         return command.equals(cmd.command) && alias.equals(cmd.alias) && type == cmd.type &&
-               getDisplayName().equals(cmd.getDisplayName());
+            getDisplayName().equals(cmd.getDisplayName());
     }
 
     public int compareTo(Command command) {

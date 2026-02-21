@@ -220,15 +220,15 @@ class IsoParser {
                     // positive for time zones east of Greenwich, and negative for time zones
                     calendar.setTimeZone(new java.util.SimpleTimeZone(15 * 60 * 1000 * idr.date[6], ""));
                     entries.add(
-                            new IsoArchiveEntry(
-                                    name.toString(),
-                                    dir,
-                                    calendar.getTimeInMillis(),
-                                    fstat_buf.st_size,
-                                    isonum_733(idr.extent) - sector_offset,
-                                    sectSize,
-                                    shiftOffset,
-                                    false)
+                        new IsoArchiveEntry(
+                            name.toString(),
+                            dir,
+                            calendar.getTimeInMillis(),
+                            fstat_buf.st_size,
+                            isonum_733(idr.extent) - sector_offset,
+                            sectSize,
+                            shiftOffset,
+                            false)
                     );
                 }
 

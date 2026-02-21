@@ -392,8 +392,8 @@ public abstract class HadoopFile extends ProtocolFile {
             throw new IOException();
 
         FileStatus[] statuses = filter==null
-                ?fs.listStatus(path)
-                :fs.listStatus(path, new HadoopFilenameFilter(filter));
+            ?fs.listStatus(path)
+            :fs.listStatus(path, new HadoopFilenameFilter(filter));
 
         int nbChildren = statuses==null?0:statuses.length;
         AbstractFile[] children = new AbstractFile[nbChildren];

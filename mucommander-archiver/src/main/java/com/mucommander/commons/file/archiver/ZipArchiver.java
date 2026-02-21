@@ -83,8 +83,8 @@ class ZipArchiver extends Archiver {
 
         entry.setTime(file.getDate());
         int unixMode = SimpleFilePermissions.padPermissions(file.getPermissions(), isDirectory ?
-                FilePermissions.DEFAULT_DIRECTORY_PERMISSIONS
-                : FilePermissions.DEFAULT_FILE_PERMISSIONS).getIntValue();
+            FilePermissions.DEFAULT_DIRECTORY_PERMISSIONS
+            : FilePermissions.DEFAULT_FILE_PERMISSIONS).getIntValue();
         unixMode |= file.getURL().getScheme() == LocalFile.SCHEMA && file.isSymlink() ? UnixStat.LINK_FLAG : 0;
         entry.setUnixMode(unixMode);
 

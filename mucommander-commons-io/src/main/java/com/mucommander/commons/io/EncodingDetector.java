@@ -113,7 +113,7 @@ public class EncodingDetector {
         // Trim the array if it is too long, detecting the charset is an expensive operation and past a certain point,
         // having more bytes won't help any further        
         if(len > MAX_RECOMMENDED_BYTE_SIZE)
-                len = MAX_RECOMMENDED_BYTE_SIZE;
+            len = MAX_RECOMMENDED_BYTE_SIZE;
 
         // CharsetDetector will process the array fully, so if the data does not start at 0 or ends before the array's
         // length, create a new array that fits the data exactly
@@ -130,7 +130,7 @@ public class EncodingDetector {
 
         // Debug info
         LOGGER.trace("bestMatch getName()={}, getConfidence()={}", cm==null?"null":cm.getName(),
-                     cm==null?"null":Integer.toString(cm.getConfidence()));
+            cm==null?"null":Integer.toString(cm.getConfidence()));
 //            CharsetMatch cms[] = cd.detectAll();
 //            for(int i=0; i<cms.length; i++)
 //                CommonsLogger.finest("getName()="+cms[i].getName()+" getConfidence()="+cms[i].getConfidence());

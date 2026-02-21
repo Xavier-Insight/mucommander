@@ -217,7 +217,7 @@ public class Oid {
             return false;
             
         for (Enumeration e1 = m_v.elements(), e2 = anOid.m_v.elements();
-            e1.hasMoreElements(); ) {
+             e1.hasMoreElements(); ) {
         
             if (! e1.nextElement().equals(e2.nextElement()))
                 return false;

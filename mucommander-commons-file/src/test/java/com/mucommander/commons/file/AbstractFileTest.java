@@ -1811,7 +1811,7 @@ public abstract class AbstractFileTest {
     public void testMkdirs() throws IOException {
         // Require the 'create directory' operation to be supported
         if(!tempFile.isFileOperationSupported(FileOperation.CREATE_DIRECTORY))
-        return;
+            return;
 
         // Assert that a directory can be created when the file doesn't already exist (without throwing an IOException)
         AbstractFile dir1 = tempFile.getDirectChild("dir1");

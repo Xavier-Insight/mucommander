@@ -950,7 +950,7 @@ public class BatchRenameDialog extends FocusDialog implements ActionListener, Do
                         && currentStartIndex - 1 < targetLen) {
                     try {
                         name = name.substring(currentStartIndex - 1, Math.min(
-                                currentEndIndex, targetLen));
+                            currentEndIndex, targetLen));
                     } catch (Exception e) {
                     	LOGGER.info("currentStartIndex="+currentStartIndex+", currentEndIndex="+currentEndIndex, e);
                     }

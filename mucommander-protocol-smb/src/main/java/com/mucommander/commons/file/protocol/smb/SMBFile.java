@@ -183,7 +183,7 @@ import jcifs.smb.SmbRandomAccessFile;
         // for the URL parsing which is unable to properly parse urls where the password contains a '@' character,
         // such as smb://user:p@ssword@host/path . 
         CIFSContext context = SingletonContext.getInstance().withCredentials(new NtlmPasswordAuthenticator(
-                domain, login, credentials.getPassword()));
+            domain, login, credentials.getPassword()));
         return new SmbFile(url.toString(false), context);
     }
 
@@ -501,34 +501,34 @@ import jcifs.smb.SmbRandomAccessFile;
                 throw new IOException("failed to list " + file);
 
             return Stream.of(smbFiles)
-                    .filter(file -> {
-                        int smbFileType;
-                        try {
-                            smbFileType = file.getType();
-                        } catch (SmbException e) {
-                            LOGGER.error("failed to get type of {}, skipping", file);
-                            LOGGER.debug("failed to get smb type", e);
-                            // this typically means that the user has no access to the file
-                            return false;
-                        }
-                        // excluded files are those that are not file share / not browsable
-                        // (Printers, named pipes, comm ports)
-                        return smbFileType != SmbFile.TYPE_PRINTER && smbFileType != SmbFile.TYPE_NAMED_PIPE && smbFileType != SmbFile.TYPE_COMM;
-                    })
-                    .map(file -> {
-                        // Note: properties and credentials are cloned for every children's url
-                        FileURL childURL = (FileURL)fileURL.clone();
-                        childURL.setHost(file.getServer());
-                        childURL.setPath(file.getURL().getPath());
-                        try {
-                            return FileFactory.getFile(childURL, this, Collections.singletonMap("parentSmbFile", file));
-                        } catch (IOException e) {
-                            LOGGER.debug("failed to get file {}", childURL);
-                            return null;
-                        }
-                    })
-                    .filter(Objects::nonNull)
-                    .toArray(AbstractFile[]::new);
+                .filter(file -> {
+                    int smbFileType;
+                    try {
+                        smbFileType = file.getType();
+                    } catch (SmbException e) {
+                        LOGGER.error("failed to get type of {}, skipping", file);
+                        LOGGER.debug("failed to get smb type", e);
+                        // this typically means that the user has no access to the file
+                        return false;
+                    }
+                    // excluded files are those that are not file share / not browsable
+                    // (Printers, named pipes, comm ports)
+                    return smbFileType != SmbFile.TYPE_PRINTER && smbFileType != SmbFile.TYPE_NAMED_PIPE && smbFileType != SmbFile.TYPE_COMM;
+                })
+                .map(file -> {
+                    // Note: properties and credentials are cloned for every children's url
+                    FileURL childURL = (FileURL)fileURL.clone();
+                    childURL.setHost(file.getServer());
+                    childURL.setPath(file.getURL().getPath());
+                    try {
+                        return FileFactory.getFile(childURL, this, Collections.singletonMap("parentSmbFile", file));
+                    } catch (IOException e) {
+                        LOGGER.debug("failed to get file {}", childURL);
+                        return null;
+                    }
+                })
+                .filter(Objects::nonNull)
+                .toArray(AbstractFile[]::new);
         }
         catch(SmbAuthException e) {
             throw new AuthException(fileURL, e.getMessage());
@@ -674,12 +674,12 @@ import jcifs.smb.SmbRandomAccessFile;
 
             try {
             	switch(type) {
-            	case READ:
-            		return file.canRead();
-            	case WRITE:
-            		return file.canWrite();
-            	default:
-            		return false;
+            	    case READ:
+            		    return file.canRead();
+            	    case WRITE:
+            		    return file.canWrite();
+            	    default:
+            		    return false;
             	}
             }
             // Unlike java.io.File, SmbFile#canRead() and SmbFile#canWrite() can throw an SmbException

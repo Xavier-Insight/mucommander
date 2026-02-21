@@ -346,11 +346,11 @@ public abstract class TransferFileJob extends FileJob {
                         break;
                     default:
                         choice = showErrorDialog(errorDialogTitle,
-                                                 Translator.get("error_while_transferring", sourceFile.getName()),
-                                                 Arrays.asList(FileJobAction.SKIP, FileJobAction.SKIP_ALL,
-                                                         FileJobAction.APPEND, FileJobAction.RETRY,
-                                                         FileJobAction.CANCEL));
-                    break;
+                            Translator.get("error_while_transferring", sourceFile.getName()),
+                            Arrays.asList(FileJobAction.SKIP, FileJobAction.SKIP_ALL,
+                                FileJobAction.APPEND, FileJobAction.RETRY,
+                                FileJobAction.CANCEL));
+                        break;
                 }
 
                 // Retry action (append or retry)

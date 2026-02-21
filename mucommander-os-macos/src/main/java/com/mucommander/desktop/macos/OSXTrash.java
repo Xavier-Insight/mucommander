@@ -180,18 +180,18 @@ public class OSXTrash extends QueuedTrash {
             return true;
 
         boolean smbfs = queuedFiles.stream()
-                .map(file -> (File) file.getUnderlyingFileObject())
-                .map(File::toPath)
-                .map(path -> {
-                    try {
-                        return Files.getFileStore(path);
-                    } catch (IOException e) {
-                        LOGGER.warn("failed to retrieve FileStore of {}", path, e);
-                        return null;
-                    }
-                })
-                .map(fs -> fs != null ? fs.type() : null)
-                .anyMatch("smbfs"::equals);
+            .map(file -> (File) file.getUnderlyingFileObject())
+            .map(File::toPath)
+            .map(path -> {
+                try {
+                    return Files.getFileStore(path);
+                } catch (IOException e) {
+                    LOGGER.warn("failed to retrieve FileStore of {}", path, e);
+                    return null;
+                }
+            })
+            .map(fs -> fs != null ? fs.type() : null)
+            .anyMatch("smbfs"::equals);
         if (smbfs) {
             // JNA doesn't move files on SMB shares to trash
             LOGGER.error("failed to move SMB files to trash");

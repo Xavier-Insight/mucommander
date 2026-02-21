@@ -80,8 +80,8 @@ public class CombineFilesJob extends AbstractCopyJob {
         } catch (IOException e) {
             LOGGER.debug("Caught exception", e);
             showErrorDialog(errorDialogTitle,
-                    Translator.get("error_while_transferring", destFile.getName()),
-                    Arrays.asList(FileJobAction.CANCEL)
+                Translator.get("error_while_transferring", destFile.getName()),
+                Arrays.asList(FileJobAction.CANCEL)
             );
             interrupt();
             return false;

@@ -284,8 +284,7 @@ public class ZipFile implements ZipConstants {
                 bis.addDummy();
                 return new InflaterInputStream(bis, new Inflater(true));
             default:
-                throw new ZipException("Found unsupported compression method "
-                                       + ze.getMethod());
+                throw new ZipException("Found unsupported compression method " + ze.getMethod());
         }
     }
 

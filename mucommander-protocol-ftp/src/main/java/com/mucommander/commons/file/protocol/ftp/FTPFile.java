@@ -337,8 +337,8 @@ public class FTPFile extends ProtocolFile implements ConnectionHandlerFactory {
                 // If server reported that the command is not supported, mark it in the ConnectionHandler so that
                 // we don't try it anymore
                 if(replyCode==FTPReply.UNRECOGNIZED_COMMAND
-                        || replyCode==FTPReply.COMMAND_NOT_IMPLEMENTED 
-                        || replyCode==FTPReply.COMMAND_NOT_IMPLEMENTED_FOR_PARAMETER) {
+                    || replyCode==FTPReply.COMMAND_NOT_IMPLEMENTED 
+                    || replyCode==FTPReply.COMMAND_NOT_IMPLEMENTED_FOR_PARAMETER) {
 
                     LOGGER.info("marking UTIME command as unsupported");
                     connHandler.utimeCommandSupported = false;
@@ -704,8 +704,8 @@ public class FTPFile extends ProtocolFile implements ConnectionHandlerFactory {
                 // If server reported that the command is not supported, mark it in the ConnectionHandler so that
                 // we don't try it anymore
                 if(replyCode==FTPReply.UNRECOGNIZED_COMMAND
-                        || replyCode==FTPReply.COMMAND_NOT_IMPLEMENTED
-                        || replyCode==FTPReply.COMMAND_NOT_IMPLEMENTED_FOR_PARAMETER) {
+                    || replyCode==FTPReply.COMMAND_NOT_IMPLEMENTED
+                    || replyCode==FTPReply.COMMAND_NOT_IMPLEMENTED_FOR_PARAMETER) {
 
                     LOGGER.info("marking CHMOD command as unsupported");
                     connHandler.chmodCommandSupported = false;
