@@ -161,7 +161,7 @@ public class ButtonChoicePanel extends JPanel implements KeyListener, FocusListe
         }
         // DOWN key goes down one row, to the first row if current button is on the last row
         else if (keyCode==KeyEvent.VK_DOWN) {
-            if(nbButtons-currentButton>0 && nbButtons-currentButton<=nbCols)		// If current button is on the last row
+            if(nbButtons > currentButton && nbButtons-currentButton<=nbCols)		// If current button is on the last row
                 this.currentButton = currentButton%nbCols;
             else
                 this.currentButton += nbCols;

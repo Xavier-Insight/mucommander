@@ -121,7 +121,7 @@ public class LibguestfsArchiveFile extends AbstractRWArchiveFile {
 				libguestFile.read(tmpFile, entry, off, len);
 				byte[] output = Files.readAllBytes(tmpFile.toPath());
 				System.arraycopy(output, 0, b, 0, len);
-				remaining = remaining - len;
+				remaining -= len;
 				return len;
 			}
 
