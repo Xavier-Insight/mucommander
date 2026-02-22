@@ -387,7 +387,7 @@ public class VSphereFile extends ProtocolFile implements
 		Detail detail = e.getFault().getDetail();
 		NodeList childNodes = detail.getChildNodes();
 
-		for (int i = 0; i < childNodes.getLength(); ++i) {
+		for (int i = 0; i < childNodes.getLength(); i++) {
 			// I hate soap...
 			if ("FileNotFoundFault".equals(childNodes.item(i).getNodeName())) {
 				return true;

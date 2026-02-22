@@ -89,7 +89,7 @@ public class CommandBarAttributes {
             if (nbActions != DEFAULT_ACTION_IDS.length)
                 return false;
 
-            for (int i=0; i<nbActions; ++i)
+            for (int i=0; i<nbActions; i++)
                 if (!equals(actionIds[i], DEFAULT_ACTION_IDS[i]))
                     return false;
         }
@@ -100,7 +100,7 @@ public class CommandBarAttributes {
             if (nbAlternateActions != DEFAULT_ALTERNATE_ACTION_IDS.length)
                 return false;
 
-            for (int i=0; i<nbAlternateActions; ++i)
+            for (int i=0; i<nbAlternateActions; i++)
                 if (!equals(alternateActionIds[i], DEFAULT_ALTERNATE_ACTION_IDS[i]))
                     return false;
         }

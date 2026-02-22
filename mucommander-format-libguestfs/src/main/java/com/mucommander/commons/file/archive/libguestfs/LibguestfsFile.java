@@ -70,7 +70,7 @@ public class LibguestfsFile {
     private void walk(int depth, String dir, Visitor visitor) throws LibGuestFSException {
         String[] names = guestFS.ls(dir);
         StatNS[] stats = guestFS.lstatnslist(dir, names);
-        for (int i=0; i<names.length; ++i) {
+        for (int i=0; i<names.length; i++) {
             String path = dir + (dir.endsWith("/") ? "" : "/") + names[i];
             boolean folder = isDir(stats[i].st_mode);
             visitor.visit(path, stats[i], folder);

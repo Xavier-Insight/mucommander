@@ -130,7 +130,7 @@ public class ToolBarAttributes {
         if (nbActions != DEFAULT_TOOLBAR_ACTIONS.length)
             return false;
 
-        for (int i=0; i<nbActions; ++i)
+        for (int i=0; i<nbActions; i++)
             if (!equals(actionIds[i], DEFAULT_TOOLBAR_ACTIONS[i]))
                 return false;
 

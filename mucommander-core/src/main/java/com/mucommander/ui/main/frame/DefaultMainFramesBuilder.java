@@ -95,7 +95,7 @@ public class DefaultMainFramesBuilder extends MainFrameBuilder {
     private MainFrame createMainFrame(int index) {
         int nbTabsInLeftPanel = snapshot.getIntegerVariable(MuSnapshot.getTabsCountVariable(index, true));
         ConfFileTableTab[] leftTabs = new ConfFileTableTab[nbTabsInLeftPanel];
-        for (int i=0; i<nbTabsInLeftPanel; ++i)
+        for (int i=0; i<nbTabsInLeftPanel; i++)
             leftTabs[i] = new ConfFileTableTab(
                 snapshot.getBooleanVariable(MuSnapshot.getTabLockedVariable(index, true, i)),
                 restoreFileURL(snapshot.getVariable(MuSnapshot.getTabLocationVariable(index, true, i))),
@@ -103,7 +103,7 @@ public class DefaultMainFramesBuilder extends MainFrameBuilder {
 
         int nbTabsInRightPanel = snapshot.getIntegerVariable(MuSnapshot.getTabsCountVariable(index, false));
         ConfFileTableTab[] rightTabs = new ConfFileTableTab[nbTabsInRightPanel];
-        for (int i=0; i<nbTabsInRightPanel; ++i)
+        for (int i=0; i<nbTabsInRightPanel; i++)
             rightTabs[i] = new ConfFileTableTab(
                 snapshot.getBooleanVariable(MuSnapshot.getTabLockedVariable(index, false, i)),
                 restoreFileURL(snapshot.getVariable(MuSnapshot.getTabLocationVariable(index, false, i))),

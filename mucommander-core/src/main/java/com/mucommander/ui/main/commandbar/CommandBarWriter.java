@@ -83,7 +83,7 @@ class CommandBarWriter extends CommandBarIO {
     			writer.startElement(ROOT_ELEMENT, rootElementAttributes, true);    			
     			
     			int nbCommandBarActions = actionIds.length;
-    			for (int i=0; i<nbCommandBarActions; ++i)
+    			for (int i=0; i<nbCommandBarActions; i++)
     				write(actionIds[i], alternativeActionIds[i]);
 
     		} finally {

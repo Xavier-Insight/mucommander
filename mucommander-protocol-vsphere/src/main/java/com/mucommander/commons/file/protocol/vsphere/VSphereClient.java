@@ -255,7 +255,7 @@ public class VSphereClient implements Closeable {
 				if (dps != null) {
 					for (DynamicProperty dp : dps) {
 						// find property path index
-						for (int p = 0; p < ret.length; ++p) {
+						for (int p = 0; p < ret.length; p++) {
 							if (properties[p].equals(dp.getName())) {
 								ret[p] = dp.getVal();
 							}

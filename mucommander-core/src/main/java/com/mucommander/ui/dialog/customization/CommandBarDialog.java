@@ -122,13 +122,13 @@ public class CommandBarDialog extends CustomizeDialog {
     protected void commit() {
 		int nbNewActions = getNumberOfButtons();
 		ActionId[] newActionIds = new ActionId[nbNewActions];
-		for (int i=0; i<nbNewActions; ++i) {
+		for (int i=0; i<nbNewActions; i++) {
 			newActionIds[i] = ((CommandBarButtonForDisplay) commandBarButtons.get(i)).getActionId();
 		}
 		
 		int nbNewAlternativeActions = commandBarAlternateButtons.size();
 		ActionId[] newAlternativeActionIds = new ActionId[nbNewAlternativeActions];
-		for (int i=0; i<nbNewAlternativeActions; ++i) {
+		for (int i=0; i<nbNewAlternativeActions; i++) {
 			Object button = commandBarAlternateButtons.get(i);
 			newAlternativeActionIds[i] = button != null ? 
 										((CommandBarButtonForDisplay) button).getActionId() : null;
@@ -166,7 +166,7 @@ public class CommandBarDialog extends CustomizeDialog {
     	if (nbActions != getNumberOfButtons())
     		return true;
     	
-    	for (int i=0; i<nbActions; ++i) {
+    	for (int i=0; i<nbActions; i++) {
     		CommandBarButtonForDisplay buttonI = (CommandBarButtonForDisplay) commandBarButtons.get(i);
     		if (buttonI == null) {
     			if (commandBarActionIds[i] != null)
@@ -186,7 +186,7 @@ public class CommandBarDialog extends CustomizeDialog {
     	if (nbActions != commandBarAlternateButtons.size())
     		return true;
     	
-    	for (int i=0; i<nbActions; ++i) {
+    	for (int i=0; i<nbActions; i++) {
     		CommandBarButtonForDisplay buttonI = (CommandBarButtonForDisplay) commandBarAlternateButtons.get(i);
     		if (buttonI == null) {
     			if (commandBarAlternativeActionIds[i] != null)

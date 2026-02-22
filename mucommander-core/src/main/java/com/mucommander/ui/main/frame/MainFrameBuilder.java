@@ -85,7 +85,7 @@ public abstract class MainFrameBuilder {
             // Set initial path to each tab
             int nbFolderPaths = snapshot.getIntegerVariable(MuSnapshot.getTabsCountVariable(window, folderPanelType == FolderPanelType.LEFT));
             folderPaths = new String[nbFolderPaths];
-            for (int i=0; i<nbFolderPaths;++i)
+            for (int i=0; i<nbFolderPaths;i++)
                 folderPaths[i] = snapshot.getVariable(MuSnapshot.getTabLocationVariable(window, folderPanelType == FolderPanelType.LEFT, i));
         }
 

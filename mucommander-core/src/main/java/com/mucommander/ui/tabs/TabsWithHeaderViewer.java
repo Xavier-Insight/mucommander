@@ -124,7 +124,7 @@ public class TabsWithHeaderViewer<T extends Tab> extends TabsViewer<T> {
 		if (duplicatedTabs.remove(selectedTab)) {
 			int removedTabsCount = 0;
 			int tabsCount = tabsCollection.count();
-			for (int i=0; i<tabsCount; ++i) {
+			for (int i=0; i<tabsCount; i++) {
 				if (i == selectedTabIndex) // do not remove the selected tab
 					continue;
 				if (selectedTab.equals(tabsCollection.get(i-removedTabsCount)))
@@ -133,10 +133,10 @@ public class TabsWithHeaderViewer<T extends Tab> extends TabsViewer<T> {
 		}
 
 		// remove all other duplicated tabs
-		for (int i = 0; i < tabsCollection.count(); ++i) {
+		for (int i = 0; i < tabsCollection.count(); i++) {
 			T currentTab = tabsCollection.get(i);
 			if (duplicatedTabs.remove(currentTab)) {
-				for (int j = i + 1; j < tabsCollection.count(); ++j)
+				for (int j = i + 1; j < tabsCollection.count(); j++)
 					if (currentTab.equals(tabsCollection.get(j)))
 						tabsCollection.remove(j--);
 			}
@@ -147,10 +147,10 @@ public class TabsWithHeaderViewer<T extends Tab> extends TabsViewer<T> {
 	public void removeOtherTabs() {
 		int selectedTabIndex = getSelectedTabIndex();
 
-		for (int i=0; i<selectedTabIndex; ++i)
+		for (int i=0; i<selectedTabIndex; i++)
 			tabsCollection.remove(0);
 
-		for(int i=tabsCollection.count()-1; i>0; --i)
+		for(int i=tabsCollection.count()-1; i>0; i--)
 			tabsCollection.remove(1);		
 	}
 
