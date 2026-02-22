@@ -42,7 +42,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Collections;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
@@ -188,7 +187,7 @@ public class CommandManager implements CommandBuilder {
         // Copy the registered commands to a new list
         List<Command> list = new Vector<>(commands.values());
         // Sorts the list.
-        Collections.sort(list);
+        list.sort(null);
         
         return list;
     }

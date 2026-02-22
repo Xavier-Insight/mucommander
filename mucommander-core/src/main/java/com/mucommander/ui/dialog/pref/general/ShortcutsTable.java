@@ -32,7 +32,6 @@ import java.awt.event.FocusListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.EnumSet;
 import java.util.HashMap;
@@ -672,7 +671,7 @@ public class ShortcutsTable extends PrefTable implements KeyListener, ListSelect
 
         public ShortcutsTableData() {
             List<ActionId> allActionIds = ActionManager.getActionIds();
-            Collections.sort(allActionIds, ACTIONS_COMPARATOR);
+            allActionIds.sort(ACTIONS_COMPARATOR);
 
             final int nbActions = allActionIds.size();
             originalActionMap = new LinkedHashMap<>(nbActions);

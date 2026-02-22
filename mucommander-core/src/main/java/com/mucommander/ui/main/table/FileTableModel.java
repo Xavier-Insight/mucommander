@@ -875,7 +875,7 @@ public class FileTableModel extends AbstractTableModel {
     private void processNextQueuedFile(FileTable table) {
         AbstractFile nextFile;
         synchronized (calculateSizeQueue) {
-            if (calculateSizeQueue.size() > 0) {
+            if (!calculateSizeQueue.isEmpty()) {
                 nextFile = calculateSizeQueue.remove(0);
             } else {
                 nextFile = null;

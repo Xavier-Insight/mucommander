@@ -90,12 +90,12 @@ public class DefaultPathCanonizer implements PathCanonizer {
                 }
 
                 // Discard '.' and empty directories
-                if(("".equals(dirWS) && pathV.size()>0) || ".".equals(dirWS)) {
+                if(("".equals(dirWS) && !pathV.isEmpty()) || ".".equals(dirWS)) {
                     continue;
                 }
                 // Remove last directory
                 else if("..".equals(dirWS)) {
-                    if(pathV.size()>0)
+                    if(!pathV.isEmpty())
                         pathV.removeElementAt(pathV.size()-1);
                     continue;
                 }

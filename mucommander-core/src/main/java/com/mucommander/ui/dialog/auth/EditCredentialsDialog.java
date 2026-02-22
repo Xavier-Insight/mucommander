@@ -175,7 +175,7 @@ public class EditCredentialsDialog extends FocusDialog implements ActionListener
 
         boolean componentsEnabled = false;
 
-        if(!credentialsList.isSelectionEmpty() && credentials.size()>0) {
+        if(!credentialsList.isSelectionEmpty() && !credentials.isEmpty()) {
             componentsEnabled = true;
 
             CredentialsMapping credentialsMapping = (CredentialsMapping) credentialsList.getSelectedValue();

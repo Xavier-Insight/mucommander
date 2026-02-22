@@ -19,7 +19,6 @@ package com.mucommander.ui.main.table;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.Enumeration;
 import java.util.Iterator;
@@ -109,7 +108,7 @@ public class FileTableColumnModel implements TableColumnModel, PropertyChangeLis
         }
 
         // Sorts the columns.
-        Collections.sort(columns, new ColumnSorter(conf));
+        columns.sort(new ColumnSorter(conf));
     }
 
 

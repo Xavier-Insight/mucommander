@@ -23,7 +23,6 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.Hashtable;
 import java.util.Iterator;
@@ -103,7 +102,7 @@ public class ShortcutsDialog extends FocusDialog implements ActionListener {
         for(ActionCategory category: categoryToItsActionsWithShortcutsIdsMap.keySet()) {
             // Get the list of actions from the above category which have shortcuts assigned to them
             List<ActionId> categoryActionsWithShortcuts = categoryToItsActionsWithShortcutsIdsMap.get(category);
-            Collections.sort(categoryActionsWithShortcuts, ACTIONS_COMPARATOR);
+            categoryActionsWithShortcuts.sort(ACTIONS_COMPARATOR);
 
             // If there is at least one action in the category with shortcuts assigned to it, add tab for the category
             if (!categoryActionsWithShortcuts.isEmpty())
@@ -210,7 +209,7 @@ public class ShortcutsDialog extends FocusDialog implements ActionListener {
 
     private void addShortcutList(XAlignedComponentPanel compPanel, Map<String, String> actionsToShortcutsMap) {
         List<String> vec = new Vector<String>(actionsToShortcutsMap.keySet());
-        Collections.sort(vec);
+        vec.sort(null);
 
         for(String action : vec)
             compPanel.addRow(actionsToShortcutsMap.get(action), new JLabel(Translator.get(action)), 5);

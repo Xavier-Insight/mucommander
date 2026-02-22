@@ -171,7 +171,7 @@ public class GeneralPreferencesDialog extends PreferencesDialog {
 		else
 			modifiedComponents.remove(component);
 		
-		setCommitButtonsEnabled(modifiedComponents.size() != 0);
+		setCommitButtonsEnabled(!modifiedComponents.isEmpty());
 	}
     
     @Override

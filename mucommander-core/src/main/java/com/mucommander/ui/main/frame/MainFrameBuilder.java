@@ -99,7 +99,7 @@ public abstract class MainFrameBuilder {
         }
 
         // If the initial path is not legal or does not exist, defaults to the user's home.
-        AbstractFile[] results = initialFolders.size() == 0 ?
+        AbstractFile[] results = initialFolders.isEmpty() ?
                 new AbstractFile[] {FileFactory.getFile(System.getProperty("user.home"))} :
                     initialFolders.toArray(new AbstractFile[0]);
 

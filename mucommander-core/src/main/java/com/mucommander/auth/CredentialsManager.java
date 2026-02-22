@@ -397,7 +397,7 @@ public class CredentialsManager {
      * @return the CredentialsMapping instance that best matches the given location, -1 if the given matches Vector is empty.
      */
     private static int getBestMatchIndex(FileURL location, List<CredentialsMapping> matches) {
-        if(matches.size()==0)
+        if(matches.isEmpty())
             return -1;
 
         // Splits the provided location's path into an array of folder tokens (e.g. "/home/maxence" -> ["home","maxence"])

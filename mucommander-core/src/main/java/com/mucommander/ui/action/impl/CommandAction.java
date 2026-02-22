@@ -75,7 +75,7 @@ public class CommandAction extends MuAction {
         selectedFiles = mainFrame.getActiveTable().getSelectedFiles();
 
         // If no files are either selected or marked, aborts.
-        if(command.hasSelectedFileKeyword() && selectedFiles.size() == 0)
+        if(command.hasSelectedFileKeyword() && selectedFiles.isEmpty())
             return;
 
         // If we're working with local files, go ahead and runs the command.

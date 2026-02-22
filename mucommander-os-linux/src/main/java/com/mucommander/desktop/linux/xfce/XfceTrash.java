@@ -258,7 +258,7 @@ public class XfceTrash extends QueuedTrash {
             return false;
         }
 
-        if (filesToDelete.size() > 0) {
+        if (!filesToDelete.isEmpty()) {
             // Starts deleting files
             MainFrame mainFrame = WindowManager.getCurrentMainFrame();
             ProgressDialog progressDialog = new ProgressDialog(mainFrame, Translator.get("delete_dialog.deleting"));

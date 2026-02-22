@@ -278,7 +278,7 @@ public class CommandBarDialog extends CustomizeDialog {
 	
 	private void removeCommandBarButtonAtIndex(int index) {
 		commandBarButtons.remove(index);
-		if (commandBarButtons.size() == 0) {
+		if (commandBarButtons.isEmpty()) {
 			commandBarButtons.add(null);
 			commandBarButtonsList.setDropMode(DropMode.ON);
 		}
@@ -568,7 +568,7 @@ public class CommandBarDialog extends CustomizeDialog {
 	}
 	
 	private static int insertInOrder(List<JButton> vector, JButton element) {
-		if (vector.size() != 0) {
+		if (!vector.isEmpty()) {
 			int index = findPlace(vector, element, BUTTONS_COMPARATOR, 0, vector.size() - 1);
 			vector.add(index, element);
 			return index;

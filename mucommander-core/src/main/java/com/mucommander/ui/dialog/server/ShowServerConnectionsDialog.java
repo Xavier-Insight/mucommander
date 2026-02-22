@@ -106,7 +106,7 @@ public class ShowServerConnectionsDialog extends FocusDialog implements ActionLi
         connectionList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         // Select the first connection in the list
-        boolean hasConnections = connections.size()>0;
+        boolean hasConnections = !connections.isEmpty();
         if(hasConnections)
             connectionList.setSelectedIndex(0);
 
@@ -190,7 +190,7 @@ public class ShowServerConnectionsDialog extends FocusDialog implements ActionLi
                 connectionList.repaint();
 
                 // Disable contextual butons if there are no more connections
-                if(connections.size()==0) {
+                if(connections.isEmpty()) {
                     disconnectButton.setEnabled(false);
                     goToButton.setEnabled(false);
                 }

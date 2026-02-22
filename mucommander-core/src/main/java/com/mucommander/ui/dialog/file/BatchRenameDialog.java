@@ -361,7 +361,7 @@ public class BatchRenameDialog extends FocusDialog implements ActionListener, Do
             blockNames.remove(sel[i]);
             tableModel.fireTableRowsDeleted(sel[i], sel[i]);
         }
-        if (files.size() == 0) {
+        if (files.isEmpty()) {
             dispose();
         }
     }
@@ -599,7 +599,7 @@ public class BatchRenameDialog extends FocusDialog implements ActionListener, Do
     private void doRename() {
         removeUnchangedFiles(false);
         // start rename job
-        if (files.size() > 0) {
+        if (!files.isEmpty()) {
             ProgressDialog progressDialog = new ProgressDialog(mainFrame,
                     Translator.get("progress_dialog.processing_files"));
             BatchRenameJob job = new BatchRenameJob(progressDialog, mainFrame,

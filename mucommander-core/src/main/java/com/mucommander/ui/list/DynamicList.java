@@ -200,7 +200,7 @@ public class DynamicList<E> extends JList {
         setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         // Select first item, if there is at least one
-        if(items.size()>0)
+        if(!items.isEmpty())
             setSelectedIndex(0);
 
         // Create action instances

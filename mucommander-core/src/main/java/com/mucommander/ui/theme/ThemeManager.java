@@ -28,7 +28,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Vector;
@@ -232,9 +231,11 @@ public class ThemeManager {
         }
 
         // Sorts the themes by name.
-        Collections.sort(themes, new Comparator<Theme>() {
-                public int compare(Theme t1, Theme t2) {return t1.getName().compareTo(t2.getName());}
-            });
+        themes.sort(new Comparator<Theme>() {
+            public int compare(Theme t1, Theme t2) {
+                return t1.getName().compareTo(t2.getName());
+            }
+        });
 
         return themes;
     }
@@ -264,7 +265,7 @@ public class ThemeManager {
         }
 
         // Sorts the theme names.
-        Collections.sort(themes);
+        themes.sort(null);
 
         return themes;
     }

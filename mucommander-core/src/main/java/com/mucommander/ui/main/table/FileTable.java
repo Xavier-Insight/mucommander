@@ -459,7 +459,7 @@ public class FileTable extends JTable implements MouseListener, MouseMotionListe
     public FileSet getSelectedFiles() {
         FileSet selectedFiles = tableModel.getMarkedFiles();
         // if no row is marked, then add selected row if there is one, and if it is not parent folder
-        if(selectedFiles.size()==0)	{
+        if(selectedFiles.isEmpty())	{
             AbstractFile selectedFile = getSelectedFile();
             if(selectedFile!=null)
                 selectedFiles.add(selectedFile);

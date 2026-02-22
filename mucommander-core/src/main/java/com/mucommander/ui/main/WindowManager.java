@@ -375,7 +375,7 @@ public class WindowManager implements WindowListener, ConfigurationListener {
         }
 
         // Test if there is at least one MainFrame still showing
-        if(mainFrames.size()>0)
+        if(!mainFrames.isEmpty())
             return;
 
         // Test if there is at least one window (viewer, editor...) still showing

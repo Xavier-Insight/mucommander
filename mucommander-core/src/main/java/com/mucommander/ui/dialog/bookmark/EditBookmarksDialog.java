@@ -199,7 +199,7 @@ public class EditBookmarksDialog extends FocusDialog implements ActionListener, 
 
         boolean componentsEnabled = false;
 
-        if(!bookmarkList.isSelectionEmpty() && bookmarks.size()>0) {
+        if(!bookmarkList.isSelectionEmpty() && !bookmarks.isEmpty()) {
             componentsEnabled = true;
 
             Bookmark b = (Bookmark)bookmarkList.getSelectedValue();
@@ -231,7 +231,7 @@ public class EditBookmarksDialog extends FocusDialog implements ActionListener, 
      * @param sourceDocument the javax.swing.text.Document of the JTextField that was modified
      */
     private void modifyBookmark(Document sourceDocument) {
-        if(ignoreDocumentListenerEvents || bookmarks.size()==0)
+        if(ignoreDocumentListenerEvents || bookmarks.isEmpty())
             return;
 
         int selectedIndex = bookmarkList.getSelectedIndex();

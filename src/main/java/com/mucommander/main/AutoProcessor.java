@@ -135,7 +135,7 @@ public class AutoProcessor
         }
 
         // Perform auto-deploy actions.
-        if (actionList.size() > 0)
+        if (!actionList.isEmpty())
         {
             // Retrieve the Start Level service, since it will be needed
             // to set the start level of the installed bundles.
