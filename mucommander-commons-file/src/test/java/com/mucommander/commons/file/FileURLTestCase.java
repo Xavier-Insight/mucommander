@@ -319,8 +319,8 @@ public abstract class FileURLTestCase {
         FileURL url = getRootURL();
         AuthenticationType expectedAuthenticationType = getAuthenticationType();
 
-        assert expectedAuthenticationType.equals(url.getAuthenticationType());
-        assert expectedAuthenticationType.equals(url.getHandler().getAuthenticationType());
+        assert expectedAuthenticationType == url.getAuthenticationType();
+        assert expectedAuthenticationType == url.getHandler().getAuthenticationType();
 
         assert expectedAuthenticationType==AuthenticationType.NO_AUTHENTICATION
                 || expectedAuthenticationType==AuthenticationType.AUTHENTICATION_REQUIRED

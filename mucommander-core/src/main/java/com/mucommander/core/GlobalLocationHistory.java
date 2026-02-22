@@ -84,7 +84,7 @@ public class GlobalLocationHistory implements LocationListener {
 	 * 
 	 * @return Singleton instance of this class
 	 */
-	public static final GlobalLocationHistory Instance() {
+	public static GlobalLocationHistory Instance() {
 		return instance;
 	}
 

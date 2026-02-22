@@ -114,7 +114,7 @@ public class OSXDesktopAdapter extends DefaultDesktopAdapter {
     }
 
     @Override
-    public boolean isAvailable() {return OsFamily.getCurrent().equals(OsFamily.MAC_OS);}
+    public boolean isAvailable() {return OsFamily.getCurrent() == OsFamily.MAC_OS;}
 
     @Override
     public void init(boolean install) throws DesktopInitialisationException {

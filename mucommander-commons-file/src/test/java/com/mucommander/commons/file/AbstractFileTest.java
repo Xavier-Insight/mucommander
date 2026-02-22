@@ -351,7 +351,7 @@ public abstract class AbstractFileTest {
      */
     protected void assertUnsupportedFileOperationException(UnsupportedFileOperationException e, FileOperation expectedFileOperation) {
         assert e != null;
-        assert expectedFileOperation.equals(e.getFileOperation());
+        assert expectedFileOperation == e.getFileOperation();
     }
 
     /**
