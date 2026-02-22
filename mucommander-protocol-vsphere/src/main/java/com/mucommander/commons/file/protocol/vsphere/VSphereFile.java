@@ -501,23 +501,9 @@ public class VSphereFile extends ProtocolFile implements
 
 		try {
 			parent = new VSphereFile(fileURL.getParent(), this);
-		} catch (URISyntaxException e) {
-			return null;
-		} catch (IOException e) {
-			return null;
-		} catch (RuntimeFaultFaultMsg e) {
-			return null;
-		} catch (InvalidPropertyFaultMsg e) {
-			return null;
-		} catch (FileFaultFaultMsg e) {
-			return null;
-		} catch (GuestOperationsFaultFaultMsg e) {
-			return null;
-		} catch (InvalidStateFaultMsg e) {
-			return null;
-		} catch (TaskInProgressFaultMsg e) {
-			return null;
-		}
+		} catch (URISyntaxException | IOException | RuntimeFaultFaultMsg | InvalidPropertyFaultMsg | FileFaultFaultMsg | GuestOperationsFaultFaultMsg | InvalidStateFaultMsg | TaskInProgressFaultMsg e) {
+            return null;
+        }
 		return parent;
 	}
 
