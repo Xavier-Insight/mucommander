@@ -113,8 +113,7 @@ public class CommandManager implements CommandBuilder {
     /** Default command used when no other command is found for a specific file type. */
     private static       Command              defaultCommand;
 
-    private enum FORMAT { XML, YAML };
-
+    private enum FORMAT { XML, YAML }
 
     // - Initialization --------------------------------------------------------
     // -------------------------------------------------------------------------

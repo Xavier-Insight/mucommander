@@ -94,7 +94,7 @@ final class NotificationPopup {
         @Override
         public void popupMenuCanceled(PopupMenuEvent e) {
         }
-    };
+    }
 
     private class CustomPopupMenu extends JPopupMenu {
         @Override
@@ -199,7 +199,7 @@ final class NotificationPopup {
         closingTask = task;
         if (oldTask != null) {
             oldTask.cancel();
-        };
+        }
         closingTimer.schedule(task, timeout);
     }
 

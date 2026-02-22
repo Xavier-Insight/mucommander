@@ -291,7 +291,7 @@ public class StatusBar extends JPanel {
                     popupMenu.show(StatusBar.this, e.getX(), e.getY());
                     popupMenu.setVisible(true);
                 }
-            };
+            }
         };
         selectedFilesLabel.addMouseListener(mouseAdapter);
         volumeSpaceLabel.addMouseListener(mouseAdapter);
@@ -305,7 +305,7 @@ public class StatusBar extends JPanel {
                 // Invoked when the component has been made visible (apparently not called when just created)
                 // Status bar needs to be updated since it is not updated when not visible
                 updateStatusInfo();
-            };
+            }
         });
 
         // Initialises theme.

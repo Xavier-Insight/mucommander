@@ -155,7 +155,7 @@ public class GoogleDrivePanel extends ServerPanel implements ActionListener {
                         try (GoogleDriveClient client = new GoogleDriveClient(credential)) {
                             client.connect();
                             about = client.getConnection().about().get().setFields("user").execute();
-                        };
+                        }
                     } catch (IOException | GeneralSecurityException e) {
                         LOGGER.warn("failed to sign in to Google account", e);
                         return;
