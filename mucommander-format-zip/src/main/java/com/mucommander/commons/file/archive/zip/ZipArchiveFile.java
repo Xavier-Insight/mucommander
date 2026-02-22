@@ -29,12 +29,13 @@ import com.mucommander.commons.io.FilteredOutputStream;
 import com.mucommander.commons.io.StreamUtils;
 
 import java.io.*;
-import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.zip.ZipInputStream;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 
 /**
@@ -151,7 +152,7 @@ public class ZipArchiveFile extends AbstractRWArchiveFile {
             try (InputStream in = zipFile.getInputStream(entry)) {
                 final ByteArrayOutputStream output = new ByteArrayOutputStream();
                 StreamUtils.copyStream(in, output);
-                return new String(output.toByteArray(), Charset.forName("utf-8"));
+                return new String(output.toByteArray(), UTF_8);
             } catch(Exception e) {
                 LOGGER.warn("found a symlink entry '{}' but failed to get its target", entry.getName());
                 LOGGER.debug("exception: ", e);

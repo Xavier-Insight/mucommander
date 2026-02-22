@@ -18,8 +18,9 @@
 package com.mucommander.commons.conf;
 
 import java.io.*;
-import java.nio.charset.Charset;
 import java.util.*;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
  * Base class for all configuration related tasks.
@@ -296,7 +297,7 @@ public class Configuration {
      */
     @Deprecated
     public void read(InputStream in) throws ConfigurationException, IOException {
-        read(new InputStreamReader(in, Charset.forName("utf-8")), getReaderFactory().getReaderInstance());
+        read(new InputStreamReader(in, UTF_8), getReaderFactory().getReaderInstance());
     }
 
     /**
