@@ -69,91 +69,79 @@ subprojects {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.staticanalysis.CollectionToArrayShouldHaveProperType")
-    activeRecipe("org.openrewrite.staticanalysis.AvoidBoxedBooleanExpressions")
-    activeRecipe("org.openrewrite.staticanalysis.BigDecimalRoundingConstantsToEnums")
-    activeRecipe("org.openrewrite.staticanalysis.BooleanChecksNotInverted")
-    activeRecipe("org.openrewrite.staticanalysis.CaseInsensitiveComparisonsDoNotChangeCase")
-    activeRecipe("org.openrewrite.staticanalysis.CatchClauseOnlyRethrows")
-    activeRecipe("org.openrewrite.staticanalysis.ChainStringBuilderAppendCalls")
-    activeRecipe("org.openrewrite.staticanalysis.NewStringBuilderBufferWithCharArgument")
-    activeRecipe("org.openrewrite.staticanalysis.CombineSemanticallyEqualCatchBlocks")
-    activeRecipe("org.openrewrite.staticanalysis.ControlFlowIndentation")
-    activeRecipe("org.openrewrite.staticanalysis.BufferedWriterCreationRecipes")
-    activeRecipe("org.openrewrite.staticanalysis.CovariantEquals")
-    activeRecipe("org.openrewrite.staticanalysis.DefaultComesLast")
-    activeRecipe("org.openrewrite.staticanalysis.CompareEnumsWithEqualityOperator")
-    activeRecipe("org.openrewrite.staticanalysis.EqualsAvoidsNull")
-    activeRecipe("org.openrewrite.staticanalysis.ExplicitInitialization")
+    activeRecipe("org.openrewrite.staticanalysis.CollectionToArrayShouldHaveProperType") //run
+    activeRecipe("org.openrewrite.staticanalysis.AvoidBoxedBooleanExpressions") //run
+    activeRecipe("org.openrewrite.staticanalysis.BigDecimalRoundingConstantsToEnums") //run
+    activeRecipe("org.openrewrite.staticanalysis.BooleanChecksNotInverted") //run
+    activeRecipe("org.openrewrite.staticanalysis.CaseInsensitiveComparisonsDoNotChangeCase") //run
+    activeRecipe("org.openrewrite.staticanalysis.CatchClauseOnlyRethrows") //run
+    activeRecipe("org.openrewrite.staticanalysis.ChainStringBuilderAppendCalls") //run
+    activeRecipe("org.openrewrite.staticanalysis.NewStringBuilderBufferWithCharArgument") //run
+    activeRecipe("org.openrewrite.staticanalysis.CombineSemanticallyEqualCatchBlocks") //run
+    activeRecipe("org.openrewrite.staticanalysis.ControlFlowIndentation") //run
+    activeRecipe("org.openrewrite.staticanalysis.BufferedWriterCreationRecipes") //run
+    activeRecipe("org.openrewrite.staticanalysis.CompareEnumsWithEqualityOperator") //run
+    activeRecipe("org.openrewrite.staticanalysis.EqualsAvoidsNull") //run
+    // do not run this recipe, it breaks code
     activeRecipe("org.openrewrite.staticanalysis.FinalizePrivateFields")
-    activeRecipe("org.openrewrite.staticanalysis.FixStringFormatExpressions")
-    activeRecipe("org.openrewrite.staticanalysis.HideUtilityClassConstructor")
-    activeRecipe("org.openrewrite.staticanalysis.InlineVariable")
-    activeRecipe("org.openrewrite.staticanalysis.NoRedundantJumpStatements")
-    activeRecipe("org.openrewrite.staticanalysis.NestedEnumsAreNotStatic")
-    activeRecipe("org.openrewrite.staticanalysis.UseJavaStyleArrayDeclarations")
-    activeRecipe("org.openrewrite.staticanalysis.NoDoubleBraceInitialization")
-    activeRecipe("org.openrewrite.staticanalysis.NoPrimitiveWrappersForToStringOrCompareTo")
-    activeRecipe("org.openrewrite.staticanalysis.PreferSystemGetPropertyOverGetenv")
-    activeRecipe("org.openrewrite.staticanalysis.PreferEqualityComparisonOverDifferenceCheck")
-    activeRecipe("org.openrewrite.staticanalysis.PreferIncrementOperator")
-    activeRecipe("org.openrewrite.staticanalysis.WhileInsteadOfFor")
-    activeRecipe("org.openrewrite.staticanalysis.RedundantFileCreation")
-    activeRecipe("org.openrewrite.staticanalysis.UnnecessaryPrimitiveAnnotations")
-    activeRecipe("org.openrewrite.staticanalysis.RemoveExtraSemicolons")
-    activeRecipe("org.openrewrite.staticanalysis.RemoveRedundantTypeCast")
-    activeRecipe("org.openrewrite.staticanalysis.RemoveRedundantNullCheckBeforeInstanceof")
-    activeRecipe("org.openrewrite.staticanalysis.RemoveRedundantNullCheckBeforeLiteralEquals")
-    activeRecipe("org.openrewrite.staticanalysis.RemoveToStringCallsFromArrayInstances")
-    activeRecipe("org.openrewrite.staticanalysis.UnnecessaryParentheses")
-    activeRecipe("org.openrewrite.staticanalysis.RemoveUnneededBlock")
-
-    // does not properly work, wants to rename something in build.gradle files.
+    activeRecipe("org.openrewrite.staticanalysis.FixStringFormatExpressions") //run
+    activeRecipe("org.openrewrite.staticanalysis.InlineVariable") //run
+    activeRecipe("org.openrewrite.staticanalysis.NoRedundantJumpStatements") //run
+    activeRecipe("org.openrewrite.staticanalysis.NestedEnumsAreNotStatic") //run
+    activeRecipe("org.openrewrite.staticanalysis.UseJavaStyleArrayDeclarations") //run
+    activeRecipe("org.openrewrite.staticanalysis.NoPrimitiveWrappersForToStringOrCompareTo") //run
+    activeRecipe("org.openrewrite.staticanalysis.PreferSystemGetPropertyOverGetenv") //run
+    activeRecipe("org.openrewrite.staticanalysis.PreferEqualityComparisonOverDifferenceCheck") //run
+    activeRecipe("org.openrewrite.staticanalysis.PreferIncrementOperator") //run
+    activeRecipe("org.openrewrite.staticanalysis.WhileInsteadOfFor") //run
+    activeRecipe("org.openrewrite.staticanalysis.RedundantFileCreation") //run
+    activeRecipe("org.openrewrite.staticanalysis.RemoveExtraSemicolons") //run
+    // run but be beware of semantic changes when the code calls the Reflection API
+    activeRecipe("org.openrewrite.staticanalysis.RemoveRedundantTypeCast") //run
+    activeRecipe("org.openrewrite.staticanalysis.RemoveRedundantNullChec kBeforeInstanceof") //run
+    activeRecipe("org.openrewrite.staticanalysis.RemoveRedundantNullCheckBeforeLiteralEquals") //run
+    activeRecipe("org.openrewrite.staticanalysis.RemoveToStringCallsFromArrayInstances") //run
+    activeRecipe("org.openrewrite.staticanalysis.UnnecessaryParentheses") //run
+    // do not use this recipe, it does not properly work, it wants to rename something in build.gradle files.
 //    activeRecipe("org.openrewrite.staticanalysis.RenameExceptionInEmptyCatch")
-    activeRecipe("org.openrewrite.staticanalysis.ReplaceClassIsInstanceWithInstanceof")
-    activeRecipe("org.openrewrite.staticanalysis.ReplaceOptionalIsPresentWithIfPresent")
-    activeRecipe("org.openrewrite.staticanalysis.ReplaceStringBuilderWithString")
-    activeRecipe("org.openrewrite.staticanalysis.SimplifyTernaryRecipes")
-    activeRecipe("org.openrewrite.staticanalysis.ReplaceDuplicateStringLiterals")
-    activeRecipe("org.openrewrite.staticanalysis.UseListSort")
-    activeRecipe("org.openrewrite.staticanalysis.UseForEachRemoveInsteadOfSetRemoveAll")
-    activeRecipe("org.openrewrite.staticanalysis.ReplaceRedundantFormatWithPrintf")
-    activeRecipe("org.openrewrite.staticanalysis.SimplifyArraysAsList")
-    activeRecipe("org.openrewrite.staticanalysis.SimplifyBooleanExpression")
-    activeRecipe("org.openrewrite.staticanalysis.SimplifyBooleanExpressionWithDeMorgan")
-    activeRecipe("org.openrewrite.staticanalysis.SimplifyBooleanReturn")
-    activeRecipe("org.openrewrite.staticanalysis.SimplifyConsecutiveAssignments")
-    activeRecipe("org.openrewrite.staticanalysis.SimplifyConstantIfBranchExecution")
-    activeRecipe("org.openrewrite.staticanalysis.SimplifyElseBranch")
-    activeRecipe("org.openrewrite.staticanalysis.SimplifyDurationCreationUnits")
-    activeRecipe("org.openrewrite.staticanalysis.LambdaBlockToExpression")
-    activeRecipe("org.openrewrite.staticanalysis.SortedSetStreamToLinkedHashSet")
-    activeRecipe("org.openrewrite.staticanalysis.SimplifyCompoundStatement")
-    activeRecipe("org.openrewrite.staticanalysis.StaticMethodNotFinal")
-    activeRecipe("org.openrewrite.staticanalysis.URLEqualsHashCodeRecipes")
-    activeRecipe("org.openrewrite.staticanalysis.NoToStringOnStringType")
-    activeRecipe("org.openrewrite.staticanalysis.NoValueOfOnStringType")
-    activeRecipe("org.openrewrite.staticanalysis.UnnecessaryCloseInTryWithResources")
-    activeRecipe("org.openrewrite.staticanalysis.UnnecessaryExplicitTypeArguments")
-    activeRecipe("org.openrewrite.staticanalysis.UnnecessaryReturnAsLastStatement")
-    activeRecipe("org.openrewrite.staticanalysis.UnnecessaryThrows")
-    activeRecipe("org.openrewrite.staticanalysis.UnwrapElseAfterReturn")
-    activeRecipe("org.openrewrite.staticanalysis.UsePortableNewlines")
-    activeRecipe("org.openrewrite.staticanalysis.IsEmptyCallOnCollections")
-    activeRecipe("org.openrewrite.staticanalysis.NoEmptyCollectionWithRawType")
-    activeRecipe("org.openrewrite.staticanalysis.ReplaceCollectionToArrayArgWithEmptyArray")
-    activeRecipe("org.openrewrite.staticanalysis.UseStandardCharset")
-    activeRecipe("org.openrewrite.staticanalysis.EqualsToContentEquals")
-    activeRecipe("org.openrewrite.staticanalysis.StringLiteralEquality")
-    activeRecipe("org.openrewrite.staticanalysis.UseStringReplace")
-    activeRecipe("org.openrewrite.staticanalysis.UseSystemLineSeparator")
-    activeRecipe("org.openrewrite.staticanalysis.UseLambdaForFunctionalInterface")
-    activeRecipe("org.openrewrite.staticanalysis.ReplaceLambdaWithMethodReference")
-    activeRecipe("org.openrewrite.staticanalysis.PrimitiveWrapperClassConstructorToValueOf")
-    activeRecipe("org.openrewrite.staticanalysis.ForLoopIncrementInUpdate")
-    activeRecipe("org.openrewrite.staticanalysis.ForLoopControlVariablePostfixOperators")
-    activeRecipe("org.openrewrite.staticanalysis.RemoveHashCodeCallsFromArrayInstances")
-    activeRecipe("org.openrewrite.staticanalysis.IndexOfReplaceableByContains")
+    activeRecipe("org.openrewrite.staticanalysis.ReplaceOptionalIsPresentWithIfPresent") //run
+    activeRecipe("org.openrewrite.staticanalysis.ReplaceStringBuilderWithString") //run
+    activeRecipe("org.openrewrite.staticanalysis.SimplifyTernaryRecipes") //run
+    activeRecipe("org.openrewrite.staticanalysis.ReplaceDuplicateStringLiterals") //run
+    activeRecipe("org.openrewrite.staticanalysis.UseListSort") //run
+    activeRecipe("org.openrewrite.staticanalysis.UseForEachRemoveInsteadOfSetRemoveAll") //run
+    activeRecipe("org.openrewrite.staticanalysis.ReplaceRedundantFormatWithPrintf") //run
+    activeRecipe("org.openrewrite.staticanalysis.SimplifyArraysAsList") //run
+    activeRecipe("org.openrewrite.staticanalysis.SimplifyBooleanExpression") //run
+    activeRecipe("org.openrewrite.staticanalysis.SimplifyBooleanExpressionWithDeMorgan") //run
+    activeRecipe("org.openrewrite.staticanalysis.SimplifyBooleanReturn") //run
+    activeRecipe("org.openrewrite.staticanalysis.SimplifyConstantIfBranchExecution") //run
+    activeRecipe("org.openrewrite.staticanalysis.SimplifyElseBranch") //run
+    activeRecipe("org.openrewrite.staticanalysis.SimplifyDurationCreationUnits") //run
+    activeRecipe("org.openrewrite.staticanalysis.LambdaBlockToExpression") //run
+    activeRecipe("org.openrewrite.staticanalysis.SortedSetStreamToLinkedHashSet") //run
+    activeRecipe("org.openrewrite.staticanalysis.SimplifyCompoundStatement") //run
+    activeRecipe("org.openrewrite.staticanalysis.StaticMethodNotFinal") //run
+    activeRecipe("org.openrewrite.staticanalysis.NoToStringOnStringType") //run
+    activeRecipe("org.openrewrite.staticanalysis.NoValueOfOnStringType") //run
+    activeRecipe("org.openrewrite.staticanalysis.UnnecessaryExplicitTypeArguments") //run
+    activeRecipe("org.openrewrite.staticanalysis.UnnecessaryReturnAsLastStatement") //run
+    // do not use this recipe, changes the code a lot
+//    activeRecipe("org.openrewrite.staticanalysis.UnnecessaryThrows")
+    // do not use this recipe, changes the symmetry of the code
+//    activeRecipe("org.openrewrite.staticanalysis.UnwrapElseAfterReturn")
+    activeRecipe("org.openrewrite.staticanalysis.IsEmptyCallOnCollections") //run
+    activeRecipe("org.openrewrite.staticanalysis.NoEmptyCollectionWithRawType") //run
+    activeRecipe("org.openrewrite.staticanalysis.ReplaceCollectionToArrayArgWithEmptyArray") //run
+    activeRecipe("org.openrewrite.staticanalysis.UseStandardCharset") //run
+    activeRecipe("org.openrewrite.staticanalysis.StringLiteralEquality") //run
+    activeRecipe("org.openrewrite.staticanalysis.UseStringReplace") //run
+    activeRecipe("org.openrewrite.staticanalysis.UseSystemLineSeparator") //run
+    activeRecipe("org.openrewrite.staticanalysis.UseLambdaForFunctionalInterface") //run
+    activeRecipe("org.openrewrite.staticanalysis.ReplaceLambdaWithMethodReference") //run
+    activeRecipe("org.openrewrite.staticanalysis.PrimitiveWrapperClassConstructorToValueOf") //run
+    activeRecipe("org.openrewrite.staticanalysis.ForLoopIncrementInUpdate") //run
+    activeRecipe("org.openrewrite.staticanalysis.ForLoopControlVariablePostfixOperators") //run
 
     setExportDatatables(true)
 }
