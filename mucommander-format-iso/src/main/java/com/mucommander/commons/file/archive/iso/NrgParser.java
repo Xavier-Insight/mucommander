@@ -167,7 +167,7 @@ class NrgParser extends IsoParser {
 
             // fun : handle audio disc :)
             if (audioOnly) {
-                Vector<IsoArchiveEntry> entries = new Vector<IsoArchiveEntry>();
+                Vector<IsoArchiveEntry> entries = new Vector<>();
                 for (int k = 0; k < tracks; k++) {
                     entries.add(
                         new IsoArchiveEntry(

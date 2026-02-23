@@ -364,12 +364,12 @@ public class muCommander {
         System.setProperty("MUCOMMANDER_USER_PREFERENCES", configuration.preferences);
 
         // Copy configuration provided by command line arguments
-        configProps.putAll(new AbstractMap<String, String>() {
-            @Override
-            public java.util.Set<Map.Entry<String, String>> entrySet() {
-                return configuration.entrySet();
-            }
-        });
+        configProps.putAll(new AbstractMap<>() {
+			@Override
+			public java.util.Set<Map.Entry<String, String>> entrySet() {
+				return configuration.entrySet();
+			}
+		});
 
         // If enabled, register a shutdown hook to make sure the framework is
         // cleanly shutdown when the VM exits.
@@ -614,7 +614,7 @@ public class muCommander {
 
         // Perform variable substitution for system properties and
         // convert to dictionary.
-        Map<String, String> map = new HashMap<String, String>();
+        Map<String, String> map = new HashMap<>();
         for (Enumeration<String> e = (Enumeration<String>) props.propertyNames(); e.hasMoreElements(); ) {
             String name = e.nextElement();
             map.put(name,

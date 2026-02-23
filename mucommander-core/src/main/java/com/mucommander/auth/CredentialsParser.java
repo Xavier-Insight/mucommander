@@ -114,7 +114,7 @@ class CredentialsParser extends DefaultHandler implements CredentialsConstants {
         // Property element (properties will be set when credentials element ends
         else if(ELEMENT_PROPERTY.equals(qName)) {
             if(urlProperties==null)
-                urlProperties = new Hashtable<String, String>();
+                urlProperties = new Hashtable<>();
             urlProperties.put(attributes.getValue(ATTRIBUTE_NAME), attributes.getValue(ATTRIBUTE_VALUE));
         }
         // Root element, the 'encryption' attribute specifies which encoding was used to encrypt passwords

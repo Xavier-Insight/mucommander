@@ -537,9 +537,7 @@ public class Application {
             // Check for newer version unless it was disabled
             if (MuConfigurations.getPreferences()
                     .getVariable(MuPreference.CHECK_FOR_UPDATE, MuPreferences.DEFAULT_CHECK_FOR_UPDATE)) {
-                CompletableFuture.runAsync(() -> {
-                    new CheckVersionDialog(WindowManager.getCurrentMainFrame(), false);
-                }, CompletableFuture.delayedExecutor(10L, TimeUnit.SECONDS));
+                CompletableFuture.runAsync(() -> new CheckVersionDialog(WindowManager.getCurrentMainFrame(), false), CompletableFuture.delayedExecutor(10L, TimeUnit.SECONDS));
             }
 
         } catch (Throwable t) {

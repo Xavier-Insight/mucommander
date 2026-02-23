@@ -82,10 +82,10 @@ public class ZipFile implements ZipConstants {
     private RandomAccessOutputStream raos;
 
     /** Contains ZipEntry instances corresponding to the archive's entries, in the order they were found in the archive. */
-    private Vector<ZipEntry> entries = new Vector<ZipEntry>();
+    private Vector<ZipEntry> entries = new Vector<>();
 
     /** Maps entry paths to corresponding ZipEntry instances */
-    private Hashtable<String, ZipEntry> nameMap = new Hashtable<String, ZipEntry>();
+    private Hashtable<String, ZipEntry> nameMap = new Hashtable<>();
 
     /** Global zip file comment */
     private String comment;

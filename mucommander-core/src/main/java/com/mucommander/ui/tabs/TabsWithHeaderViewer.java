@@ -104,9 +104,9 @@ public class TabsWithHeaderViewer<T extends Tab> extends TabsViewer<T> {
 	@Override
 	public void removeDuplicateTabs() {
 		// a Set that will contain the tabs we've seen
-		Set<T> visitedTabs = new HashSet<T>();
+		Set<T> visitedTabs = new HashSet<>();
 		// a Set that will contain the tabs which are duplicated
-		Set<T> duplicatedTabs = new HashSet<T>(); 
+		Set<T> duplicatedTabs = new HashSet<>();
 		// The index of the selected tab
 		int selectedTabIndex = getSelectedTabIndex();
 

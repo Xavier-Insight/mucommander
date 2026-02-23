@@ -49,10 +49,10 @@ public class BookmarkManager implements VectorChangeListener {
     private static final String DEFAULT_BOOKMARKS_FILE_NAME = "bookmarks.xml";
 
     /** Bookmark instances */
-    private static AlteredVector<Bookmark> bookmarks = new AlteredVector<Bookmark>();
+    private static AlteredVector<Bookmark> bookmarks = new AlteredVector<>();
 
     /** Contains all registered bookmark listeners, stored as weak references */
-    private static WeakHashMap<BookmarkListener, ?> listeners = new WeakHashMap<BookmarkListener, Object>();
+    private static WeakHashMap<BookmarkListener, ?> listeners = new WeakHashMap<>();
 
     /** Specifies whether bookmark events should be fired when a change to the bookmarks is detected */
     private static boolean fireEvents = true;

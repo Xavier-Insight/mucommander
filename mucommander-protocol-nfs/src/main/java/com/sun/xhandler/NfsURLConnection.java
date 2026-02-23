@@ -137,8 +137,8 @@ public class NfsURLConnection extends URLConnection {
         MimeEntry entry;
 
 	if (nfsFile.isDirectory()) {
-	    String[] dirList;
-	    StringBuffer buf = new StringBuffer();
+	    String[]      dirList;
+	    StringBuilder buf = new StringBuilder();
 	    
 	    // Get height and width of icons for entries in directory list
 	    int iconHeight = Integer.getInteger("hotjava.file.iconheight", 

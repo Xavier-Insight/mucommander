@@ -54,7 +54,7 @@ public abstract class AnimatedIcon implements Icon {
     // - Instance fields -----------------------------------------------------------------
     // -----------------------------------------------------------------------------------
     /** All tracked components. */
-    private HashSet<TrackedComponent> components = new HashSet<TrackedComponent>();
+    private HashSet<TrackedComponent> components = new HashSet<>();
     /** Timer used to take the animation from one frame to the next. */
     private Timer   timer;
     /** Index of the current frame. */
@@ -357,7 +357,7 @@ public abstract class AnimatedIcon implements Icon {
          * Creates a new animation updater on the specified icon.
          * @param icon animation to update.
          */
-        public AnimationUpdater(AnimatedIcon icon) {this.icon = new WeakReference<AnimatedIcon>(icon);}
+        public AnimationUpdater(AnimatedIcon icon) {this.icon = new WeakReference<>(icon);}
 
         /**
          * Notifies the icon that it should update.

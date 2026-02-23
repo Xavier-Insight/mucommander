@@ -370,12 +370,8 @@ public class ActionManager {
         Map<ActionParameters, ActionAndIdPair> mainFrameActions = mainFrameActionsMap.get(mainFrame);
         if (mainFrameActions == null) {
             synchronized (mainFrameActionsMap) {
-                mainFrameActions = mainFrameActionsMap.get(mainFrame);
-                if (mainFrameActions == null) {
-                    mainFrameActions = new ConcurrentHashMap<>();
-                    mainFrameActionsMap.put(mainFrame, mainFrameActions);
-                }
-            }
+				mainFrameActions = mainFrameActionsMap.computeIfAbsent(mainFrame, k -> new ConcurrentHashMap<>());
+			}
         }
 
         // Looks for an existing MuAction instance used by the specified MainFrame
@@ -406,7 +402,7 @@ public class ActionManager {
         // else clone the ConcurrentHashMap to ensure that it doesn't get modified by action instances.
         // Since cloning is an expensive operation, this is done only if the hashtable is not empty.
         else if (!properties.isEmpty()) {
-            var buffer = new ConcurrentHashMap<String, Object>(properties);
+            var buffer = new ConcurrentHashMap<>(properties);
             properties = buffer;
         }
 
@@ -465,7 +461,7 @@ public class ActionManager {
      * @return  a Vector of all MuAction instances matching the specified action id
      */
     public static List<MuAction> getActionInstances(ActionId actionId) {
-        List<MuAction> actionInstances = new Vector<MuAction>();
+        List<MuAction> actionInstances = new Vector<>();
 
         // Iterate on all MainFrame instances
         for (Map<ActionParameters, ActionAndIdPair> actionParametersActionAndIdPairHashtable : mainFrameActionsMap.values()) {

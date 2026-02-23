@@ -111,21 +111,19 @@ public class ShortcutsTable extends PrefTable implements KeyListener, ListSelect
     /**
      * Comparator of actions according to their labels
      */
-    private static final Comparator<ActionId> ACTIONS_COMPARATOR = new Comparator<>() {
-        public int compare(ActionId id1, ActionId id2) {
-            String label1 = ActionProperties.getActionLabel(id1);
-            if (label1 == null) {
-                return 1;
-            }
+    private static final Comparator<ActionId> ACTIONS_COMPARATOR = (id1, id2) -> {
+		String label1 = ActionProperties.getActionLabel(id1);
+		if (label1 == null) {
+			return 1;
+		}
 
-            String label2 = ActionProperties.getActionLabel(id2);
-            if (label2 == null) {
-                return -1;
-            }
+		String label2 = ActionProperties.getActionLabel(id2);
+		if (label2 == null) {
+			return -1;
+		}
 
-            return label1.compareTo(label2);
-        }
-    };
+		return label1.compareTo(label2);
+	};
 
     /**
      * A class to represent Description cell in table data (the first column).

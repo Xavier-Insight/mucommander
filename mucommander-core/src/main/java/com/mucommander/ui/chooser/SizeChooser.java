@@ -49,7 +49,7 @@ public class SizeChooser extends JPanel {
     private JComboBox<String> unitComboBox;
 
     /** Contains all registered listeners, stored as weak references */
-    private WeakHashMap<ChangeListener, ?> listeners = new WeakHashMap<ChangeListener, Object>();
+    private WeakHashMap<ChangeListener, ?> listeners = new WeakHashMap<>();
 
     /** Maximum value allowed by the spinner */
     private final static int MAX_SPINNER_VALUE = Integer.MAX_VALUE;

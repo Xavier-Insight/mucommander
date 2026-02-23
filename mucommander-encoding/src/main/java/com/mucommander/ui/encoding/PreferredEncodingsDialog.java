@@ -100,7 +100,7 @@ public class PreferredEncodingsDialog extends FocusDialog {
 
         YBoxPanel yPanel = new YBoxPanel();
 
-        checkboxes = new Vector<JCheckBox>();
+        checkboxes = new Vector<>();
         JCheckBox checkbox;
         for(String enc : Charset.availableCharsets().keySet()) {
             checkbox = new JCheckBox(enc);
@@ -138,7 +138,7 @@ public class PreferredEncodingsDialog extends FocusDialog {
             @Override
             public void windowClosing(WindowEvent e) {
                 JCheckBox checkbox;
-				java.util.List<String> preferredEncodings = new Vector<String>();
+				java.util.List<String> preferredEncodings = new Vector<>();
 
 				for (JCheckBox jCheckBox : checkboxes) {
 					checkbox = jCheckBox;

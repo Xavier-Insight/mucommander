@@ -142,7 +142,7 @@ public class CustomFileIconProvider implements FileIconProvider {
      */
     private static void init() {
         // Map known file extensions to icon names
-        extensionMap = new Hashtable<String, String>();
+        extensionMap = new Hashtable<>();
 		for (String[] iconExtension : ICON_EXTENSIONS) {
 			int    nbExtensions = iconExtension.length;
 			String iconName     = iconExtension[0];

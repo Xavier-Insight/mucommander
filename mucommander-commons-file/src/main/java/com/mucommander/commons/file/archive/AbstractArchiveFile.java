@@ -121,7 +121,7 @@ public abstract class AbstractArchiveFile extends ProxyFile {
     protected void createEntriesTree() throws IOException, UnsupportedFileOperationException {
         // TODO: this method is not thread-safe and needs to be synchronized
         ArchiveEntryTree treeRoot = new ArchiveEntryTree();
-        archiveEntryFiles = new WeakHashMap<ArchiveEntry, AbstractArchiveEntryFile>();
+        archiveEntryFiles = new WeakHashMap<>();
 
         long start = System.currentTimeMillis();
         try (ArchiveEntryIterator entries = getEntryIterator()) {
@@ -242,7 +242,7 @@ public abstract class AbstractArchiveFile extends ProxyFile {
         }
         // Use provided FilenameFilter and temporarily store created entry files that match the filter in a Vector
         else {
-            Vector<AbstractFile> filesV = new Vector<AbstractFile>();
+            Vector<AbstractFile> filesV = new Vector<>();
             for(int c=0; c<nbChildren; c++) {
                 ArchiveEntry entry = (ArchiveEntry)(((DefaultMutableTreeNode)treeNode.getChildAt(c)).getUserObject());
                 if(!filenameFilter.accept(entry.getName()))

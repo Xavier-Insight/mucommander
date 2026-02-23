@@ -15,6 +15,7 @@ import java.awt.event.ComponentListener;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Vector;
 
 import javax.swing.JComponent;
@@ -182,12 +183,7 @@ public class DefaultOverlayable extends JPanel implements SwingConstants, Compon
 
     public int getOverlayLocation(JComponent component) {
         Integer location = _overlayLocations.get(component);
-        if (location != null) {
-            return location;
-        }
-        else {
-            return -1;
-        }
+		return Objects.requireNonNullElse(location, -1);
     }
 
 //    public Component getOverlayRelativeComponent(JComponent component) {

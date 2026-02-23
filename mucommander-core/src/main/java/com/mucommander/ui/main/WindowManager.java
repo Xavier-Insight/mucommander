@@ -103,7 +103,7 @@ public class WindowManager implements WindowListener, ConfigurationListener {
      * Creates a new instance of WindowManager.
      */
     private WindowManager() {
-        mainFrames = new Vector<MainFrame>();
+        mainFrames = new Vector<>();
 
         // Notifies Swing that look&feels must be loaded as extensions.
         // This is necessary to ensure that look and feels placed in the extensions folder

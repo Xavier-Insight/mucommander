@@ -89,7 +89,7 @@ public abstract class MainFrameBuilder {
                 folderPaths[i] = snapshot.getVariable(MuSnapshot.getTabLocationVariable(window, folderPanelType == FolderPanelType.LEFT, i));
         }
 
-        List<AbstractFile> initialFolders = new LinkedList<AbstractFile>(); // Initial folders 
+        List<AbstractFile> initialFolders = new LinkedList<>(); // Initial folders
         AbstractFile folder;
 
         for (String folderPath : folderPaths) {

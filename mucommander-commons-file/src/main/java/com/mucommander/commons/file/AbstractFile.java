@@ -856,7 +856,7 @@ public abstract class AbstractFile implements FileAttributes {
      * @throws IOException in any of the cases listed above
      */
     public final AbstractFile getDirectChild(String filename, AbstractFile template) throws IOException {
-        if(filename.indexOf(getSeparator())!=-1)
+        if(filename.contains(getSeparator()))
             throw new IOException();
 
         AbstractFile childFile = getChild(filename, template);

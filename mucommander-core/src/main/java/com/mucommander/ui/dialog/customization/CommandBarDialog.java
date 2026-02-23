@@ -96,14 +96,12 @@ public class CommandBarDialog extends CustomizeDialog {
 	private static final Color JBUTTON_BACKGROUND_COLOR = UIManager.getColor("button.background");
 	
 	/** Comparator for buttons according to their text */
-	private static final Comparator<JButton> BUTTONS_COMPARATOR = new Comparator<JButton>() {
-		public int compare(JButton b1, JButton b2) {
-			if (b1.getText() == null)
-				return 1;
-			if (b2.getText() == null)
-				return -1;
-			return b1.getText().compareTo(b2.getText());
-		}
+	private static final Comparator<JButton> BUTTONS_COMPARATOR = (b1, b2) -> {
+		if (b1.getText() == null)
+			return 1;
+		if (b2.getText() == null)
+			return -1;
+		return b1.getText().compareTo(b2.getText());
 	};
 	
 	/**
@@ -142,9 +140,9 @@ public class CommandBarDialog extends CustomizeDialog {
     protected JPanel createCustomizationPanel() {
 		JPanel panel = new JPanel(new BorderLayout());
 		
-		commandBarAvailableButtons   = new AlteredVector<JButton>();
-		commandBarButtons            = new AlteredVector<JButton>();
-		commandBarAlternateButtons   = new AlteredVector<JButton>();
+		commandBarAvailableButtons   = new AlteredVector<>();
+		commandBarButtons            = new AlteredVector<>();
+		commandBarAlternateButtons   = new AlteredVector<>();
 		
 		// a Set that contains all actions that are used by the command-bar (as regular or alternate buttons).
 		Set<ActionId> usedActions = new HashSet<>();
@@ -207,7 +205,7 @@ public class CommandBarDialog extends CustomizeDialog {
 		for (ActionId commandBarActionId : commandBarActionIds)
 			commandBarButtons.add(CommandBarButtonForDisplay.create(commandBarActionId));
 		
-		commandBarButtonsList = new DynamicList<JButton>(commandBarButtons);
+		commandBarButtonsList = new DynamicList<>(commandBarButtons);
 		
 		// Set lists cells renderer
 		commandBarButtonsList.setCellRenderer(new CommandBarButtonListCellRenderer());
@@ -259,9 +257,7 @@ public class CommandBarDialog extends CustomizeDialog {
 					commandBarButtonsList.ensureIndexIsVisible(index);
 					commandBarButtonsList.repaint();
 					return true;
-				} catch (UnsupportedFlavorException e) {
-					e.printStackTrace();
-				} catch (IOException e) {
+				} catch (UnsupportedFlavorException | IOException e) {
 					e.printStackTrace();
 				}
 				return false;
@@ -314,7 +310,7 @@ public class CommandBarDialog extends CustomizeDialog {
 		for (ActionId commandBarActionId : commandBarActionIds)
 			commandBarAlternateButtons.add(CommandBarButtonForDisplay.create(commandBarActionId));
 		
-		commandBarAlternateButtonsList = new DynamicList<JButton>(commandBarAlternateButtons);
+		commandBarAlternateButtonsList = new DynamicList<>(commandBarAlternateButtons);
 		
 		// Set lists cells renderer
 		commandBarAlternateButtonsList.setCellRenderer(new CommandBarAlternativeButtonListRenderer());
@@ -370,9 +366,7 @@ public class CommandBarDialog extends CustomizeDialog {
 					commandBarAlternateButtonsList.ensureIndexIsVisible(index);
 					commandBarAlternateButtonsList.repaint();
 					return true;
-				} catch (UnsupportedFlavorException e) {
-					e.printStackTrace();
-				} catch (IOException e) {
+				} catch (UnsupportedFlavorException | IOException e) {
 					e.printStackTrace();
 				}
 				return false;
@@ -394,7 +388,7 @@ public class CommandBarDialog extends CustomizeDialog {
 	            insertInOrder(commandBarAvailableButtons, CommandBarButtonForDisplay.create(actionId));
 	    }
 
-		commandBarAvailableButtonsList = new DynamicHorizontalWrapList<JButton>(commandBarAvailableButtons, CommandBarButtonForDisplay.PREFERRED_SIZE.width, 6);
+		commandBarAvailableButtonsList = new DynamicHorizontalWrapList<>(commandBarAvailableButtons, CommandBarButtonForDisplay.PREFERRED_SIZE.width, 6);
 		
 		commandBarAvailableButtonsList.setCellRenderer(new AvailableButtonCellListRenderer());
 		commandBarAvailableButtonsList.setDragEnabled(true);
@@ -435,9 +429,7 @@ public class CommandBarDialog extends CustomizeDialog {
 					commandBarAvailableButtonsList.ensureIndexIsVisible(insertedIndex);
 					return true;
 				}
-				catch (UnsupportedFlavorException e) {
-					e.printStackTrace();
-				} catch (IOException e) {
+				catch (UnsupportedFlavorException | IOException e) {
 					e.printStackTrace();
 				}
 				return false;

@@ -513,7 +513,7 @@ public class GSSCredential {
      */
     public String toString() {
         
-        StringBuffer sb = new StringBuffer(150);
+        StringBuilder sb = new StringBuilder(150);
         
         sb.append(super.toString());
         sb.append("\nOver mechs:\t");

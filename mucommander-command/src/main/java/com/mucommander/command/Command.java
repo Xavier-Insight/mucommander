@@ -238,7 +238,7 @@ public class Command implements Comparable<Command> {
      * @return         the specified command's tokens after replacing keywords by the corresponding values from the specified files.
      */
     public String[] getTokens(String command, AbstractFile[] files) {
-        List<String> tokens = new Vector<String>(); // All tokens.
+        List<String> tokens = new Vector<>(); // All tokens.
         StringBuilder currentToken = new StringBuilder(command.length()); // Buffer for the current token.
         char[] buffer = command.toCharArray(); // All the characters that compose command.
         boolean isInQuotes = false; // Whether we're currently within quotes or not.

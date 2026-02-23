@@ -629,7 +629,7 @@ class MechInfo {
      */
     public String toString() {
 
-        StringBuffer aBuf = new StringBuffer(100);
+        StringBuilder aBuf = new StringBuilder(100);
         
         aBuf.append("Mechanism oid:\t").append(m_oid);
         aBuf.append("\nMechanism alias:\t").append(

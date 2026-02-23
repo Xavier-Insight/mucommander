@@ -43,7 +43,7 @@ public abstract class Completer {
     private Set<CompletionService> services;
 
     public Completer() {
-        services = new LinkedHashSet<CompletionService>();
+        services = new LinkedHashSet<>();
     }
 
     /**
@@ -108,7 +108,7 @@ public abstract class Completer {
      * 			which were retured from the registered services.
      */
     protected Vector<String> getPossibleCompletionsFromServices(String path) {
-        Vector<String> result = new Vector<String>();
+        Vector<String> result = new Vector<>();
         for (CompletionService service : services)
             result.addAll(service.getPossibleCompletions(path));
         return result;

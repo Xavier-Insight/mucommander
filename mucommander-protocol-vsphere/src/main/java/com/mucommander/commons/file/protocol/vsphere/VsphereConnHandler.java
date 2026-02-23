@@ -60,10 +60,7 @@ public class VsphereConnHandler extends ConnectionHandler {
 	public void startConnection() throws IOException, AuthException {
 		try {
 			initClientIfNeeded();
-		} catch (RuntimeFaultFaultMsg e) {
-
-			throw new IOException(e);
-		} catch (InvalidLocaleFaultMsg e) {
+		} catch (RuntimeFaultFaultMsg | InvalidLocaleFaultMsg e) {
 
 			throw new IOException(e);
 		} catch (InvalidLoginFaultMsg e) {

@@ -63,31 +63,29 @@ public class ShortcutsDialog extends FocusDialog implements ActionListener {
     //////////////////////////
 
     private final static String QUICK_SEARCH_TITLE = "shortcuts_dialog.quick_search";
-    private final static Map<String, String> QUICK_SEARCH_SHORTCUTS = new Hashtable<String, String>() {
-        {
-            put("shortcuts_dialog.quick_search.start_search", "");
-            put("shortcuts_dialog.quick_search.jump_to_previous", "UP");
-            put("shortcuts_dialog.quick_search.jump_to_next", "DOWN");
-            put("shortcuts_dialog.quick_search.remove_last_char", "BACKSPACE");
-            put("shortcuts_dialog.quick_search.mark_jump_next", "INSERT");
-            put("shortcuts_dialog.quick_search.cancel_search", "ESCAPE");
-        }
-    };
+    private final static Map<String, String> QUICK_SEARCH_SHORTCUTS = new Hashtable<>() {
+		{
+			put("shortcuts_dialog.quick_search.start_search", "");
+			put("shortcuts_dialog.quick_search.jump_to_previous", "UP");
+			put("shortcuts_dialog.quick_search.jump_to_next", "DOWN");
+			put("shortcuts_dialog.quick_search.remove_last_char", "BACKSPACE");
+			put("shortcuts_dialog.quick_search.mark_jump_next", "INSERT");
+			put("shortcuts_dialog.quick_search.cancel_search", "ESCAPE");
+		}
+	};
 
     /** Comparator of actions according to their labels */
-    private static final Comparator<ActionId> ACTIONS_COMPARATOR = new Comparator<>() {
-        public int compare(ActionId id1, ActionId id2) {
-            String label1 = ActionProperties.getActionLabel(id1);
-            if (label1 == null)
-                return 1;
+    private static final Comparator<ActionId> ACTIONS_COMPARATOR = (id1, id2) -> {
+		String label1 = ActionProperties.getActionLabel(id1);
+		if (label1 == null)
+			return 1;
 
-            String label2 = ActionProperties.getActionLabel(id2);
-            if (label2 == null)
-                return -1;
+		String label2 = ActionProperties.getActionLabel(id2);
+		if (label2 == null)
+			return -1;
 
-            return label1.compareTo(label2);
-        }
-    };
+		return label1.compareTo(label2);
+	};
 
     public ShortcutsDialog(MainFrame mainFrame) {
         super(mainFrame.getJFrame(), ActionProperties.getActionLabel(ActionType.ShowKeyboardShortcuts), mainFrame.getJFrame());
@@ -132,7 +130,7 @@ public class ShortcutsDialog extends FocusDialog implements ActionListener {
 
         // Initialize empty LinkedList for each category
         for (ActionCategory category : ActionProperties.getNonEmptyActionCategories())
-            categoryToItsActionsWithShortcutsIdsMap.put(category, new LinkedList<ActionId>());
+            categoryToItsActionsWithShortcutsIdsMap.put(category, new LinkedList<>());
 
         // Go over all action ids
         for (ActionId actionId : ActionManager.getActionIds()) {
@@ -208,7 +206,7 @@ public class ShortcutsDialog extends FocusDialog implements ActionListener {
     }
 
     private void addShortcutList(XAlignedComponentPanel compPanel, Map<String, String> actionsToShortcutsMap) {
-        List<String> vec = new Vector<String>(actionsToShortcutsMap.keySet());
+        List<String> vec = new Vector<>(actionsToShortcutsMap.keySet());
         vec.sort(null);
 
         for(String action : vec)

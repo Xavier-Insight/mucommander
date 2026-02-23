@@ -73,21 +73,21 @@ public class QuickListPanel extends ThemeEditorPanel implements PropertyChangeLi
     }
 
     /** The list of items of the sample quick list */
-    private QuickListDataList<String> list = new QuickListDataListWithIcons<String>(sampleData) {
-    	
-    	{
-    		for (KeyListener listener : getKeyListeners())
-    			removeKeyListener(listener);
-    	}
-    	
+    private QuickListDataList<String> list = new QuickListDataListWithIcons<>(sampleData) {
+
+		{
+			for (KeyListener listener : getKeyListeners())
+				removeKeyListener(listener);
+		}
+
 		@Override
-        public Icon getImageIconOfItem(String item,  final Dimension preferredSize) {
+		public Icon getImageIconOfItem(String item, final Dimension preferredSize) {
 			return sampleIcon;
 		}
-		
+
 		@Override
-        protected void addMouseListenerToList() { }
-    };
+		protected void addMouseListenerToList() {}
+	};
     
     /**
      * Creates the quick list preview panel.

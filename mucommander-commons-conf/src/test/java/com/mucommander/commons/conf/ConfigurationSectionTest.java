@@ -37,7 +37,7 @@ public class ConfigurationSectionTest {
     public Iterator<Object[]> removeVariableCases() {
         List<Object[]> data;
 
-        data = new ArrayList<Object[]>();
+        data = new ArrayList<>();
 
         data.add(new Object[] {"value"});
         data.add(new Object[] {""});
@@ -74,7 +74,7 @@ public class ConfigurationSectionTest {
     public Iterator<Object[]> setVariableCases() {
         List<Object[]> data;
 
-        data = new ArrayList<Object[]>();
+        data = new ArrayList<>();
 
         data.add(new Object[] {"value", "other", true});
         data.add(new Object[] {"value", "value", false});
@@ -146,7 +146,7 @@ public class ConfigurationSectionTest {
             assert !section.isEmpty();
 
             // Populates a set will all the expected variable names.
-            expectedNames = new HashSet<String>(count);
+            expectedNames = new HashSet<>(count);
             for(int i = 0; i < count; i++)
                 expectedNames.add("var" + i);
 
@@ -330,7 +330,7 @@ public class ConfigurationSectionTest {
             assert !section.isEmpty();
 
             // Populates a set will all the expected variable names.
-            expectedNames = new HashSet<String>(count);
+            expectedNames = new HashSet<>(count);
             for(int i = 0; i < count; i++)
                 expectedNames.add("sect" + i);
 

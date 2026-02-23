@@ -88,7 +88,7 @@ public class DialogEditor extends PropertyEditorSupport {
     public void setAsText(String text) throws IllegalArgumentException {
 	for (int i=0; i<dialogNames.length; i++) {
 	    if (text.equals(dialogNames[i])) {
-		setValue(Integer.valueOf(dialogValues[i]));
+		setValue(dialogValues[i]);
 		return;
 	    }
 	}

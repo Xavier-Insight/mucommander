@@ -488,26 +488,26 @@ class AppearancePanel extends PreferencesPanel implements ActionListener, Runnab
      */
     private JPanel createSystemIconsPanel() {
         /* 'Use system file icons' combo box */
-        this.useSystemFileIconsComboBox = new PrefComboBox<String>() {
-            public boolean hasChanged() {
-                SystemIconsPolicy systemIconsPolicy;
-                // TODO use objects instead of index.....
-                switch (useSystemFileIconsComboBox.getSelectedIndex()) {
-                    case 0:
-                        systemIconsPolicy = SystemIconsPolicy.NEVER;
-                        break;
-                    case 1:
-                        systemIconsPolicy = SystemIconsPolicy.APPLICATIONS_ONLY;
-                        break;
-                    case 2:
-                        systemIconsPolicy = SystemIconsPolicy.FOLDERS_ONLY;
-                        break;
-                    default:
-                        systemIconsPolicy = SystemIconsPolicy.ALWAYS;
-                }
-                return !systemIconsPolicy.toString().equals(MuConfigurations.getPreferences().getVariable(MuPreference.USE_SYSTEM_FILE_ICONS, systemIconsPolicy.toString()));
-            }
-        };
+        this.useSystemFileIconsComboBox = new PrefComboBox<>() {
+			public boolean hasChanged() {
+				SystemIconsPolicy systemIconsPolicy;
+				// TODO use objects instead of index.....
+				switch (useSystemFileIconsComboBox.getSelectedIndex()) {
+					case 0:
+						systemIconsPolicy = SystemIconsPolicy.NEVER;
+						break;
+					case 1:
+						systemIconsPolicy = SystemIconsPolicy.APPLICATIONS_ONLY;
+						break;
+					case 2:
+						systemIconsPolicy = SystemIconsPolicy.FOLDERS_ONLY;
+						break;
+					default:
+						systemIconsPolicy = SystemIconsPolicy.ALWAYS;
+				}
+				return !systemIconsPolicy.toString().equals(MuConfigurations.getPreferences().getVariable(MuPreference.USE_SYSTEM_FILE_ICONS, systemIconsPolicy.toString()));
+			}
+		};
         useSystemFileIconsComboBox.addItem(Translator.get("prefs_dialog.use_system_file_icons.never"));
         useSystemFileIconsComboBox.addItem(Translator.get("prefs_dialog.use_system_file_icons.applications"));
         useSystemFileIconsComboBox.addItem(Translator.get("prefs_dialog.use_system_file_icons.folders"));
@@ -643,15 +643,15 @@ class AppearancePanel extends PreferencesPanel implements ActionListener, Runnab
         lookAndFeels = UIManager.getInstalledLookAndFeels();
 
         // Sorts them.
-        Arrays.sort(lookAndFeels, new Comparator<UIManager.LookAndFeelInfo>() {
-            public int compare(UIManager.LookAndFeelInfo a, UIManager.LookAndFeelInfo b) {
-                return a.getName().compareTo(b.getName());
-            }
+        Arrays.sort(lookAndFeels, new Comparator<>() {
+			public int compare(UIManager.LookAndFeelInfo a, UIManager.LookAndFeelInfo b) {
+				return a.getName().compareTo(b.getName());
+			}
 
-            public boolean equals(Object a) {
-                return false;
-            }
-        });
+			public boolean equals(Object a) {
+				return false;
+			}
+		});
     }
 
     /**
@@ -841,7 +841,7 @@ class AppearancePanel extends PreferencesPanel implements ActionListener, Runnab
                 String currentName;
 
                 if (customLookAndFeels == null)
-                    customLookAndFeels = new Vector<String>();
+                    customLookAndFeels = new Vector<>();
 
                 // Adds all new instances to the list of custom look&feels.
 				for (Class<?> newLookAndFeel : newLookAndFeels) {

@@ -80,7 +80,7 @@ public class ServerConnectDialog extends FocusDialog implements ServerPanelListe
     private ServerPanel currentServerPanel;
 
     private JTabbedPane tabbedPane;
-    private java.util.List<ServerPanel> serverPanels = new Vector<ServerPanel>();
+    private java.util.List<ServerPanel> serverPanels = new Vector<>();
 
     private JLabel urlLabel;
     private JCheckBox saveCredentialsCheckBox;

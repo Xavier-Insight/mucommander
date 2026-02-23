@@ -57,7 +57,7 @@ public class PrefixFilter {
      * @return Vector of strings which start with this filter's prefix.
      */
     public Vector<String> filter(String[] strings) {
-        Vector<String> result = new Vector<String>();
+        Vector<String> result = new Vector<>();
 		for (String stringI : strings) {
 			if (accept(stringI)) result.add(stringI);
 		}
@@ -71,7 +71,7 @@ public class PrefixFilter {
      * @return Vector of strings which start with this filter's prefix.
      */
     public Vector<String> filter(Vector<String> strings) {
-        Vector<String> result = new Vector<String>();
+        Vector<String> result = new Vector<>();
 
         for(String s : strings) {
             if (accept(s))

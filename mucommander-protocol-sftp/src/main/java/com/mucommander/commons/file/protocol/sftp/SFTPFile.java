@@ -381,7 +381,7 @@ public class SFTPFile extends ProtocolFile {
     @SuppressWarnings("unchecked")
     @Override
     public AbstractFile[] ls() throws IOException {
-        List<LsEntry> files = new ArrayList<LsEntry>();
+        List<LsEntry> files = new ArrayList<>();
         try (SFTPConnectionHandler connHandler = (SFTPConnectionHandler)ConnectionPool.getConnectionHandler(connHandlerFactory, fileURL, true)) {
             // Makes sure the connection is started, if not starts it
             connHandler.checkConnection();

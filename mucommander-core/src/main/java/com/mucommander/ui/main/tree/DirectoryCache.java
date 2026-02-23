@@ -53,7 +53,7 @@ public class DirectoryCache {
      */
     public DirectoryCache(FileFilter filter, FileComparator sort) {
         //this.cache = Collections.synchronizedMap(new HashMap());
-        this.cache = new HashMap<AbstractFile, CachedDirectory>();
+        this.cache = new HashMap<>();
         this.filter = filter;
         this.sort = sort;
     }

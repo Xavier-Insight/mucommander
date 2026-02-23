@@ -52,7 +52,7 @@ public class RegistryClient implements Closeable {
 		log.debug("RegistryClient::connect");
 		JSONObject manifest = SkopeoCommandExecutor.inspect(imageUrl, creds);
 		JSONArray layersArray = (JSONArray)manifest.get("Layers");
-		layers = (List<String>) layersArray.stream().map(v->v.toString()).collect(Collectors.toList());
+		layers = (List<String>) layersArray.stream().map(Object::toString).collect(Collectors.toList());
 
 		String imageDigest = (String) manifest.get("Digest");
 		tempFolder = SkopeoCommandExecutor.copy(imageUrl, imageDigest, creds);

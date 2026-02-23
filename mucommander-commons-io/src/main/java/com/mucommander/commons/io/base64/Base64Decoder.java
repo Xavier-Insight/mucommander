@@ -80,8 +80,8 @@ public abstract class Base64Decoder {
     public static String decode(String s, String encoding, Base64Table table) throws UnsupportedEncodingException, IOException {
 
 		try (InputStreamReader isr = new InputStreamReader(new ByteArrayInputStream(decodeAsBytes(s, table)), encoding)) {
-			StringBuffer sb = new StringBuffer();
-			int          i;
+			StringBuilder sb = new StringBuilder();
+			int           i;
 			while ((i = isr.read()) != -1) sb.append((char) i);
 
 			return sb.toString();

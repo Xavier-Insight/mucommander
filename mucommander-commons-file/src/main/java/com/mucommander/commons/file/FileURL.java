@@ -140,7 +140,7 @@ public class FileURL implements Cloneable {
     private final static SchemeHandler DEFAULT_HANDLER = new DefaultSchemeHandler();
 
     /** Maps schemes (String) onto SchemeHandler instances */
-    private final static Hashtable<String, SchemeHandler> handlers = new Hashtable<String, SchemeHandler>();
+    private final static Hashtable<String, SchemeHandler> handlers = new Hashtable<>();
 
     /** String designating the localhost */
     public final static String LOCALHOST = "localhost";
@@ -618,7 +618,7 @@ public class FileURL implements Cloneable {
 
                 // Copy properties to parent (if any)
                 if(properties!=null)
-                    parentURL.properties = new Hashtable<String, String>(properties);
+                    parentURL.properties = new Hashtable<>(properties);
 
                 return parentURL;
             }
@@ -705,7 +705,7 @@ public class FileURL implements Cloneable {
     public void setProperty(String name, String value) {
         // Create the property hashtable only when a property is set for the first time
         if(properties==null)
-            properties = new Hashtable<String, String>();
+            properties = new Hashtable<>();
 
         if(value==null)
             properties.remove(name);
@@ -755,7 +755,7 @@ public class FileURL implements Cloneable {
      * @return a string representation of this <code>FileURL</code>
      */
     public String toString(boolean includeCredentials, boolean maskPassword) {
-        StringBuffer sb = new StringBuffer(scheme);
+        StringBuilder sb = new StringBuilder(scheme);
         sb.append("://");
 
         if(includeCredentials && credentials!=null) {
@@ -999,7 +999,7 @@ public class FileURL implements Cloneable {
 
         // Mutable fields
         if(properties!=null)    // Copy properties (if any)
-            clonedURL.properties = new Hashtable<String, String>(properties);
+            clonedURL.properties = new Hashtable<>(properties);
 
         // Caches
         clonedURL.hashCode = hashCode;

@@ -108,8 +108,8 @@ class CommandBarReader extends CommandBarIO {
     public void startDocument() {
     	LOGGER.trace(file.getAbsolutePath()+" parsing started");
 
-        actionsIdsV = new Vector<ActionId>();
-        alternateActionsIdsV = new Vector<ActionId>();
+        actionsIdsV = new Vector<>();
+        alternateActionsIdsV = new Vector<>();
         modifier = null;
     }
 

@@ -75,7 +75,7 @@ public class ToolBarReader extends ToolBarIO {
 
     @Override
     public void startDocument() {
-        actionIdsV = new Vector<ActionId>();
+        actionIdsV = new Vector<>();
     }
 
     @Override

@@ -42,8 +42,8 @@ class ConfigurationSection {
      * Creates a new configuration section.
      */
     public ConfigurationSection() {
-        variables = new HashMap<String, String>();
-        sections  = new HashMap<String, ConfigurationSection>();
+        variables = new HashMap<>();
+        sections  = new HashMap<>();
     }
 
 

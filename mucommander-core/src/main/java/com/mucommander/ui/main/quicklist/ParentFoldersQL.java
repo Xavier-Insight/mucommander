@@ -62,7 +62,7 @@ public class ParentFoldersQL extends QuickListWithIcons<AbstractFile> {
     }
 
     protected List<AbstractFile> populateParentFolders(AbstractFile folder) {
-        List<AbstractFile> parents = new LinkedList<AbstractFile>();
+        List<AbstractFile> parents = new LinkedList<>();
 
         while ((folder = folder.getParent()) != null)
             parents.add(folder);

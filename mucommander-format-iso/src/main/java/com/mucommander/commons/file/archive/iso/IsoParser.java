@@ -48,7 +48,7 @@ import java.util.Vector;
 class IsoParser {
     private static final Logger LOGGER = LoggerFactory.getLogger(IsoParser.class);
     public static Vector<IsoArchiveEntry> getEntries(byte[] buffer, RandomAccessInputStream rais, int sectSize, long sector_offset, long shiftOffset) throws Exception {
-        Vector<IsoArchiveEntry> entries = new Vector<IsoArchiveEntry>();
+        Vector<IsoArchiveEntry> entries = new Vector<>();
 
         Calendar calendar = Calendar.getInstance();
         int start = 16;
@@ -205,7 +205,7 @@ class IsoParser {
                 boolean dir = false;
                 String n = name_buf.toString();
                 if (!(".".equals(n) || "..".equals(n))) {
-                    StringBuffer name = new StringBuffer(rootname);
+                    StringBuilder name = new StringBuilder(rootname);
                     name.append(n);
 
                     if (S_ISDIR(fstat_buf.st_mode)) {

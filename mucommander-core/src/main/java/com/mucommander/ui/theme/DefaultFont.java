@@ -46,7 +46,7 @@ public abstract class DefaultFont {
      * Creates a new instance of {@link DefaultFont}.
      */
     protected DefaultFont() {
-        linkedFonts = new Vector<Integer>();
+        linkedFonts = new Vector<>();
     }
 
 

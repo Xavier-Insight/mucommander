@@ -188,12 +188,7 @@ public final class BonjourDirectory implements ServiceListener, ConfigurationLis
 
         // Resolve service info in a separate thread, serviceResolved() will be called once service info has been resolved.
         // Not spawning a thread often leads to service info loss (serviceResolved() not called).
-        new Thread() {
-            @Override
-            public void run() {
-                jmDNS.requestServiceInfo(serviceEvent.getType(), serviceEvent.getName(), SERVICE_RESOLUTION_TIMEOUT);
-            }
-        }.start();
+        new Thread(() -> jmDNS.requestServiceInfo(serviceEvent.getType(), serviceEvent.getName(), SERVICE_RESOLUTION_TIMEOUT)).start();
     }
 
     public void serviceResolved(ServiceEvent serviceEvent) {

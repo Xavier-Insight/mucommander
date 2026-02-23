@@ -664,8 +664,8 @@ public class XRandomAccessFile implements DataOutput, DataInput {
      * @exception  java.io.IOException  if an I/O error occurs.
      */
     public final String readLine() throws IOException {
-	StringBuffer input = new StringBuffer();
-	int c;
+	StringBuilder input = new StringBuilder();
+	int           c;
 
 	while (((c = read()) != -1) && (c != '\n')) {
 	    input.append((char)c);

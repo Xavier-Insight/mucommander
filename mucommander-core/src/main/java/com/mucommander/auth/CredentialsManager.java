@@ -61,11 +61,11 @@ public class CredentialsManager {
 	private static final Logger LOGGER = LoggerFactory.getLogger(CredentialsManager.class);
 	
     /** Contains volatile CredentialsMapping instances, lost when the application terminates */
-    private static List<CredentialsMapping> volatileCredentialMappings = new Vector<CredentialsMapping>();
+    private static List<CredentialsMapping> volatileCredentialMappings = new Vector<>();
 
     /** Contains persistent CredentialsMapping instances, stored to an XML file when the application
      * terminates, and loaded the next time the application is started */
-    private static AlteredVector<CredentialsMapping> persistentCredentialMappings = new AlteredVector<CredentialsMapping>();
+    private static AlteredVector<CredentialsMapping> persistentCredentialMappings = new AlteredVector<>();
 
     /** Singleton CredentialsManagerAuthenticator instance */
     private final static Authenticator AUTHENTICATOR = new CredentialsManagerAuthenticator();
@@ -254,7 +254,7 @@ public class CredentialsManager {
      * @return a Vector of CredentialsMapping matching the given URL's scheme and host, best match at the first position
      */
     private static List<CredentialsMapping> getMatchingCredentialsV(FileURL location) {
-        List<CredentialsMapping> matchesV = new Vector<CredentialsMapping>();
+        List<CredentialsMapping> matchesV = new Vector<>();
 
         findMatches(location, volatileCredentialMappings, matchesV);
         findMatches(location, persistentCredentialMappings, matchesV);
@@ -402,7 +402,7 @@ public class CredentialsManager {
 
         // Splits the provided location's path into an array of folder tokens (e.g. "/home/maxence" -> ["home","maxence"])
         String path = location.getPath();
-        List<String> pathTokensV = new Vector<String>();
+        List<String> pathTokensV = new Vector<>();
         StringTokenizer st = new StringTokenizer(path, "/\\");
         while(st.hasMoreTokens()) {
             pathTokensV.add(st.nextToken());

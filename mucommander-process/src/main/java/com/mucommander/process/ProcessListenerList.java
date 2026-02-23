@@ -38,7 +38,7 @@ public class ProcessListenerList implements ProcessListener {
      * Creates a new process listener list.
      */
     public ProcessListenerList() {
-        listeners = new Vector<ProcessListener>();
+        listeners = new Vector<>();
     }
 
 

@@ -150,7 +150,7 @@ public class OpenAction extends MuAction {
     }
 
     protected AbstractFile resolveSymlink(AbstractFile symlink) {
-        return resolveSymlink(symlink, new HashSet<AbstractFile>());
+        return resolveSymlink(symlink, new HashSet<>());
     }
 
     private AbstractFile resolveSymlink(AbstractFile file, Set<AbstractFile> visitedFiles) {

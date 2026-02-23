@@ -78,29 +78,28 @@ public class ShowServerConnectionsDialog extends FocusDialog implements ActionLi
 
         connections = ConnectionPool.getConnectionHandlersSnapshot();
 
-        connectionList = new JList<>(new AbstractListModel<String>() {
-            @Override
-            public int getSize() {
-                return connections.size();
-            }
+        connectionList = new JList<>(new AbstractListModel<>() {
+			@Override
+			public int getSize() {
+				return connections.size();
+			}
 
-            @Override
-            public String getElementAt(int i) {
-                ConnectionHandler connHandler = connections.get(i);
+			@Override
+			public String getElementAt(int i) {
+				ConnectionHandler connHandler = connections.get(i);
 
-                // Show login (but not password) in the URL
-                // Note: realm returned by ConnectionHandler does not contain credentials
-                FileURL clonedRealm = (FileURL)connHandler.getRealm().clone();
-                Credentials credentials = connHandler.getCredentials();
-                if (credentials != null) {
-                    Credentials loginCredentials = new Credentials(credentials.getLogin(), "");
-                    clonedRealm.setCredentials(loginCredentials);
-                }
+				// Show login (but not password) in the URL
+				// Note: realm returned by ConnectionHandler does not contain credentials
+				FileURL     clonedRealm = (FileURL) connHandler.getRealm().clone();
+				Credentials credentials = connHandler.getCredentials();
+				if (credentials != null) {
+					Credentials loginCredentials = new Credentials(credentials.getLogin(), "");
+					clonedRealm.setCredentials(loginCredentials);
+				}
 
-                return clonedRealm.toString(true)
-                        +" ("+Translator.get(connHandler.isLocked()?"server_connections_dialog.connection_busy":"server_connections_dialog.connection_idle")+")";
-            }
-        });
+				return clonedRealm.toString(true) + " (" + Translator.get(connHandler.isLocked() ? "server_connections_dialog.connection_busy" : "server_connections_dialog.connection_idle") + ")";
+			}
+		});
 
         // Only one list index can be selected at a time
         connectionList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -177,12 +176,7 @@ public class ShowServerConnectionsDialog extends FocusDialog implements ActionLi
 
                 // Close connection in a separate thread as I/O can lock.
                 // Todo: Add a confirmation dialog if the connection is active as it will stop whatever the connection is currently doing
-                new Thread(){
-                    @Override
-                    public void run() {
-                        connHandler.closeConnection();
-                    }
-                }.start();
+                new Thread(() -> connHandler.closeConnection()).start();
 
                 // Remove connection from the list
                 connections.remove(selectedIndex);

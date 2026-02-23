@@ -155,12 +155,10 @@ public class FoldersTreePanel implements TreeSelectionListener,
         JMenuItem item = new JMenuItem(
         		ActionProperties.getActionLabel(ActionType.Refresh),
                 KeyEvent.VK_R);
-        item.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                model.refresh(tree.getSelectionPath());
+        item.addActionListener(e -> {
+			model.refresh(tree.getSelectionPath());
 //                model.fireTreeStructureChanged(tree, tree.getSelectionPath());
-            }
-        });
+		});
         popup.add(item);
         tree.addMouseListener(new MouseAdapter() {
             @Override

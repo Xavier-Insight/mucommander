@@ -81,8 +81,7 @@ public class CommandReader extends DefaultHandler implements CommandsXmlConstant
     public static void read(InputStream in, CommandBuilder b) throws CommandException, IOException {
         b.startBuilding();
         try {SAXParserFactory.newInstance().newSAXParser().parse(in, new CommandReader(b));}
-        catch(ParserConfigurationException e) {throw new CommandException(e);}
-        catch(SAXException e) {throw new CommandException(e);}
+        catch(ParserConfigurationException | SAXException e) {throw new CommandException(e);}
         finally {b.endBuilding();}
     }
 

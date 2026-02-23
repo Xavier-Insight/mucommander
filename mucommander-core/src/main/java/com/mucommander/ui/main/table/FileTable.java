@@ -157,7 +157,7 @@ public class FileTable extends JTable implements MouseListener, MouseMotionListe
     private QuickSearch<AbstractFile> quickSearch = new FileTableQuickSearch();
 
     /** TableSelectionListener instances registered to receive selection change events */
-    private WeakHashMap<TableSelectionListener, ?> tableSelectionListeners = new WeakHashMap<TableSelectionListener, Object>();
+    private WeakHashMap<TableSelectionListener, ?> tableSelectionListeners = new WeakHashMap<>();
 
     /** True when this table is the current or last active table in the MainFrame */
     private boolean isActiveTable;
@@ -1083,7 +1083,7 @@ public class FileTable extends JTable implements MouseListener, MouseMotionListe
         final int dirStringWidth = Math.max(dirStringWidth1, dirStringWidth2);
 
         int remainingWidth = getSize().width - RESERVED_NAME_COLUMN_WIDTH;
-        Iterator<TableColumn> columns = respectSize ? new Enumerator<TableColumn>(getColumnModel().getColumns()) : getFileTableColumnModel().getAllColumns();
+        Iterator<TableColumn> columns = respectSize ? new Enumerator<>(getColumnModel().getColumns()) : getFileTableColumnModel().getAllColumns();
         TableColumn nameColumn = null;
 
         while (columns.hasNext()) {
@@ -1309,31 +1309,28 @@ public class FileTable extends JTable implements MouseListener, MouseMotionListe
                     // the filename/date/permission editor
                     if (hasFocus() && System.currentTimeMillis() - focusGainedTime > 100) {
                         // Create a new thread and sleep long enough to ensure that this click was not the first of a double click
-                        new Thread() {
-                            @Override
-                            public void run() {
-                                try { sleep(800); }
-                                catch (InterruptedException e) {}
+                        new Thread(() -> {
+							try { Thread.sleep(800); }
+							catch (InterruptedException e1) {}
 
-                                // Do not execute this block (cancel editing) if:
-                                // - a double click was made in the last second
-                                // - current row changed
-                                // - isEditing() is true which could happen if multiple clicks were made
-                                if ((System.currentTimeMillis() - lastDoubleClickTimestamp) > 1000 && row == currentRow) {
-                                    if (column == Column.NAME) {
-                                        if(!isEditing())
-                                            editCurrentFilename();
-                                    }
-                                    else if(column == Column.DATE) {
-                                        ActionManager.performAction(ActionType.ChangeDate, mainFrame);
-                                    }
-                                    else if(column == Column.PERMISSIONS) {
-                                        if(getSelectedFile().getChangeablePermissions().getIntValue()!=0)
-                                            ActionManager.performAction(ActionType.ChangePermissions, mainFrame);
-                                    }
-                                }
-                            }
-                        }.start();
+							// Do not execute this block (cancel editing) if:
+							// - a double click was made in the last second
+							// - current row changed
+							// - isEditing() is true which could happen if multiple clicks were made
+							if ((System.currentTimeMillis() - lastDoubleClickTimestamp) > 1000 && row == currentRow) {
+								if (column == Column.NAME) {
+									if(!isEditing())
+										editCurrentFilename();
+								}
+								else if(column == Column.DATE) {
+									ActionManager.performAction(ActionType.ChangeDate, mainFrame);
+								}
+								else if(column == Column.PERMISSIONS) {
+									if(getSelectedFile().getChangeablePermissions().getIntValue()!=0)
+										ActionManager.performAction(ActionType.ChangePermissions, mainFrame);
+								}
+							}
+						}).start();
                     }
                 }
             }

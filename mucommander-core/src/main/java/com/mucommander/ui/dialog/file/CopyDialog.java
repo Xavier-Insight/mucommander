@@ -79,7 +79,7 @@ public class CopyDialog extends AbstractCopyDialog {
         if(parentArchiveFile!=null) {
             // Add all selected archive entries to a vector
             int nbFiles = files.size();
-            List<ArchiveEntry> selectedEntries = new Vector<ArchiveEntry>();
+            List<ArchiveEntry> selectedEntries = new Vector<>();
             for(int i=0; i<nbFiles; i++) {
                 selectedEntries.add((ArchiveEntry)files.elementAt(i).getAncestor(AbstractArchiveEntryFile.class).getUnderlyingFileObject());
             }

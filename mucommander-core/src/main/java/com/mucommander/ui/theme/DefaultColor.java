@@ -47,7 +47,7 @@ public abstract class DefaultColor {
      * Creates a new instance of {@link DefaultColor}.
      */
     protected DefaultColor() {
-        linkedColors = new Vector<Integer>();
+        linkedColors = new Vector<>();
     }
 
 

@@ -55,7 +55,7 @@ public class DummyName implements GSSNameSpi {
 	 */
 	static DummyName getDefault() {
 
-		StringBuffer res = new StringBuffer(System.getProperty("user.name", "unknown"));
+		StringBuilder res = new StringBuilder(System.getProperty("user.name", "unknown"));
 		res.append("@");
 		try {
 			res.append(InetAddress.getLocalHost().getHostName());

@@ -97,7 +97,7 @@ public abstract class AbstractFileTest {
      */
     @BeforeMethod
     public void setUp() throws IOException {
-        filesToDelete = new Vector<AbstractFile>();
+        filesToDelete = new Vector<>();
 
         tempFile = getTemporaryFile();
         deleteWhenFinished(tempFile);   // this file will be automatically deleted when the test is over

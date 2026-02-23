@@ -101,7 +101,7 @@ public class EditBookmarksDialog extends FocusDialog implements ActionListener, 
         BookmarkManager.setFireEvents(false);
 
         // Create the sortable bookmarks list panel
-        SortableListPanel<Bookmark> listPanel = new SortableListPanel<Bookmark>(bookmarks);
+        SortableListPanel<Bookmark> listPanel = new SortableListPanel<>(bookmarks);
         this.bookmarkList = listPanel.getDynamicList();
 
         contentPane.add(listPanel, BorderLayout.CENTER);

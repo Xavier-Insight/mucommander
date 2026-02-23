@@ -68,7 +68,7 @@ public class ZipOutputStream extends OutputStream implements ZipConstants {
     protected byte[] deflaterBuf;
 
     /** List of zip entries written so far */
-    private Vector<ZipEntry> entries = new Vector<ZipEntry>();
+    private Vector<ZipEntry> entries = new Vector<>();
 
     /** Count the bytes written to out */
     private long written = 0;

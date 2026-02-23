@@ -127,7 +127,7 @@ public abstract class QuickSearch<T> extends KeyAdapter implements Runnable, Con
      * @return true if the current quick search string matches the given string
      */
     public boolean matches(String string) {
-        return isActive() && string.toLowerCase().indexOf(searchString.toLowerCase())!=-1;
+        return isActive() && string.toLowerCase().contains(searchString.toLowerCase());
     }
 
 
@@ -272,7 +272,7 @@ public abstract class QuickSearch<T> extends KeyAdapter implements Runnable, Con
             if(containsCaseMatch!=-1)
                 continue;
 
-            if(item.indexOf(searchString)!=-1) {
+            if(item.contains(searchString)) {
                 // We've got a match, let's see if we can find a better match on the next string
                 containsCaseMatch = i;
                 continue;
@@ -282,7 +282,7 @@ public abstract class QuickSearch<T> extends KeyAdapter implements Runnable, Con
             if(containsNoCaseMatch!=-1)
                 continue;
 
-            if(itemLC.indexOf(searchStringLC)!=-1) {
+            if(itemLC.contains(searchStringLC)) {
                 // We've got a match, let's see if we can find a better match on the next string
                 containsNoCaseMatch = i;
                 continue;

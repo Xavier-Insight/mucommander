@@ -99,7 +99,7 @@ public class PathTokenizer implements Enumeration<String> {
 
         // Split the path into tokens
         StringTokenizer st = new StringTokenizer(path, separators, true);
-        Vector<String> tokensV = new Vector<String>();
+        Vector<String> tokensV = new Vector<>();
         while(st.hasMoreTokens()) {
             tokensV.add(st.nextToken());
         }
@@ -135,7 +135,7 @@ public class PathTokenizer implements Enumeration<String> {
         lastSeparator = "";
 
         String token;
-        while(currentIndex<tokens.length && separators.indexOf(token=tokens[currentIndex])!=-1) {
+        while(currentIndex<tokens.length && separators.contains(token = tokens[currentIndex])) {
             // Update last separator
             lastSeparator += token;
 

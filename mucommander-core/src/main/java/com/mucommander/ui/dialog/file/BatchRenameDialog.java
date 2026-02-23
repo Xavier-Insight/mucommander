@@ -115,16 +115,16 @@ public class BatchRenameDialog extends FocusDialog implements ActionListener, Do
     private FileSet files;
 
     /** a map of old file names used to check for name conflicts */
-    private HashMap<String, AbstractFile> oldNames = new HashMap<String, AbstractFile>();
+    private HashMap<String, AbstractFile> oldNames = new HashMap<>();
 
     /** a list of generated names */
-    private List<String> newNames = new ArrayList<String>();
+    private List<String> newNames = new ArrayList<>();
 
     /** a list of flags to block file rename */
-    private List<Boolean> blockNames = new ArrayList<Boolean>();
+    private List<Boolean> blockNames = new ArrayList<>();
     
     /** a list of parsed tokens */
-    private List<AbstractToken> tokens = new ArrayList<AbstractToken>();
+    private List<AbstractToken> tokens = new ArrayList<>();
 
 
 
@@ -247,7 +247,7 @@ public class BatchRenameDialog extends FocusDialog implements ActionListener, Do
         edtReplaceWith.getDocument().addDocumentListener(this);
 
         // upper/lower case
-        Vector<String> ulcase = new Vector<String>();
+        Vector<String> ulcase = new Vector<>();
         ulcase.add(Translator.get("batch_rename_dialog.no_change"));
         ulcase.add(Translator.get("batch_rename_dialog.lower_case"));
         ulcase.add(Translator.get("batch_rename_dialog.upper_case"));
@@ -265,7 +265,7 @@ public class BatchRenameDialog extends FocusDialog implements ActionListener, Do
         edtCounterStep.getDocument().addDocumentListener(this);
         edtCounterStep.setColumns(2);
 
-        Vector<String> digits = new Vector<String>();
+        Vector<String> digits = new Vector<>();
         String zeros = "0000";
         for (int i = 1; i <= 5; i++) {
             digits.add(zeros.substring(0, i - 1) + "1");
@@ -372,7 +372,7 @@ public class BatchRenameDialog extends FocusDialog implements ActionListener, Do
     private void checkForDuplicates() {
         boolean duplicates = false;
         boolean oldNamesConflict = false;
-        Set<String> names = new HashSet<String>();
+        Set<String> names = new HashSet<>();
         for (int i=0; i<newNames.size(); i++) {
             String newName = newNames.get(i);
             AbstractFile file = files.get(i);

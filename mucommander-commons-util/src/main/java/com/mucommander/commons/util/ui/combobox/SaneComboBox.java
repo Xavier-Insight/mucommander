@@ -39,7 +39,7 @@ import javax.swing.JComboBox;
  */
 public class SaneComboBox extends JComboBox {
 
-    private WeakHashMap<ComboBoxListener, Object> listeners = new WeakHashMap<ComboBoxListener, Object>();
+    private WeakHashMap<ComboBoxListener, Object> listeners = new WeakHashMap<>();
     private boolean ignoreActionEvent;
 
 

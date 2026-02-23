@@ -96,11 +96,7 @@ public class CalculateChecksumDialog extends JobDialog implements ActionListener
         // Retrieve all MessageDigest instances and sort them by alphabetical order of their algorithm
 
         // Create a TreeSet with a custom Comparator
-        SortedSet<MessageDigest> algorithmSortedSet = new TreeSet<MessageDigest>(new Comparator<MessageDigest>() {
-                    public int compare(MessageDigest md1, MessageDigest md2) {
-                        return md1.getAlgorithm().compareTo(md2.getAlgorithm());
-                    }
-                });
+        SortedSet<MessageDigest> algorithmSortedSet = new TreeSet<>((md1, md2) -> md1.getAlgorithm().compareTo(md2.getAlgorithm()));
 
         // Add all MessageDigest to the TreeSet
         for(String algo : Security.getAlgorithms("MessageDigest")) {

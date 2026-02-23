@@ -45,7 +45,7 @@ import com.mucommander.ui.quicklist.item.QuickListHeaderItem;
 public abstract class QuickList extends JPopupMenu implements FocusListener {
 	private static final int PADDING = 2;
 	protected QuickListHeaderItem headerMenuItem;
-	private java.util.List<Component> items = new Vector<Component>();
+	private java.util.List<Component> items = new Vector<>();
 	private QuickListContainer container;
 	
 	protected QuickList(QuickListContainer container, String header) {

@@ -181,7 +181,7 @@ public class SendMailJob extends TransferFileJob {
         // address is provided
         readWriteLine("MAIL FROM: " + fromAddress);
 
-        List<String> recipients = new Vector<String>();
+        List<String> recipients = new Vector<>();
         recipientString = splitRecipientString(recipientString, recipients);
 		for (String recipient : recipients)
             readWriteLine("RCPT TO: <" + recipient + ">");

@@ -95,7 +95,7 @@ public abstract class AbstractCriterionFilter<C> extends AbstractFileFilter impl
      * @return an array of accepted AbstractFile instances
      */
     public C[] filter(C[] values) {
-        Vector<C> filteredValuesV = new Vector<C>();
+        Vector<C> filteredValuesV = new Vector<>();
 		C value;
 		for (C c : values) {
 			value = c;

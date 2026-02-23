@@ -65,7 +65,7 @@ public class GrowlNotifier extends AbstractNotifier {
             "end tell";
 
     static {
-        NOTIFICATION_KEYS = new Hashtable<NotificationType, String>();
+        NOTIFICATION_KEYS = new Hashtable<>();
         NOTIFICATION_KEYS.put(NotificationType.JOB_COMPLETED, "progress_dialog.job_finished");
         NOTIFICATION_KEYS.put(NotificationType.JOB_ERROR, "progress_dialog.job_error");
     }

@@ -156,8 +156,8 @@ class ActionKeymapReader extends ActionKeymapIO {
     public void startDocument() {
     	LOGGER.trace(file.getAbsolutePath()+" parsing started");
     	
-    	primaryActionsReadKeymap = new HashMap<ActionId, KeyStroke>();
-    	alternateActionsReadKeymap = new HashMap<ActionId, KeyStroke>();
+    	primaryActionsReadKeymap = new HashMap<>();
+    	alternateActionsReadKeymap = new HashMap<>();
     }
     
     @Override

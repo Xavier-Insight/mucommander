@@ -107,12 +107,10 @@ public class ExtraFieldUtils {
                 ZipExtraField ze = createExtraField(headerId);
                 ze.parseFromLocalFileData(data, start + 4, length);
                 v.addElement(ze);
-            } catch (InstantiationException ie) {
+            } catch (InstantiationException | IllegalAccessException ie) {
                 throw new ZipException(ie.getMessage());
-            } catch (IllegalAccessException iae) {
-                throw new ZipException(iae.getMessage());
             }
-            start += length + 4;
+			start += length + 4;
         }
         if (start != data.length) { // array not exhausted
             throw new ZipException("data starting at " + start

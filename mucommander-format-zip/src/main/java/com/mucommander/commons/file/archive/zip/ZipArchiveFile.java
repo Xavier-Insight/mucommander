@@ -191,17 +191,14 @@ public class ZipArchiveFile extends AbstractRWArchiveFile {
 
             final Iterator<ZipEntry> iterator = zipFile.getEntries();
 
-            return new ArchiveEntryIterator() {
-                @Override
-                public ArchiveEntry nextEntry() throws IOException {
-                    ZipEntry entry;
+            return () -> {
+				ZipEntry entry;
 
-                    if(!iterator.hasNext() || (entry = iterator.next())==null)
-                        return null;
+				if(!iterator.hasNext() || (entry = iterator.next())==null)
+					return null;
 
-                    return createArchiveEntry(entry);
-                }
-            };
+				return createArchiveEntry(entry);
+			};
         }
         // If the underlying AbstractFile doesn't have random read access, use java.util.zip.ZipInputStream to
         // read the entries. This is much slower than the former method as the file cannot be sought through and needs

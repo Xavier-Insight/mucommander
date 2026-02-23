@@ -395,9 +395,9 @@ public class AutoProcessor
 
         if (st.countTokens() > 0)
         {
-            String tokenList = "\" ";
-            StringBuffer tokBuf = new StringBuffer(10);
-            String tok = null;
+            String        tokenList = "\" ";
+            StringBuilder tokBuf    = new StringBuilder(10);
+            String        tok       = null;
             boolean inQuote = false;
             boolean tokStarted = false;
             boolean exit = false;

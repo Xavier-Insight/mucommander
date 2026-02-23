@@ -46,8 +46,8 @@ public class XmlAttributes {
      * Builds a new, empty XmlAttributes instance.
      */
     public XmlAttributes() {
-        attributes = new Hashtable<String, String>();
-        names = new LinkedList<String>();
+        attributes = new Hashtable<>();
+        names = new LinkedList<>();
     }
 
     // - Content handling ------------------------------------------------

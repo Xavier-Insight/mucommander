@@ -43,7 +43,7 @@ import com.mucommander.ui.quicklist.QuickListWithIcons;
  */
 
 public class RecentExecutedFilesQL extends QuickListWithIcons<AbstractFile> {
-	private static LinkedList<AbstractFile> list = new LinkedList<AbstractFile>();
+	private static LinkedList<AbstractFile> list = new LinkedList<>();
 	private static final int MAX_NUM_OF_ELEMENTS = 10;
 	private FolderPanel folderPanel;
 	

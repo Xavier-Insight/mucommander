@@ -45,7 +45,7 @@ import com.mucommander.text.Translator;
 public class EncodingMenu extends JMenu {
 
     /** Contains all registered encoding listeners, stored as weak references */
-    protected final WeakHashMap<EncodingListener, ?> listeners = new WeakHashMap<EncodingListener, Object>();
+    protected final WeakHashMap<EncodingListener, ?> listeners = new WeakHashMap<>();
 
     /** the dialog/frame that owns this component */
     protected DialogOwner dialogOwner;
@@ -103,16 +103,14 @@ public class EncodingMenu extends JMenu {
                 item.setSelected(true);
 
             // Listen to checkbox actions
-            item.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    String oldEncoding = selectedEncoding;
-                    selectedEncoding = ((JCheckBoxMenuItem)e.getSource()).getText();
-                    if(!oldEncoding.equals(selectedEncoding)) {
-                        // Notify listeners of the new encoding
-                        fireEncodingListener(oldEncoding, EncodingMenu.this.selectedEncoding);
-                    }
-                }
-            });
+            item.addActionListener(e -> {
+				String oldEncoding = selectedEncoding;
+				selectedEncoding = ((JCheckBoxMenuItem)e.getSource()).getText();
+				if(!oldEncoding.equals(selectedEncoding)) {
+					// Notify listeners of the new encoding
+					fireEncodingListener(oldEncoding, EncodingMenu.this.selectedEncoding);
+				}
+			});
 
             group.add(item);
             add(item);

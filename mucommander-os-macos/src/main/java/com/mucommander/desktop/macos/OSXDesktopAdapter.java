@@ -570,12 +570,12 @@ public class OSXDesktopAdapter extends DefaultDesktopAdapter {
      * @param <V> value type
      */
     private static <K, V> Map<K, V> createSizeLimitedMap(int maxSize) {
-        return new LinkedHashMap<K, V>(maxSize * 10 / 7, 0.7f, false) {
-            @Override
-            protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
-                return size() > maxSize;
-            }
-        };
+        return new LinkedHashMap<>(maxSize * 10 / 7, 0.7f, false) {
+			@Override
+			protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
+				return size() > maxSize;
+			}
+		};
     }
 
 

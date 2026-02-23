@@ -70,7 +70,7 @@ public class ThemeManager {
     /** Path to the custom themes repository. */
     private static final String       CUSTOM_THEME_FOLDER              = "themes";
     /** List of all registered theme change listeners. */
-    private static final WeakHashMap<ThemeListener, Object>  listeners = new WeakHashMap<ThemeListener, Object>();
+    private static final WeakHashMap<ThemeListener, Object>  listeners = new WeakHashMap<>();
     /** List of all predefined theme names. */
     private static final String[]     PREDEFINED_THEME_NAMES = {
         "ClassicCommander",
@@ -187,7 +187,7 @@ public class ThemeManager {
 
         try {
             files = themeFolder.ls(new ExtensionFilenameFilter(".xml"));
-            names = new Vector<String>();
+            names = new Vector<>();
             for (AbstractFile file : files)
                 names.add(getThemeName(file));
             return names.iterator();
@@ -200,7 +200,7 @@ public class ThemeManager {
         Iterator<String> iterator;
         String          name;
 
-        themes = new Vector<Theme>();
+        themes = new Vector<>();
 
         // Tries to load the user theme. If it's corrupt, uses an empty user theme.
         try {themes.add(readTheme(ThemeType.USER_THEME, null));}
@@ -232,11 +232,7 @@ public class ThemeManager {
         }
 
         // Sorts the themes by name.
-        themes.sort(new Comparator<Theme>() {
-            public int compare(Theme t1, Theme t2) {
-                return t1.getName().compareTo(t2.getName());
-            }
-        });
+        themes.sort((t1, t2) -> t1.getName().compareTo(t2.getName()));
 
         return themes;
     }
@@ -245,7 +241,7 @@ public class ThemeManager {
         Vector<String>   themes;
         Iterator<String> iterator;
 
-        themes = new Vector<String>();
+        themes = new Vector<>();
 
         // Adds the user theme name.
         themes.add(Translator.get("theme.custom_theme"));

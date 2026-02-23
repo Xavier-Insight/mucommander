@@ -99,7 +99,7 @@ public class GeneralPreferencesDialog extends PreferencesDialog {
      */
     private GeneralPreferencesDialog() {
         super(WindowManager.getCurrentMainFrame().getJFrame(), Translator.get("prefs_dialog.title"));
-        modifiedComponents = new LinkedHashSet<PrefComponent>();
+        modifiedComponents = new LinkedHashSet<>();
 
         // Adds the preference tabs.
         addPreferencesPanel(new GeneralPanel(this),    GENERAL_ICON);

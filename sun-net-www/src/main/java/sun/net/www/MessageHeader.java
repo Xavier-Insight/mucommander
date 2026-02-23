@@ -258,12 +258,8 @@ class MessageHeader {
                 }
             }
             if (!skipIt) {
-                List<String> l = m.get(keys[i]);
-                if (l == null) {
-                    l = new ArrayList<>();
-                    m.put(keys[i], l);
-                }
-                l.add(values[i]);
+				List<String> l = m.computeIfAbsent(keys[i], k -> new ArrayList<>());
+				l.add(values[i]);
             } else {
                 // reset the flag
                 skipIt = false;
@@ -272,18 +268,12 @@ class MessageHeader {
 
         if (include != null) {
                 for (Map.Entry<String,List<String>> entry: include.entrySet()) {
-                List<String> l = m.get(entry.getKey());
-                if (l == null) {
-                    l = new ArrayList<>();
-                    m.put(entry.getKey(), l);
-                }
-                l.addAll(entry.getValue());
+					List<String> l = m.computeIfAbsent(entry.getKey(), k -> new ArrayList<>());
+					l.addAll(entry.getValue());
             }
         }
 
-        for (String key : m.keySet()) {
-            m.put(key, Collections.unmodifiableList(m.get(key)));
-        }
+		m.replaceAll((k, v) -> Collections.unmodifiableList(m.get(k)));
 
         return Collections.unmodifiableMap(m);
     }

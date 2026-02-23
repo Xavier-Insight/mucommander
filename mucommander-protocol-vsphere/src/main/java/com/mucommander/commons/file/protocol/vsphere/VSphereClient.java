@@ -173,10 +173,8 @@ public class VSphereClient implements Closeable {
 		HostnameVerifier hv = (urlHostName, session) -> true;
 		try {
 			trustAllHttpsCertificates();
-		} catch (KeyManagementException e) {
+		} catch (KeyManagementException | NoSuchAlgorithmException e) {
 
-			throw new IllegalStateException(SSL_INIT_PROBLEMS, e);
-		} catch (NoSuchAlgorithmException e) {
 			throw new IllegalStateException(SSL_INIT_PROBLEMS, e);
 		}
 		HttpsURLConnection.setDefaultHostnameVerifier(hv);
@@ -291,10 +289,8 @@ public class VSphereClient implements Closeable {
 			sslsc.setSessionTimeout(0);
 			sc.init(null, trustAllCerts, null);
 			return sc;
-		} catch (KeyManagementException e) {
+		} catch (KeyManagementException | NoSuchAlgorithmException e) {
 
-			throw new IllegalStateException(SSL_INIT_PROBLEMS, e);
-		} catch (NoSuchAlgorithmException e) {
 			throw new IllegalStateException(SSL_INIT_PROBLEMS, e);
 		}
 	}

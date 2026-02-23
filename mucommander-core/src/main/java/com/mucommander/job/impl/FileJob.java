@@ -123,7 +123,7 @@ public abstract class FileJob implements com.mucommander.job.FileJob {
     private FileJobState jobState = FileJobState.NOT_STARTED;
 
     /** List of registered FileJobListener stored as weak references */
-    private WeakHashMap<FileJobListener, ?> listeners = new WeakHashMap<FileJobListener, Object>();
+    private WeakHashMap<FileJobListener, ?> listeners = new WeakHashMap<>();
     
     /** Information about this job progress */
     private JobProgress jobProgress;

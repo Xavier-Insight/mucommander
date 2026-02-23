@@ -136,7 +136,7 @@ class ColorButton extends JPanel implements ActionListener, ColorChangeListener 
             return;
 
         if(updatedPreviewComponents == null)
-            updatedPreviewComponents = new Vector<JComponent>();
+            updatedPreviewComponents = new Vector<>();
 
         updatedPreviewComponents.add(previewComponent);
 

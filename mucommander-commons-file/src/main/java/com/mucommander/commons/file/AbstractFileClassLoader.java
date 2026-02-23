@@ -169,7 +169,7 @@ public class AbstractFileClassLoader extends ClassLoader {
     @Override
     protected Enumeration<URL> findResources(String name) {
         Iterator<AbstractFile> iterator  = files.iterator(); // Iterator on all available JAR files.
-        List<URL> resources = new ArrayList<URL>();
+        List<URL> resources = new ArrayList<>();
 
         // Goes through all files in the classpath to find the resource.
         while(iterator.hasNext()) {

@@ -128,7 +128,7 @@ public class OSXTrash extends QueuedTrash {
     @Override
     public boolean isTrashFile(AbstractFile file) {
         return (file.getTopAncestor() instanceof LocalFile)
-            && (file.getAbsolutePath(true).indexOf("/.Trash/") != -1);
+            && (file.getAbsolutePath(true).contains("/.Trash/"));
     }
 
     /**

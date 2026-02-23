@@ -153,7 +153,7 @@ public class FolderChangeMonitor implements Runnable, WindowListener, LocationLi
         // Listen to window focus changes to know when a MainFrame gains focus and make sure
         // that only one instance of FolderChangeMonitor is registered per MainFrame (no need for both panels)
         WindowFocusListener[] listeners = folderPanel.getMainFrame().getJFrame().getWindowFocusListeners();
-        if (!Arrays.stream(listeners).anyMatch(l -> l instanceof FolderChangeMonitor))
+        if (!Arrays.stream(listeners).anyMatch(FolderChangeMonitor.class::isInstance))
             folderPanel.getMainFrame().getJFrame().addWindowFocusListener(this);
 
         instances.add(this);

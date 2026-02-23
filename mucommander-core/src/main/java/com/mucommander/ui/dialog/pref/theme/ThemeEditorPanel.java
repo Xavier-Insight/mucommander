@@ -55,7 +55,7 @@ abstract class ThemeEditorPanel extends PreferencesPanel {
     /** Edited theme data. */
     protected ThemeData                      themeData;
     /** Holds references to listeners to prevent them from being garbage collected. */
-    private   java.util.List<ChangeListener> listenerReferences = new Vector<ChangeListener>();
+    private   java.util.List<ChangeListener> listenerReferences = new Vector<>();
     /** Font used to display caption labels. */
     private   Font                           captionLabelFont;
     /** Color used to display caption labels. */

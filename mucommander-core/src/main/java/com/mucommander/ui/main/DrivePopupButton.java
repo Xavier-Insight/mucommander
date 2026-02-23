@@ -96,7 +96,7 @@ public class DrivePopupButton extends PopupButton implements BookmarkListener, C
     private static Map<AbstractFile, String> extendedNameCache;
 
     /** Caches drive icons */
-    private static Map<AbstractFile, Icon> iconCache = new Hashtable<AbstractFile, Icon>();
+    private static Map<AbstractFile, Icon> iconCache = new Hashtable<>();
 
     /**
      * Filters out volumes from the list based on the exclude regexp defined in the configuration, null if the regexp is
@@ -110,7 +110,7 @@ public class DrivePopupButton extends PopupButton implements BookmarkListener, C
     static {
         if (OsFamily.WINDOWS.isCurrent()) {
             fileSystemView = FileSystemView.getFileSystemView();
-            extendedNameCache = new Hashtable<AbstractFile, String>();
+            extendedNameCache = new Hashtable<>();
         }
 
         try {
@@ -314,7 +314,7 @@ public class DrivePopupButton extends PopupButton implements BookmarkListener, C
         String volumeName;
 
         boolean useExtendedDriveNames = fileSystemView != null;
-        ArrayList<JMenuItem> itemsV = new ArrayList<JMenuItem>();
+        ArrayList<JMenuItem> itemsV = new ArrayList<>();
 
         for (int i = 0; i < nbVolumes; i++) {
             action = new OpenLocationAction(mainFrame, Collections.emptyMap(), volumes[i]) {

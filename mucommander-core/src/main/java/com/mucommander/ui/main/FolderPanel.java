@@ -239,12 +239,12 @@ public class FolderPanel implements FocusListener, QuickListContainer, ActiveTab
      */
     private void disableCtrlFocusTraversalKeys(Component component) {
         // Remove Ctrl+Tab from forward focus traversal keys
-        HashSet<AWTKeyStroke> keyStrokeSet = new HashSet<AWTKeyStroke>();
+        HashSet<AWTKeyStroke> keyStrokeSet = new HashSet<>();
         keyStrokeSet.add(AWTKeyStroke.getAWTKeyStroke(KeyEvent.VK_TAB, 0));
         component.setFocusTraversalKeys(KeyboardFocusManager.FORWARD_TRAVERSAL_KEYS, keyStrokeSet);
 
         // Remove Shift+Ctrl+Tab from backward focus traversal keys
-        keyStrokeSet = new HashSet<AWTKeyStroke>();
+        keyStrokeSet = new HashSet<>();
         keyStrokeSet.add(AWTKeyStroke.getAWTKeyStroke(KeyEvent.VK_TAB, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         component.setFocusTraversalKeys(KeyboardFocusManager.BACKWARD_TRAVERSAL_KEYS, keyStrokeSet);
     }

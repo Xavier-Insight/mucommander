@@ -155,7 +155,7 @@ public class Oid {
      */
     public String toString() {
     
-        StringBuffer sb = new StringBuffer(50);
+        StringBuilder sb = new StringBuilder(50);
     
         if (m_v.size() < 1)
             return new String("");
@@ -180,7 +180,7 @@ public class Oid {
      */
     public String toRFC2078String() {
     
-        StringBuffer sb = new StringBuffer(50);
+        StringBuilder sb = new StringBuilder(50);
         
         if (m_v.size() < 1)
             return new String("");
