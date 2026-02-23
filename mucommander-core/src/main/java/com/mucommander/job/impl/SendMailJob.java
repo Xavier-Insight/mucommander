@@ -46,6 +46,8 @@ import java.util.Vector;
  */
 public class SendMailJob extends TransferFileJob {
 
+    private static final String UTF_8 = "UTF-8";
+
     /**
      * True after connection to mail server has been established
      */
@@ -165,7 +167,7 @@ public class SendMailJob extends TransferFileJob {
 
     private void openConnection() throws IOException {
         this.socket = new Socket(mailServer, MuConfigurations.getPreferences().getVariable(MuPreference.SMTP_PORT, MuPreferences.DEFAULT_SMTP_PORT));
-        this.in = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
+        this.in = new BufferedReader(new InputStreamReader(socket.getInputStream(), UTF_8));
         this.out = socket.getOutputStream();
         this.out64 = new Base64OutputStream(out, true);
 
@@ -274,12 +276,12 @@ public class SendMailJob extends TransferFileJob {
     }
 
     private void readWriteLine(String s) throws IOException {
-        out.write((s + "\r\n").getBytes("UTF-8"));
+        out.write((s + "\r\n").getBytes(UTF_8));
         in.readLine();
     }
 
     private void writeLine(String s) throws IOException {
-        out.write((s + "\r\n").getBytes("UTF-8"));
+        out.write((s + "\r\n").getBytes(UTF_8));
     }
 
 

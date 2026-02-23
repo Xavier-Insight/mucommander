@@ -92,6 +92,7 @@ import com.mucommander.commons.runtime.OsFamily;
  * @author Maxence Bernard, Nicolas Rinaudo
  */
 public class FileFactory {
+    private static final String CAUGHT_AN_EXCEPTION = "Caught an exception";
     private static final Logger LOGGER = LoggerFactory.getLogger(FileFactory.class);
 
     /** All registered protocol providers. */
@@ -313,7 +314,7 @@ public class FileFactory {
     public static AbstractFile getFile(String absPath) {
         try {return getFile(absPath, null);}
         catch(IOException e) {
-            LOGGER.info("Caught an exception", e);
+            LOGGER.info(CAUGHT_AN_EXCEPTION, e);
             return null;
         }
     }
@@ -333,7 +334,7 @@ public class FileFactory {
     public static AbstractFile getFile(String absPath, boolean throwException) throws AuthException, IOException {
         try {return getFile(absPath, null);}
         catch(IOException e) {
-            LOGGER.info("Caught an exception", e);
+            LOGGER.info(CAUGHT_AN_EXCEPTION, e);
 
             if(throwException)
                 throw e;
@@ -365,7 +366,7 @@ public class FileFactory {
     public static AbstractFile getFile(FileURL fileURL) {
         try {return getFile(fileURL, null);}
         catch(IOException e) {
-            LOGGER.info("Caught an exception", e);
+            LOGGER.info(CAUGHT_AN_EXCEPTION, e);
             return null;
         }
     }
@@ -381,7 +382,7 @@ public class FileFactory {
     public static AbstractFile getFile(FileURL fileURL, boolean throwException) throws IOException {
         try {return getFile(fileURL, null);}
         catch(IOException e) {
-            LOGGER.info("Caught an exception", e);
+            LOGGER.info(CAUGHT_AN_EXCEPTION, e);
 
             if(throwException)
                 throw e;

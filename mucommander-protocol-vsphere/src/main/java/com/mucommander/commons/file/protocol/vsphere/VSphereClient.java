@@ -57,6 +57,8 @@ import com.vmware.vim25.VimService;
  */
 public class VSphereClient implements Closeable {
 
+    private static final String SSL_INIT_PROBLEMS = "SSL init problems";
+
 	public static final String TYPE_SERVICE_INSTANCE = "ServiceInstance";
 	private static Logger log = LoggerFactory.getLogger(VSphereClient.class);
 
@@ -173,9 +175,9 @@ public class VSphereClient implements Closeable {
 			trustAllHttpsCertificates();
 		} catch (KeyManagementException e) {
 
-			throw new IllegalStateException("SSL init problems", e);
+			throw new IllegalStateException(SSL_INIT_PROBLEMS, e);
 		} catch (NoSuchAlgorithmException e) {
-			throw new IllegalStateException("SSL init problems", e);
+			throw new IllegalStateException(SSL_INIT_PROBLEMS, e);
 		}
 		HttpsURLConnection.setDefaultHostnameVerifier(hv);
 	}
@@ -291,9 +293,9 @@ public class VSphereClient implements Closeable {
 			return sc;
 		} catch (KeyManagementException e) {
 
-			throw new IllegalStateException("SSL init problems", e);
+			throw new IllegalStateException(SSL_INIT_PROBLEMS, e);
 		} catch (NoSuchAlgorithmException e) {
-			throw new IllegalStateException("SSL init problems", e);
+			throw new IllegalStateException(SSL_INIT_PROBLEMS, e);
 		}
 	}
 

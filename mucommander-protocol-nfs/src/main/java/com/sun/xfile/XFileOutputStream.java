@@ -45,6 +45,8 @@ import java.io.*;
  */
 public class XFileOutputStream extends OutputStream {
 
+    private static final String NO_WRITE_PERMISSION = "no write permission";
+
     private long fp;	/* File Pointer */
 
     /*
@@ -70,11 +72,11 @@ public class XFileOutputStream extends OutputStream {
                 throw new IOException("not a file");
 
             if (!xfa.canWrite())
-                throw new IOException("no write permission");
+                throw new IOException(NO_WRITE_PERMISSION);
         }
 
         if (!xfa.mkfile())
-            throw new IOException("no write permission");
+            throw new IOException(NO_WRITE_PERMISSION);
     }
 
     /**
@@ -109,7 +111,7 @@ public class XFileOutputStream extends OutputStream {
                 throw new IOException("not a file");
 
             if (!xfa.canWrite())
-                throw new IOException("no write permission");
+                throw new IOException(NO_WRITE_PERMISSION);
         }
 
         /*
@@ -117,7 +119,7 @@ public class XFileOutputStream extends OutputStream {
          */
         if (!isExist || !append) {
             if (!xfa.mkfile())
-                throw new IOException("no write permission");
+                throw new IOException(NO_WRITE_PERMISSION);
         }
 
         if (append)

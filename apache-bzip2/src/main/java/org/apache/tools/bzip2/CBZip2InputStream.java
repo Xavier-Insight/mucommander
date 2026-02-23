@@ -45,6 +45,8 @@ import java.io.InputStream;
  */
 public class CBZip2InputStream extends InputStream implements BZip2Constants {
 
+    private static final String UNEXPECTED_END_OF_STREAM = "unexpected end of stream";
+
     /**
      * Index of the last char in the block, so the block size == last + 1.
      */
@@ -421,7 +423,7 @@ public class CBZip2InputStream extends InputStream implements BZip2Constants {
                 int thech = inShadow.read();
 
                 if (thech < 0) {
-                    throw new IOException("unexpected end of stream");
+                    throw new IOException(UNEXPECTED_END_OF_STREAM);
                 }
 
                 bsBuffShadow = (bsBuffShadow << 8) | thech;
@@ -443,7 +445,7 @@ public class CBZip2InputStream extends InputStream implements BZip2Constants {
             int thech = this.in.read();
 
             if (thech < 0) {
-                throw new IOException("unexpected end of stream");
+                throw new IOException(UNEXPECTED_END_OF_STREAM);
             }
 
             bsBuffShadow = (bsBuffShadow << 8) | thech;
@@ -695,7 +697,7 @@ public class CBZip2InputStream extends InputStream implements BZip2Constants {
                             bsBuffShadow = (bsBuffShadow << 8) | thech;
                             bsLiveShadow += 8;
                         } else {
-                            throw new IOException("unexpected end of stream");
+                            throw new IOException(UNEXPECTED_END_OF_STREAM);
                         }
                     }
                     int zvec = (bsBuffShadow >> (bsLiveShadow - zn)) & ((1 << zn) - 1);
@@ -709,7 +711,7 @@ public class CBZip2InputStream extends InputStream implements BZip2Constants {
                                 bsBuffShadow = (bsBuffShadow << 8) | thech;
                                 bsLiveShadow += 8;
                             } else {
-                                throw new IOException("unexpected end of stream");
+                                throw new IOException(UNEXPECTED_END_OF_STREAM);
                             }
                         }
                         bsLiveShadow--;
@@ -773,7 +775,7 @@ public class CBZip2InputStream extends InputStream implements BZip2Constants {
                         bsBuffShadow = (bsBuffShadow << 8) | thech;
                         bsLiveShadow += 8;
                     } else {
-                        throw new IOException("unexpected end of stream");
+                        throw new IOException(UNEXPECTED_END_OF_STREAM);
                     }
                 }
                 int zvec = (bsBuffShadow >> (bsLiveShadow - zn)) & ((1 << zn) - 1);
@@ -787,7 +789,7 @@ public class CBZip2InputStream extends InputStream implements BZip2Constants {
                             bsBuffShadow = (bsBuffShadow << 8) | thech;
                             bsLiveShadow += 8;
                         } else {
-                            throw new IOException("unexpected end of stream");
+                            throw new IOException(UNEXPECTED_END_OF_STREAM);
                         }
                     }
                     bsLiveShadow--;
@@ -822,7 +824,7 @@ public class CBZip2InputStream extends InputStream implements BZip2Constants {
                     bsBuffShadow = (bsBuffShadow << 8) | thech;
                     bsLiveShadow += 8;
                 } else {
-                    throw new IOException("unexpected end of stream");
+                    throw new IOException(UNEXPECTED_END_OF_STREAM);
                 }
             }
             bsLiveShadow--;

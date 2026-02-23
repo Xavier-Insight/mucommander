@@ -60,6 +60,7 @@ import static com.mucommander.ui.dialog.QuestionDialog.DIALOG_DISPOSED_ACTION;
  * @author Maxence Bernard
  */
 public class BrowseLocationThread extends ChangeFolderThread {
+    private static final String THIS_THREAD_HAS_BEEN_KILLED_RETURNING = "this thread has been killed, returning";
     private static final Logger LOGGER = LoggerFactory.getLogger(BrowseLocationThread.class);
 
     public enum BrowseLocationThreadAction implements DialogAction {
@@ -213,7 +214,7 @@ public class BrowseLocationThread extends ChangeFolderThread {
 
                         synchronized(KILL_LOCK) {
                             if(killed) {
-                                LOGGER.debug("this thread has been killed, returning");
+                                LOGGER.debug(THIS_THREAD_HAS_BEEN_KILLED_RETURNING);
                                 break;
                             }
                         }
@@ -347,7 +348,7 @@ public class BrowseLocationThread extends ChangeFolderThread {
 
                     synchronized(KILL_LOCK) {
                         if(killed) {
-                            LOGGER.debug("this thread has been killed, returning");
+                            LOGGER.debug(THIS_THREAD_HAS_BEEN_KILLED_RETURNING);
                             break;
                         }
                     }
@@ -367,7 +368,7 @@ public class BrowseLocationThread extends ChangeFolderThread {
 
                     synchronized(KILL_LOCK) {
                         if(killed) {
-                            LOGGER.debug("this thread has been killed, returning");
+                            LOGGER.debug(THIS_THREAD_HAS_BEEN_KILLED_RETURNING);
                             break;
                         }
                         // From now on, thread cannot be killed (would comprise table integrity)

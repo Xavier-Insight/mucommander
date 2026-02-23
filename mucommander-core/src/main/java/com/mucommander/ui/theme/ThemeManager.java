@@ -57,6 +57,7 @@ import com.mucommander.ui.theme.Theme.ThemeType;
  * @author Nicolas Rinaudo
  */
 public class ThemeManager {
+    private static final String ILLEGAL_THEME_TYPE = "Illegal theme type: ";
     private static final Logger LOGGER = LoggerFactory.getLogger(ThemeManager.class);
 
     // - Class variables -----------------------------------------------------------------
@@ -450,7 +451,7 @@ public class ThemeManager {
         }
 
         // Unknown theme.
-        throw new IllegalArgumentException("Illegal theme type: " + type);
+        throw new IllegalArgumentException(ILLEGAL_THEME_TYPE + type);
     }
 
     /**
@@ -761,7 +762,7 @@ public class ThemeManager {
         }
 
         // Error handling.
-        throw new IllegalArgumentException("Illegal theme type: " + type);
+        throw new IllegalArgumentException(ILLEGAL_THEME_TYPE + type);
     }
 
     /**
@@ -853,7 +854,7 @@ public class ThemeManager {
 
             // Error.
         default:
-            throw new IllegalStateException("Illegal theme type: " + type);
+            throw new IllegalStateException(ILLEGAL_THEME_TYPE + type);
         }
     }
 

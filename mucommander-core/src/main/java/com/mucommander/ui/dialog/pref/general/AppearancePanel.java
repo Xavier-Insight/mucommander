@@ -80,6 +80,7 @@ import com.mucommander.ui.theme.ThemeManager;
  * @author Maxence Bernard, Nicolas Rinaudo
  */
 class AppearancePanel extends PreferencesPanel implements ActionListener, Runnable {
+    private static final String PREFS_DIALOG_IMPORT = "prefs_dialog.import";
     private static final Logger LOGGER = LoggerFactory.getLogger(AppearancePanel.class);
 
     public enum AppearanceAction implements DialogAction {
@@ -344,7 +345,7 @@ class AppearancePanel extends PreferencesPanel implements ActionListener, Runnab
         populateLookAndFeels();
 
         // Initialises buttons and event listening.
-        importLookAndFeelButton = new JButton(Translator.get("prefs_dialog.import") + "...");
+        importLookAndFeelButton = new JButton(Translator.get(PREFS_DIALOG_IMPORT) + "...");
         deleteLookAndFeelButton = new JButton(Translator.get("delete"));
         importLookAndFeelButton.addActionListener(this);
         deleteLookAndFeelButton.addActionListener(this);
@@ -396,7 +397,7 @@ class AppearancePanel extends PreferencesPanel implements ActionListener, Runnab
 
         // Creates the various panel's buttons.
         editThemeButton = new JButton(Translator.get("edit") + "...");
-        importThemeButton = new JButton(Translator.get("prefs_dialog.import") + "...");
+        importThemeButton = new JButton(Translator.get(PREFS_DIALOG_IMPORT) + "...");
         exportThemeButton = new JButton(Translator.get("prefs_dialog.export") + "...");
         renameThemeButton = new JButton(Translator.get("rename"));
         deleteThemeButton = new JButton(Translator.get("delete"));
@@ -880,7 +881,7 @@ class AppearancePanel extends PreferencesPanel implements ActionListener, Runnab
         chooser.setDialogTitle(Translator.get("prefs_dialog.import_look_and_feel"));
         chooser.setDialogType(JFileChooser.OPEN_DIALOG);
 
-        if (chooser.showDialog(parent, Translator.get("prefs_dialog.import")) == JFileChooser.APPROVE_OPTION) {
+        if (chooser.showDialog(parent, Translator.get(PREFS_DIALOG_IMPORT)) == JFileChooser.APPROVE_OPTION) {
             file = FileFactory.getFile(chooser.getSelectedFile().getAbsolutePath());
             lastSelectedFolder = file.getParent();
 
@@ -1022,7 +1023,7 @@ class AppearancePanel extends PreferencesPanel implements ActionListener, Runnab
         chooser.setDialogTitle(Translator.get("prefs_dialog.import_theme"));
         chooser.setDialogType(JFileChooser.OPEN_DIALOG);
 
-        if (chooser.showDialog(parent, Translator.get("prefs_dialog.import")) == JFileChooser.APPROVE_OPTION) {
+        if (chooser.showDialog(parent, Translator.get(PREFS_DIALOG_IMPORT)) == JFileChooser.APPROVE_OPTION) {
             // Makes sure the file actually exists - JFileChooser apparently doesn't enforce that properly in all look&feels.
             file = FileFactory.getFile(chooser.getSelectedFile().getAbsolutePath());
             lastSelectedFolder = file.getParent();

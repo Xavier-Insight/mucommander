@@ -303,7 +303,7 @@ public class AdbFile extends ProtocolFile {
         JadbDevice device = getDevice(getURL());
         if (device == null) {
             closeConnection();
-            throw new IOException("file not found: " + getURL());
+            throwFileNotFound();
         }
         try {
             device.executeShell("mkdir", getURL().getPath());
@@ -376,7 +376,7 @@ public class AdbFile extends ProtocolFile {
         JadbDevice device = getDevice(getURL());
         if (device == null) {
             closeConnection();
-            throw new IOException("file not found: " + getURL());
+            throwFileNotFound();
         }
         try {
             if (isDirectory()) {
@@ -397,7 +397,7 @@ public class AdbFile extends ProtocolFile {
         JadbDevice device = getDevice(getURL());
         if (device == null) {
             closeConnection();
-            throw new IOException("file not found: " + getURL());
+            throwFileNotFound();
         }
         try {
             device.executeShell("mv", getURL().getPath(), destFile.getURL().getPath());
@@ -437,7 +437,7 @@ public class AdbFile extends ProtocolFile {
         JadbDevice device = getDevice(getURL());
         if (device == null) {
             closeConnection();
-            throw new IOException("file not found: " + getURL());
+            throwFileNotFound();
         }
         try {
             device.pull(new RemoteFile(getURL().getPath()), destFile.getOutputStream());
@@ -451,7 +451,7 @@ public class AdbFile extends ProtocolFile {
         JadbDevice device = getDevice(getURL());
         if (device == null) {
             closeConnection();
-            throw new IOException("file not found: " + getURL());
+            throwFileNotFound();
         }
         long lastModified = sourceFile.getDate();
         int mode = 0664;
@@ -504,5 +504,9 @@ public class AdbFile extends ProtocolFile {
                 }
             }
         };
+    }
+
+    private void throwFileNotFound() throws IOException {
+        throw new IOException("file not found: " + getURL());
     }
 }

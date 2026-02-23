@@ -41,6 +41,8 @@ import java.io.*;
  */
 public class CircularByteBuffer {
 
+    private static final String BLOCKING_READ_OPERATION_INTERRUPTED = "Blocking read operation interrupted.";
+
 	/**
 	 * The default size for a circular byte buffer.
 	 *
@@ -515,7 +517,7 @@ public class CircularByteBuffer {
 				try {
 					Thread.sleep(100);
 				} catch(Exception x){
-					throw new IOException("Blocking read operation interrupted.");
+					throw new IOException(BLOCKING_READ_OPERATION_INTERRUPTED);
 				}
 			}
 		}
@@ -578,7 +580,7 @@ public class CircularByteBuffer {
 				try {
 					Thread.sleep(100);
 				} catch(Exception x){
-					throw new IOException("Blocking read operation interrupted.");
+					throw new IOException(BLOCKING_READ_OPERATION_INTERRUPTED);
 				}
 			}
 		}
@@ -638,7 +640,7 @@ public class CircularByteBuffer {
 				try {
 					Thread.sleep(100);
 				} catch(Exception x){
-					throw new IOException("Blocking read operation interrupted.");
+					throw new IOException(BLOCKING_READ_OPERATION_INTERRUPTED);
 				}
 			}
 		}
