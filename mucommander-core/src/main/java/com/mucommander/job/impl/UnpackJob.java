@@ -42,8 +42,6 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.util.List;
 
-import javax.swing.tree.DefaultMutableTreeNode;
-
 
 /**
  * This job unpacks a set of archive files to a base destination folder. Archive entries are extracted in their natural

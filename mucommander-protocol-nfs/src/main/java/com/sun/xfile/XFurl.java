@@ -144,7 +144,7 @@ class XFurl {
                     p2 = len;
                 String component = rpath.substring(p1, p2);
 
-                if (".".equals(component) || "".equals(component)) {
+                if (".".equals(component) || component.isEmpty()) {
                     // ignore
                 } else if ("..".equals(component)) {
                     int q = bpath.lastIndexOf("/");

@@ -429,7 +429,7 @@ class FoldersPanel extends PreferencesPanel implements ItemListener, KeyListener
         }
     }
     
-    public class PrefFilePathFieldWithDefaultValue extends PrefFilePathField {
+    public static class PrefFilePathFieldWithDefaultValue extends PrefFilePathField {
 
         private final boolean isLeft;
         private final String  HOME_FOLDER_PATH = System.getProperty("user.home");

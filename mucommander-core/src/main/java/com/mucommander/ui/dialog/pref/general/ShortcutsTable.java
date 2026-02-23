@@ -128,7 +128,7 @@ public class ShortcutsTable extends PrefTable implements KeyListener, ListSelect
     /**
      * A class to represent Description cell in table data (the first column).
      */
-    class DescriptionData {
+	static class DescriptionData {
         private final ActionId actionId;
         private final String label;
         private final String toolTip;
@@ -439,7 +439,7 @@ public class ShortcutsTable extends PrefTable implements KeyListener, ListSelect
         }
     }
 
-    private class CancelEditingStateThread extends Thread {
+    private static class CancelEditingStateThread extends Thread {
         private boolean stopped = false;
         private final TableCellEditor cellEditor;
 
@@ -688,12 +688,7 @@ public class ShortcutsTable extends PrefTable implements KeyListener, ListSelect
                 }
 
                 /* icon & name, tooltip, action id */
-                actionProperties.put(TableDataColumnEnum.DESCRIPTION,
-                        new DescriptionData(
-                                actionId,
-                                actionDescriptor.getLabel(),
-                                actionDescriptor.getDescription(),
-                                IconManager.getPaddedIcon(actionIcon, new Insets(0, 4, 0, 4))));
+                actionProperties.put(TableDataColumnEnum.DESCRIPTION, new DescriptionData(actionId, actionDescriptor.getLabel(), actionDescriptor.getDescription(), IconManager.getPaddedIcon(actionIcon, new Insets(0, 4, 0, 4))));
                 /* action's accelerator */
                 actionProperties.put(TableDataColumnEnum.ACCELERATOR, ActionKeymap.getAccelerator(actionId));
                 /* action's alternate accelerator */
@@ -986,7 +981,7 @@ public class ShortcutsTable extends PrefTable implements KeyListener, ListSelect
     /**
      * CellLabel with a dotted outline.
      */
-    private class DotBorderedCellLabel extends CellLabel {
+    private static class DotBorderedCellLabel extends CellLabel {
 
         @Override
         protected void paintOutline(Graphics g) {

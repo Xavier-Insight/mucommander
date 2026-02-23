@@ -23,6 +23,7 @@ import java.io.OutputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,7 +44,6 @@ import com.mucommander.job.FileJobAction;
 import com.mucommander.job.FileJobState;
 import com.mucommander.text.Translator;
 import com.mucommander.ui.action.ActionProperties;
-import com.mucommander.ui.action.impl.SplitFileAction;
 import com.mucommander.ui.dialog.file.FileCollisionDialog;
 import com.mucommander.ui.dialog.file.ProgressDialog;
 import com.mucommander.ui.main.MainFrame;
@@ -138,8 +138,7 @@ public class SplitFileJob extends AbstractCopyJob {
         } catch (IOException e) {
             LOGGER.debug("Caught exception", e);
             showErrorDialog(errorDialogTitle,
-                    Translator.get("error_while_transferring", sourceFile.getName()),
-                    Arrays.asList(FileJobAction.CANCEL)
+                    Translator.get("error_while_transferring", sourceFile.getName()), List.of(FileJobAction.CANCEL)
             );
             setState(FileJobState.INTERRUPTED);
             return;
@@ -226,8 +225,7 @@ public class SplitFileJob extends AbstractCopyJob {
             LOGGER.debug("Caught exception", e);
 
             showErrorDialog(errorDialogTitle,
-                    Translator.get("error_while_transferring", destFile.getName()),
-                    Arrays.asList(FileJobAction.CANCEL)
+                    Translator.get("error_while_transferring", destFile.getName()), List.of(FileJobAction.CANCEL)
             );
             return false;
 
@@ -273,8 +271,7 @@ public class SplitFileJob extends AbstractCopyJob {
                     LOGGER.debug("Caught exception", e);
 
                     showErrorDialog(errorDialogTitle,
-                            Translator.get("error_while_transferring", crcFileName),
-                            Arrays.asList(FileJobAction.CANCEL)
+                            Translator.get("error_while_transferring", crcFileName), List.of(FileJobAction.CANCEL)
                     );
                 }
             }

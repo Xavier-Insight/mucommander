@@ -52,7 +52,7 @@ public class FastLRUCache<K, V> extends LRUCache<K,V> {
         this.cacheMap = new LinkedHashMap<>(16, 0.75f, true) {
 			// Override this method to automatically remove eldest entry before insertion when cache is full
 			@Override
-			protected final boolean removeEldestEntry(Map.Entry<K, Object[]> eldest) {
+			protected boolean removeEldestEntry(Map.Entry<K, Object[]> eldest) {
 				return cacheMap.size() > FastLRUCache.this.capacity;
 			}
 		};

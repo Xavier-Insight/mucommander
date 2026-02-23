@@ -26,7 +26,6 @@ import com.mucommander.command.CommandManager;
 import com.mucommander.command.CommandType;
 import com.mucommander.desktop.DefaultDesktopAdapter;
 import com.mucommander.desktop.DesktopInitialisationException;
-import com.mucommander.desktop.TrashProvider;
 
 /**
  * @author Nicolas Rinaudo, Maxence Bernard

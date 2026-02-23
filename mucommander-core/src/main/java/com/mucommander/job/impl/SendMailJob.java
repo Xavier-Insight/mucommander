@@ -156,7 +156,7 @@ public class SendMailJob extends TransferFileJob {
      * Shows an error dialog with a single action : close, and stops the job.
      */
     private void showErrorDialog(String message) {
-        showErrorDialog(errorDialogTitle, message, Arrays.asList(SendMailDialogAction.CLOSE));
+        showErrorDialog(errorDialogTitle, message, List.of(SendMailDialogAction.CLOSE));
         interrupt();
     }
 

@@ -78,7 +78,7 @@ public class XFileAccessor implements com.sun.xfile.XFileAccessor {
             zipList = zf.entries();
             path = zu.getPath();
 
-            if (path != null && !"".equals(path)) {
+            if (path != null && !path.isEmpty()) {
                 ze = zf.getEntry(path);
                 if (ze == null) {
                     path += "/";

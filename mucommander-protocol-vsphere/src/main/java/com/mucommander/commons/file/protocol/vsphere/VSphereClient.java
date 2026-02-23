@@ -236,14 +236,13 @@ public class VSphereClient implements Closeable {
 		// PropertyFilterSpec is used to hold the ObjectSpec and
 		// PropertySpec for the call
 		PropertyFilterSpec pfSpec = new PropertyFilterSpec();
-		pfSpec.getPropSet().addAll(Arrays.asList(pSpec));
-		pfSpec.getObjectSet().addAll(Arrays.asList(oSpec));
+		pfSpec.getPropSet().addAll(List.of(pSpec));
+		pfSpec.getObjectSet().addAll(List.of(oSpec));
 
 		// retrieveProperties() returns the properties
 		// selected from the PropertyFilterSpec
 		List<ObjectContent> ocs = vimPort.retrieveProperties(
-				serviceContent.getPropertyCollector(),
-				Arrays.asList(pfSpec));
+				serviceContent.getPropertyCollector(), List.of(pfSpec));
 
 		// Return value, one object for each property specified
 		Object[] ret = new Object[properties.length];
@@ -295,7 +294,7 @@ public class VSphereClient implements Closeable {
 		}
 	}
 
-	private class TrustAllTrustManager implements javax.net.ssl.TrustManager,
+	private static class TrustAllTrustManager implements javax.net.ssl.TrustManager,
 			javax.net.ssl.X509TrustManager {
 
 		@Override

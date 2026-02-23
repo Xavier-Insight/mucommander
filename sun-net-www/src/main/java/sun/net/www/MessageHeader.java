@@ -30,7 +30,6 @@
 package sun.net.www;
 
 import java.io.*;
-import java.util.Collections;
 import java.util.*;
 
 /** An RFC 844 or MIME message header.  Includes methods
@@ -322,7 +321,7 @@ class MessageHeader {
             if (keys[i] != null) {
                 StringBuilder sb = new StringBuilder(keys[i]);
                 if (values[i] != null) {
-                    sb.append(": " + values[i]);
+                    sb.append(": ").append(values[i]);
                 } else if (i != 0 || !isRequestline(keys[i])) {
                     sb.append(":");
                 }

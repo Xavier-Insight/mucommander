@@ -1034,7 +1034,7 @@ public class CBZip2InputStream extends InputStream implements BZip2Constants {
          * avoid unnecessary memory allocation when compressing small
          * files.
          */
-        final int[] initTT(int length) {
+		int[] initTT(int length) {
             int[] ttShadow = this.tt;
 
             // tt.length should always be >= length, but theoretically

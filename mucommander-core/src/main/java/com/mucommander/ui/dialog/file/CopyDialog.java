@@ -35,7 +35,6 @@ import com.mucommander.job.impl.TransferFileJob;
 import com.mucommander.job.impl.UnpackJob;
 import com.mucommander.text.Translator;
 import com.mucommander.ui.action.ActionProperties;
-import com.mucommander.ui.action.impl.CopyAction;
 import com.mucommander.ui.main.MainFrame;
 
 

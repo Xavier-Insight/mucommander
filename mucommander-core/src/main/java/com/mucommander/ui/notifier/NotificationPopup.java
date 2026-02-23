@@ -96,7 +96,7 @@ final class NotificationPopup {
         }
     }
 
-    private class CustomPopupMenu extends JPopupMenu {
+    private static class CustomPopupMenu extends JPopupMenu {
         @Override
         public Insets getInsets() {
             return new Insets(0, 0, 0, 0);

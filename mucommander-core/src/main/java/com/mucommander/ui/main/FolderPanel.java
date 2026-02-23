@@ -32,7 +32,6 @@ import java.awt.event.FocusListener;
 import java.awt.event.KeyEvent;
 import java.util.HashSet;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 import javax.swing.JComponent;

@@ -45,7 +45,6 @@ import com.mucommander.job.impl.SendMailJob;
 import com.mucommander.text.SizeFormat;
 import com.mucommander.text.Translator;
 import com.mucommander.ui.action.ActionProperties;
-import com.mucommander.ui.action.impl.EmailAction;
 import com.mucommander.ui.dialog.pref.general.GeneralPreferencesDialog;
 import com.mucommander.ui.main.MainFrame;
 
@@ -239,7 +238,7 @@ public class EmailFilesDialog extends JobDialog implements ActionListener, ItemL
             String to = toField.getText().trim();
             String subject = subjectField.getText();
             String body = bodyArea.getText();
-            if(!"".equals(to)) {
+            if(!to.isEmpty()) {
                 lastTo = to;
                 lastSubject = subject;
                 lastBody = body;

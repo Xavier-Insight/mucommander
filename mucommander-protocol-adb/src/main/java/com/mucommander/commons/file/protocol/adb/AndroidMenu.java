@@ -19,7 +19,6 @@ package com.mucommander.commons.file.protocol.adb;
 
 import java.net.MalformedURLException;
 import java.util.Collections;
-import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 import javax.swing.JMenu;

@@ -40,7 +40,6 @@ import com.mucommander.desktop.ActionType;
 import com.mucommander.job.impl.SelfUpdateJob;
 import com.mucommander.text.Translator;
 import com.mucommander.ui.action.ActionProperties;
-import com.mucommander.ui.action.impl.GoToWebsiteAction;
 import com.mucommander.ui.dialog.DialogAction;
 import com.mucommander.ui.dialog.InformationDialog;
 import com.mucommander.ui.dialog.QuestionDialog;

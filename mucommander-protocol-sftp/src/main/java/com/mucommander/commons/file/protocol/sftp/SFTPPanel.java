@@ -148,7 +148,7 @@ public class SFTPPanel extends ServerPanel {
 
         // Set credentials
         url.setCredentials(new Credentials(lastUsername, lastPassword));
-        if(!"".equals(lastKeyPath.trim()))
+        if(!lastKeyPath.trim().isEmpty())
             url.setProperty(SFTPFile.PRIVATE_KEY_PATH_PROPERTY_NAME, lastKeyPath);
 
         // Set port

@@ -556,7 +556,7 @@ public class FileURL implements Cloneable {
      * @see #getPath()
      */
     public void setPath(String path) {
-        if(path==null || "".equals(path))
+        if(path==null || path.isEmpty())
             path = "/";
 
         if(!path.startsWith("/"))

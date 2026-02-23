@@ -59,10 +59,8 @@ import com.mucommander.protocol.ui.ServerPanel;
 import com.mucommander.protocol.ui.ServerPanelListener;
 import com.mucommander.text.Translator;
 import com.mucommander.ui.action.ActionProperties;
-import com.mucommander.ui.action.impl.ConnectToServerAction;
 import com.mucommander.ui.dialog.InformationDialog;
 import com.mucommander.ui.main.FolderPanel;
-import com.mucommander.ui.main.MainFrame;
 
 
 /**

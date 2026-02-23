@@ -212,7 +212,7 @@ public class PathUtilsTest {
         assert "/home/maxence".equals(PathUtils.removeTrailingSeparator("/home/maxence", "/"));
         assert "/home/maxence".equals(PathUtils.removeTrailingSeparator("/home/maxence/", "/"));
         assert "/home/".equals(PathUtils.removeTrailingSeparator("/home/", "\\"));
-        assert "".equals(PathUtils.removeTrailingSeparator("/", "/"));
+        assert PathUtils.removeTrailingSeparator("/", "/").isEmpty();
 
         assert "C:\\home".equals(PathUtils.removeTrailingSeparator("C:\\home", "\\"));
         assert "C:\\home".equals(PathUtils.removeTrailingSeparator("C:\\home\\", "\\"));
@@ -224,7 +224,7 @@ public class PathUtilsTest {
         assert "--home--maxence".equals(PathUtils.removeTrailingSeparator("--home--maxence", "--"));
         assert "--home--maxence".equals(PathUtils.removeTrailingSeparator("--home--maxence--", "--"));
         assert "--home--".equals(PathUtils.removeTrailingSeparator("--home--", "/"));
-        assert "".equals(PathUtils.removeTrailingSeparator("--", "--"));
+        assert PathUtils.removeTrailingSeparator("--", "--").isEmpty();
     }
 
     /**

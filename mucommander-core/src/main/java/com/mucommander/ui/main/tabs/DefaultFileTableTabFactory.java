@@ -47,7 +47,7 @@ public class DefaultFileTableTabFactory implements TabFactory<FileTableTab, File
 	    return new DefaultFileTableTab(location, folderPanel, selectedFile);
 	}
 
-	class DefaultFileTableTab extends FileTableTab {
+	static class DefaultFileTableTab extends FileTableTab {
 		
 		/** The location presented in this tab */
 		private FileURL location;

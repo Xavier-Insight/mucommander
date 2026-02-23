@@ -268,7 +268,7 @@ public class DrivePopupButton extends PopupButton implements BookmarkListener, C
         // Note: fileSystemView.getSystemDisplayName(java.io.File) is unfortunately very very slow
         String name = fileSystemView.getSystemDisplayName((java.io.File) localFile.getUnderlyingFileObject());
 
-        if (name == null || "".equals(name)) // This happens for CD/DVD drives when they don't contain any disc
+        if (name == null || name.isEmpty()) // This happens for CD/DVD drives when they don't contain any disc
             return localFile.getName();
 
         return name;
@@ -460,7 +460,7 @@ public class DrivePopupButton extends PopupButton implements BookmarkListener, C
      * the main even thread. The popup menu gets first displayed with the short drive names, and then refreshed with the
      * extended names as they are retrieved.
      */
-    private class RefreshDriveNamesAndIcons extends Thread {
+    private static class RefreshDriveNamesAndIcons extends Thread {
 
         private final JPopupMenu           popupMenu;
         private final ArrayList<JMenuItem> items;

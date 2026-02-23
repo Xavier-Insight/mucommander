@@ -36,7 +36,6 @@ import com.mucommander.commons.file.util.Kernel32API;
 import com.mucommander.commons.file.util.PathUtils;
 import com.mucommander.commons.io.RandomAccessInputStream;
 import com.mucommander.commons.io.RandomAccessOutputStream;
-import com.mucommander.commons.runtime.OsVersion;
 
 /**
  * TODO: update this documentation and LocalFile documentation

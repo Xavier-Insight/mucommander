@@ -66,7 +66,7 @@ public enum JavaVersion implements ComparableRuntimeProperty {
     private static final String currentArchitecture;
 
     /** The String representation of this RuntimeProperty, set at creation time */
-    protected final String stringRepresentation;
+	private final String stringRepresentation;
 
     /*
      * Determines the current value by parsing the corresponding system property. This method is called automatically
@@ -138,7 +138,7 @@ public enum JavaVersion implements ComparableRuntimeProperty {
         // Java version property should never be null or empty, but better be
         // safe than sorry ...
         if (javaVersionProp == null
-                || "".equals(javaVersionProp = javaVersionProp.trim()))
+                || (javaVersionProp = javaVersionProp.trim()).isEmpty())
             // Assume java 1.8 (first supported Java version)
             return JavaVersion.JAVA_11;
         // Java 20

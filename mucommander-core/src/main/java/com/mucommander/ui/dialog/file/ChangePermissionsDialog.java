@@ -47,7 +47,6 @@ import com.mucommander.desktop.ActionType;
 import com.mucommander.job.impl.ChangeFileAttributesJob;
 import com.mucommander.text.Translator;
 import com.mucommander.ui.action.ActionProperties;
-import com.mucommander.ui.action.impl.ChangePermissionsAction;
 import com.mucommander.ui.main.MainFrame;
 
 /**

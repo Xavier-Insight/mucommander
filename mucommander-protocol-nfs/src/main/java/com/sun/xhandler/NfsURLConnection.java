@@ -157,7 +157,7 @@ public class NfsURLConnection extends URLConnection {
             buf.append("</TITLE>\n");
 
 	    // Set the base URL for the file name anchors
-	    buf.append("<BASE HREF=\"" + url.toString());
+	    buf.append("<BASE HREF=\"").append(url.toString());
 	    if (url.toString().endsWith("/")) {
 		buf.append("\">");
 	    } else {
@@ -172,7 +172,7 @@ public class NfsURLConnection extends URLConnection {
 	    if (root_directory) {
             	buf.append("<H1>\n/</H1>\n<HR>\n");
 	    } else {
-            	buf.append("<H1>\n" + path + "</H1>\n<HR>\n");
+            	buf.append("<H1>\n").append(path).append("</H1>\n<HR>\n");
             }
             
             // Display a URL link to the parent directory if this is
@@ -187,7 +187,7 @@ public class NfsURLConnection extends URLConnection {
 	        
 		    parentURL = parentURL.substring(0,
 			parentURL.lastIndexOf('/', limit));
-		    buf.append("<A HREF=\"" + parentURL + "\">");
+		    buf.append("<A HREF=\"").append(parentURL).append("\">");
 		    buf.append("<H2>Go To Parent Directory</H2></A>\n<BR>\n");
 		}
 	    }
@@ -224,9 +224,8 @@ public class NfsURLConnection extends URLConnection {
                     dirEntry = new XFile((XFile)nfsFile, dirList[i]);
             String MimeEntry_defaultImagePath="";//"doc:/lib/images/ftp";
 		    if (dirEntry.isDirectory()) {
-		        buf.append(MimeEntry_defaultImagePath +
-			           "/directory.gif\" WIDTH=" + iconWidth +
-			           " HEIGHT=" + iconHeight + ">\n");
+		        buf.append(MimeEntry_defaultImagePath).append("/directory.gif\" WIDTH=").append(iconWidth)
+				   .append(" HEIGHT=").append(iconHeight).append(">\n");
 		    } else if (dirEntry.isFile()) {
 		        String imageFileName = MimeEntry_defaultImagePath + "/file.gif";
 
@@ -240,20 +239,18 @@ public class NfsURLConnection extends URLConnection {
 		        }
 		    
 		        buf.append(imageFileName);
-		        buf.append("\" WIDTH=" + iconWidth + " HEIGHT=" + iconHeight +
-			       ">\n");
+		        buf.append("\" WIDTH=").append(iconWidth).append(" HEIGHT=").append(iconHeight).append(">\n");
 		    } else {
 		        // Entry is a symbolic link.  Use the default file image for now.
-		        buf.append(MimeEntry_defaultImagePath +
-			           "/file.gif\" WIDTH=" + iconWidth +
-			           " HEIGHT=" + iconHeight + ">\n");
+		        buf.append(MimeEntry_defaultImagePath).append("/file.gif\" WIDTH=").append(iconWidth).append(" HEIGHT=")
+				   .append(iconHeight).append(">\n");
 		    }
 		    
 		    //dirEntry.close();
                     
                     // Display the directory entry's name
-                    buf.append("<A HREF=\"" + dirList[i] + "\">");
-		            buf.append(dirList[i] + "</A>\n<BR>");
+                    buf.append("<A HREF=\"").append(dirList[i]).append("\">");
+		            buf.append(dirList[i]).append("</A>\n<BR>");
 
                 }
             }

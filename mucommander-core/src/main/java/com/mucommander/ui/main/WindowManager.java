@@ -26,7 +26,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.Vector;
 
-import javax.swing.JFrame;
 import javax.swing.LookAndFeel;
 import javax.swing.MenuSelectionManager;
 import javax.swing.SwingUtilities;

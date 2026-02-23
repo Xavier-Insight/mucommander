@@ -149,7 +149,7 @@ public class ShortcutsPanel extends PreferencesPanel {
         return panel;
     }
 
-    class DeferredDocumentListener implements DocumentListener {
+    static class DeferredDocumentListener implements DocumentListener {
 
         private final Timer timer;
 
@@ -256,7 +256,7 @@ public class ShortcutsPanel extends PreferencesPanel {
         ToolBarAttributes.fireActionsChanged();
     }
 
-    class TooltipBar extends JLabel {
+    static class TooltipBar extends JLabel {
         private              String lastActionTooltipShown;
         private final        String DEFAULT_MESSAGE;
         private static final int    MESSAGE_SHOWING_TIME = 3000;

@@ -266,7 +266,7 @@ public class DebugConsoleDialog extends FocusDialog implements ItemListener {
     /**
      * Custom {@link ListCellRenderer} that renders {@link LoggingEvent} instances.
      */
-    private class DebugTreeCellRenderer extends DefaultTreeCellRenderer {
+    private static class DebugTreeCellRenderer extends DefaultTreeCellRenderer {
 
         @Override
         public Component getTreeCellRendererComponent(JTree list, Object value,

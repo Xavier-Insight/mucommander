@@ -52,7 +52,6 @@ import com.mucommander.desktop.ActionType;
 import com.mucommander.job.impl.CalculateChecksumJob;
 import com.mucommander.text.Translator;
 import com.mucommander.ui.action.ActionProperties;
-import com.mucommander.ui.action.impl.CalculateChecksumAction;
 import com.mucommander.ui.main.MainFrame;
 import com.mucommander.ui.text.FilePathField;
 

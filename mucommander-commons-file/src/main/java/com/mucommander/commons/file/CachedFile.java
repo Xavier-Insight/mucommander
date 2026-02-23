@@ -30,7 +30,6 @@ import org.slf4j.LoggerFactory;
 import com.mucommander.commons.file.filter.FileFilter;
 import com.mucommander.commons.file.filter.FilenameFilter;
 import com.mucommander.commons.file.protocol.local.LocalFile;
-import com.mucommander.commons.runtime.JavaVersion;
 
 /**
  * CachedFile is a ProxyFile that caches the return values of most {@link AbstractFile} getter methods. This allows

@@ -216,7 +216,7 @@ public class OSXDesktopAdapter extends DefaultDesktopAdapter {
             // Swallow the exception and do not interrupt the transfer
             LOGGER.debug("Error while parsing macOS file comment of source", e);
         }
-        if (comment != null && !"".equals(comment = comment.trim()) && !setFileComment(destPath, comment))
+        if (comment != null && !(comment = comment.trim()).isEmpty() && !setFileComment(destPath, comment))
             LOGGER.error("Error while copying macOS file comment to %s", destPath);
     }
 

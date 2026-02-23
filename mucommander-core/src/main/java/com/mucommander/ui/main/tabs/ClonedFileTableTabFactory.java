@@ -42,7 +42,7 @@ public class ClonedFileTableTabFactory implements TabFactory<FileTableTab, FileT
 		return new ClonedFileTableTab(tab, folderPanel);
 	}
 
-	class ClonedFileTableTab extends FileTableTab {
+	static class ClonedFileTableTab extends FileTableTab {
 		
 		/** The location presented in this tab */
 		private FileURL location;

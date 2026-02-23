@@ -25,7 +25,6 @@ import com.mucommander.commons.file.FileURL;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.Objects;
 
@@ -209,7 +208,7 @@ public class PathUtils {
             FileURL baseFolderURL = baseFolder.getURL();
             destURL  = (FileURL)baseFolderURL.clone();
             String basePath = destURL.getPath();
-            if(!"".equals(destPath))
+            if(!destPath.isEmpty())
                 destURL.setPath(basePath + (basePath.endsWith(separator)?"":separator) + destPath);
 
             // At this point we have the proper URL, except that the path may contain '.', '..' or '~' tokens.

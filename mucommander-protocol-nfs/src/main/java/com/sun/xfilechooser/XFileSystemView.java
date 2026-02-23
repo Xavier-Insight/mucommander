@@ -340,7 +340,7 @@ class WindowsXFileSystemView extends XFileSystemView {
      * dialog. We therefore assume that A: is the floppy drive,
      * and force it to always return true for isDirectory()
      */
-    class XWindowsFloppy extends BeanXFile {
+	static class XWindowsFloppy extends BeanXFile {
 	public XWindowsFloppy() {
 	    super("A" + ":" + "\\");
 	}

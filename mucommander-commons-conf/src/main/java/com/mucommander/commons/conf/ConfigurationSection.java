@@ -81,7 +81,7 @@ class ConfigurationSection {
      */
     public boolean setVariable(String name, String value) {
         // If the specified value is empty, deletes the variable.
-        if(value == null || "".equals(value.trim())) {
+        if(value == null || value.trim().isEmpty()) {
             // If the variable wasn't set, we haven't changed its value.
             if(getVariable(name) == null)
                 return false;

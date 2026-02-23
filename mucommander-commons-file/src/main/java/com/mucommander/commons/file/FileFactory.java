@@ -610,7 +610,7 @@ public class FileFactory {
      * normal circumstances.
      */
     public static AbstractFile getTemporaryFile(String desiredFilename, boolean deleteOnExit) throws IOException {
-        if(desiredFilename==null || "".equals(desiredFilename))
+        if(desiredFilename==null || desiredFilename.isEmpty())
             desiredFilename = "temp";
         
         // Attempt to use the desired name

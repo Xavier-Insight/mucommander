@@ -1158,7 +1158,7 @@ public class FTPFile extends ProtocolFile implements ConnectionHandlerFactory {
 
             // Use the encoding property if it is set
             this.encoding = location.getProperty(ENCODING_PROPERTY_NAME);
-            if(encoding==null || "".equals(encoding))
+            if(encoding==null || encoding.isEmpty())
                 encoding = DEFAULT_ENCODING;
 
             // Use the property that controls the number of connection retries after a recoverable connection failure,

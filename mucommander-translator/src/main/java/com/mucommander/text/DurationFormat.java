@@ -53,7 +53,7 @@ public class DurationFormat {
         for(int i=0; i<5; i++) {
             int n = remainderSec/seconds[i];
             if(n>0) {
-                if(!"".equals(s))
+                if(!s.isEmpty())
                     s += " ";
 
                 s += Translator.get(keys[i], ""+n);
@@ -62,11 +62,11 @@ public class DurationFormat {
         }
 
         // Don't add second part if equal to 0, unless this is the only part
-        if(remainderSec>0 || "".equals(s)) {
+        if(remainderSec>0 || s.isEmpty()) {
             if(remainderSec==0)
                 s = "<"+Translator.get(SECONDS_KEY, "1");
             else
-                s += ("".equals(s)?"":" ")+Translator.get(SECONDS_KEY, ""+remainderSec);
+                s += (s.isEmpty() ?"":" ")+Translator.get(SECONDS_KEY, ""+remainderSec);
         }
 
         return s;

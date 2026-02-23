@@ -94,21 +94,21 @@ public class KeyStrokeUtils {
             modifiersString += SHIFT_MODIFIER_STRING;
 
         if((modifiers&KeyEvent.CTRL_DOWN_MASK)!=0)
-            modifiersString += ("".equals(modifiersString)?"":"+")+CTRL_MODIFIER_STRING;
+            modifiersString += (modifiersString.isEmpty() ?"":"+")+CTRL_MODIFIER_STRING;
 
         if(OsFamily.MAC_OS.isCurrent()) {
             if((modifiers&KeyEvent.ALT_DOWN_MASK)!=0)
-                modifiersString += ("".equals(modifiersString)?"":"+")+ALT_MODIFIER_STRING;
+                modifiersString += (modifiersString.isEmpty() ?"":"+")+ALT_MODIFIER_STRING;
 
             if((modifiers&KeyEvent.META_DOWN_MASK)!=0)
-                modifiersString += ("".equals(modifiersString)?"":"+")+META_MODIFIER_STRING;
+                modifiersString += (modifiersString.isEmpty() ?"":"+")+META_MODIFIER_STRING;
         }
         else {
             if((modifiers&KeyEvent.META_DOWN_MASK)!=0)
-                modifiersString += ("".equals(modifiersString)?"":"+")+META_MODIFIER_STRING;
+                modifiersString += (modifiersString.isEmpty() ?"":"+")+META_MODIFIER_STRING;
 
             if((modifiers&KeyEvent.ALT_DOWN_MASK)!=0)
-                modifiersString += ("".equals(modifiersString)?"":"+")+ALT_MODIFIER_STRING;
+                modifiersString += (modifiersString.isEmpty() ?"":"+")+ALT_MODIFIER_STRING;
         }
 
         return modifiersString;

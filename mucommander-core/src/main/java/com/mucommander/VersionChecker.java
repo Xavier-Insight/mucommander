@@ -147,8 +147,8 @@ public class VersionChecker extends DefaultHandler {
         // Makes sure we retrieved the information we were looking for.
         // We're not checking the release date as older version of muCommander
         // didn't use it.
-        if(instance.latestVersion == null || "".equals(instance.latestVersion) ||
-           instance.downloadURL == null   || "".equals(instance.downloadURL))
+        if(instance.latestVersion == null || instance.latestVersion.isEmpty() ||
+           instance.downloadURL == null   || instance.downloadURL.isEmpty())
             throw new Exception();
 
         return instance;
@@ -276,7 +276,7 @@ public class VersionChecker extends DefaultHandler {
         latestVersion = latestVersion.toLowerCase().trim();
         downloadURL   = downloadURL.trim();
         jarURL        = jarURL.trim();
-        if("".equals(jarURL))
+        if(jarURL.isEmpty())
             jarURL = null;
         releaseDate   = releaseDate.trim();
 
