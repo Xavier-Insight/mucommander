@@ -55,11 +55,11 @@ import java.io.OutputStream;
 public class NFSFile extends ProtocolFile {
 
     /** Underlying file instance */
-    private XFile file;
+    private final XFile file;
 
     private String absPath;
 
-    private FilePermissions permissions;
+    private final FilePermissions permissions;
 
     /** Caches the parent folder, initially null until getParent() gets called */
     private AbstractFile parent;
@@ -427,7 +427,7 @@ public class NFSFile extends ProtocolFile {
      */
     public static class NFSRandomAccessInputStream extends RandomAccessInputStream {
 
-        private XRandomAccessFile raf;
+        private final XRandomAccessFile raf;
 
         public NFSRandomAccessInputStream(XRandomAccessFile raf) {
             this.raf = raf;
@@ -469,7 +469,7 @@ public class NFSFile extends ProtocolFile {
      */
     public static class NFSRandomAccessOutputStream extends RandomAccessOutputStream {
 
-        private XRandomAccessFile raf;
+        private final XRandomAccessFile raf;
 
         public NFSRandomAccessOutputStream(XRandomAccessFile raf) {
             this.raf = raf;
@@ -537,7 +537,7 @@ public class NFSFile extends ProtocolFile {
      */
     private static class NFSFilePermissions extends IndividualPermissionBits implements FilePermissions {
 
-        private XFile file;
+        private final XFile file;
 
         private final static PermissionBits MASK = new GroupedPermissionBits(384);  // rw------- (300 octal)
 

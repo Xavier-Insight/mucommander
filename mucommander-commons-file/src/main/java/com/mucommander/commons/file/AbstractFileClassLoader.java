@@ -40,7 +40,7 @@ public class AbstractFileClassLoader extends ClassLoader {
     // - Instance fields -------------------------------------------------------
     // -------------------------------------------------------------------------
     /** All abstract files in which to look for classes and resources. */
-    private Set<AbstractFile> files;
+    private final Set<AbstractFile> files;
 
 
 

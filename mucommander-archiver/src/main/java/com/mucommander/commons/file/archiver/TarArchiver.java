@@ -42,8 +42,8 @@ import java.nio.file.Path;
  */
 class TarArchiver extends Archiver {
 
-    private TarArchiveOutputStream tos;
-    private boolean firstEntry = true;
+    private final TarArchiveOutputStream tos;
+    private       boolean                firstEntry = true;
 
     protected TarArchiver(OutputStream outputStream) {
         super(outputStream);

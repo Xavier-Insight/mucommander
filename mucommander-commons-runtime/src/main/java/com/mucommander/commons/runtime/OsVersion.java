@@ -90,7 +90,7 @@ public enum OsVersion implements ComparableRuntimeProperty {
     protected final String stringRepresentation;
 
     /** Holds the OsVersion of the current runtime environment  */
-    private static OsVersion currentValue;
+    private static final OsVersion currentValue;
 
     /*
      * Determines the current value by parsing the corresponding system property. This method is called automatically

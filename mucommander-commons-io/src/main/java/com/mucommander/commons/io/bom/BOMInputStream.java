@@ -52,7 +52,7 @@ import java.io.InputStream;
 public class BOMInputStream extends InputStream implements BOMConstants {
 
     /** The underlying InputStream that feeds bytes to this stream */
-    private InputStream in;
+    private final InputStream in;
 
     /** Contains the BOM that was detected in the stream, null if none was found */
     private BOM bom;

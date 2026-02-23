@@ -69,18 +69,18 @@ public class CalculateChecksumJob extends TransferFileJob {
 	private static final Logger LOGGER = LoggerFactory.getLogger(CalculateChecksumJob.class);
 	
     /** The checksum file where the checksum of each file is written */
-    private AbstractFile checksumFile;
+    private final AbstractFile checksumFile;
     /** The OutputStream of the checksum file */
-    private OutputStream checksumFileOut;
+    private       OutputStream checksumFileOut;
 
     /** The path to the base source folder, i.e. the folder which contains all the files this job operates on */
-    private String baseSourcePath;
+    private final String baseSourcePath;
 
     /** True if the SFV format is used rather than the default 'SUMS' format */
-    private boolean useSfvFormat;
+    private final boolean useSfvFormat;
 
     /** The MessageDigest that serves to calculate the checksum */
-    private MessageDigest digest;
+    private final MessageDigest digest;
 
 
     public CalculateChecksumJob(ProgressDialog progressDialog, MainFrame mainFrame, FileSet files, AbstractFile checksumFile, MessageDigest digest) {

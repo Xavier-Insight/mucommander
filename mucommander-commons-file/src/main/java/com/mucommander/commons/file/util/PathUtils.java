@@ -46,14 +46,14 @@ public class PathUtils {
     public static class ResolvedDestination {
 
         /** The destination AbstractFile, may be a regular file or a folder */
-        private AbstractFile file;
+        private final AbstractFile file;
 
         /** The destination's folder, the file itself for {@link #EXISTING_FOLDER}, the destination file's parent for
          * other types */
-        private AbstractFile folder;
+        private final AbstractFile folder;
 
         /** The destination type, see {@link DestinationType} */
-        private DestinationType type;
+        private final DestinationType type;
 
         /**
          * Creates a new <code>ResolvedDestination</code> with the specified destination file and type.

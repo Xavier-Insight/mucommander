@@ -36,9 +36,9 @@ public class XmlAttributes {
     // - Instance fields -------------------------------------------------
     // -------------------------------------------------------------------
     /** Contains the XML attributes. */
-    private Map<String, String> attributes;
+    private final Map<String, String> attributes;
     /** Contains the XML attribute names in the order they were added */
-    private LinkedList<String> names;
+    private final LinkedList<String>  names;
 
     // - Initialization --------------------------------------------------
     // -------------------------------------------------------------------

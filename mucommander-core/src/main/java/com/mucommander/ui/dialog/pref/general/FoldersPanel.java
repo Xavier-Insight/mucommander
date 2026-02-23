@@ -78,17 +78,17 @@ import com.mucommander.ui.main.WindowManager;
 class FoldersPanel extends PreferencesPanel implements ItemListener, KeyListener, ActionListener {
 
     // Startup folders
-    private PrefRadioButton lastFoldersRadioButton;
-    private PrefRadioButton customFoldersRadioButton;
+    private final PrefRadioButton lastFoldersRadioButton;
+    private final PrefRadioButton customFoldersRadioButton;
     
-    private PrefFilePathFieldWithDefaultValue leftCustomFolderTextField;
-    private JButton leftCustomFolderButton;
+    private final PrefFilePathFieldWithDefaultValue leftCustomFolderTextField;
+    private final JButton                           leftCustomFolderButton;
 
-    private PrefFilePathFieldWithDefaultValue rightCustomFolderTextField;
-    private JButton rightCustomFolderButton;
+    private final PrefFilePathFieldWithDefaultValue rightCustomFolderTextField;
+    private final JButton                           rightCustomFolderButton;
 
     // Show hidden files?
-    private PrefCheckBox showHiddenFilesCheckBox;
+    private final PrefCheckBox showHiddenFilesCheckBox;
 
     // Show Mac OS X .DS_Store?
     private PrefCheckBox showDSStoreFilesCheckBox;
@@ -97,22 +97,22 @@ class FoldersPanel extends PreferencesPanel implements ItemListener, KeyListener
     private PrefCheckBox showSystemFoldersCheckBox;
 
     // Display compact file size ?
-    private PrefCheckBox compactSizeCheckBox;
+    private final PrefCheckBox compactSizeCheckBox;
 
     // Follow symlinks when changing directory ?
-    private PrefCheckBox followSymlinksCheckBox;
+    private final PrefCheckBox followSymlinksCheckBox;
     
     // Always show single tab's header ?
-    private PrefCheckBox showTabHeaderCheckBox;
+    private final PrefCheckBox showTabHeaderCheckBox;
 
     // Timeout for quick searches
-    private PrefSpinner quickSearchTimeoutSpinner;
+    private final PrefSpinner quickSearchTimeoutSpinner;
 
     // Locale that is used to sort by filenames
-    private PrefComboBox<Locale> localeComboBox;
+    private final PrefComboBox<Locale> localeComboBox;
 
     // Show parent folder (as "..") in the file table
-    private PrefCheckBox showParentFolderCheckBox;
+    private final PrefCheckBox showParentFolderCheckBox;
 
     public FoldersPanel(PreferencesDialog parent) {
         super(parent, Translator.get("prefs_dialog.folders_tab"));
@@ -431,8 +431,8 @@ class FoldersPanel extends PreferencesPanel implements ItemListener, KeyListener
     
     public class PrefFilePathFieldWithDefaultValue extends PrefFilePathField {
 
-        private boolean isLeft;
-        private final String HOME_FOLDER_PATH = System.getProperty("user.home");
+        private final boolean isLeft;
+        private final String  HOME_FOLDER_PATH = System.getProperty("user.home");
 
         public PrefFilePathFieldWithDefaultValue(boolean isLeft) {
             super(isLeft ? MuConfigurations.getPreferences().getVariable(MuPreference.LEFT_CUSTOM_FOLDER, "") : MuConfigurations.getPreferences().getVariable(MuPreference.RIGHT_CUSTOM_FOLDER, ""));

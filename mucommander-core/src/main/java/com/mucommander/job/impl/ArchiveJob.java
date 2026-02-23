@@ -48,19 +48,19 @@ public class ArchiveJob extends TransferFileJob {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ArchiveJob.class);
 	
     /** Destination archive file */
-    private AbstractFile destFile;
+    private final AbstractFile destFile;
 
     /** Base destination folder's path */
-    private String baseFolderPath;
+    private final String baseFolderPath;
 
     /** Archiver instance that does the actual archiving */
     private Archiver archiver;
 
     /** Archive format */
-    private int archiveFormat;
+    private final int archiveFormat;
 	
     /** Optional archive comment */
-    private String archiveComment;
+    private final String archiveComment;
 	
     /** Lock to avoid Archiver.close() to be called while data is being written */
     private final Object ioLock = new Object();

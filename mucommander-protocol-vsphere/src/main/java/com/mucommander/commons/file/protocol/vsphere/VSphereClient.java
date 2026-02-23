@@ -59,8 +59,8 @@ public class VSphereClient implements Closeable {
 
     private static final String SSL_INIT_PROBLEMS = "SSL init problems";
 
-	public static final String TYPE_SERVICE_INSTANCE = "ServiceInstance";
-	private static Logger log = LoggerFactory.getLogger(VSphereClient.class);
+	public static final  String TYPE_SERVICE_INSTANCE = "ServiceInstance";
+	private static final Logger log                   = LoggerFactory.getLogger(VSphereClient.class);
 
 	private final String server;
 	private final String user;

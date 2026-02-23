@@ -53,9 +53,9 @@ import java.util.Hashtable;
  */
 public class NfsConnect {
 
-    private static byte[] pubfh2 = new byte[32];  // v2 public filehandle
-    private static byte[] pubfh3 = new byte[0];   // v3 public filehandle
-    private static Hashtable cacheNfsConnect = new Hashtable();
+    private static final byte[] pubfh2 = new byte[32];  // v2 public filehandle
+    private static final byte[] pubfh3 = new byte[0];   // v3 public filehandle
+    private static final Hashtable cacheNfsConnect = new Hashtable();
 
     static final int NFS_PORT = 2049;
     static final int NFS_PROG = 100003;

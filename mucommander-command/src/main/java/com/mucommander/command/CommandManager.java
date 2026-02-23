@@ -100,7 +100,7 @@ public class CommandManager implements CommandBuilder {
     // - Commands definition ---------------------------------------------------
     // -------------------------------------------------------------------------
     /** All known commands. */
-    private static       Map<String, Command> commands;
+    private static final Map<String, Command> commands;
     /** Path to the custom commands XML file, <code>null</code> if the default one should be used. */
     private static       AbstractFile         commandsFile;
     /** Whether the custom commands have been modified since the last time they were saved. */

@@ -60,9 +60,9 @@ import java.io.*;
  * @author Brent Callaghan
  */
 public class Xdr {
-    private static int XDRUNIT = 4;
-    private byte[] buf;
-    private int size, off, wrap_offset;
+    private static final int    XDRUNIT = 4;
+    private final        byte[] buf;
+    private        int    size, off, wrap_offset;
     int xid;
 
     /**

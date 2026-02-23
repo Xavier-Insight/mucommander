@@ -31,8 +31,8 @@ import javax.swing.event.ChangeListener;
 */
 public class TabsWithHeaderViewer<T extends Tab> extends TabsViewer<T> {
 
-	private TabsCollection<T> tabsCollection;
-	private TabbedPane<T> tabbedpane;
+	private final TabsCollection<T> tabsCollection;
+	private final TabbedPane<T>     tabbedpane;
 
 	public TabsWithHeaderViewer(TabsCollection<T> tabs, TabbedPane<T> tabbedpane) {
 		super(tabbedpane, tabs);

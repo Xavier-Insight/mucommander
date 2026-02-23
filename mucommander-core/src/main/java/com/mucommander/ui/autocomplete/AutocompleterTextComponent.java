@@ -42,8 +42,8 @@ import com.mucommander.commons.util.ui.combobox.EditableComboBox;
  */
 
 public abstract class AutocompleterTextComponent {
-	private JTextComponent textComponent;
-	private EditableComboBox editableComboBox;
+	private final JTextComponent   textComponent;
+	private       EditableComboBox editableComboBox;
 	
 	public AutocompleterTextComponent(JTextComponent textComp) {
 		this.textComponent = textComp;	

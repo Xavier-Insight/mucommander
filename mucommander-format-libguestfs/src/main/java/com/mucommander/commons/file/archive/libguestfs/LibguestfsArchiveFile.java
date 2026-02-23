@@ -42,7 +42,7 @@ public class LibguestfsArchiveFile extends AbstractRWArchiveFile {
 		addToEntriesTree(entry);
 		return new BufferedOutputStream(new OutputStream() {
 			int offset;
-			File tmpFile = File.createTempFile(entry.getName()+"-", "-upload");
+			final File tmpFile = File.createTempFile(entry.getName()+"-", "-upload");
 
 			@Override
 			public void write(int arg0) throws IOException {
@@ -103,7 +103,7 @@ public class LibguestfsArchiveFile extends AbstractRWArchiveFile {
 			throws IOException, UnsupportedFileOperationException {
 		return new BufferedInputStream(new InputStream() {
 			long remaining = entry.getSize();
-			File tmpFile = File.createTempFile(entry.getName()+"-", "-download");
+			final File tmpFile = File.createTempFile(entry.getName()+"-", "-download");
 
 			@Override
 			public int read() throws IOException {

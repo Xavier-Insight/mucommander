@@ -87,9 +87,9 @@ public class ThemeManager {
     /** Whether or not the user theme was modified. */
     private static boolean       wasUserThemeModified;
     /** Theme that is currently applied to muCommander. */
-    private static Theme         currentTheme;
+    private static       Theme         currentTheme;
     /** Used to listen on the current theme's modifications. */
-    private static ThemeListener listener = new CurrentThemeListener();
+    private static final ThemeListener listener = new CurrentThemeListener();
 
 
 

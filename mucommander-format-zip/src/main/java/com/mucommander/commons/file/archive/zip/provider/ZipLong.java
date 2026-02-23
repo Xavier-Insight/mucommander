@@ -32,7 +32,7 @@ package com.mucommander.commons.file.archive.zip.provider;
  */
 public final class ZipLong implements Cloneable {
 
-    private long value;
+    private final long value;
 
     /**
      * Create instance from a number.

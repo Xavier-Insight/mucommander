@@ -44,7 +44,7 @@ public class LocalMonitoredFile extends ModificationDateBasedMonitoredFile {
     private WatchService watchService;
     private WatchKey watchKey;
 
-    private static WatchEvent.Kind<?>[] kinds = new WatchEvent.Kind<?>[] {
+    private static final WatchEvent.Kind<?>[] kinds = new WatchEvent.Kind<?>[] {
         StandardWatchEventKinds.ENTRY_CREATE,
         StandardWatchEventKinds.ENTRY_DELETE,
         StandardWatchEventKinds.ENTRY_MODIFY};

@@ -89,16 +89,16 @@ import com.mucommander.ui.theme.ThemeManager;
 public class StatusBar extends JPanel {
 	private static final Logger LOGGER = LoggerFactory.getLogger(StatusBar.class);
 	
-    private MainFrame mainFrame;
+    private final MainFrame mainFrame;
 
     /** Label that displays info about current selected file(s) */
-    private JLabel selectedFilesLabel;
+    private final JLabel selectedFilesLabel;
 
     /** Icon used while loading is in progress. */
-    private SpinningDial dial;
+    private final SpinningDial dial;
 	
     /** Label that displays info about current volume (free/total space) */
-    private VolumeSpaceLabel volumeSpaceLabel;
+    private final VolumeSpaceLabel volumeSpaceLabel;
 
     /** Thread which auto updates volume info */
     private Thread autoUpdateThread;
@@ -128,10 +128,10 @@ public class StatusBar extends JPanel {
     private String volumePath;
 
     /** hold references to listeners that are stored with weak references to prevent them from being collected by the garbage collector */
-    private LocationListener locationListener;
-    private TableSelectionListener tableSelectionListener;
-    private ActivePanelListener activePanelListener;
-    private ThemeListener themeListener;
+    private final LocationListener       locationListener;
+    private final TableSelectionListener tableSelectionListener;
+    private final ActivePanelListener    activePanelListener;
+    private final ThemeListener          themeListener;
 
     static {
         // Initialize the size column format based on the configuration

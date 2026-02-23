@@ -84,11 +84,11 @@ public class FTPFile extends ProtocolFile implements ConnectionHandlerFactory {
 
     private org.apache.commons.net.ftp.FTPFile file;
 
-    private String absPath;
+    private final String absPath;
 
     private AbstractFile parent;
-    private boolean parentValSet;
-    private FilePermissions permissions;
+    private       boolean         parentValSet;
+    private final FilePermissions permissions;
 
     private boolean fileExists;
 
@@ -1117,7 +1117,7 @@ public class FTPFile extends ProtocolFile implements ConnectionHandlerFactory {
 //        private CustomFTPClient ftpClient;
 
         /** Controls whether passive mode should be used for data transfers (default is true) */
-        private boolean passiveMode;
+        private final boolean passiveMode;
 
         /** Encoding used by the FTP control connection */
         private String encoding;
@@ -1405,7 +1405,7 @@ public class FTPFile extends ProtocolFile implements ConnectionHandlerFactory {
      */
     private static class FTPFilePermissions extends IndividualPermissionBits implements FilePermissions {
 
-        private org.apache.commons.net.ftp.FTPFile file;
+        private final org.apache.commons.net.ftp.FTPFile file;
 
         public FTPFilePermissions(org.apache.commons.net.ftp.FTPFile file) {
             this.file = file;

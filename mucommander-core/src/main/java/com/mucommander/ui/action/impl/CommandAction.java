@@ -45,7 +45,7 @@ public class CommandAction extends MuAction {
     // - Instance fields -------------------------------------------------------
     // -------------------------------------------------------------------------
     /** Command to run. */
-    private Command command;
+    private final Command command;
 
 
 
@@ -101,8 +101,8 @@ public class CommandAction extends MuAction {
 
     public static class Descriptor extends AbstractActionDescriptor {
         private static final String ACTION_ID_PREFIX = "OpenWith_";
-        private String ACTION_ID;
-        private String label;
+        private final        String ACTION_ID;
+        private final        String label;
 
         public Descriptor(Command command) {
             ACTION_ID = ACTION_ID_PREFIX + command.getAlias();

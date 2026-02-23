@@ -60,19 +60,19 @@ import com.mucommander.ui.main.MainFrame;
 public class ChangePermissionsDialog extends JobDialog
         implements ActionListener, ItemListener, DocumentListener {
 
-    private JCheckBox[][] permCheckBoxes;
+    private final JCheckBox[][] permCheckBoxes;
 
-    private JTextField octalPermTextField;
+    private final JTextField octalPermTextField;
 
-    private JCheckBox recurseDirCheckBox;
+    private final JCheckBox recurseDirCheckBox;
 
     /** If true, ItemEvent events should be ignored */
     private boolean ignoreItemEvent;
     /** If true, DocumentEvent events should be ignored */
     private boolean ignoreDocumentEvent;
 
-    private JButton okButton;
-    private JButton cancelButton;
+    private final JButton okButton;
+    private final JButton cancelButton;
 
 
     public ChangePermissionsDialog(MainFrame mainFrame, FileSet files) {

@@ -32,7 +32,7 @@ package com.mucommander.commons.file.archive.zip.provider;
  */
 public final class ZipShort implements Cloneable {
 
-    private int value;
+    private final int value;
 
     /**
      * Create instance from a number.

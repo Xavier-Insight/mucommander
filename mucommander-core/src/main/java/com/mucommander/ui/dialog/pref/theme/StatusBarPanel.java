@@ -266,8 +266,8 @@ class StatusBarPanel extends ThemeEditorPanel implements PropertyChangeListener 
     // - Preview labels ------------------------------------------------------------------
     // -----------------------------------------------------------------------------------
     private class Preview extends JLabel {
-        private MutableLineBorder border;
-        private int type;
+        private final MutableLineBorder border;
+        private final int               type;
 
         public Preview(int type) {
             super(WARNING_LEVEL_TEXT[type]);

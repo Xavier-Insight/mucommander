@@ -49,10 +49,10 @@ import com.mucommander.ui.main.MainFrame;
 public class MkdirJob extends FileJob {
     private static final Logger LOGGER = LoggerFactory.getLogger(MkdirJob.class);
 
-    private AbstractFile destFolder;
+    private final AbstractFile destFolder;
 
-    private boolean mkfileMode;
-    private long allocateSpace;
+    private final boolean mkfileMode;
+    private       long    allocateSpace;
 
 
     /**

@@ -41,8 +41,8 @@ import com.mucommander.commons.file.protocol.local.LocalFile;
  */
 class ZipArchiver extends Archiver {
 
-    private ZipOutputStream zos;
-    private boolean firstEntry = true;
+    private final ZipOutputStream zos;
+    private       boolean         firstEntry = true;
 
 
 

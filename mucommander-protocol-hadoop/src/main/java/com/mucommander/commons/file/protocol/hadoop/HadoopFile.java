@@ -70,12 +70,12 @@ public abstract class HadoopFile extends ProtocolFile {
     private static final Logger LOGGER = LoggerFactory.getLogger(HadoopFile.class);
 
     /** The Hadoop FileSystem object */
-    private FileSystem fs;
+    private final FileSystem fs;
     /** The Hadoop */
-    private Path path;
+    private final Path       path;
 
     /** Holds file attributes */
-    private HadoopFileAttributes fileAttributes;
+    private final HadoopFileAttributes fileAttributes;
 
     /** Cached parent file instance, null if not created yet or if this file has no parent */
     private AbstractFile parent;
@@ -548,8 +548,8 @@ public abstract class HadoopFile extends ProtocolFile {
      */
     private static class HadoopRandomAccessInputStream extends RandomAccessInputStream {
 
-        private FSDataInputStream in;
-        private long length;
+        private final FSDataInputStream in;
+        private final long              length;
 
         private HadoopRandomAccessInputStream(FSDataInputStream in, long length) {
             this.in = in;
@@ -588,7 +588,7 @@ public abstract class HadoopFile extends ProtocolFile {
      */
     private static class HadoopFilenameFilter implements PathFilter {
 
-        private FilenameFilter filenameFilter;
+        private final FilenameFilter filenameFilter;
 
         private HadoopFilenameFilter(FilenameFilter filenameFilter) {
             this.filenameFilter = filenameFilter;

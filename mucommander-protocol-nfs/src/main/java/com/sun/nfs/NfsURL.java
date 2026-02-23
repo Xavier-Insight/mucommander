@@ -73,9 +73,9 @@ import java.net.MalformedURLException;
 
 public class NfsURL {
 
-    private String url;
-    private String protocol;
-    private String host;
+    private final String url;
+    private final String protocol;
+    private       String host;
     private String location;
     private int port;
     private String file;

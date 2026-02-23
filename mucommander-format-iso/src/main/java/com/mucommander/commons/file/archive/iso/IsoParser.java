@@ -258,8 +258,8 @@ class IsoParser {
     }
 
     // ======================================
-    private static int S_IFREG = 0100000;
-    private static int S_IFDIR = 0040000;
+    private static final int S_IFREG = 0100000;
+    private static final int S_IFDIR = 0040000;
 
     private static class stat {
         int st_size;

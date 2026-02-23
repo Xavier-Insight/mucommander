@@ -48,11 +48,11 @@ public class ClassFinder {
     // - Instance fields -----------------------------------------------------------------
     // -----------------------------------------------------------------------------------
     /** ClassLoader used to load classes from explored files. */
-    private ClassLoader  loader;
+    private       ClassLoader  loader;
     /** Used to filter out files that are neither classes nor directories. */
-    private OrFileFilter filter;
+    private final OrFileFilter filter;
     /** Used to filter out unwanted classes. */
-    private ClassFilter  classFilter;
+    private       ClassFilter  classFilter;
 
 
     // - Initialization ------------------------------------------------------------------

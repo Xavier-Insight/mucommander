@@ -1174,11 +1174,11 @@ class AppearancePanel extends PreferencesPanel implements ActionListener, Runnab
         /**
          * Extension to match.
          */
-        private String extension;
+        private final String extension;
         /**
          * Filter's description.
          */
-        private String description;
+        private final String description;
 
         /**
          * Creates a new extension file filter that will match files with the specified extension.

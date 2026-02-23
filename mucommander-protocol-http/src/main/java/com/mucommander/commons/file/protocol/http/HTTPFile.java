@@ -82,14 +82,14 @@ public class HTTPFile extends ProtocolFile {
     private static final Logger LOGGER = LoggerFactory.getLogger(HTTPFile.class);
 
     /** java.net.URL corresponding to this */
-    private URL url;
+    private final URL url;
 
     /** Contains the attributes of the remote HTTP resource. Contains default values until the file has been resolved */
-    private SimpleFileAttributes attributes;
+    private final SimpleFileAttributes attributes;
 
     /** True if the file should be resolved on the remote HTTP server to fetch attribute values, false if these are
      * guessed. */
-    private boolean resolve;
+    private final boolean resolve;
 
     /** True if file has been resolved on the remote HTTP server, either successfully or unsuccessfully */
     private boolean fileResolved;
@@ -728,7 +728,7 @@ public class HTTPFile extends ProtocolFile {
         private final static int CHUNK_SIZE = 1024;
 
         /** Length of the HTTP resource */
-        private long length;
+        private final long length;
 
 
         private HTTPRandomAccessInputStream() throws IOException {

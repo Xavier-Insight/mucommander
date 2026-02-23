@@ -26,7 +26,7 @@ import java.util.Vector;
  */
 
 public class PrefixFilter {
-    private String prefix;
+    private final String prefix;
 
     private PrefixFilter(String prefix) {
         this.prefix = prefix!=null ? prefix.toLowerCase() : null;

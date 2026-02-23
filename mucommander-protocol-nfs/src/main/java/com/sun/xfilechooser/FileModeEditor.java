@@ -51,7 +51,7 @@ import javax.swing.JFileChooser;
 public class FileModeEditor extends PropertyEditorSupport 
 {
     /* For I18N */
-    private static ResourceBundle rb =
+    private static final ResourceBundle rb =
 	ResourceBundle.getBundle("com.sun.xfilechooser.EditorResource"/*NOI18N*/); 
     /* Valid Selection File modes */
     int[] fileModeValues = {JFileChooser.FILES_ONLY,

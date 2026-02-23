@@ -39,7 +39,7 @@ public class PrintableFileTableTabFactory implements TabFactory<FileTableTab, Fi
 	 */
 	private class PrintableFileTableTab extends FileTableTab {
 
-		private FileTableTab tab;
+		private final FileTableTab tab;
 		
 		private PrintableFileTableTab(FileTableTab tab) {
 			this.tab = tab;

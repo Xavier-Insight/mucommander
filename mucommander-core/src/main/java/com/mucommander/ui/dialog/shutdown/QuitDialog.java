@@ -43,7 +43,7 @@ import java.util.Arrays;
 public class QuitDialog extends QuestionDialog {
 
     /** True when quit confirmation button has been pressed by the user */
-    private boolean quitConfirmed;
+    private final boolean quitConfirmed;
 
     private enum QuitDialogAction implements DialogAction {
 

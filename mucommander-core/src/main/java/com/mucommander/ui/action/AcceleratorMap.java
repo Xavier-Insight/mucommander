@@ -41,7 +41,7 @@ public class AcceleratorMap {
 	}
     
     // Maps KeyStrokes to MuAction id and accelerator type (PRIMARY_ACCELERATOR/ALTERNATIVE_ACCELERATOR) pair.
-	private static Map<KeyStroke, List<Pair<ActionId, AcceleratorType>>> map = new HashMap<>();
+	private static final Map<KeyStroke, List<Pair<ActionId, AcceleratorType>>> map = new HashMap<>();
 
 	/**
 	 * Register KeyStroke to MuAction as primary accelerator.

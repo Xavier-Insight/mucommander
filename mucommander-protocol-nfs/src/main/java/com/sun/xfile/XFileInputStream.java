@@ -50,7 +50,7 @@ public class XFileInputStream extends InputStream {
     /**
      * File Accessor that implements the underlying filesystem
      */
-    private XFileAccessor xfa;
+    private final XFileAccessor xfa;
 
 
     /**

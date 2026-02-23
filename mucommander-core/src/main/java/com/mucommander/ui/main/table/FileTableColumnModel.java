@@ -51,17 +51,17 @@ public class FileTableColumnModel implements TableColumnModel, PropertyChangeLis
     // - Instance fields -----------------------------------------------------------------
     // -----------------------------------------------------------------------------------
     /** All registered listeners. */
-    private WeakHashMap<TableColumnModelListener, ?> listeners  = new WeakHashMap<>();
+    private final WeakHashMap<TableColumnModelListener, ?> listeners  = new WeakHashMap<>();
     /** Cache for the table's total width. */
-    private int                                      widthCache = CACHE_OUT_OF_DATE;
+    private       int                                      widthCache = CACHE_OUT_OF_DATE;
     /** All available columns. */
-    private List<TableColumn>                        columns    = new Vector<>(Column.values().length);
+    private final List<TableColumn> columns    = new Vector<>(Column.values().length);
     /** Enabled state of each column. */
-    private boolean[]     enabled = new boolean[Column.values().length];
+    private final boolean[]         enabled    = new boolean[Column.values().length];
     /** Visibility state of each column. */
-    private boolean[]     visibility = new boolean[Column.values().length];
+    private final boolean[]         visibility = new boolean[Column.values().length];
     /** Cache for the number of available columns. */
-    private int           countCache;
+    private       int       countCache;
     /** Whether the column sizes were set already. */
     private boolean       columnSizesSet;
 
@@ -558,7 +558,7 @@ public class FileTableColumnModel implements TableColumnModel, PropertyChangeLis
         // - Instance fields -------------------------------------------------------------
         // -------------------------------------------------------------------------------
         /** Defines the columns order. */
-        private FileTableConfiguration conf;
+        private final FileTableConfiguration conf;
 
 
 

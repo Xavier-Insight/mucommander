@@ -43,13 +43,13 @@ import java.util.WeakHashMap;
 public class SizeChooser extends JPanel {
 
     /** Allows to enter a value in multiple of the current unit */
-    private JSpinner valueSpinner;
+    private final JSpinner valueSpinner;
 
     /** Allows to select the size/speed unit */
-    private JComboBox<String> unitComboBox;
+    private final JComboBox<String> unitComboBox;
 
     /** Contains all registered listeners, stored as weak references */
-    private WeakHashMap<ChangeListener, ?> listeners = new WeakHashMap<>();
+    private final WeakHashMap<ChangeListener, ?> listeners = new WeakHashMap<>();
 
     /** Maximum value allowed by the spinner */
     private final static int MAX_SPINNER_VALUE = Integer.MAX_VALUE;

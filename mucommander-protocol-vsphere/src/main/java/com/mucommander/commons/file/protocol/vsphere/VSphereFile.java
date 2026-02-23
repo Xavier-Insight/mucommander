@@ -706,10 +706,10 @@ public class VSphereFile extends ProtocolFile implements
 	 */
 	public class VSphereOutputStream extends FileOutputStream {
 
-		private ManagedObjectReference fileManager;
-		private VsphereConnHandler connHandler;
-		private String fileName;
-		private File tmpFile;
+		private final ManagedObjectReference fileManager;
+		private       VsphereConnHandler     connHandler;
+		private final String             fileName;
+		private final File               tmpFile;
 
 		public VSphereOutputStream(VsphereConnHandler connHandler,
 				ManagedObjectReference fileManager, ManagedObjectReference vm,

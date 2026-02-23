@@ -68,7 +68,7 @@ public class ZipOutputStream extends OutputStream implements ZipConstants {
     protected byte[] deflaterBuf;
 
     /** List of zip entries written so far */
-    private Vector<ZipEntry> entries = new Vector<>();
+    private final Vector<ZipEntry> entries = new Vector<>();
 
     /** Count the bytes written to out */
     private long written = 0;
@@ -77,7 +77,7 @@ public class ZipOutputStream extends OutputStream implements ZipConstants {
     private String encoding = UTF_8;
 
     /** Holds byte buffer instance used to convert short and longs, avoids creating lots of small arrays */
-    private ZipBuffer zipBuffer = new ZipBuffer();
+    private final ZipBuffer zipBuffer = new ZipBuffer();
 
     /** 0 (zero) as ZipShort */
     private static final byte[] SHORT_0 = ZipShort.getBytes(0);
@@ -112,7 +112,7 @@ public class ZipOutputStream extends OutputStream implements ZipConstants {
     /**
      * Is the underlying stream a RandomAccessOutputStream? Avoids excessive instanceof comparisons.
      */
-    private boolean hasRandomAccess;
+    private final boolean hasRandomAccess;
 
 
     /**

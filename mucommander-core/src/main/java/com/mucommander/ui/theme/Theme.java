@@ -38,7 +38,7 @@ public class Theme extends ThemeData {
 
     // - Theme listeners -----------------------------------------------------------------
     // -----------------------------------------------------------------------------------
-    private static WeakHashMap<ThemeListener, ?> listeners = new WeakHashMap<>();
+    private static final WeakHashMap<ThemeListener, ?> listeners = new WeakHashMap<>();
 
 
     

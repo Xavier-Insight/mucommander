@@ -64,7 +64,7 @@ public abstract class QuickSearch<T> extends KeyAdapter implements Runnable, Con
     /** Icon that is used to indicate in the status bar that quick search has found a match */
     protected final static String QUICK_SEARCH_OK_ICON = "quick_search_ok.png";
     
-    private JComponent component;
+    private final JComponent component;
     
     protected QuickSearch(JComponent component) {
     	this.component = component;

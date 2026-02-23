@@ -662,7 +662,7 @@ class MechInfo {
     private Class _V30FDA16;    //class implementing ctxt
     
     //class variables
-    private static Properties M_oidAlias;    //oid <-> alias mapping
+    private static final Properties M_oidAlias;    //oid <-> alias mapping
     
     static {
         M_oidAlias = new Properties();
@@ -708,7 +708,7 @@ class MechTable {
     
 
     //private table storing the mapping
-    private static Hashtable M_table;
+    private static final Hashtable M_table;
     
     static {
         M_table = new Hashtable(13);

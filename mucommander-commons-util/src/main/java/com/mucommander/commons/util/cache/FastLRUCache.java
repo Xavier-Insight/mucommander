@@ -39,7 +39,7 @@ import java.util.Map;
 public class FastLRUCache<K, V> extends LRUCache<K,V> {
 
     /** Cache key->value/expirationDate map */
-    private LinkedHashMap<K, Object[]> cacheMap;
+    private final LinkedHashMap<K, Object[]> cacheMap;
 
     /** Timestamp of last expired items purge */
     private long lastExpiredPurge;

@@ -81,7 +81,7 @@ public class CredUnix extends Cred {
     static final int AUTH_RES_FAKE = 1;
     static final int AUTH_RES_FAIL = 2;
 
-    private Xdr cr = new Xdr(64);
+    private final Xdr cr = new Xdr(64);
 
     /**
      * Constructor creates an instance of

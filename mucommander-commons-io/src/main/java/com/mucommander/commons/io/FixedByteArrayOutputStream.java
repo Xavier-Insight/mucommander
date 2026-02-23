@@ -35,8 +35,8 @@ import java.io.OutputStream;
  */
 public class FixedByteArrayOutputStream extends OutputStream {
 
-    private byte[] bytes;
-    private int offset;
+    private final byte[] bytes;
+    private       int    offset;
 
     public FixedByteArrayOutputStream(byte[] bytes) {
         this(bytes, 0);

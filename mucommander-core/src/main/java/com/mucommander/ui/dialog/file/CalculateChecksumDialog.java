@@ -64,13 +64,13 @@ import com.mucommander.ui.text.FilePathField;
  */
 public class CalculateChecksumDialog extends JobDialog implements ActionListener, ItemListener {
 
-    private JComboBox<String> algorithmComboBox;
-    private JRadioButton specificLocationRadioButton;
-    private JTextField specificLocationTextField;
-    private JButton okButton;
+    private final JComboBox<String> algorithmComboBox;
+    private final JRadioButton      specificLocationRadioButton;
+    private final JTextField        specificLocationTextField;
+    private final JButton      okButton;
 
     /** An instance of all MessageDigest implementations */
-    private MessageDigest[] messageDigests;
+    private final MessageDigest[] messageDigests;
 
     /** Default checksum algorithm (most commonly used) */
     private final static String DEFAULT_ALGORITHM = "MD5";

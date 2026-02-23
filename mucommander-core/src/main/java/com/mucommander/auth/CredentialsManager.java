@@ -61,11 +61,11 @@ public class CredentialsManager {
 	private static final Logger LOGGER = LoggerFactory.getLogger(CredentialsManager.class);
 	
     /** Contains volatile CredentialsMapping instances, lost when the application terminates */
-    private static List<CredentialsMapping> volatileCredentialMappings = new Vector<>();
+    private static final List<CredentialsMapping> volatileCredentialMappings = new Vector<>();
 
     /** Contains persistent CredentialsMapping instances, stored to an XML file when the application
      * terminates, and loaded the next time the application is started */
-    private static AlteredVector<CredentialsMapping> persistentCredentialMappings = new AlteredVector<>();
+    private static final AlteredVector<CredentialsMapping> persistentCredentialMappings = new AlteredVector<>();
 
     /** Singleton CredentialsManagerAuthenticator instance */
     private final static Authenticator AUTHENTICATOR = new CredentialsManagerAuthenticator();
@@ -85,7 +85,7 @@ public class CredentialsManager {
 
     /** Create a singleton instance, needs to be referenced so that it's not garbage collected (AlteredVector
       * stores VectorChangeListener as weak references) */
-    private static CredentialsManager singleton = new CredentialsManager();
+    private static final CredentialsManager singleton = new CredentialsManager();
 
     static {
         // Listen to changes made to the persistent entries vector.

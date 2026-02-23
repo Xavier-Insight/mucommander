@@ -52,7 +52,7 @@ public class XFileOutputStream extends OutputStream {
     /*
      * File Accessor that implements the underlying filesystem
      */
-    private XFileAccessor xfa;
+    private final XFileAccessor xfa;
 
 
     /**

@@ -73,7 +73,7 @@ public class ZipFile implements ZipConstants {
     private static final Logger LOGGER = LoggerFactory.getLogger(ZipFile.class);
 
     /** The underlying archive file */
-    private AbstractFile file;
+    private final AbstractFile file;
 
     /** The currently opened RandomAccessInputStream to the zip file (may be null) */
     private RandomAccessInputStream rais;
@@ -82,10 +82,10 @@ public class ZipFile implements ZipConstants {
     private RandomAccessOutputStream raos;
 
     /** Contains ZipEntry instances corresponding to the archive's entries, in the order they were found in the archive. */
-    private Vector<ZipEntry> entries = new Vector<>();
+    private final Vector<ZipEntry> entries = new Vector<>();
 
     /** Maps entry paths to corresponding ZipEntry instances */
-    private Hashtable<String, ZipEntry> nameMap = new Hashtable<>();
+    private final Hashtable<String, ZipEntry> nameMap = new Hashtable<>();
 
     /** Global zip file comment */
     private String comment;
@@ -97,7 +97,7 @@ public class ZipFile implements ZipConstants {
     private String defaultEncoding;
 
     /** Holds byte buffer instance used to convert short and longs, avoids creating lots of small arrays */
-    private ZipBuffer zipBuffer = new ZipBuffer();
+    private final ZipBuffer zipBuffer = new ZipBuffer();
 
     
     /**

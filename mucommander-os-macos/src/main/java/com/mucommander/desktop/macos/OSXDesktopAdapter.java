@@ -97,11 +97,11 @@ public class OSXDesktopAdapter extends DefaultDesktopAdapter {
     // cached values
     private String dutiCmdPath;
 
-    private Map<String, String> utiForExt = createSizeLimitedMap(200);
+    private final Map<String, String> utiForExt = createSizeLimitedMap(200);
 
-    private Map<String, List<String>> bundleIdsForUti = createSizeLimitedMap(100);
+    private final Map<String, List<String>> bundleIdsForUti = createSizeLimitedMap(100);
 
-    private Map<String, Pair<String, String>> appPathsForBundleId = createSizeLimitedMap(100);
+    private final Map<String, Pair<String, String>> appPathsForBundleId = createSizeLimitedMap(100);
     // /cached values
 
     /** The key of the comment attribute in file metadata */

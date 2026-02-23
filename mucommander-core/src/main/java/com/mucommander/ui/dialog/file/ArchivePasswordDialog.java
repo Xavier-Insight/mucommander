@@ -40,9 +40,9 @@ import com.mucommander.ui.main.MainFrame;
 
 public class ArchivePasswordDialog extends FocusDialog implements ActionListener, DialogResult {
 
-    private JTextField passwordField;
+    private final JTextField passwordField;
 
-    private JButton okButton;
+    private final JButton okButton;
 
     private String password;
 

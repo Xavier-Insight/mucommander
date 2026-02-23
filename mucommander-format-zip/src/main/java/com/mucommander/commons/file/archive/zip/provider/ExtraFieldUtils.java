@@ -38,7 +38,7 @@ public class ExtraFieldUtils {
     /**
      * Static registry of known extra fields.
      */
-    private static Hashtable<ZipShort, Class<? extends ZipExtraField>> implementations;
+    private static final Hashtable<ZipShort, Class<? extends ZipExtraField>> implementations;
 
     static {
         implementations = new Hashtable<>();

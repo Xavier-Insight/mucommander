@@ -29,7 +29,7 @@ import java.util.Vector;
  */
 
 public class SystemVariablesService implements CompletionService {
-    private String[] cachedKeyNames;
+    private final String[] cachedKeyNames;
 
     public SystemVariablesService() {
         Set<String> keys = System.getenv().keySet();

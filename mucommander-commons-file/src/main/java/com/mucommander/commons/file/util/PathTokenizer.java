@@ -57,19 +57,19 @@ import java.util.Vector;
 public class PathTokenizer implements Enumeration<String> {
 
     /** Separator characters */
-    private String separators;
+    private final String separators;
 
     /** True if this PathTokenizer tokenizes the path in reverse order, from right to left. */
-    private boolean reverseOrder;
+    private final boolean reverseOrder;
 
     /** Path tokens: separators and filenames. */
-    private String[] tokens;
+    private final String[] tokens;
     /** Current index in the token array. */
-    private int currentIndex;
+    private       int      currentIndex;
     /** Path part that has been tokenized. */
-    private StringBuffer currentPath;
+    private final StringBuffer currentPath;
     /** Last separators token. */ 
-    private String lastSeparator;
+    private       String       lastSeparator;
 
     /** Default separator characters. */
     public final static String DEFAULT_SEPARATORS = "/\\";

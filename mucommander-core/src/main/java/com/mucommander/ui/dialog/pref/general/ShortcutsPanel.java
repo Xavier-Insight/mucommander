@@ -257,9 +257,9 @@ public class ShortcutsPanel extends PreferencesPanel {
     }
 
     class TooltipBar extends JLabel {
-        private String lastActionTooltipShown;
-        private String DEFAULT_MESSAGE;
-        private static final int MESSAGE_SHOWING_TIME = 3000;
+        private              String lastActionTooltipShown;
+        private final        String DEFAULT_MESSAGE;
+        private static final int    MESSAGE_SHOWING_TIME = 3000;
         private MessageRemoverThread currentRemoverThread;
 
         public TooltipBar() {

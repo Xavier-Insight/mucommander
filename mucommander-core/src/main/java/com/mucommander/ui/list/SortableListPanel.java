@@ -38,7 +38,7 @@ import com.mucommander.ui.button.ArrowButton;
  */
 public class SortableListPanel<E> extends JPanel {
 
-    private DynamicList<E> dynamicList;
+    private final DynamicList<E> dynamicList;
 
 
     /**

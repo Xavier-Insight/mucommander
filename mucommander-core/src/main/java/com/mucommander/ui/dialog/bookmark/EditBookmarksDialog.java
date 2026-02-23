@@ -59,19 +59,19 @@ import java.awt.event.ActionListener;
  */
 public class EditBookmarksDialog extends FocusDialog implements ActionListener, ListSelectionListener, DocumentListener {
 
-    private MainFrame mainFrame;
+    private final MainFrame mainFrame;
 
-    private JButton newButton;
-    private JButton duplicateButton;
-    private JButton removeButton;
-    private JButton goToButton;
-    private JButton closeButton;
+    private final JButton newButton;
+    private final JButton duplicateButton;
+    private final JButton removeButton;
+    private final JButton goToButton;
+    private final JButton closeButton;
 
-    private JTextField nameField;
-    private JTextField locationField;
+    private final JTextField nameField;
+    private final JTextField locationField;
 
-    private AlteredVector<Bookmark> bookmarks;
-    private DynamicList<Bookmark> bookmarkList;
+    private final AlteredVector<Bookmark> bookmarks;
+    private final DynamicList<Bookmark>   bookmarkList;
 
     private int currentListIndex;
     private Bookmark currentBookmarkSave;

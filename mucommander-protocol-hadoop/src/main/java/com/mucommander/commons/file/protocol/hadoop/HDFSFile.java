@@ -43,7 +43,7 @@ public class HDFSFile extends HadoopFile {
     private static String DEFAULT_USERNAME;
 
     /** Default group */
-    private static String DEFAULT_GROUP;
+    private static final String DEFAULT_GROUP;
 
     /** Default file permissions */
     private final static FilePermissions DEFAULT_PERMISSIONS = new SimpleFilePermissions(

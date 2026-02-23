@@ -724,7 +724,7 @@ public class ThemeData {
     // - Listeners -----------------------------------------------------------------------------------------------------
     // -----------------------------------------------------------------------------------------------------------------
     /** Listeners on the default font and colors. */
-    private static WeakHashMap<ThemeListener, ?> listeners = new WeakHashMap<>();
+    private static final WeakHashMap<ThemeListener, ?> listeners = new WeakHashMap<>();
 
 
 

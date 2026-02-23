@@ -42,9 +42,9 @@ import com.mucommander.ui.main.FolderPanel;
 */
 public class FileTableTabHeader extends JPanel implements ActionListener {
 	
-	private FolderPanel folderPanel;
+	private final FolderPanel folderPanel;
 	
-	private JLabel lockedIcon;
+	private final JLabel lockedIcon;
 
 	private static final String CLOSE_ICON_NAME = "close.png";
     private static final String CLOSE_ROLLOVER_ICON_NAME = "close_rollover.png";

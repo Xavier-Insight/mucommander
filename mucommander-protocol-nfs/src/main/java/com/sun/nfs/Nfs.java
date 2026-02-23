@@ -70,8 +70,8 @@ public abstract class Nfs {
     Buffer[] bufferList;
     long cacheTime;		// Time when object was cached
     int rsize, wsize;
-    private Object wbLock = new Object(); // write-behind semaphore lock
-    static Hashtable cacheNfs = new Hashtable();
+    private final Object    wbLock   = new Object(); // write-behind semaphore lock
+    static        Hashtable cacheNfs = new Hashtable();
 
     // Some of the filetypes we're dealing with.
 

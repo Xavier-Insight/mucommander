@@ -48,9 +48,9 @@ import com.mucommander.ui.text.KeyStrokeUtils;
 public class KeyboardShortcutChooser extends JPanel implements ItemListener, ComboBoxListener, FocusListener, KeyListener {
 	private static final Logger LOGGER = LoggerFactory.getLogger(KeyboardShortcutChooser.class);
 	
-    private JTextField textField;
-    private JCheckBox[] modifierCheckBoxes;
-    private SaneComboBox keyComboBox;
+    private final JTextField  textField;
+    private final JCheckBox[] modifierCheckBoxes;
+    private final SaneComboBox keyComboBox;
 
     private KeyStroke currentKeyStroke;
 
@@ -58,7 +58,7 @@ public class KeyboardShortcutChooser extends JPanel implements ItemListener, Com
     private boolean updatingComboBox;
     private boolean updatingCheckBoxes;
 
-    private String noneString = "<"+Translator.get("none")+">";
+    private final String noneString = "<"+Translator.get("none")+">";
 
     private final static int[] KEY_CHOICES = new int[] {
         KeyEvent.VK_ESCAPE, KeyEvent.VK_TAB, KeyEvent.VK_DELETE, KeyEvent.VK_BACK_SPACE, KeyEvent.VK_ENTER,
@@ -283,8 +283,8 @@ public class KeyboardShortcutChooser extends JPanel implements ItemListener, Com
 
     private static class KeyChoice {
 
-        private int keyValue;
-        private String keyLabel;
+        private final int    keyValue;
+        private final String keyLabel;
 
         private KeyChoice(int choiceValue, String choiceLabel) {
             this.keyValue = choiceValue;

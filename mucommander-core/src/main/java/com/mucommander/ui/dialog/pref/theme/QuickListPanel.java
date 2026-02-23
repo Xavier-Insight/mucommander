@@ -57,7 +57,7 @@ public class QuickListPanel extends ThemeEditorPanel implements PropertyChangeLi
 	private JPanel quickListPreviewPanel;
 	
 	/** The header of the sample quick list */
-    private QuickListHeaderItem header = new QuickListHeaderItem(Translator.get("sample_text"));
+    private final QuickListHeaderItem header = new QuickListHeaderItem(Translator.get("sample_text"));
 
     /** The items of the sample quick list */
     private final static String[] sampleData;
@@ -73,7 +73,7 @@ public class QuickListPanel extends ThemeEditorPanel implements PropertyChangeLi
     }
 
     /** The list of items of the sample quick list */
-    private QuickListDataList<String> list = new QuickListDataListWithIcons<>(sampleData) {
+    private final QuickListDataList<String> list = new QuickListDataListWithIcons<>(sampleData) {
 
 		{
 			for (KeyListener listener : getKeyListeners())

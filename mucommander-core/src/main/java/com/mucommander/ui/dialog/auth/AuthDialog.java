@@ -68,26 +68,26 @@ public class AuthDialog extends FocusDialog implements ActionListener, EditableC
     // Identical to SMBProtocolProvider.PROPERTY_SMB_USE_LEGACY
     public static final String PROPERTY_SMB_USE_LEGACY = "useLegacy";
 
-    private JButton okButton;
-    private JButton cancelButton;
+    private final JButton okButton;
+    private final JButton cancelButton;
 
     private JRadioButton guestRadioButton;
     private JRadioButton userRadioButton;
 
-    private JTextField loginField;
-    private EditableComboBox loginComboBox;
+    private final JTextField       loginField;
+    private       EditableComboBox loginComboBox;
 
-    private JPasswordField passwordField;
+    private final JPasswordField passwordField;
 
-    private JCheckBox saveCredentialsCheckBox;
-    private JCheckBox useLegacyCheckbox;
+    private final JCheckBox saveCredentialsCheckBox;
+    private       JCheckBox useLegacyCheckbox;
 
     private CredentialsMapping selectedCredentialsMapping;
     private boolean guestCredentialsSelected;
 
-    private FileURL fileURL;
+    private final FileURL fileURL;
 
-    private CredentialsMapping[] credentialsMappings;
+    private final CredentialsMapping[] credentialsMappings;
 
     // Dialog size constraints
     private final static Dimension MINIMUM_DIALOG_DIMENSION = new Dimension(320,0);

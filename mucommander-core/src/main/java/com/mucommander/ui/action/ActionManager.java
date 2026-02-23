@@ -62,10 +62,10 @@ public class ActionManager {
     private static final Logger LOGGER = LoggerFactory.getLogger(ActionManager.class);
 
     /** MuAction id -> factory map */
-    private static Map<ActionId, ActionFactory> actionFactories = new ConcurrentHashMap<>();
+    private static final Map<ActionId, ActionFactory> actionFactories = new ConcurrentHashMap<>();
 
     /** MainFrame -> MuAction map */
-    private static WeakHashMap<MainFrame, Map<ActionParameters, ActionAndIdPair>> mainFrameActionsMap = new WeakHashMap<>();
+    private static final WeakHashMap<MainFrame, Map<ActionParameters, ActionAndIdPair>> mainFrameActionsMap = new WeakHashMap<>();
 
     /** Pattern to resolve the action ID from action class path */
     private final static Pattern pattern = Pattern.compile(".*\\.(.*)?Action");
@@ -523,8 +523,8 @@ public class ActionManager {
      *  Helper class to represent a pair of instance and id of MuAction.
      */
     private static class ActionAndIdPair {
-        private MuAction action;
-        private ActionId id;
+        private final MuAction action;
+        private final ActionId id;
 
         public ActionAndIdPair(MuAction action, ActionId id) {
             this.action = action;

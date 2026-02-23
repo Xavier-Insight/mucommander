@@ -26,7 +26,7 @@ package com.mucommander.commons.file.filter;
 public class AbstractContainsFilter extends AbstractStringCriterionFilter {
 
     /** The string to look for in criterion values */
-    private String s;
+    private final String s;
 
     /**
      * Creates a new <code>AbstractContainsFilter</code> using the specified generator and string, and operating in the

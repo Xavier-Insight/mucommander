@@ -204,7 +204,7 @@ public abstract class XFileSystemView extends FileSystemView {
  */
 class UnixXFileSystemView extends XFileSystemView {
     /* For I18N */
-    private static ResourceBundle rb =
+    private static final ResourceBundle rb =
 	ResourceBundle.getBundle("com.sun.xfilechooser.EditorResource"/*NOI18N*/); 
 
     /**
@@ -267,7 +267,7 @@ class UnixXFileSystemView extends XFileSystemView {
  */
 class WindowsXFileSystemView extends XFileSystemView {
     /* For I18N */
-    private static ResourceBundle rb =
+    private static final ResourceBundle rb =
 	ResourceBundle.getBundle("com.sun.xfilechooser.EditorResource"/*NOI18N*/); 
 
     /**
@@ -358,7 +358,7 @@ class WindowsXFileSystemView extends XFileSystemView {
  */
 class GenericXFileSystemView extends XFileSystemView {
     /* For I18N */
-    private static ResourceBundle rb =
+    private static final ResourceBundle rb =
 	ResourceBundle.getBundle("com.sun.xfilechooser.EditorResource"/*NOI18N*/); 
 
     /**

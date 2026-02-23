@@ -47,8 +47,8 @@ import com.mucommander.ui.main.MainFrame;
  */
 public class BonjourMenu extends JMenu implements MenuListener {
 
-    private MainFrame mainFrame;
-    private FolderPanel folderPanel;
+    private final MainFrame   mainFrame;
+    private final FolderPanel folderPanel;
 
     /**
      * Creates a new instance of <code>BonjourMenu</code>.

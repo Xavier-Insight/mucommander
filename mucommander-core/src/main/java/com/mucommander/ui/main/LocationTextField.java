@@ -60,7 +60,7 @@ import com.mucommander.ui.theme.ThemeManager;
 
 public class LocationTextField extends ProgressTextField implements LocationListener, FocusListener, ThemeListener {
     /** FolderPanel this text field is displayed in */
-    private FolderPanel folderPanel;
+    private final FolderPanel folderPanel;
 
     /** True while a folder is being changed after a path was entered in the location field and validated by the user */
     private boolean folderChangeInitiatedByLocationField;

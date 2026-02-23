@@ -55,15 +55,16 @@ public class OneDrivePanel extends ServerPanel implements ActionListener {
     // TODO: find a better way to load icons from plugins
     private static final String MICROSOFT_ACCOUNT_ICON_PATH = "/images/file/microsoft.png";
 
-    private JTextField accountAlias;
-    private JButton signingIn;
-    private JLabel displayName;
-    private JLabel emailAddress;
-    private JLabel signingInInstructions;
-    private LoginPhase loginPhase;
-    private ImageIcon microsoftIcon;
-    private JLabel accountLabel, accountAliasLabel;
-    private OneDriveClient client;
+    private final JTextField accountAlias;
+    private final JButton    signingIn;
+    private final JLabel     displayName;
+    private final JLabel  emailAddress;
+    private final JLabel signingInInstructions;
+    private       LoginPhase loginPhase;
+    private final ImageIcon  microsoftIcon;
+    private final JLabel     accountLabel;
+	private final JLabel    accountAliasLabel;
+    private       OneDriveClient client;
 
     private String token;
 

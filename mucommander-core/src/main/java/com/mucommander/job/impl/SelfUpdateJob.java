@@ -59,16 +59,16 @@ public class SelfUpdateJob extends CopyJob {
 	private static final Logger LOGGER = LoggerFactory.getLogger(SelfUpdateJob.class);
 	
     /** The JAR file to be updated */
-    private AbstractFile destJar;
+    private final AbstractFile destJar;
 
     /** The temporary file where the remote JAR file is copied, before being moved to its final location */
-    private AbstractFile tempDestJar;
+    private final AbstractFile tempDestJar;
 
     /** The ClassLoader to use for loading all classes from the JAR file */
-    private ClassLoader classLoader;
+    private final ClassLoader classLoader;
 
     /** Filters directories and class files, used for loading classes from the JAR file */
-    private OrFileFilter directoryOrClassFileFilter;
+    private final OrFileFilter directoryOrClassFileFilter;
 
     /** True if classes haven't been loaded yet */ 
     private boolean loadingClasses =  true;

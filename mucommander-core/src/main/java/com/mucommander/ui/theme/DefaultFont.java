@@ -36,7 +36,7 @@ public abstract class DefaultFont {
     // - Instance fields -----------------------------------------------------------------------------------------------
     // -----------------------------------------------------------------------------------------------------------------
     /** List of fonts linked to this default value. */
-    private Vector<Integer> linkedFonts;
+    private final Vector<Integer> linkedFonts;
 
 
 

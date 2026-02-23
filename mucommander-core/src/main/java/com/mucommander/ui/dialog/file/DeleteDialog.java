@@ -61,10 +61,10 @@ public class DeleteDialog extends JobDialog implements ItemListener, ActionListe
     private JCheckBox moveToTrashCheckBox;
 
     /** Informs the user about the consequences of deleting files, based on the current 'Move to trash' choice */
-    private InformationPane informationPane;
+    private final InformationPane informationPane;
 
     /** The button that confirms deletion */
-    private JButton deleteButton;
+    private final JButton deleteButton;
 
     /** Dialog size constraints */
     private final static Dimension MINIMUM_DIALOG_DIMENSION = new Dimension(360,0);

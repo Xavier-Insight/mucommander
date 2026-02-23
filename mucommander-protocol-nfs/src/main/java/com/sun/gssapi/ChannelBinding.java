@@ -63,8 +63,8 @@ import java.net.InetAddress;
 
 public class ChannelBinding {
 
-    private InetAddress m_initiator;
-    private InetAddress m_acceptor;
+    private final InetAddress m_initiator;
+    private final InetAddress m_acceptor;
   
     private  byte[] m_appData;
 

@@ -61,10 +61,10 @@ class FilePreviewPanel extends JScrollPane implements PropertyChangeListener {
 
     // - Instance fields -----------------------------------------------------------------
     // -----------------------------------------------------------------------------------
-    private ThemeData    data;
-    private boolean      isActive;
-    private PreviewTable table;
-    private ImageIcon    symlinkIcon;
+    private final ThemeData data;
+    private final boolean   isActive;
+    private       PreviewTable table;
+    private final ImageIcon    symlinkIcon;
 
 
 
@@ -134,8 +134,8 @@ class FilePreviewPanel extends JScrollPane implements PropertyChangeListener {
      * @author Nicolas Rinaudo
      */
     private class PreviewTable extends JTable {
-        private PreviewCellRenderer cellRenderer;
-        private Dimension           preferredSize;
+        private final PreviewCellRenderer cellRenderer;
+        private       Dimension           preferredSize;
 
         /**
          * Creates a new preview table.
@@ -246,8 +246,8 @@ class FilePreviewPanel extends JScrollPane implements PropertyChangeListener {
      * @author Nicolas Rinaudo
      */
     private class PreviewCellRenderer implements TableCellRenderer {
-        private CellLabel label;
-        private CellLabel icon;
+        private final CellLabel label;
+        private final CellLabel icon;
 
         /**
          * Creates a new preview cell renderer.

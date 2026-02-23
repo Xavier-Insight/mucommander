@@ -60,13 +60,13 @@ public class CheckVersionDialog extends QuestionDialog implements Runnable {
     /**
      * Parent MainFrame instance
      */
-    private MainFrame mainFrame;
+    private final MainFrame mainFrame;
 
     /**
      * true if the user manually clicked on the 'Check for updates' menu item,
      * false if the update check was automatically triggered on startup
      */
-    private boolean userInitiated;
+    private final boolean userInitiated;
 
     /**
      * Dialog's width has to be at least 240

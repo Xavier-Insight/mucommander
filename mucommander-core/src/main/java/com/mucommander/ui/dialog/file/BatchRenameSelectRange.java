@@ -42,10 +42,10 @@ import com.mucommander.text.Translator;
  */
 public class BatchRenameSelectRange extends FocusDialog implements ActionListener {
 
-    private JTextField edtRange;
-    private JButton btnCancel;
-    private JButton btnOK;
-    private String range;
+    private final JTextField edtRange;
+    private final JButton    btnCancel;
+    private final JButton    btnOK;
+    private       String  range;
     
 
     public BatchRenameSelectRange(Dialog owner, String filename) {

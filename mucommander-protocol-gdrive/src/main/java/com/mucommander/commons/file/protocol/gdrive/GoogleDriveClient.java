@@ -50,7 +50,7 @@ import java.util.List;
  */
 public class GoogleDriveClient implements Closeable {
 
-    private static Logger log = LoggerFactory.getLogger(GoogleDriveClient.class);
+    private static final Logger log = LoggerFactory.getLogger(GoogleDriveClient.class);
 
     private static final String APPLICATION_NAME = "muCommander";
 

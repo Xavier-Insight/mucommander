@@ -30,7 +30,7 @@ import java.util.Vector;
  */
 public abstract class AbstractCriterionFilter<C> extends AbstractFileFilter implements CriterionFilter<C> {
 
-    private CriterionValueGenerator<C> generator;
+    private final CriterionValueGenerator<C> generator;
 
     /**
      * Creates a new <code>AbstractCriterionFilter</code> using the specified {@link CriterionValueGenerator} and operating

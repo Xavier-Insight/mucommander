@@ -56,7 +56,7 @@ public class SendMailJob extends TransferFileJob {
     /**
      * Error dialog title
      */
-    private String errorDialogTitle;
+    private final String errorDialogTitle;
 
 
     /////////////////////
@@ -66,33 +66,33 @@ public class SendMailJob extends TransferFileJob {
     /**
      * Email recipient(s)
      */
-    private String recipientString;
+    private       String recipientString;
     /**
      * Email subject
      */
-    private String mailSubject;
+    private final String mailSubject;
     /**
      * Email body
      */
-    private String mailBody;
+    private final String mailBody;
 
     /**
      * SMTP server
      */
-    private String mailServer;
+    private final String mailServer;
     /**
      * From name
      */
-    private String fromName;
+    private final String fromName;
     /**
      * From address
      */
-    private String fromAddress;
+    private final String fromAddress;
 
     /**
      * Email boundary string, delimits the end of the body and attachments
      */
-    private String boundary;
+    private final String boundary;
 
     /**
      * Connection variable

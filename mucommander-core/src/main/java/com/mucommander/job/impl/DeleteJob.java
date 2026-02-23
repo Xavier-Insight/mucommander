@@ -53,10 +53,10 @@ public class DeleteJob extends FileJob {
 	private static final Logger LOGGER = LoggerFactory.getLogger(DeleteJob.class);
 	
     /** Title used for error dialogs */
-    private String errorDialogTitle;
+    private final String errorDialogTitle;
 
     /** If true, files will be moved to the trash instead of being deleted */
-    private boolean moveToTrash;
+    private final boolean moveToTrash;
 
     /** Trash instance, null if moveToTrash is false */
     private AbstractTrash trash;

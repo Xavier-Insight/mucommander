@@ -79,10 +79,10 @@ public class SplitFileDialog extends JobDialog implements ActionListener {
     	DECIMAL_FORMAT.setGroupingUsed(false);
     }
     
-    private String MSG_AUTO = Translator.get("split_file_dialog.auto");
+    private final String MSG_AUTO = Translator.get("split_file_dialog.auto");
 
-    private AbstractFile file;
-	private AbstractFile destFolder;
+    private final AbstractFile file;
+	private final AbstractFile destFolder;
 
     private JButton btnSplit;
     private JButton btnClose;

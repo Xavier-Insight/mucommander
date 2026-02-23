@@ -53,7 +53,7 @@ class CommandBarReader extends CommandBarIO {
     private KeyStroke modifier;
 
     /** Parsed file */
-    private AbstractFile file;
+    private final AbstractFile file;
 
     /**
      * Starts parsing the XML description file.

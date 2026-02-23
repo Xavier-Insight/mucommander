@@ -53,7 +53,7 @@ import com.mucommander.commons.file.UnsupportedFileOperationException;
  */
 public class OvirtDisk extends OvirtFile {
 
-    private static Logger log = LoggerFactory.getLogger(OvirtDisk.class);
+    private static final Logger log = LoggerFactory.getLogger(OvirtDisk.class);
 
     private Disk disk;
     private DiskContainer properties;

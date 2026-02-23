@@ -31,7 +31,7 @@ import java.io.IOException;
 public class BufferedRandomOutputStream extends RandomAccessOutputStream {
 
     /** The underlying random access output stream */
-    private RandomAccessOutputStream raos;
+    private final RandomAccessOutputStream raos;
 
     /** The buffer where written bytes are accumulated before being sent to the underlying output stream */
     private byte[] buffer;

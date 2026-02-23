@@ -61,7 +61,7 @@ final class NotificationPopup {
     private final JPanel panel;
     private final JLabel labelText;
 
-    private CustomPopupMenuListener popupListener;
+    private final CustomPopupMenuListener popupListener;
 
     /**
      * Used to re-center notification when we know panel width.

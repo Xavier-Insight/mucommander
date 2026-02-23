@@ -51,7 +51,7 @@ class ActionKeymapReader extends ActionKeymapIO {
     private Map<ActionId, KeyStroke> alternateActionsReadKeymap;
 
     /** Parsed file */
-    private AbstractFile file;
+    private final AbstractFile file;
     
     /**
      * Loads the action file: loads the one contained in the JAR file first, and then the user's one.

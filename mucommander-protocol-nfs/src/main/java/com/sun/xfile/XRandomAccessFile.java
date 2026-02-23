@@ -52,12 +52,12 @@ public class XRandomAccessFile implements DataOutput, DataInput {
 
     private long fp;	/* File Pointer */
 
-    private boolean readOnly;
+    private final boolean readOnly;
 
     /*
      * File Accessor that implements the underlying filesystem
      */
-    private XFileAccessor xfa;
+    private final XFileAccessor xfa;
 
 
     /**

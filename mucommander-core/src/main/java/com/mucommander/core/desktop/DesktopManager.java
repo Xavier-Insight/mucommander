@@ -142,11 +142,11 @@ public final class DesktopManager {
     // - Class fields ----------------------------------------------------
     // -------------------------------------------------------------------
     /** All available desktop operations. */
-    private static Map<String, List<DesktopOperation>>[] operations;
+    private static final Map<String, List<DesktopOperation>>[] operations;
     /** All known desktops. */
-    private static Vector<DesktopAdapter>                desktops;
+    private static final Vector<DesktopAdapter>                desktops;
     /** Current desktop. */
-    private static DesktopAdapter                        desktop;
+    private static       DesktopAdapter                        desktop;
     /** Object used to create instances of {@link AbstractTrash}. */
     private static TrashProvider                         trashProvider;
     /** Default action shortcuts, never null (see {@link DefaultDesktopAdapter#getActionShortcuts()} */

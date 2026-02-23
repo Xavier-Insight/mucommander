@@ -31,11 +31,11 @@ import java.io.InputStream;
  */
 class IsoEntryInputStream extends InputStream {
 
-    private RandomAccessInputStream rais;
-    private int pos;
-    private long size;
-    private int sectSize;
-    private boolean audio;
+    private final RandomAccessInputStream rais;
+    private       int                     pos;
+    private final long size;
+    private final int  sectSize;
+    private final boolean audio;
 
     IsoEntryInputStream(RandomAccessInputStream rais, IsoArchiveEntry entry) throws IOException {
         this.rais = rais;

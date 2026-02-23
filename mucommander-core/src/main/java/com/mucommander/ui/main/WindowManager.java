@@ -63,7 +63,7 @@ public class WindowManager implements WindowListener, ConfigurationListener {
     // The following constants are used to compute the proper position of a new MainFrame.
 
     /** MainFrame (main muCommander window) instances */
-    private List<MainFrame> mainFrames;
+    private final List<MainFrame> mainFrames;
     
     /** MainFrame currently being used (that has focus),
      * or last frame to have been used if muCommander doesn't have focus */	

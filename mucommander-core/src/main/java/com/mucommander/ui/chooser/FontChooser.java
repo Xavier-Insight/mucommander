@@ -60,9 +60,9 @@ public class FontChooser extends YBoxPanel implements ActionListener {
     /** Used to display a preview of the current font. */
     private JLabel      preview;
     /** Currently selected font. */
-    private Font        font;
+    private       Font                           font;
     /** List of all registered state change listeners. */
-    private WeakHashMap<ChangeListener, ?> listeners = new WeakHashMap<>();
+    private final WeakHashMap<ChangeListener, ?> listeners = new WeakHashMap<>();
 
 
     // - Initialisation ---------------------------------------------------------

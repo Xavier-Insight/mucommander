@@ -290,6 +290,6 @@ public class Oid {
     
     
     //Instance variables
-    private Vector m_v;
+    private final Vector m_v;
     byte [] m_der;
 }

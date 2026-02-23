@@ -29,13 +29,13 @@ import java.nio.charset.Charset;
 public class BOM {
 
     /** the byte sequence that identifies this BOM */
-    private byte[] sig;
+    private final byte[] sig;
 
     /** the character encoding denoted by this BOM */
-    private String encoding;
+    private final String encoding;
 
     /** character encoding aliases that map onto this BOM */
-    private String[] aliases;
+    private final String[] aliases;
 
     /**
      * Creates a new <code>BOM</code> instance identified by the given signature and denoting the specified

@@ -44,10 +44,10 @@ class KdeTrash extends QueuedTrash {
 	private static final Logger LOGGER = LoggerFactory.getLogger(KdeTrash.class);
 	
     /** Command that allows to interact with the trash */
-    private String baseCommand;
+    private final String baseCommand;
 
     /** Command that allows to interact with the trash */
-    private String trashEmptyCommand;
+    private final String trashEmptyCommand;
 
     /**
      * Creates a new <code>KDETrash</code> instance using the specified command for interacting with the trash.

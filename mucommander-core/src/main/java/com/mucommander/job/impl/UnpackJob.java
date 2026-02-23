@@ -385,9 +385,9 @@ public class UnpackJob extends AbstractCopyJob {
 
     private static class ProxiedEntryFile extends ProxyFile {
 
-        private ArchiveEntry entry;
-        private AbstractArchiveFile archiveFile;
-        private ArchiveEntryIterator iterator;
+        private final ArchiveEntry        entry;
+        private final AbstractArchiveFile archiveFile;
+        private final ArchiveEntryIterator iterator;
 
         public ProxiedEntryFile(AbstractFile entryFile, ArchiveEntry entry, AbstractArchiveFile archiveFile, ArchiveEntryIterator iterator) {
             super(entryFile);

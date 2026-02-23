@@ -56,11 +56,11 @@ import com.mucommander.ui.main.MainFrame;
 public class SplitFileJob extends AbstractCopyJob {
     private static final Logger LOGGER = LoggerFactory.getLogger(SplitFileJob.class);
 
-    private long partSize;
-    private AbstractFile sourceFile;
-    private InputStream origFileStream;
-    private AbstractFile destFolder;
-    private long sizeLeft;
+    private final long         partSize;
+    private final AbstractFile sourceFile;
+    private       InputStream  origFileStream;
+    private final AbstractFile destFolder;
+    private       long         sizeLeft;
     private boolean recalculateCRC;
 
 
@@ -70,7 +70,7 @@ public class SplitFileJob extends AbstractCopyJob {
      * @author Mariusz Jakubowski
      */
     private static class DummyDestFile extends DummyFile {
-        private long size;
+        private final long size;
 
         public DummyDestFile(FileURL url, long size) {
             super(url);

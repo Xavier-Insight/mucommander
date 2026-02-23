@@ -51,7 +51,7 @@ public class GlobalLocationHistory implements LocationListener {
 	private final static GlobalLocationHistory instance = new GlobalLocationHistory();
 	
 	/** Locations that were accessed */
-	private Set<FileURL> history = new LinkedHashSet<>();
+	private final Set<FileURL> history = new LinkedHashSet<>();
 	
 	/** Maximum number of location that would be saved */
 	private static final int MAX_CAPACITY = 100;

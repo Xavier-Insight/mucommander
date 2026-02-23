@@ -60,10 +60,10 @@ public enum JavaVersion implements ComparableRuntimeProperty {
     private static final Logger LOGGER = LoggerFactory.getLogger(JavaVersion.class);
 
     /** Holds the JavaVersion of the current runtime environment  */
-    private static JavaVersion currentValue;
+    private static final JavaVersion currentValue;
 
     /** Holds the String representation of the current JVM architecture  */
-    private static String currentArchitecture;
+    private static final String currentArchitecture;
 
     /** The String representation of this RuntimeProperty, set at creation time */
     protected final String stringRepresentation;

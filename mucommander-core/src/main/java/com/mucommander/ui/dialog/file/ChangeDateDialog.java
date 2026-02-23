@@ -57,14 +57,14 @@ import com.mucommander.ui.main.MainFrame;
  */
 public class ChangeDateDialog extends JobDialog implements ActionListener, ItemListener {
 
-    private JRadioButton nowRadioButton;
+    private final JRadioButton nowRadioButton;
 
-    private JSpinner dateSpinner;
+    private final JSpinner dateSpinner;
 
-    private JCheckBox recurseDirCheckBox;
+    private final JCheckBox recurseDirCheckBox;
     
-    private JButton okButton;
-    private JButton cancelButton;
+    private final JButton okButton;
+    private final JButton cancelButton;
 
 
     public ChangeDateDialog(MainFrame mainFrame, FileSet files) {

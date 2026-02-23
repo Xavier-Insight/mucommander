@@ -84,7 +84,7 @@ public class DrivePopupButton extends PopupButton implements BookmarkListener, C
     private static final Logger LOGGER = LoggerFactory.getLogger(DrivePopupButton.class);
 
     /** FolderPanel instance that contains this button */
-    private FolderPanel folderPanel;
+    private final FolderPanel folderPanel;
 
     /** Current volumes */
     private static AbstractFile[] volumes;
@@ -96,7 +96,7 @@ public class DrivePopupButton extends PopupButton implements BookmarkListener, C
     private static Map<AbstractFile, String> extendedNameCache;
 
     /** Caches drive icons */
-    private static Map<AbstractFile, Icon> iconCache = new Hashtable<>();
+    private static final Map<AbstractFile, Icon> iconCache = new Hashtable<>();
 
     /**
      * Filters out volumes from the list based on the exclude regexp defined in the configuration, null if the regexp is
@@ -105,7 +105,7 @@ public class DrivePopupButton extends PopupButton implements BookmarkListener, C
     private static PathFilter volumeFilter;
 
     /** ProtocolPanelProviders that we should make shortcuts for */
-    private static Map<String, ProtocolPanelProvider> schemaToPanelProvider = new HashMap<>();
+    private static final Map<String, ProtocolPanelProvider> schemaToPanelProvider = new HashMap<>();
 
     static {
         if (OsFamily.WINDOWS.isCurrent()) {
@@ -462,8 +462,8 @@ public class DrivePopupButton extends PopupButton implements BookmarkListener, C
      */
     private class RefreshDriveNamesAndIcons extends Thread {
 
-        private JPopupMenu popupMenu;
-        private ArrayList<JMenuItem> items;
+        private final JPopupMenu           popupMenu;
+        private final ArrayList<JMenuItem> items;
 
         public RefreshDriveNamesAndIcons(JPopupMenu popupMenu, ArrayList<JMenuItem> items) {
             super("RefreshDriveNamesAndIcons");
@@ -572,7 +572,7 @@ public class DrivePopupButton extends PopupButton implements BookmarkListener, C
      * This action pops up {@link com.mucommander.ui.dialog.server.ServerConnectDialog} for a specified protocol.
      */
     private class ServerConnectAction extends AbstractAction {
-        private Class<? extends ServerPanel> serverPanelClass;
+        private final Class<? extends ServerPanel> serverPanelClass;
 
         private ServerConnectAction(String label, Class<? extends ServerPanel> serverPanelClass) {
             super(label);

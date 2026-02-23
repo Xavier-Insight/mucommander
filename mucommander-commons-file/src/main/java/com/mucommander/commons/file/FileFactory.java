@@ -96,13 +96,13 @@ public class FileFactory {
     private static final Logger LOGGER = LoggerFactory.getLogger(FileFactory.class);
 
     /** All registered protocol providers. */
-    private static Hashtable<String, ProtocolProvider> protocolProviders = new Hashtable<>();
+    private static final Hashtable<String, ProtocolProvider> protocolProviders = new Hashtable<>();
 
     /** Local file provider to avoid hashtable lookups (faster). */
     private static ProtocolProvider localFileProvider;
 
     /** Vector of registered ArchiveFormatMapping instances */
-    private static Vector<ArchiveFormatProvider> archiveFormatProvidersV = new Vector<>();
+    private static final Vector<ArchiveFormatProvider> archiveFormatProvidersV = new Vector<>();
 
     /** Array of registered FileProtocolMapping instances, for quicker access */
     private static ArchiveFormatProvider[] archiveFormatProviders = new ArchiveFormatProvider[0];

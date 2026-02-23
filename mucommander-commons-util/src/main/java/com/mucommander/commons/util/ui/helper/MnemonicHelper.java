@@ -36,7 +36,7 @@ import javax.swing.JButton;
 public class MnemonicHelper {
 
     /** Current list of previously assigned mnemonics */
-    private List<Character> takenMnemonics;
+    private final List<Character> takenMnemonics;
 
 
     /**

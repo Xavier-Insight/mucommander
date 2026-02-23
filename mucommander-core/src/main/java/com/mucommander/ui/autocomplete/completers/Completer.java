@@ -40,7 +40,7 @@ import com.mucommander.ui.autocomplete.completers.services.CompletionService;
  */
 
 public abstract class Completer {
-    private Set<CompletionService> services;
+    private final Set<CompletionService> services;
 
     public Completer() {
         services = new LinkedHashSet<>();

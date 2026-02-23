@@ -127,7 +127,7 @@ public abstract class QueuedTrash extends AbstractTrash {
      */
     private class MoveToTrashThread extends Thread {
 
-        private Runnable showErrorDialog;
+        private final Runnable showErrorDialog;
 
         private MoveToTrashThread(Runnable showErrorDialog) {
             this.showErrorDialog = showErrorDialog;

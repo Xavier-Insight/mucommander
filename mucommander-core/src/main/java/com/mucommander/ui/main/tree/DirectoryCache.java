@@ -34,13 +34,13 @@ import java.util.Map;
 public class DirectoryCache {
     
     /** a map that holds cached folders */
-    private Map<AbstractFile, CachedDirectory> cache;
+    private final Map<AbstractFile, CachedDirectory> cache;
     
     /** Comparator used to sort folders */
-    private FileComparator sort;
+    private final FileComparator sort;
 
     /** A file filter */
-    private FileFilter filter;
+    private final FileFilter filter;
 
     /** Listeners. */
     protected EventListenerList listenerList = new EventListenerList();

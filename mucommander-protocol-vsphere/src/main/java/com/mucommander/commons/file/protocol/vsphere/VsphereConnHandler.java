@@ -34,8 +34,8 @@ import com.vmware.vim25.RuntimeFaultFaultMsg;
  */
 public class VsphereConnHandler extends ConnectionHandler {
 
-	private VSphereClient client;
-	private FileURL location;
+	private       VSphereClient client;
+	private final FileURL       location;
 
 	public VSphereClient getClient() {
 		return client;

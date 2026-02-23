@@ -46,10 +46,10 @@ import com.mucommander.desktop.ActionType;
 public class ActionParameters {
 
     /** Action ID */
-    private ActionId actionId;
+    private final ActionId actionId;
 
     /** Initialization properties, null if there are no initialization properties */
-    private Map<String,Object> properties;
+    private final Map<String,Object> properties;
 
 
     /**

@@ -46,8 +46,8 @@ import com.mucommander.commons.runtime.OsVersion;
 public class UNCFile extends ProtocolFile {
 	private static final Logger LOGGER = LoggerFactory.getLogger(UNCFile.class);
 
-    protected File file;
-    private FilePermissions permissions;
+    protected     File            file;
+    private final FilePermissions permissions;
     
     /** Absolute file path, free of trailing separator */
     protected String absPath;
@@ -553,7 +553,7 @@ public class UNCFile extends ProtocolFile {
      */
     private static class UNCFilePermissions extends IndividualPermissionBits implements FilePermissions {
         
-        private java.io.File file;
+        private final java.io.File file;
 
         // Permissions are limited to the user access type. Executable permission flag is only available under Java 1.6
         // and up.
@@ -612,7 +612,7 @@ public class UNCFile extends ProtocolFile {
      */
     private static class UNCFilenameFilter implements java.io.FilenameFilter {
 
-        private FilenameFilter filter;
+        private final FilenameFilter filter;
 
         private UNCFilenameFilter(FilenameFilter filter) {
             this.filter = filter;

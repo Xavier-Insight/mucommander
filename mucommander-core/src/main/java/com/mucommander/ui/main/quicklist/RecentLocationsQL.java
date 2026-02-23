@@ -38,7 +38,7 @@ import com.mucommander.ui.quicklist.QuickListWithIcons;
  */
 public class RecentLocationsQL extends QuickListWithIcons<RecentLocationsQL.RecentLocation> {
 
-    private FolderPanel folderPanel;
+    private final FolderPanel folderPanel;
 
     public RecentLocationsQL(FolderPanel folderPanel) {
         super(folderPanel,
@@ -69,7 +69,7 @@ public class RecentLocationsQL extends QuickListWithIcons<RecentLocationsQL.Rece
     }
 
     class RecentLocation {
-        private FileURL url;
+        private final FileURL url;
 
         RecentLocation(FileURL url) {
             this.url = url;

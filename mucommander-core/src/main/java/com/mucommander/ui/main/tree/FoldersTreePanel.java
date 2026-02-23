@@ -82,16 +82,16 @@ public class FoldersTreePanel implements TreeSelectionListener,
 	private static final Logger LOGGER = LoggerFactory.getLogger(FoldersTreePanel.class);
 	
     /** Directory tree */
-    private JTree tree;
+    private final JTree tree;
 
     /** Folder panel to which this tree is attached */
-    private FolderPanel folderPanel;
+    private final FolderPanel folderPanel;
 
     /** A model with a directory tree */
-    private FilesTreeModel model;
+    private final FilesTreeModel model;
 
     /** A timer that fires a directory change */
-    private ChangeTimer changeTimer = new ChangeTimer();
+    private final ChangeTimer changeTimer = new ChangeTimer();
 
     private final JPanel panel;
 

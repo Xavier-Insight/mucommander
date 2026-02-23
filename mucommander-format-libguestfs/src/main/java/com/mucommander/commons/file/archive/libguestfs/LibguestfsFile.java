@@ -18,8 +18,8 @@ public class LibguestfsFile {
     private static final Logger LOGGER = LoggerFactory.getLogger(LibguestfsFile.class);
 
     /** Interface to libguestfs-java */
-    private GuestFS guestFS;
-    private List<ArchiveEntry> entries;
+    private final GuestFS            guestFS;
+    private       List<ArchiveEntry> entries;
 
     public LibguestfsFile(AbstractFile file) throws LibGuestFSException {
         guestFS = new GuestFS();

@@ -88,11 +88,11 @@ public class BrowseLocationThread extends ChangeFolderThread {
     private AbstractFile fileToSelect;
     private CredentialsMapping credentialsMapping;
 
-    private MainFrame mainFrame;
-    private FolderPanel folderPanel;
-    private LocationChanger locationChanger;
+    private final MainFrame   mainFrame;
+    private final FolderPanel folderPanel;
+    private final LocationChanger locationChanger;
 
-    private GlobalLocationHistory globalHistory = GlobalLocationHistory.Instance();
+    private final GlobalLocationHistory globalHistory = GlobalLocationHistory.Instance();
 
     private boolean disposed;
 

@@ -66,10 +66,10 @@ public class CommandBarAttributes {
                     null
             };
     /** Default modifier key that triggers the display of alternate actions when pressed */
-    private static KeyStroke DEFAULT_MODIFIER = KeyStroke.getKeyStroke(KeyEvent.VK_SHIFT, 0);
+    private static final KeyStroke  DEFAULT_MODIFIER             = KeyStroke.getKeyStroke(KeyEvent.VK_SHIFT, 0);
 
     /** Contains all registered command-bar attributes listeners, stored as weak references */
-    private static List<CommandBarAttributesListener> listeners = new ArrayList<>();
+    private static final List<CommandBarAttributesListener> listeners = new ArrayList<>();
 
     /**
      * This method restore the default command-bar attributes.

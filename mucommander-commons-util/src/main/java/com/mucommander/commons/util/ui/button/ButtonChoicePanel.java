@@ -55,12 +55,12 @@ public class ButtonChoicePanel extends JPanel implements KeyListener, FocusListe
     private final List<JButton> buttons;
 
     /** RootPane associated with this ButtonChoicePanel */
-    private JRootPane rootPane;
+    private final JRootPane rootPane;
 
     /** Number of columns of the buttons grid */
-    private int nbCols;
+    private final int nbCols;
     /** Number of row of the buttons grid */
-    private int nbRows;
+    private final int nbRows;
 
     /** Current button, i.e. the one that currently has focus */
     private int currentButton;

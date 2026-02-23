@@ -46,7 +46,7 @@ import com.mucommander.commons.io.RandomAccessInputStream;
  */
 public class S3Root extends S3File {
 
-    private SimpleFileAttributes atts;
+    private final SimpleFileAttributes atts;
 
     /** Default permissions for the S3 root */
     private final static FilePermissions DEFAULT_PERMISSIONS = new SimpleFilePermissions(448);   // rwx------

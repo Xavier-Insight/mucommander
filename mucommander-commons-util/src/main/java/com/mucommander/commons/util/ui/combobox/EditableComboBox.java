@@ -54,7 +54,7 @@ public class EditableComboBox extends SaneComboBox {
     private JTextField textField;
 
     /** Contains all registered EditableComboBoxListener instances, stored as weak references */
-    private WeakHashMap<EditableComboBoxListener, Object> listeners = new WeakHashMap<>();
+    private final WeakHashMap<EditableComboBoxListener, Object> listeners = new WeakHashMap<>();
 
     /** Specifies whether the text field's contents is updated when an item is selected in the associated combo box */
     private boolean comboSelectionUpdatesTextField;

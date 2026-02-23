@@ -30,7 +30,7 @@ import com.mucommander.ui.tabs.TabsViewerFactory;
 */
 public class FileTableTabsWithoutHeadersViewerFactory implements TabsViewerFactory<FileTableTab> {
 
-	private FolderPanel folderPanel;
+	private final FolderPanel folderPanel;
 	
 	public FileTableTabsWithoutHeadersViewerFactory(FolderPanel folderPanel) {
 		this.folderPanel = folderPanel;

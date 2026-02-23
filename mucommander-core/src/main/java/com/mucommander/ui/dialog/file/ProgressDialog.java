@@ -522,9 +522,9 @@ public class ProgressDialog extends FocusDialog implements ActionListener, ItemL
 
         private static final int STROKE_WIDTH = 1;
 
-        private java.util.List<Long> samples = new Vector<>(NB_SAMPLES_MAX);
+        private final java.util.List<Long> samples = new Vector<>(NB_SAMPLES_MAX);
 
-        private Stroke lineStroke = new BasicStroke(STROKE_WIDTH);
+        private final Stroke lineStroke = new BasicStroke(STROKE_WIDTH);
 
 
         private SpeedGraph() {

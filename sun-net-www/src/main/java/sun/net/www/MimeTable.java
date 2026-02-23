@@ -36,11 +36,11 @@ import java.util.StringTokenizer;
 @SuppressWarnings("removal")
 public class MimeTable implements FileNameMap {
     /** Keyed by content type, returns MimeEntries */
-    private Hashtable<String, MimeEntry> entries
+    private final Hashtable<String, MimeEntry> entries
         = new Hashtable<>();
 
     /** Keyed by file extension (with the .), returns MimeEntries */
-    private Hashtable<String, MimeEntry> extensionMap
+    private final Hashtable<String, MimeEntry> extensionMap
         = new Hashtable<>();
 
     // Will be reset if in the platform-specific data file

@@ -51,14 +51,14 @@ import com.mucommander.ui.main.MainFrame;
  */
 public class ShowServerConnectionsDialog extends FocusDialog implements ActionListener {
 
-    private MainFrame mainFrame;
+    private final MainFrame mainFrame;
 
-    private JList<String> connectionList;
-    private java.util.List<ConnectionHandler> connections;
+    private final JList<String>                     connectionList;
+    private final java.util.List<ConnectionHandler> connections;
 
-    private JButton disconnectButton;
-    private JButton goToButton;
-    private JButton closeButton;
+    private final JButton disconnectButton;
+    private final JButton goToButton;
+    private final JButton closeButton;
 
     // Dialog's size has to be at least 400x300
     private final static Dimension MINIMUM_DIALOG_DIMENSION = new Dimension(400,300);

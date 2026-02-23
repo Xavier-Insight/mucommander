@@ -501,7 +501,7 @@ public class CommandBarDialog extends CustomizeDialog {
 	private static class TransferableButton implements Transferable {
     	public static DataFlavor buttonFlavor = new DataFlavor(CommandBarButtonForDisplay.class, null);
     	
-    	private JButton button;
+    	private final JButton button;
     	
     	public TransferableButton(JButton button) {
     		this.button = button;

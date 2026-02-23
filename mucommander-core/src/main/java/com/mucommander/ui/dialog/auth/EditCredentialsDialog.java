@@ -61,17 +61,17 @@ import com.mucommander.ui.main.MainFrame;
 public class EditCredentialsDialog extends FocusDialog implements ActionListener, ListSelectionListener {
 	private static final Logger LOGGER = LoggerFactory.getLogger(EditCredentialsDialog.class);
 	
-    private MainFrame mainFrame;
+    private final MainFrame mainFrame;
 
-    private JButton removeButton;
-    private JButton goToButton;
-    private JButton closeButton;
+    private final JButton removeButton;
+    private final JButton goToButton;
+    private final JButton closeButton;
 
-    private JTextField loginField;
-    private JPasswordField passwordField;
+    private final JTextField     loginField;
+    private final JPasswordField passwordField;
 
-    private AlteredVector<CredentialsMapping> credentials;
-    private DynamicList<CredentialsMapping> credentialsList;
+    private final AlteredVector<CredentialsMapping> credentials;
+    private final DynamicList<CredentialsMapping>   credentialsList;
 
     private CredentialsMapping lastSelectedItem;
 

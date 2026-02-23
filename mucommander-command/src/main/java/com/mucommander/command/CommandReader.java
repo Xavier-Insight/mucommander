@@ -44,7 +44,7 @@ public class CommandReader extends DefaultHandler implements CommandsXmlConstant
     // - Instance variables --------------------------------------------------
     // -----------------------------------------------------------------------
     /** Where to send building messages. */
-    private CommandBuilder builder;
+    private final CommandBuilder builder;
 
 
 

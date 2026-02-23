@@ -48,7 +48,7 @@ import com.mucommander.ui.main.MainFrame;
 public class CommandBar extends JPanel {
 
     /** Parent MainFrame instance */
-    private MainFrame mainFrame;
+    private final MainFrame mainFrame;
 
     /** True when modifier key is pressed */
     private boolean modifierDown;

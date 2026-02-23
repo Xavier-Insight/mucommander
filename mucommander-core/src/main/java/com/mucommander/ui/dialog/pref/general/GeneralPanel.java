@@ -64,16 +64,16 @@ import com.mucommander.ui.icon.IconManager;
 class GeneralPanel extends PreferencesPanel implements ItemListener, ActionListener, DocumentListener {
 
     // Language
-    private PrefComboBox<Locale> languageComboBox;
+    private final PrefComboBox<Locale> languageComboBox;
 
     // Date/time format
-    private PrefRadioButton time12RadioButton;
-    private PrefComboBox<String> dateFormatComboBox;
-    private PrefTextField dateSeparatorField;
-    private PrefCheckBox showSecondsCheckBox;
-    private PrefCheckBox showCenturyCheckBox;
-    private JLabel previewLabel;
-    private Date exampleDate;
+    private final PrefRadioButton      time12RadioButton;
+    private final PrefComboBox<String> dateFormatComboBox;
+    private final PrefTextField        dateSeparatorField;
+    private final PrefCheckBox         showSecondsCheckBox;
+    private final PrefCheckBox  showCenturyCheckBox;
+    private final JLabel       previewLabel;
+    private final Date         exampleDate;
 
     private final static String DAY = Translator.get("prefs_dialog.day");
     private final static String MONTH = Translator.get("prefs_dialog.month");

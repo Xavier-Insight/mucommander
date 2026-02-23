@@ -528,8 +528,8 @@ public class ShortcutsTable extends PrefTable implements KeyListener, ListSelect
         // The last KeyStroke that was entered to the field.
         // Before any keystroke is entered, it contains the keystroke appearing in the cell before entering the editing
         // state.
-        private KeyStroke lastKeyStroke;
-        private DescriptionData descriptionData;
+        private       KeyStroke       lastKeyStroke;
+        private final DescriptionData descriptionData;
 
         public RecordingKeyStrokeField(KeyStroke currentKeyStroke, DescriptionData descriptionData) {
             super(Translator.get("shortcuts_table.type_in_a_shortcut"));
@@ -631,7 +631,7 @@ public class ShortcutsTable extends PrefTable implements KeyListener, ListSelect
         UNKNOWN(-1),
         ;
 
-        private int columnIndex;
+        private final int columnIndex;
 
         TableDataColumnEnum(int columnIndex) {
             this.columnIndex = columnIndex;

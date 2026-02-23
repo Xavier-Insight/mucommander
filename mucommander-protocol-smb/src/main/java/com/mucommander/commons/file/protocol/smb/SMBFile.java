@@ -89,8 +89,8 @@ import jcifs.smb.SmbRandomAccessFile;
  public class SMBFile extends ProtocolFile {
     private static final Logger LOGGER = LoggerFactory.getLogger(SMBFile.class);
 
-    private SmbFile file;
-    private FilePermissions permissions;
+    private       SmbFile         file;
+    private final FilePermissions permissions;
 
     private AbstractFile parent;
     private boolean parentValSet;
@@ -566,7 +566,7 @@ import jcifs.smb.SmbRandomAccessFile;
      */
     public static class SMBRandomAccessInputStream extends RandomAccessInputStream {
 
-        private SmbRandomAccessFile raf;
+        private final SmbRandomAccessFile raf;
 
         public SMBRandomAccessInputStream(SmbRandomAccessFile raf) {
             this.raf = raf;
@@ -605,7 +605,7 @@ import jcifs.smb.SmbRandomAccessFile;
      */
     public static class SMBRandomAccessOutputStream extends RandomAccessOutputStream {
 
-        private SmbRandomAccessFile raf;
+        private final SmbRandomAccessFile raf;
 
         public SMBRandomAccessOutputStream(SmbRandomAccessFile raf) {
             this.raf = raf;
@@ -660,7 +660,7 @@ import jcifs.smb.SmbRandomAccessFile;
      */
     private static class SMBFilePermissions extends IndividualPermissionBits implements FilePermissions {
 
-        private SmbFile file;
+        private final SmbFile file;
 
         private final static PermissionBits MASK = new GroupedPermissionBits(384);  // rw------- (300 octal)
 
@@ -699,7 +699,7 @@ import jcifs.smb.SmbRandomAccessFile;
      */
     private static class SMBFilenameFilter implements jcifs.smb.SmbFilenameFilter {
 
-        private FilenameFilter filter;
+        private final FilenameFilter filter;
 
         private SMBFilenameFilter(FilenameFilter filter) {
             this.filter = filter;

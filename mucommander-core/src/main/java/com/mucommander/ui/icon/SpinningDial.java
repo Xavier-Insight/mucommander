@@ -68,13 +68,13 @@ public class SpinningDial extends AnimatedIcon {
     // - Instance fields -----------------------------------------------------------------
     // -----------------------------------------------------------------------------------
     /** Icon's width. */
-    private int     width;
+    private final int width;
     /** Icon's height. */
-    private int     height;
+    private final int height;
     /** All images that compose the spinning dial. */
-    private Image[] frames;
+    private final Image[] frames;
     /** Color used to paint the dial. */
-    private Color   color;
+    private       Color   color;
     /** Width of each stroke. */
     private float   strokeWidth;
 

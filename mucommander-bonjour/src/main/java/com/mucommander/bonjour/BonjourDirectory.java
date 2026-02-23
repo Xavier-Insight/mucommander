@@ -63,7 +63,7 @@ public final class BonjourDirectory implements ServiceListener, ConfigurationLis
     private static boolean starting = false;
 
     /** List of discovered and currently active Bonjour services */
-    private static List<BonjourService> services = new Vector<>();
+    private static final List<BonjourService> services = new Vector<>();
 
     /** Known Bonjour/Zeroconf service types and their corresponding protocol */
     private final static String[][] KNOWN_SERVICE_TYPES = {

@@ -47,7 +47,7 @@ import com.mucommander.ui.main.MainFrame;
 public class CombineFilesDialog extends TransferDestinationDialog {
     private static final Logger LOGGER = LoggerFactory.getLogger(CombineFilesDialog.class);
 
-    private AbstractFile destFolder;
+    private final AbstractFile destFolder;
 
     /**
      * Creates a new combine file dialog.

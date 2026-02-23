@@ -87,26 +87,26 @@ public class FolderPanel implements FocusListener, QuickListContainer, ActiveTab
 	/** The following constants are used to identify the left and right folder panels */
 	public enum FolderPanelType { LEFT, RIGHT }
 
-    private MainFrame  mainFrame;
+    private final MainFrame mainFrame;
 
     private final JPanel panel;
 
-    private LocationManager locationManager = new LocationManager(this);
+    private final LocationManager locationManager = new LocationManager(this);
 
     /*  We're NOT using JComboBox anymore because of its strange behavior:
         it calls actionPerformed() each time an item is highlighted with the arrow (UP/DOWN) keys,
         so there is no way to tell if it's the final selection (ENTER) or not.
     */
     private DrivePopupButton driveButton;
-    private LocationTextField locationTextField;
-    private FileTable fileTable;
-    private FileTableTabs tabs;
-    private FoldersTreePanel foldersTreePanel;
-    private JSplitPane treeSplitPane;
+    private       LocationTextField locationTextField;
+    private final FileTable         fileTable;
+    private final FileTableTabs     tabs;
+    private final FoldersTreePanel foldersTreePanel;
+    private final JSplitPane       treeSplitPane;
 
-    private FileDragSourceListener fileDragSourceListener;
+    private final FileDragSourceListener fileDragSourceListener;
 
-    private LocationChanger locationChanger;
+    private final LocationChanger locationChanger;
 
     /** Is directory tree visible */
     private boolean treeVisible = false;
@@ -115,7 +115,7 @@ public class FolderPanel implements FocusListener, QuickListContainer, ActiveTab
     private int oldTreeWidth = 150;
 
     /** Array of all the existing pop ups for this panel's FileTable **/
-    private Future<QuickList[]> fileTablePopups;
+    private final Future<QuickList[]> fileTablePopups;
 
     /* TODO branch private boolean branchView; */
 

@@ -51,7 +51,7 @@ import com.sun.gssapi.GSSException;
 
 public final class Dummy extends Provider {
 
-	private static String info = "JGSS Dummy Mechanism Provider";
+	private static final String info = "JGSS Dummy Mechanism Provider";
 	
 	public Dummy() {
 
@@ -92,7 +92,7 @@ public final class Dummy extends Provider {
 
 	
 	//private variables
-	private static Oid M_myOid;
+	private static final Oid M_myOid;
 	private static final int M_tokNum = 2;
 
 

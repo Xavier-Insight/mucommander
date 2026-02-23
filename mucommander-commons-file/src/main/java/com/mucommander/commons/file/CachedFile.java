@@ -53,7 +53,7 @@ public class CachedFile extends ProxyFile {
     private static final Logger LOGGER = LoggerFactory.getLogger(CachedFile.class);
 
     /** If true, AbstractFile instances returned by this class will be wrapped into CachedFile instances */
-    private boolean recurseInstances;
+    private final boolean recurseInstances;
 
     ///////////////////
     // Cached values //

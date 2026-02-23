@@ -184,7 +184,7 @@ public class GSSException extends Exception {
     public static final int GAP_TOKEN = 22;
 
 
-    private static String[] messages = {
+    private static final String[] messages = {
         "channel binding mismatch", // BAD_BINDINGS
         "unsupported mechanism requested", // BAD_MECH
         "invalid name provided", // BAD_NAME
@@ -210,8 +210,8 @@ public class GSSException extends Exception {
         "an expected per-message token was not received", //GAP_TOKEN
     };
 
-    private int m_major; // the major code for this exception
-    private int m_minor = 0; // the minor code for this exception
+    private final int m_major; // the major code for this exception
+    private       int m_minor = 0; // the minor code for this exception
     private String m_minorMessage = null; //text string for minor code
 
 

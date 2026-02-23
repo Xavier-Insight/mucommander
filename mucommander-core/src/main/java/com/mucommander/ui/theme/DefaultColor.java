@@ -37,7 +37,7 @@ public abstract class DefaultColor {
     // - Instance fields -----------------------------------------------------------------------------------------------
     // -----------------------------------------------------------------------------------------------------------------
     /** List of colors linked to this default value. */
-    private java.util.List<Integer> linkedColors;
+    private final java.util.List<Integer> linkedColors;
 
 
 

@@ -63,11 +63,11 @@ import com.mucommander.ui.theme.ThemeListener;
 public class FileTableCellRenderer implements TableCellRenderer, ThemeListener {
 	private static final Logger LOGGER = LoggerFactory.getLogger(FileTableCellRenderer.class);
 	
-    private FileTable table;
-    private FileTableModel tableModel;
+    private final FileTable      table;
+    private final FileTableModel tableModel;
 
     /** Custom JLabel that render specific column cells */
-    private CellLabel[] cellLabels = new CellLabel[Column.values().length];
+    private final CellLabel[] cellLabels = new CellLabel[Column.values().length];
 
 
     public FileTableCellRenderer(FileTable table) {

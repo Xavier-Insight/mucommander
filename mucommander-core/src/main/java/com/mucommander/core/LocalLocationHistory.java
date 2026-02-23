@@ -44,13 +44,13 @@ public class LocalLocationHistory {
 	private final static int HISTORY_CAPACITY = 100;
 
 	/** List of visited locations, ordered by last visit date */
-	private List<FileURL> history = new Vector<>(HISTORY_CAPACITY + 1);
+	private final List<FileURL> history = new Vector<>(HISTORY_CAPACITY + 1);
 
 	/** Index of current folder in history */
 	private int historyIndex = -1;
 
 	/** FolderPanel which is being monitored */
-	private FolderPanel folderPanel; 
+	private final FolderPanel folderPanel;
 
 	/** Last folder which can be recalled on next startup */
 	private String lastRecallableFolder;

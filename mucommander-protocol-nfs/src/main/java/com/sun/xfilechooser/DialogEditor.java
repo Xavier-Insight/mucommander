@@ -50,7 +50,7 @@ import java.util.ResourceBundle;
 public class DialogEditor extends PropertyEditorSupport {
 
     /* For I18N */
-    private static ResourceBundle rb =
+    private static final ResourceBundle rb =
 	ResourceBundle.getBundle("com.sun.xfilechooser.EditorResource"/*NOI18N*/); 
     int[] dialogValues = {JFileChooser.OPEN_DIALOG, JFileChooser.SAVE_DIALOG,
 			  JFileChooser.CUSTOM_DIALOG};

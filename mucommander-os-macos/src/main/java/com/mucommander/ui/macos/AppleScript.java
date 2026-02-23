@@ -152,8 +152,8 @@ public class AppleScript {
      */
     private static class ScriptOutputListener implements ProcessListener {
 
-        private StringBuilder outputBuffer;
-        private String outputEncoding;
+        private final StringBuilder outputBuffer;
+        private final String        outputEncoding;
 
         private ScriptOutputListener(StringBuilder outputBuffer, String outputEncoding) {
             this.outputBuffer = outputBuffer;

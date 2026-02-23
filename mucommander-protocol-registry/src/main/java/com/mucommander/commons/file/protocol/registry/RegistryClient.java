@@ -35,7 +35,7 @@ import org.json.simple.JSONObject;
  */
 public class RegistryClient implements Closeable {
 
-	private static Logger log = LoggerFactory.getLogger(RegistryClient.class);
+	private static final Logger log = LoggerFactory.getLogger(RegistryClient.class);
 
 	private final Credentials creds;
 	private final String imageUrl;

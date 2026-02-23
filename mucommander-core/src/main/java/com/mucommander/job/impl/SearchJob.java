@@ -46,9 +46,9 @@ public class SearchJob extends FileJob implements com.mucommander.commons.file.p
     private static final Logger LOGGER = LoggerFactory.getLogger(SearchJob.class);
 
     private Predicate<AbstractFile> fileMatcher;
-    private Predicate<AbstractFile> lsFilter;
-    private List<AbstractFile> findings;
-    private SearchListener listener;
+    private       Predicate<AbstractFile> lsFilter;
+    private final List<AbstractFile>      findings;
+    private       SearchListener          listener;
     private int depth, threads;
 
     private ExecutorService customThreadPool;

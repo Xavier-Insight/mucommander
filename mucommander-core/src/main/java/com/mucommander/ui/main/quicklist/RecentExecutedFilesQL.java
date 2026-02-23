@@ -43,9 +43,9 @@ import com.mucommander.ui.quicklist.QuickListWithIcons;
  */
 
 public class RecentExecutedFilesQL extends QuickListWithIcons<AbstractFile> {
-	private static LinkedList<AbstractFile> list = new LinkedList<>();
-	private static final int MAX_NUM_OF_ELEMENTS = 10;
-	private FolderPanel folderPanel;
+	private static final LinkedList<AbstractFile> list                = new LinkedList<>();
+	private static final int                      MAX_NUM_OF_ELEMENTS = 10;
+	private final        FolderPanel folderPanel;
 	
 	public RecentExecutedFilesQL(FolderPanel folderPanel) {
 		super(folderPanel, ActionProperties.getActionLabel(ActionType.ShowRecentExecutedFilesQL), Translator.get("recent_executed_files_quick_list.empty_message"));

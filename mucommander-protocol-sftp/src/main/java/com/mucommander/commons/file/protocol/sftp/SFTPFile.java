@@ -84,10 +84,10 @@ public class SFTPFile extends ProtocolFile {
     private static final Logger LOGGER = LoggerFactory.getLogger(SFTPFile.class);
 
     /** The absolute path to the file on the remote server, not the full URL */
-    private String absPath;
+    private final String absPath;
 
     /** Contains the file attribute values */
-    private SFTPFileAttributes fileAttributes;
+    private final SFTPFileAttributes fileAttributes;
 
     /** Cached parent file instance, null if not created yet or if this file has no parent */
     private AbstractFile parent;
@@ -634,7 +634,7 @@ public class SFTPFile extends ProtocolFile {
     static class SFTPFileAttributes extends SyncedFileAttributes {
 
         /** The URL pointing to the file whose attributes are cached by this class */
-        private FileURL url;
+        private final FileURL url;
 
         /** True if the file is a symlink */
         private boolean isSymlink;

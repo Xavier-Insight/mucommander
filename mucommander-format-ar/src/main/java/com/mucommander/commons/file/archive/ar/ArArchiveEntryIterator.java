@@ -35,7 +35,7 @@ class ArArchiveEntryIterator implements ArchiveEntryIterator {
     private static final Logger LOGGER = LoggerFactory.getLogger(ArArchiveEntryIterator.class);
 
     /** InputStream to the the archive file */
-    private InputStream in;
+    private final InputStream in;
 
     /** The current entry, where the stream is currently positionned */
     private ArchiveEntry currentEntry;

@@ -51,7 +51,7 @@ import java.io.IOException;
  */
 public class BeanXFile extends File {
 
-    private XFile beanXF;
+    private final XFile beanXF;
     
     /*
      * BeanXFile constructors which mirror the File I/O constructors.

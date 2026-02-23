@@ -114,8 +114,8 @@ import java.util.regex.Pattern;
 public class LocalFile extends ProtocolFile {
     private static final Logger LOGGER = LoggerFactory.getLogger(LocalFile.class);
 
-    final protected File file;
-    private FilePermissions permissions;
+    final protected File            file;
+    private final   FilePermissions permissions;
 
     /** Absolute file path, free of trailing separator */
     final protected String absPath;
@@ -148,11 +148,11 @@ public class LocalFile extends ProtocolFile {
     // read-write) and as such can't be changed.
 
     /** Changeable permissions mask on OSes other than Windows */
-    private static PermissionBits CHANGEABLE_PERMISSIONS_NON_WINDOWS = new GroupedPermissionBits(448); // rwx------ (700
+    private static final PermissionBits CHANGEABLE_PERMISSIONS_NON_WINDOWS = new GroupedPermissionBits(448); // rwx------ (700
                                                                                                        // octal)
 
     /** Changeable permissions mask on Windows OS (any version) */
-    private static PermissionBits CHANGEABLE_PERMISSIONS_WINDOWS = new GroupedPermissionBits(128); // -w------- (200
+    private static final PermissionBits CHANGEABLE_PERMISSIONS_WINDOWS = new GroupedPermissionBits(128); // -w------- (200
                                                                                                    // octal)
 
     /** Bit mask that indicates which permissions can be changed */
@@ -1203,7 +1203,7 @@ public class LocalFile extends ProtocolFile {
      */
     private static class LocalFilePermissions extends IndividualPermissionBits implements FilePermissions {
 
-        private java.io.File file;
+        private final java.io.File file;
 
         // Permissions are limited to the user access type. Executable permission flag is only available under Java 1.6
         // and up.
@@ -1266,7 +1266,7 @@ public class LocalFile extends ProtocolFile {
      */
     private static class LocalFilenameFilter implements java.io.FilenameFilter {
 
-        private FilenameFilter filter;
+        private final FilenameFilter filter;
 
         private LocalFilenameFilter(FilenameFilter filter) {
             this.filter = filter;

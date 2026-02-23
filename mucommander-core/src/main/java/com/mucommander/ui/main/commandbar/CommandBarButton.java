@@ -43,7 +43,7 @@ import com.mucommander.ui.main.MainFrame;
 public class CommandBarButton extends NonFocusableButton implements ConfigurationListener {
 
 	/** ID of the button's action */
-	private ActionId actionId;
+	private final ActionId actionId;
 	
 	/** Current icon scale factor */
     // The math.max(1.0f, ...) part is to workaround a bug which cause(d) this value to be set to 0.0 in the configuration file.

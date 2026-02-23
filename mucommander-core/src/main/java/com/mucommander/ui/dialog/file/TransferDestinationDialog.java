@@ -71,18 +71,18 @@ import static com.mucommander.ui.dialog.file.FileCollisionDialog.FileCollisionAc
 public abstract class TransferDestinationDialog extends JobDialog implements ActionListener, DocumentListener {
 	private static final Logger LOGGER = LoggerFactory.getLogger(TransferDestinationDialog.class);
 	
-    protected String errorDialogTitle;
-    private boolean enableTransferOptions;
+    protected     String  errorDialogTitle;
+    private final boolean enableTransferOptions;
 
-    private YBoxPanel mainPanel;
-    private FilePathField pathField;
-    private SpinningDial spinningDial;
+    private final YBoxPanel     mainPanel;
+    private final FilePathField pathField;
+    private final SpinningDial  spinningDial;
 
     private JComboBox<Enum<?>> fileExistsActionComboBox;
     private JCheckBox skipErrorsCheckBox;
-    private JCheckBox verifyIntegrityCheckBox;
-    private JCheckBox runInBackgroundCheckBox;
-    private JButton okButton;
+    private       JCheckBox verifyIntegrityCheckBox;
+    private final JCheckBox runInBackgroundCheckBox;
+    private final JButton   okButton;
 
     /** Background thread that is currently being executed, <code>null</code> if there is none. */
     private Thread thread;
