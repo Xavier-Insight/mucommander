@@ -609,7 +609,7 @@ public class StatusBar extends JPanel {
             if(freeSpace==-1 || totalSpace==-1)
                 setToolTipText(null);       // Removes any previous tooltip
             else
-                setToolTipText(""+(int)(100*freeSpace/(float)totalSpace)+"%");
+                setToolTipText((int)(100*freeSpace/(float)totalSpace)+"%");
 
             repaint();
         }

@@ -477,7 +477,7 @@ public class XFile {
             Class cl = loadClass(url.getProtocol(), suffix,
                         cachedExtensionAccessors);
     
-            Constructor con = cl.getConstructor(new Class[]{this.getClass()});
+            Constructor con = cl.getConstructor(this.getClass());
             return (XFileExtensionAccessor)con.newInstance(new Object[]{this});
     
         } catch (Exception e) {
@@ -966,7 +966,7 @@ public class XFile {
      *          <code>false</code> otherwise.
      */
     public boolean equals(Object obj) {
-	if ((obj == null) || (! (obj instanceof XFile)))
+	if ((!(obj instanceof XFile)))
             return false;
 
 	return url.toString().equals(((XFile)obj).getURL().toString());

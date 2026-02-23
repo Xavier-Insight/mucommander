@@ -28,6 +28,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Vector;
@@ -192,7 +193,7 @@ public class ThemeManager {
                 names.add(getThemeName(file));
             return names.iterator();
         }
-        catch(Exception e) {return new Vector<String>().iterator();}
+        catch(Exception e) {return Collections.emptyIterator();}
     }
 
     public static Vector<Theme> getAvailableThemes() {

@@ -147,7 +147,7 @@ class IsoEntryInputStream extends InputStream {
     @Override
     public int available() throws IOException {
         int available = (int) (size - pos);
-        return available < 0 ? 0 : available;
+        return Math.max(available, 0);
     }
 
     @Override

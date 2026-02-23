@@ -158,7 +158,7 @@ public class Oid {
         StringBuilder sb = new StringBuilder(50);
     
         if (m_v.size() < 1)
-            return new String("");
+            return "";
             
         for (Enumeration e = m_v.elements(); e.hasMoreElements();) {
             sb.append(e.nextElement().toString());
@@ -183,7 +183,7 @@ public class Oid {
         StringBuilder sb = new StringBuilder(50);
         
         if (m_v.size() < 1)
-            return new String("");
+            return "";
             
         sb.append("{ ");
         for (Enumeration e = m_v.elements(); e.hasMoreElements(); ) {

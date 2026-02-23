@@ -283,8 +283,8 @@ public class muCommander {
         configProps.putIfAbsent(AutoProcessor.AUTO_DEPLOY_ACTION_PROPERTY, "install, start");
         configProps.putIfAbsent("felix.log.level", "1");
 
-        configProps.computeIfAbsent("org.osgi.framework.system.packages.extra",
-                key -> "sun.net.www," +
+        configProps.putIfAbsent("org.osgi.framework.system.packages.extra",
+                        "sun.net.www," +
                         "sun.misc," +
                         "sun.plugin.protocol," + //optional
                         "com.sun.java.browser.net," + //optional
@@ -374,7 +374,7 @@ public class muCommander {
         // If enabled, register a shutdown hook to make sure the framework is
         // cleanly shutdown when the VM exits.
         String enableHook = configProps.get(SHUTDOWN_HOOK_PROP);
-        if ((enableHook == null) || !"false".equalsIgnoreCase(enableHook)) {
+        if (!"false".equalsIgnoreCase(enableHook)) {
             Runtime.getRuntime().addShutdownHook(new Thread("Felix Shutdown Hook") {
                 public void run() {
                     try {

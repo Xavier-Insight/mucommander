@@ -74,11 +74,11 @@ public class CustomDateFormat implements ConfigurationListener {
         int pos1 = 0;
         int pos2;
         while((pos2=dateFormatString.indexOf('/', pos1))>-1) {
-            dateFormatStringSB.append(dateFormatString.substring(pos1, pos2));
+            dateFormatStringSB.append(dateFormatString, pos1, pos2);
             dateFormatStringSB.append(separator);
             pos1 = pos2+1;
         }
-        dateFormatStringSB.append(dateFormatString.substring(pos1, dateFormatString.length()));
+        dateFormatStringSB.append(dateFormatString, pos1, dateFormatString.length());
         return dateFormatStringSB.toString();
     }
 

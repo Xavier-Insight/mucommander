@@ -215,7 +215,7 @@ public class FileTableCellRenderer implements TableCellRenderer, ThemeListener {
             // - set a tooltip text that will display the whole text when mouse is over the label
             if (table.getColumnModel().getColumn(columnIndex).getWidth() < label.getPreferredSize().getWidth()) {
                 String leftText = text.substring(0, text.length()/2);
-                String rightText = text.substring(text.length()/2, text.length());
+                String rightText = text.substring(text.length()/2);
 
                 while(table.getColumnModel().getColumn(columnIndex).getWidth() < label.getPreferredSize().getWidth()
                     && leftText.length()>0 && rightText.length()>0) {    // Prevents against going out of bounds
@@ -223,7 +223,7 @@ public class FileTableCellRenderer implements TableCellRenderer, ThemeListener {
                     if(leftText.length()>rightText.length())
                         leftText = leftText.substring(0, leftText.length()-1);
                     else
-                        rightText = rightText.substring(1, rightText.length());
+                        rightText = rightText.substring(1);
 
                     label.setText(leftText+"..."+rightText);
                 }

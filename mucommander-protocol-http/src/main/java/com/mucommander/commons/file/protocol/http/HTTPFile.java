@@ -107,7 +107,7 @@ public class HTTPFile extends ProtocolFile {
                                             System.getProperty("os.version") + " " + System.getProperty("os.arch") + ")";
 
     /** Matches HTML and XHTML attribute key/value pairs, where the value is surrounded by Single Quotes */
-    private final static Pattern linkAttributePatternSQ = Pattern.compile("(src|href|SRC|HREF)=\\\'.*?\\\'");
+    private final static Pattern linkAttributePatternSQ = Pattern.compile("(src|href|SRC|HREF)=\\'.*?\\'");
 
     /** Matches HTML and XHTML attribute key/value pairs, where the value is surrounded by Double Quotes */
     private final static Pattern linkAttributePatternDQ = Pattern.compile("(src|href|SRC|HREF)=\\\".*?\\\"");
@@ -573,7 +573,7 @@ public class HTTPFile extends ProtocolFile {
             String enc = null;
             // Extract content type information (if any)
             if((pos=contentType.indexOf("charset"))!=-1 || (pos=contentType.indexOf("Charset"))!=-1) {
-                StringTokenizer st = new StringTokenizer(contentType.substring(pos, contentType.length()));
+                StringTokenizer st = new StringTokenizer(contentType.substring(pos));
                 enc = st.nextToken();
             }
 			

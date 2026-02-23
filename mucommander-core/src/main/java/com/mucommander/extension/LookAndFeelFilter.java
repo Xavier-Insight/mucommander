@@ -67,7 +67,7 @@ public class LookAndFeelFilter implements ClassFilter {
             return false;
 
         // Makes sure the class has a public, no-arg constructor.
-        try {constructor = c.getDeclaredConstructor(new Class[0]);}
+        try {constructor = c.getDeclaredConstructor();}
         catch(Exception e) {return false;}
         if(!Modifier.isPublic(constructor.getModifiers()))
             return false;

@@ -106,7 +106,7 @@ public class ProcessRunner {
 
 		// Starts the process.
 		process = new LocalProcess(tokens, (java.io.File) currentDirectory.getUnderlyingFileObject());
-		if (!Arrays.stream(UNMONITORED_COMMANDS).anyMatch(tokens[0]::equals))
+		if (!Arrays.asList(UNMONITORED_COMMANDS).contains(tokens[0]))
 			process.startMonitoring(listener, encoding);
 
 		return process;

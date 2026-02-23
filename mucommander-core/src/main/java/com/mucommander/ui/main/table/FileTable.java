@@ -1131,10 +1131,7 @@ public class FileTable extends JTable implements MouseListener, MouseMotionListe
         if (width == 0)
             return;
         TableColumn nameColumn = getColumnModel().getColumn(convertColumnIndexToView(Column.NAME.ordinal()));
-        if (nameColumn.getWidth() + width >= RESERVED_NAME_COLUMN_WIDTH)
-            nameColumn.setWidth(nameColumn.getWidth() + width);
-        else
-            nameColumn.setWidth(RESERVED_NAME_COLUMN_WIDTH);
+		nameColumn.setWidth(Math.max(nameColumn.getWidth() + width, RESERVED_NAME_COLUMN_WIDTH));
     }
 
     /**

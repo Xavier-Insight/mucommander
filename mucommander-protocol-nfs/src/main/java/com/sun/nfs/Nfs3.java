@@ -200,7 +200,7 @@ class Nfs3 extends Nfs {
     long length() throws IOException {
         checkAttr();
 
-        return maxLength > attr.size ? maxLength : attr.size;
+        return Math.max(maxLength, attr.size);
     }
 
     /*

@@ -238,7 +238,7 @@ public class DefaultOverlayable extends JPanel implements SwingConstants, Compon
         }
         if (index == -1) {
             _overlayComponents.add(component);
-            add(component, getComponentCount() - 1); // add it before the the actual component
+            add(component, getComponentCount() - 1); // add it before the actual component
         }
         else {
             _overlayComponents.add(index, component);

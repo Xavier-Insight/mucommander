@@ -152,7 +152,7 @@ public class ZipArchiveFile extends AbstractRWArchiveFile {
             try (InputStream in = zipFile.getInputStream(entry)) {
                 final ByteArrayOutputStream output = new ByteArrayOutputStream();
                 StreamUtils.copyStream(in, output);
-                return new String(output.toByteArray(), UTF_8);
+                return output.toString(UTF_8);
             } catch(Exception e) {
                 LOGGER.warn("found a symlink entry '{}' but failed to get its target", entry.getName());
                 LOGGER.debug("exception: ", e);
@@ -228,7 +228,7 @@ public class ZipArchiveFile extends AbstractRWArchiveFile {
             // Optimization: first check if the specified iterator is positionned at the beginning of the entry.
             // This will typically be the case if an iterator is being used to read all the archive's entries
             // (unpack operation). In that case, we save the cost of looking for the entry in the archive.
-            if(entryIterator!=null && (entryIterator instanceof JavaUtilZipEntryIterator)) {
+            if((entryIterator instanceof JavaUtilZipEntryIterator)) {
                 ArchiveEntry currentEntry = ((JavaUtilZipEntryIterator)entryIterator).getCurrentEntry();
                 if(currentEntry.getPath().equals(entry.getPath())) {
                     // The entry/zip stream is wrapped in a FilterInputStream where #close is implemented as a no-op:

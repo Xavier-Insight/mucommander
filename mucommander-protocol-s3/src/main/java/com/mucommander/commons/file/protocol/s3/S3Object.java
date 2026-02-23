@@ -83,7 +83,7 @@ public class S3Object extends S3File {
     private String getObjectKey() {
         String urlPath = fileURL.getPath();
         // Strip out the bucket name from the path
-        return urlPath.substring(bucketName.length()+2, urlPath.length());
+        return urlPath.substring(bucketName.length()+2);
     }
 
     private String getObjectKey(boolean wantTrailingSeparator) {

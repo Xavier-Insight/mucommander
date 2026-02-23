@@ -92,7 +92,7 @@ public class SearchJob extends FileJob implements com.mucommander.commons.file.p
         Stream<AbstractFile> stream = files.parallelStream();
         if (filter)
             stream = stream.filter(lsFilter);
-        return stream.map(this::ls).flatMap(s -> s).collect(Collectors.toList());
+        return stream.flatMap(this::ls).collect(Collectors.toList());
     }
 
     private List<AbstractFile> match(List<AbstractFile> files) {

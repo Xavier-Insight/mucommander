@@ -470,9 +470,9 @@ public class AboutDialog extends FocusDialog implements ActionListener {
 
         buffer = new StringBuilder(RuntimeConstants.BUILD_DATE.substring(0, 4));
         buffer.append('/');
-        buffer.append(RuntimeConstants.BUILD_DATE.substring(4, 6));
+        buffer.append(RuntimeConstants.BUILD_DATE, 4, 6);
         buffer.append('/');
-        buffer.append(RuntimeConstants.BUILD_DATE.substring(6, 8));
+        buffer.append(RuntimeConstants.BUILD_DATE, 6, 8);
 
         return buffer.toString();
     }

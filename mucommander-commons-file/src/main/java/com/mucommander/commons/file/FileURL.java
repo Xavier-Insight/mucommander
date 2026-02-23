@@ -1049,7 +1049,7 @@ public class FileURL implements Cloneable {
      * @return true if both FileURL instances are equal
      */
     public boolean equals(Object o, boolean compareCredentials, boolean compareProperties) {
-        if(o==null || !(o instanceof FileURL))
+        if(!(o instanceof FileURL))
             return false;
 
         FileURL url = (FileURL)o;

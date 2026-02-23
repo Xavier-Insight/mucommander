@@ -132,7 +132,7 @@ public class XFileChooser extends JFileChooser implements PropertyChangeListener
     public void propertyChange(PropertyChangeEvent e) {
         String prop = e.getPropertyName();
 	Object obj = e.getNewValue();
-	if ((obj == null) || (! (obj instanceof BeanXFile)))
+	if ((!(obj instanceof BeanXFile)))
             return;
 
 	BeanXFile bf = (BeanXFile) obj;

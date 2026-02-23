@@ -140,7 +140,7 @@ public class CalculateChecksumJob extends TransferFileJob {
 
                 // Determine the path relative to the base source folder
                 String relativePath = file.getAbsolutePath();
-                relativePath = relativePath.substring(baseSourcePath.length(), relativePath.length());
+                relativePath = relativePath.substring(baseSourcePath.length());
 
                 // Write a new line in the checksum file, in the appropriate format
                 checksum = AbstractFile.calculateChecksum(in, digest);

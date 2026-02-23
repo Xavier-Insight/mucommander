@@ -419,7 +419,7 @@ public class Command implements Comparable<Command> {
     }
 
     public boolean equals(Object object) {
-        if(object == null || !(object instanceof Command))
+        if(!(object instanceof Command))
             return false;
 
         Command cmd;

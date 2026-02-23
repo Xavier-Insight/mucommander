@@ -205,7 +205,7 @@ public class LocalFile extends ProtocolFile {
 
             // Remove the leading '/' for Windows-like paths
             if (USES_ROOT_DRIVES) {
-                path = path.substring(1, path.length());
+                path = path.substring(1);
             }
 
             // Create the java.io.File instance and throw an exception if the path is not absolute.
@@ -232,7 +232,7 @@ public class LocalFile extends ProtocolFile {
 
             // Remove the leading '/' for Windows-like paths
             if (USES_ROOT_DRIVES) {
-                absPath = absPath.substring(1, absPath.length());
+                absPath = absPath.substring(1);
             }
         }
 
@@ -385,7 +385,7 @@ public class LocalFile extends ProtocolFile {
                 String mountPoint = st.nextToken().replace("\\040", " ");
                 String fsType = st.nextToken();
                 // check whether this is really a known physical FS
-                boolean knownFS = Arrays.stream(KNOWN_UNIX_FS).anyMatch(fs -> fs.equals(fsType));
+                boolean knownFS = Arrays.asList(KNOWN_UNIX_FS).contains(fsType);
                 if (knownFS) {
                     AbstractFile file = FileFactory.getFile(mountPoint);
                     if (file != null)

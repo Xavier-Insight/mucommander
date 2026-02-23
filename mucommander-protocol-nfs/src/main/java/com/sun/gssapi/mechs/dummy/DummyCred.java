@@ -183,10 +183,8 @@ public class DummyCred implements GSSCredSpi {
 		else if (getUsage() == GSSCredential.INITIATE_ONLY)
 			return m_initLifetime;
 
-		if (m_initLifetime < m_acceptLifetime)
-			return m_initLifetime;
+		return Math.min(m_initLifetime, m_acceptLifetime);
 
-		return m_acceptLifetime;
 	}
 
 

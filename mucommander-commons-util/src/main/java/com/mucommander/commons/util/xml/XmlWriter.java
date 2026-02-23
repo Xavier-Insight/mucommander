@@ -454,7 +454,7 @@ public class XmlWriter {
             position = 0;
             while ((position = data.indexOf(ENTITIES[i], position)) != -1) {
                 data = data.substring(0, position) + ENTITY_REPLACEMENTS[i] +
-                        (position == data.length() - 1 ? "" : data.substring(position + 1, data.length()));
+                        (position == data.length() - 1 ? "" : data.substring(position + 1));
                 position += ENTITY_REPLACEMENTS[i].length();
             }
         }

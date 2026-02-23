@@ -129,7 +129,7 @@ public class NfsURLConnection extends URLConnection {
         } else if (path.charAt(0) == '/') {
             // Remove extra "/" at the beginning of paths since it is not
             // used by NFS servers
-            path = path.substring(1, path.length());
+            path = path.substring(1);
         }
 
 	MessageHeader props = new MessageHeader();

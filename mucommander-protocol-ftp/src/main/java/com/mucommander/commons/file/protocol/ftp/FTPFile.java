@@ -1154,7 +1154,7 @@ public class FTPFile extends ProtocolFile implements ConnectionHandlerFactory {
             // Use the passive mode property if it is set
             String passiveModeProperty = location.getProperty(PASSIVE_MODE_PROPERTY_NAME);
             // Passive mode is enabled by default if property isn't specified
-            this.passiveMode = passiveModeProperty==null || !"false".equals(passiveModeProperty);
+            this.passiveMode = !"false".equals(passiveModeProperty);
 
             // Use the encoding property if it is set
             this.encoding = location.getProperty(ENCODING_PROPERTY_NAME);

@@ -325,10 +325,7 @@ public class CBZip2OutputStream extends OutputStream
                 weight[nNodes] = ((weight_n1 & 0xffffff00)
                                    + (weight_n2 & 0xffffff00))
                                   |
-                                  (1 + ((weight_n1 & 0x000000ff)
-                                         > (weight_n2 & 0x000000ff)
-                                        ? (weight_n1 & 0x000000ff)
-                                        : (weight_n2 & 0x000000ff))
+                                  (1 + (Math.max((weight_n1 & 0x000000ff), (weight_n2 & 0x000000ff)))
                                    );
 
                 parent[nNodes] = -1;
@@ -479,10 +476,7 @@ public class CBZip2OutputStream extends OutputStream
                 final int weight_n2 = weight[n2];
                 weight[nNodes] = ((weight_n1 & 0xffffff00)
                                   + (weight_n2 & 0xffffff00))
-                    | (1 + ((weight_n1 & 0x000000ff)
-                             > (weight_n2 & 0x000000ff)
-                            ? (weight_n1 & 0x000000ff)
-                            : (weight_n2 & 0x000000ff)));
+                    | (1 + (Math.max((weight_n1 & 0x000000ff), (weight_n2 & 0x000000ff))));
 
                 parent[nNodes] = -1;
                 nHeap++;

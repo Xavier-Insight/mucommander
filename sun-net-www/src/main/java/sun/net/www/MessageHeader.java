@@ -536,7 +536,7 @@ class MessageHeader {
             }
             String v;
             if (keyend >= len)
-                v = new String();
+                v = "";
             else
                 v = String.copyValueOf(s, keyend, len - keyend);
             add(k, v);

@@ -274,7 +274,7 @@ class GSSServer {
 		MessageProp mInfo = new MessageProp();
 
 		aCtxt.unwrap(dis, bos, mInfo);
-		print("\tMessage from peer:\t" + new String(bos.toByteArray()));
+		print("\tMessage from peer:\t" + bos.toString());
 
 		mInfo.setQOP(0);
 		mInfo.setPrivacy(false);

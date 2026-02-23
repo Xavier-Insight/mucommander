@@ -97,7 +97,7 @@ class ArArchiveEntryIterator implements ArchiveEntryIterator {
             // in the file name field, and appending the real filename to the file header.
             if(name.startsWith("#1/")) {
                 // Read extended name
-                int extendedNameLength = Integer.parseInt(name.substring(3, name.length()));
+                int extendedNameLength = Integer.parseInt(name.substring(3));
                 name = new String(StreamUtils.readFully(in, new byte[extendedNameLength])).trim();
                 // Decrease remaining file size
                 size -= extendedNameLength;
@@ -118,7 +118,7 @@ class ArArchiveEntryIterator implements ArchiveEntryIterator {
             }
             // GNU variant: entry with an extended name, look up extended name in // entry
             else if(this.gnuExtendedNames!=null && name.startsWith("/")) {
-                int off = Integer.parseInt(name.substring(1, name.length()));
+                int off = Integer.parseInt(name.substring(1));
                 name = "";
                 byte b;
                 while((b=this.gnuExtendedNames[off++])!='/')

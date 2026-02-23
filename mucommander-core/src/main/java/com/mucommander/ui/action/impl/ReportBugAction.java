@@ -90,7 +90,7 @@ public class ReportBugAction extends OpenURLInBrowserAction {
                     URLEncoder.encode(muCVersion, UTF_8),
                     URLEncoder.encode(javaVersion, UTF_8),
                     URLEncoder.encode(osVersion, UTF_8),
-                    URLEncoder.encode("[✂]\n" + logRecords.toString()
+                    URLEncoder.encode("[✂]\n" + logRecords
                             .substring(0, Math.min(MAX_REPORTED_LOG_SIZE, logRecords.length())) + "\n[✂]",UTF_8));
             putValue(URL_PROPERTY_KEY, newBugUrl);
         } catch (Exception e) {

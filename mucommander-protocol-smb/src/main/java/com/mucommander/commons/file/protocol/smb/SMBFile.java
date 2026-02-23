@@ -172,7 +172,7 @@ import jcifs.smb.SmbRandomAccessFile;
         int domainStart = login.indexOf(";");
         if(domainStart!=-1) {
             domain = login.substring(0, domainStart);
-            login = login.substring(domainStart+1, login.length());
+            login = login.substring(domainStart+1);
         }
         else {
             domain = null;

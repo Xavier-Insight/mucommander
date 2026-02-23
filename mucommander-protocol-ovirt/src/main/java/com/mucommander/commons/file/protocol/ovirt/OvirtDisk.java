@@ -247,7 +247,7 @@ public class OvirtDisk extends OvirtFile {
 
     @Override
     public boolean equals(Object o) {
-        if(o==null || !(o instanceof OvirtDisk))
+        if(!(o instanceof OvirtDisk))
             return false;
         return disk != null && disk.id().equals(((OvirtDisk)o).disk.id());
     }

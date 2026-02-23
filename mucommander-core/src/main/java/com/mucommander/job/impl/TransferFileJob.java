@@ -204,7 +204,7 @@ public abstract class TransferFileJob extends FileJob {
             // Indicate that integrity is being checked, the value is reset when the next file starts
             isCheckingIntegrity = true;
 
-            if(in!=null && (in instanceof ChecksumInputStream)) {
+            if((in instanceof ChecksumInputStream)) {
                 // The file was copied with a ChecksumInputStream, the checksum is already calculated, simply
                 // retrieve it
                 sourceChecksum = ((ChecksumInputStream)in).getChecksumString();

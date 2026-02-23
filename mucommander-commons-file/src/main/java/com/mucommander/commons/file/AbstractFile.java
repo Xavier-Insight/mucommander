@@ -1495,7 +1495,7 @@ public abstract class AbstractFile implements FileAttributes {
      * @see #equalsCanonical(Object)
      */
     public boolean equals(Object o) {
-        if(o==null || !(o instanceof AbstractFile))
+        if(!(o instanceof AbstractFile))
             return false;
 
         return getURL().equals(((AbstractFile)o).getURL(), true, true);
@@ -1521,7 +1521,7 @@ public abstract class AbstractFile implements FileAttributes {
      * @see #equals(Object)
      */
     public boolean equalsCanonical(Object o) {
-        if(o==null || !(o instanceof AbstractFile))
+        if(!(o instanceof AbstractFile))
             return false;
 
         // TODO: resolve hostnames ?
