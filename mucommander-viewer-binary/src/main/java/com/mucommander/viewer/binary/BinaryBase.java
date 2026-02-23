@@ -54,7 +54,6 @@ import org.exbin.bined.CodeCharactersCase;
 import org.exbin.bined.CodeType;
 import org.exbin.bined.EditMode;
 import org.exbin.bined.EditOperation;
-import org.exbin.bined.capability.EditModeCapable;
 import org.exbin.bined.highlight.swing.SearchCodeAreaColorAssessor;
 import org.exbin.bined.swing.basic.CodeArea;
 import org.exbin.bined.swing.basic.DefaultCodeAreaPainter;
@@ -506,7 +505,7 @@ class BinaryBase {
             BinaryStatusApi.MemoryMode memoryMode = BinaryStatusApi.MemoryMode.RAM_MEMORY;
             if (codeArea.getContentData() instanceof FileBinaryData) {
                 memoryMode = BinaryStatusApi.MemoryMode.DIRECT_ACCESS;
-            } else if (((EditModeCapable) codeArea).getEditMode() == EditMode.READ_ONLY) {
+            } else if (codeArea.getEditMode() == EditMode.READ_ONLY) {
                 memoryMode = BinaryStatusApi.MemoryMode.READ_ONLY;
             }
 

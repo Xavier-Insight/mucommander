@@ -646,7 +646,7 @@ public class MainFrame implements LocationListener {
         leftTable.setColumnModel(rightTable.getColumnModel());
         rightTable.setColumnModel(model);
 
-        SortInfo sortInfo = (SortInfo)leftTable.getSortInfo().clone();
+        SortInfo sortInfo = leftTable.getSortInfo().clone();
 
         leftTable.sortBy(rightTable.getSortInfo());
         leftTable.updateColumnsVisibility();

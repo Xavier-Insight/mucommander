@@ -593,9 +593,9 @@ class AppearancePanel extends PreferencesPanel implements ActionListener, Runnab
         MuConfigurations.getPreferences().setVariable(MuPreference.TABLE_ICON_SCALE, scaleFactor);
 
         // Sets the current theme.
-        if (!ThemeManager.isCurrentTheme((Theme) themeComboBox.getSelectedItem())) {
-            ThemeManager.setCurrentTheme((Theme) themeComboBox.getSelectedItem());
-            resetThemeButtons((Theme) themeComboBox.getSelectedItem());
+        if (!ThemeManager.isCurrentTheme(themeComboBox.getSelectedItem())) {
+            ThemeManager.setCurrentTheme(themeComboBox.getSelectedItem());
+            resetThemeButtons(themeComboBox.getSelectedItem());
             themeComboBox.repaint();
         }
 
@@ -999,7 +999,7 @@ class AppearancePanel extends PreferencesPanel implements ActionListener, Runnab
 
         count = themeComboBox.getItemCount();
         for (i = 0; i < count; i++) {
-            if (((Theme) themeComboBox.getItemAt(i)).getName().compareTo(theme.getName()) >= 0) {
+            if (themeComboBox.getItemAt(i).getName().compareTo(theme.getName()) >= 0) {
                 themeComboBox.insertItemAt(theme, i);
                 break;
             }
@@ -1118,7 +1118,7 @@ class AppearancePanel extends PreferencesPanel implements ActionListener, Runnab
     public void actionPerformed(ActionEvent e) {
         Theme theme;
 
-        theme = (Theme) themeComboBox.getSelectedItem();
+        theme = themeComboBox.getSelectedItem();
 
         // Theme combobox selection changed.
         if (e.getSource() == themeComboBox)
