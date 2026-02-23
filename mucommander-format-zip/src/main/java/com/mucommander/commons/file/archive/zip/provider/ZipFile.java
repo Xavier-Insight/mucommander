@@ -94,7 +94,7 @@ public class ZipFile implements ZipConstants {
      * The default encoding to use for parsing filenames and comments. This value is only used for Zip entries that do
      * not have the UTF-8 flag set. If not specified (null), then automatic encoding detection is used (default).
      */
-    private String defaultEncoding = null;
+    private String defaultEncoding;
 
     /** Holds byte buffer instance used to convert short and longs, avoids creating lots of small arrays */
     private ZipBuffer zipBuffer = new ZipBuffer();
@@ -1116,7 +1116,7 @@ public class ZipFile implements ZipConstants {
 
         private long remaining;
         private long loc;
-        private boolean addDummyByte = false;
+        private boolean addDummyByte;
 
         BoundedInputStream(RandomAccessInputStream rais, long start, long remaining) {
             this.rais = rais;

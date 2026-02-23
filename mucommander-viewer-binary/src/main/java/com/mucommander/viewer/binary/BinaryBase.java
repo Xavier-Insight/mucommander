@@ -399,7 +399,7 @@ class BinaryBase {
 
         private final CodeArea codeArea = new CodeArea();
         private final BinaryStatusPanel statusPanel = new BinaryStatusPanel();
-        private BinaryStatusApi binaryStatus = null;
+        private BinaryStatusApi binaryStatus;
         private long origFileSize;
         private Color backgroundColor;
 

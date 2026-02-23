@@ -86,7 +86,7 @@ public class muCommander {
      */
     public static final String CONFIG_DIRECTORY = "conf";
 
-    private static Framework m_fwk = null;
+    private static Framework m_fwk;
 
     /**
      * <p>

@@ -45,7 +45,7 @@ public class BatchRenameSelectRange extends FocusDialog implements ActionListene
     private JTextField edtRange;
     private JButton btnCancel;
     private JButton btnOK;
-    private String range = null;
+    private String range;
     
 
     public BatchRenameSelectRange(Dialog owner, String filename) {
@@ -95,7 +95,7 @@ public class BatchRenameSelectRange extends FocusDialog implements ActionListene
      *
      */
     private static class ReadOnlyDocument extends PlainDocument {
-        private boolean readOnly = false;
+        private boolean readOnly;
         
         public void setReadOnly(boolean readOnly) {
             this.readOnly = readOnly;

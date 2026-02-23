@@ -43,7 +43,7 @@ import com.mucommander.commons.util.ui.combobox.EditableComboBox;
 
 public abstract class AutocompleterTextComponent {
 	private JTextComponent textComponent;
-	private EditableComboBox editableComboBox = null;
+	private EditableComboBox editableComboBox;
 	
 	public AutocompleterTextComponent(JTextComponent textComp) {
 		this.textComponent = textComp;	

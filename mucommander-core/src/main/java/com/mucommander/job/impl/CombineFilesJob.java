@@ -45,7 +45,7 @@ import com.mucommander.ui.main.MainFrame;
 public class CombineFilesJob extends AbstractCopyJob {
     private static final Logger LOGGER = LoggerFactory.getLogger(CombineFilesJob.class);
 
-    AbstractFile destFile = null;
+    AbstractFile destFile;
     private OutputStream out;
     private AbstractFile crcFile;
 

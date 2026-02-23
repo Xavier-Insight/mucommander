@@ -45,7 +45,7 @@ public class CachedDirectory extends ProxyFile {
     private static final ImageIcon NOT_ACCESSIBLE_ICON = IconManager.getIcon(IconManager.FILE_ICON_SET, CustomFileIconProvider.NOT_ACCESSIBLE_FILE);
 
     /** an array of cached children */
-    private AbstractFile[] cachedChildren = null;
+    private AbstractFile[] cachedChildren;
     
     /** a flag indicating that a thread is running, caching children */
     private boolean readingChildren = false;
